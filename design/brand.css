@@ -23,7 +23,7 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(to right,
-            rgba(0, 0, 0, 0.75) 30%,
+            rgba(37, 37, 37, 0.75) 30%,
             rgba(0, 0, 0, 0.3) 70%);
 }
 
@@ -87,17 +87,27 @@
 .heroThumbs-swipper {
     overflow: visible !important;
     clip-path: inset(-100px 0);
+    width: 100%;
+    max-width: 1150px;
 }
 
 .heroThumbs {
+    display: flex;
+    align-items: center;
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    width: 90%;
-    max-width: 1150px;
+    width: 100%;
+    max-width: 100%;
+    height: 150px;
     margin: auto;
+    background: linear-gradient(to right,
+            rgba(0, 0, 0, 0.75) 30%,
+            rgba(0, 0, 0, 0.3) 70%);
+    z-index: 1;
 }
+
 
 .heroThumbs .swiper-slide {
     width: calc(100% / 6);
@@ -152,11 +162,12 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: -32px;
-    width: calc(100% + 65px);
+    left: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+    align-items: center;
+    padding: 0 20px;
     z-index: 10;
 }
 
@@ -206,8 +217,9 @@
 .nav-pills img {
     display: block;
     margin: 0 auto 10px;
-    height: 40px;
-    filter: grayscale(100%);
+   width: auto;
+   height: 48px;
+    /* filter: grayscale(100%); */
     opacity: 0.6;
     transition: 0.3s ease;
 }

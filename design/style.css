@@ -110,7 +110,7 @@
 .hero .overlay-bg .image1 {
     background:
         linear-gradient(to right, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.15), transparent),
-        url("../assets/homePage/hero-image.jpg") no-repeat center / cover;
+        url("../assets/homePage/hero-image.png") no-repeat center / cover;
 }
 
 /* .hero .overlay-bg .image2 {
@@ -203,9 +203,9 @@
     border: 2px solid var(--bg-primary);
 }
 
-.hero .swiper-slide {
+/* .hero .swiper-slide {
     padding-left: 60px;
-}
+} */
 
 /* Arrows */
 
@@ -274,13 +274,42 @@
 }
 
 
+/* =========================
+   KK sir Growth Section
+========================= */
 
+.growth-section-new {
 
+    width: 100%;
+    min-height: 100vh;
+    background: #fff;
+    display: flex;
+    align-items: center;
+}
 
+.quote-tail-new img {
+    transform: scaleX(-1);
+}
+
+.profile-info-new {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    place-self: flex-end;
+}
+
+.growth-wrapper-new {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    min-height: 100vh;
+}
 
 /* =========================
    Growth Section
 ========================= */
+
+
 
 .growth-section {
     width: 100%;
@@ -289,6 +318,7 @@
     display: flex;
     align-items: center;
 }
+
 
 .growth-wrapper {
     display: flex;
@@ -315,6 +345,14 @@
 }
 
 /*  RIGHT SIDE */
+
+.growth-right-new {
+    width: 60%;
+    padding: 80px;
+    display: flex;
+
+    justify-content: center;
+}
 
 .growth-right {
     width: 60%;
@@ -406,10 +444,6 @@
 }
 
 
-
-
-
-
 /* =========================
    Business Section
 ========================= */
@@ -435,6 +469,10 @@
     background: none !important;
 }
 
+.gap-6{
+    gap: 10rem !important;
+}
+
 .nav-pills .nav-link.active {
     color: var(--bg1-color) !important;
     border-bottom-color: var(--button-color);
@@ -443,10 +481,44 @@
 .nav-pills img {
     display: block;
     margin: 0 auto 10px;
-    height: 40px;
-    filter: grayscale(100%);
-    opacity: 0.6;
+    width: 62px;
+    height: 62px;
     transition: 0.3s ease;
+}
+
+.icon-box {
+    position: relative;
+    width: 62px;
+    height: 62px;
+    margin: 0 auto 10px;
+}
+
+.icon-box .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s ease;
+}
+
+/* Default icon visible */
+.default-icon {
+    opacity: 1;
+}
+
+/* Active icon hidden by default */
+.active-icon {
+    opacity: 0;
+}
+
+/* Jab active ho tab switch */
+.nav-link.active .default-icon {
+    opacity: 0;
+}
+
+.nav-link.active .active-icon {
+    opacity: 1;
 }
 
 .nav-pills .nav-link.active img {
@@ -528,7 +600,7 @@
 }
 
 .btn-view-all:hover {
-    opacity: 0.9;
+     background-color: var(--button-color);
 }
 
 

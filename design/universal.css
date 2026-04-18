@@ -333,6 +333,14 @@ button.btn-primary:hover svg {
     padding: 0 !important;
 }
 
+.navbar-brand img{
+    
+    max-width: 100%;
+   
+    object-fit: cover;
+    display: block;
+
+}
 .navbar-brand {
     margin-right: 0;
 }
