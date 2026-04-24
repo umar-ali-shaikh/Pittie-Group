@@ -101,3 +101,13 @@ gsap.fromTo(
     }
   }
 );
+
+function openVideo(url) {
+  document.getElementById("videoModal").style.display = "flex";
+  document.getElementById("videoFrame").src = url;
+}
+
+function closeVideo() {
+  document.getElementById("videoModal").style.display = "none";
+  document.getElementById("videoFrame").src = "";
+}
