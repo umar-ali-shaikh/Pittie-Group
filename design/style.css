@@ -66,6 +66,24 @@
     margin: 0 auto;
 }
 
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right,
+            rgba(0, 0, 0, 0.5) 0%,
+            /* left - readable */
+            rgba(0, 0, 0, 0.3) 30%,
+            /* medium */
+            rgba(0, 0, 0, 0.1) 55%,
+            /* light */
+            rgba(0, 0, 0, 0) 80%
+            /* fully visible right */
+        );
+    z-index: 1;
+    pointer-events: none;
+}
+
 .hero .overlay-bg {
     position: absolute;
     inset: 0;
@@ -77,51 +95,13 @@
     z-index: -1;
 }
 
-.overlay-bg img {
-    display: none;
-}
 
-
-/* Default state */
-.hero .overlay-bg .overlay-image {
-    position: absolute;
-    inset: 0;
-    background-position: center;
-    background-size: cover;
-
-    z-index: 1;
-    will-change: opacity, transform, filter;
-
-    transition:
-        opacity 1.2s ease,
-        transform 1.6s cubic-bezier(0.22, 1, 0.36, 1),
-        filter 1.2s ease;
-}
-
-/* Active image */
-/* .hero .overlay-bg .overlay-image.active {
-    opacity: 1;
-    transform: scale(1);
-    filter: blur(0);
-    z-index: 11;
-} */
-
-
-.hero .overlay-bg .image1  video{
+.hero .overlay-bg .image1 video {
     object-fit: cover;
     width: 100%;
     height: 100%;
     transform: scale(1.2);
 }
-
-/* .hero .overlay-bg .image2 {
-    background: url("../Assests/home/Bg-image-herosection1.jpg") no-repeat center / cover;
-}
-
-.hero .overlay-bg .image3 {
-    background: url("../Assests/home/Bg-image-herosection2.jpg") no-repeat center / cover;
-}
- */
 
 .hero .overlay-image-mv {
     display: none;
@@ -133,6 +113,7 @@
     height: 100%;
     padding: var(--pm64) var(--pm48);
     display: flex;
+    z-index: 11;
     align-items: center;
 }
 
@@ -849,6 +830,7 @@
 .big-card {
     position: relative;
     flex: 2;
+    height: 404px;
     border-radius: 15px;
     overflow: hidden;
 }
@@ -919,14 +901,18 @@
 
 .category {
     background: red;
+    color: white;
     padding: 5px 10px;
     border-radius: 20px;
     font-size: 12px;
 }
 
-.content h3 {
+.content p {
+    color: white;
+}.content h3 {
     margin: 10px 0;
     font-size: 24px;
+    color: white;
 }
 
 /* RIGHT SIDE */
@@ -1201,4 +1187,132 @@
         padding: 0;
     }
 
+}
+
+
+/* ================== TABLET (992px) ================== */
+@media (max-width: 992px){
+
+    .trending h2{
+        font-size: 32px;
+    }
+
+    .trending-container{
+        flex-direction: column;
+    }
+
+    .big-card{
+        height: 350px;
+    }
+
+    .side-cards{
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .card{
+        width: calc(50% - 10px);
+    }
+
+    .img-box img{
+        width: 100px;
+        height: 100px;
+    }
+}
+
+
+/* ================== MOBILE (768px) ================== */
+@media (max-width: 768px){
+
+    .trending{
+        padding: 40px 4%;
+    }
+
+    .trending h2{
+        font-size: 26px;
+        line-height: 1.3;
+    }
+
+    .big-card{
+        height: 280px;
+    }
+
+    .play-btn{
+        width: 55px;
+        height: 55px;
+        font-size: 18px;
+    }
+
+    .content h3{
+        font-size: 18px;
+    }
+
+    .content p{
+        font-size: 14px;
+    }
+
+    .side-cards{
+        flex-direction: column;
+    }
+
+    .card{
+        width: 100%;
+    }
+
+    .img-box img{
+        width: 90px;
+        height: 90px;
+    }
+
+    .text h4{
+        font-size: 14px;
+    }
+}
+
+
+/* ================== SMALL MOBILE (480px) ================== */
+@media (max-width: 480px){
+
+    .tag{
+        font-size: 12px;
+    }
+
+    .trending h2{
+        font-size: 22px;
+    }
+
+    .big-card{
+        height: 240px;
+    }
+
+    .play-btn{
+        width: 45px;
+        height: 45px;
+        font-size: 16px;
+    }
+
+    .featured.big{
+        font-size: 10px;
+        padding: 4px 40px;
+        left: -40px;
+    }
+
+    .featured.small{
+        font-size: 8px;
+        padding: 0px 30px;
+    }
+
+    .img-box img{
+        width: 75px;
+        height: 75px;
+    }
+
+    .text span{
+        font-size: 10px;
+    }
+
+    .text h4{
+        font-size: 13px;
+    }
 }
