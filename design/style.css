@@ -45,187 +45,248 @@
 
 
 /* ==============================
-   Hero Section
+   HERO SECTION (FINAL CLEAN)
    ============================== */
-
-.hero .swiper {
-    min-height: 650px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
 
 .hero {
     position: relative;
-    min-height: 650px;
-    max-height: 650px;
     height: 100vh;
-    max-width: 1330px;
+    min-height: 650px;
     overflow: hidden;
-    color: var(--text-white);
-    margin: 0 auto;
+    color: #fff;
 }
 
+/* Gradient Overlay */
 .hero::before {
     content: "";
     position: absolute;
     inset: 0;
     background: linear-gradient(to right,
-            rgba(0, 0, 0, 0.5) 0%,
-            /* left - readable */
+            rgba(0, 0, 0, 0.6) 0%,
             rgba(0, 0, 0, 0.3) 30%,
-            /* medium */
             rgba(0, 0, 0, 0.1) 55%,
-            /* light */
-            rgba(0, 0, 0, 0) 80%
-            /* fully visible right */
-        );
+            rgba(0, 0, 0, 0) 80%);
     z-index: 1;
     pointer-events: none;
 }
 
+/* ==============================
+   BACKGROUND IMAGES
+   ============================== */
+
 .hero .overlay-bg {
     position: absolute;
     inset: 0;
-    width: 100%;
-    height: 100%;
-    min-height: 650px;
-    left: 0;
-    top: 0;
-    z-index: -1;
+    z-index: 0;
 }
 
+/* Default hidden */
+.overlay-image {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: translateX(120px);
+    transition: all 1s ease;
+}
 
-.hero .overlay-bg .image1 video {
+/* Active image */
+.overlay-image.active {
+    opacity: 1;
+    transform: translateX(0) !important;
+}
+
+.overlay-image img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    width: 100%;
+}
+
+/* ==============================
+   SWIPER FIX
+   ============================== */
+
+.hero .swiper {
     height: 100%;
-    transform: scale(1.2);
 }
 
-.hero .overlay-image-mv {
-    display: none;
+.hero .swiper-wrapper {
+    height: 100%;
 }
 
-/* Layout */
+.hero .swiper-slide {
+    display: flex;
+    /* ❌ remove none */
+    align-items: center;
+}
+
+/* ==============================
+   CONTENT
+   ============================== */
+
 .hero-wrapper {
     position: relative;
+    z-index: 10;
     height: 100%;
-    padding: var(--pm64) var(--pm48);
     display: flex;
-    z-index: 11;
     align-items: center;
+    padding: 60px 0px;
 }
 
-/* Content */
 .hero-content {
-    z-index: 2;
+    max-width: 600px;
+    opacity: 0;
+    transform: translateY(80px);
+    transition: all 0.8s ease;
 }
 
+/* Active content */
+.swiper-slide-active .hero-content {
+    opacity: 1;
+    transform: translateY(0);
+}
 
+/* Heading */
 .hero-content h1 {
-    font-size: clamp(30px, 5vw, 60px);
+    font-size: clamp(30px, 5vw, 56px);
     line-height: clamp(44px, 6vw, 72px);
     font-weight: 700;
-    margin-bottom: var(--pm16);
-    color: var(--bg-primary);
+    margin-bottom: 16px;
+    color: white;
 }
 
-.hero-content .btn {
-    margin-top: var(--pm24);
-}
-
+/* Paragraph */
 .hero-content p {
-    font-size: 16px;
-    color: var(--bg-primary);
-    max-width: 520px;
-}
-
-/* Actions */
-.hero-actions {
-    margin-top: var(--pm24);
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: var(--pm24);
-}
-
-.hero-customers span {
-    color: var(--bg-primary);
-}
-
-/* Primary Button (Hero specific override if needed) */
-.btn-primary {
-    background-color: var(--bg-danger);
-    color: var(--text-white);
-    padding: var(--pm12) var(--pm24);
-    border-radius: var(--radius8);
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: var(--pm8);
-    font-family: var(--font-primary);
-}
-
-/* Customers */
-.hero-customers {
-    display: flex;
-    align-items: center;
-    gap: var(--pm8);
     font-size: 14px;
-    color: var(--bg-primary);
-    padding-left: 20px;
+    max-width: 520px;
+    color: white;
 }
 
-.avatars img {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    margin-left: -8px;
-    border: 2px solid var(--bg-primary);
+/* Button */
+.hero-content .btn {
+    margin-top: 20px;
 }
 
-/* .hero .swiper-slide {
-    padding-left: 60px;
-} */
+/* ==============================
+   INDICATORS
+   ============================== */
 
-/* Arrows */
-
-.hero-arrow.left {
-    left: -0%;
-}
-
-.hero-arrow.right {
-    right: -0%;
-
-}
-
-/* Dots */
-.hero-dots {
+.Indicators {
     position: absolute;
-    bottom: var(--pm24);
+    bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: var(--pm8);
-    z-index: 11;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 20;
+    user-select: none;
 }
 
-.hero-dots span {
-    width: 8px;
-    height: 8px;
-    background: rgba(255, 255, 255, 0.4);
-    /* opacity: 0.5; */
-    border-radius: 50px;
-    transition:
-        width 0.5s ease,
-        background-color 0.5s ease;
+/* Numbers */
+.numPagination {
+    font-size: 14px;
 }
 
-.hero-dots span.active {
-    width: 30px;
-    background: var(--bg-danger);
+.numPagination span {
+    color: white;
 }
+
+/* Progress bar container */
+.custom-indicators {
+    display: flex;
+    gap: 10px;
+    width: 300px;
+}
+
+/* Bars */
+.indicator {
+    flex: 1;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Active bar */
+.indicator.active {
+    background: #fff;
+}
+
+/* ==============================
+   NAVIGATION ARROWS
+   ============================== */
+
+.hero-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.hero-pause span {
+    color: white;
+    margin: 0;
+}
+
+.hero-pause {
+    width: 45px;
+    height: 45px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #fff;
+    font-size: 18px;
+}
+
+.hero-pause:hover {
+    background: #ff3b3b;
+    border-color: #ff3b3b;
+    transform: scale(1.1);
+}
+
+.hero-prev span,
+.hero-next span {
+    color: #fff;
+    margin: 0;
+}
+
+.hero-prev,
+.hero-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 20px;
+}
+
+/* Hover */
+.hero-prev:hover,
+.hero-next:hover {
+    transform: scale(1.1);
+}
+
+/* Arrow animation */
+.hero-prev span,
+.hero-next span {
+    transition: transform 0.3s;
+}
+
+.hero-prev:hover span {
+    transform: translateX(-3px);
+}
+
+.hero-next:hover span {
+    transform: translateX(3px);
+}
+
+
+
+
+
+
 
 
 
@@ -256,175 +317,6 @@
 }
 
 
-/* =========================
-   KK sir Growth Section
-========================= */
-
-.growth-section-new {
-
-    width: 100%;
-    min-height: 100vh;
-    background: #fff;
-    display: flex;
-    align-items: center;
-}
-
-.quote-tail-new img {
-    transform: scaleX(-1);
-}
-
-.profile-info-new {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    place-self: flex-end;
-}
-
-.growth-wrapper-new {
-    display: flex;
-    flex-direction: row-reverse;
-    width: 100%;
-    min-height: 100vh;
-}
-
-/* =========================
-   Growth Section
-========================= */
-
-
-
-.growth-section {
-    width: 100%;
-    min-height: 100vh;
-    background: #fff;
-    display: flex;
-    align-items: center;
-}
-
-
-.growth-wrapper {
-    display: flex;
-    width: 100%;
-    min-height: 100vh;
-}
-
-
-/* LEFT SIDE */
-
-.growth-left {
-    width: 40%;
-    background: linear-gradient(180deg, #0c3a6b, #001c38);
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.growth-left img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/*  RIGHT SIDE */
-
-.growth-right-new {
-    width: 60%;
-    padding: 80px;
-    display: flex;
-
-    justify-content: center;
-}
-
-.growth-right {
-    width: 60%;
-    padding: 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-/* QUOTE */
-
-.quote-box {
-    position: relative;
-    max-width: 620px;
-    margin-bottom: 50px;
-}
-
-.quote-box p {
-    font-size: 18px;
-    line-height: 1.7;
-    color: #3a3a3a;
-    position: relative;
-    padding: 0 20px;
-}
-
-/* Opening Quote */
-.quote-box p::before {
-    content: "“";
-    position: absolute;
-    left: -5px;
-    top: -10px;
-    font-size: 40px;
-    color: var(--bg-danger);
-}
-
-/* Closing Quote */
-.quote-box p::after {
-    content: "”";
-    position: absolute;
-    bottom: -15px;
-    font-size: 40px;
-    color: var(--bg-danger);
-}
-
-/* Animated Characters */
-.quote-box .char {
-    display: inline-block;
-    color: rgb(193, 193, 193);
-    transition: color 0.15s linear;
-}
-
-/* PROFILE INFO */
-
-.profile-info {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.profile-info h4 {
-    font-size: 18px;
-    font-weight: 500;
-    margin: 0;
-}
-
-.profile-info span {
-    font-size: 14px;
-    color: #777;
-}
-
-/* BUTTON */
-
-.btn-outline {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 12px 30px;
-    border: 1px solid #444;
-    border-radius: 6px;
-    text-decoration: none;
-    color: #000;
-    font-size: 14px;
-    transition: all 0.3s ease;
-    width: fit-content;
-}
-
-.btn-outline:hover {
-    background: #000;
-    color: #fff;
-}
-
 
 /* =========================
    Business Section
@@ -446,16 +338,19 @@
     color: var(--sub-text);
     font-weight: 600;
     border-radius: 0;
-    border-bottom: 3px solid transparent;
-    padding-bottom: 10px;
     background: none !important;
 }
 
-.gap-6 {
-    gap: 10rem !important;
+.nav-pills .nav-item.active .nav-link span {
+    color: var(--bg1-color) !important;
 }
 
-.nav-pills .nav-link.active {
+.nav-pills .nav-link span {
+    font-size: 14px;
+}
+
+
+#businessTabs .nav-item.active {
     color: var(--bg1-color) !important;
     border-bottom-color: var(--button-color);
 }
@@ -489,21 +384,26 @@
     opacity: 1;
 }
 
+#businessTabs .nav-item {
+    border-bottom: 3px solid transparent;
+    padding-bottom: 10px;
+}
+
 /* Active icon hidden by default */
 .active-icon {
     opacity: 0;
 }
 
 /* Jab active ho tab switch */
-.nav-link.active .default-icon {
+.nav-item.active .default-icon {
     opacity: 0;
 }
 
-.nav-link.active .active-icon {
+.nav-item.active .active-icon {
     opacity: 1;
 }
 
-.nav-pills .nav-link.active img {
+.nav-pills .nav-item.active img {
     filter: none;
     opacity: 1;
 }
@@ -553,11 +453,11 @@
 }
 
 /* Slide Up + Fade In */
-.business-card:hover .card-overlay {
+/* .business-card:hover .card-overlay {
     opacity: 1;
     transform: translateY(0);
     background: rgba(26, 65, 116, 0.7);
-}
+} */
 
 /* Overlay Text */
 .card-overlay span {
@@ -764,7 +664,7 @@
 
 /* Heading */
 .timeline-title {
-    font-size: 42px;
+    font-size: 36px;
     font-weight: 700;
     color: var(--text-primary);
 }
@@ -781,7 +681,7 @@
 
 /* Paragraph */
 .timeline-text {
-    font-size: 18px;
+    font-size: 14px;
     line-height: 1.8;
     color: var(--para-text);
 }
@@ -813,10 +713,11 @@
     color: red;
     font-weight: 600;
     letter-spacing: 2px;
+    font-size: 14px;
 }
 
 .trending h2 {
-    font-size: 40px;
+    ;
     margin: 10px 0 40px;
     color: #1e3a5f;
 }
@@ -909,7 +810,9 @@
 
 .content p {
     color: white;
-}.content h3 {
+}
+
+.content h3 {
     margin: 10px 0;
     font-size: 24px;
     color: white;
@@ -952,6 +855,7 @@
 
 .text h4 {
     margin-top: 10px;
+    font-size: 14px;
 }
 
 /* MODAL */
@@ -1000,7 +904,7 @@
 }
 
 .section-title {
-    font-size: 38px;
+    font-size: 36px;
     font-weight: 700;
     color: var(--text-primary);
     margin-top: 10px;
@@ -1191,31 +1095,31 @@
 
 
 /* ================== TABLET (992px) ================== */
-@media (max-width: 992px){
+@media (max-width: 992px) {
 
-    .trending h2{
+    .trending h2 {
         font-size: 32px;
     }
 
-    .trending-container{
+    .trending-container {
         flex-direction: column;
     }
 
-    .big-card{
+    .big-card {
         height: 350px;
     }
 
-    .side-cards{
+    .side-cards {
         flex-direction: row;
         flex-wrap: wrap;
         gap: 20px;
     }
 
-    .card{
+    .card {
         width: calc(50% - 10px);
     }
 
-    .img-box img{
+    .img-box img {
         width: 100px;
         height: 100px;
     }
@@ -1223,96 +1127,103 @@
 
 
 /* ================== MOBILE (768px) ================== */
-@media (max-width: 768px){
+@media (max-width: 768px) {
 
-    .trending{
+    .trending {
         padding: 40px 4%;
     }
 
-    .trending h2{
+    .trending h2 {
         font-size: 26px;
         line-height: 1.3;
     }
 
-    .big-card{
+    .big-card {
         height: 280px;
     }
 
-    .play-btn{
+    .play-btn {
         width: 55px;
         height: 55px;
         font-size: 18px;
     }
 
-    .content h3{
+    .content h3 {
         font-size: 18px;
     }
 
-    .content p{
+    .content p {
         font-size: 14px;
     }
 
-    .side-cards{
+    .side-cards {
         flex-direction: column;
     }
 
-    .card{
+    .card {
         width: 100%;
     }
 
-    .img-box img{
+    .img-box img {
         width: 90px;
         height: 90px;
     }
 
-    .text h4{
+    .text h4 {
         font-size: 14px;
     }
 }
 
 
 /* ================== SMALL MOBILE (480px) ================== */
-@media (max-width: 480px){
+@media (max-width: 480px) {
 
-    .tag{
+    .tag {
         font-size: 12px;
     }
 
-    .trending h2{
+    .trending h2 {
         font-size: 22px;
     }
 
-    .big-card{
+    .big-card {
         height: 240px;
     }
 
-    .play-btn{
+    .play-btn {
         width: 45px;
         height: 45px;
         font-size: 16px;
     }
 
-    .featured.big{
+    .featured.big {
         font-size: 10px;
         padding: 4px 40px;
         left: -40px;
     }
 
-    .featured.small{
+    .featured.small {
         font-size: 8px;
         padding: 0px 30px;
     }
 
-    .img-box img{
+    .img-box img {
         width: 75px;
         height: 75px;
     }
 
-    .text span{
+    .text span {
         font-size: 10px;
     }
 
-    .text h4{
+    .text h4 {
         font-size: 13px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .hero .swiper-slide {
+        align-items: start;
+        margin-top: 40px;
     }
 }

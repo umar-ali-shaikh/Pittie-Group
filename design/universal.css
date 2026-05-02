@@ -65,8 +65,8 @@ body {
 }
 
 .container {
-    width: 100%;
-    max-width: 1150px;
+    width: 80%;
+    max-width: 80%;
     margin: auto;
 }
 
@@ -92,12 +92,12 @@ h1 {
 }
 
 h2 {
-    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-size: clamp(1.5rem, 3vw, 36px);
     font-weight: 600;
 }
 
 h3 {
-    font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+    font-size: clamp(1.2rem, 2.2vw, 24px);
     line-height: 1.3;
     font-weight: 600;
 }
@@ -112,7 +112,7 @@ h6 {
 /* ===================== Text ===================== */
 p,
 span {
-    font-size: clamp(18px, 1vw, 1.05rem);
+    font-size: 14px;
     line-height: 1.8;
     color: var(--sub-text);
     margin-bottom: var(--pm8);
@@ -130,6 +130,9 @@ a:hover {
 }
 
 
+button{
+    font-size: 14px;
+}
 button:hover {
     background: var(--bg1-color);
 }
@@ -253,7 +256,7 @@ button.btn-primary:hover svg {
     color: var(--button-color);
     letter-spacing: 2px;
     font-weight: 600;
-    font-size: clamp(14px, 1.2vw, 18px);
+    font-size: clamp(12px, 1.2vw, 14px);
     text-transform: uppercase;
 }
 
@@ -326,23 +329,28 @@ button.btn-primary:hover svg {
    ============================== */
 .header {
     z-index: 1111111;
+    background: rgba(255, 255, 255, .7);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
 }
 
 .navbar-nav .nav-link {
     position: relative;
     padding: 0 !important;
+    font-size: 12px;
 }
 
-.navbar-brand img{
-    
+.navbar-brand img {
     max-width: 100%;
-   
+    width: 100%;
     object-fit: cover;
     display: block;
-
 }
+
 .navbar-brand {
     margin-right: 0;
+    width: 7%;
+    padding: 0;
 }
 
 .navbar-toggler-icon {
@@ -404,7 +412,7 @@ button.btn-primary:hover svg {
 }
 
 .footer-tagline {
-    font-size: 18px;
+    font-size: 14px;
     color: var(--strong-black);
     max-width: 260px;
     line-height: 1.6;
@@ -412,7 +420,7 @@ button.btn-primary:hover svg {
 
 /* Titles */
 .footer-title {
-    font-size: clamp(22px, 2.5vw, 26px);
+    font-size: 18px;
     color: var(--strong-black);
     margin-bottom: 14px;
 }
@@ -429,7 +437,7 @@ button.btn-primary:hover svg {
 }
 
 .footer-links a {
-    font-size: 18px;
+    font-size: 14px;
     color: var(--strong-black);
     text-decoration: none;
     transition: color 0.3s ease;
@@ -462,7 +470,7 @@ button.btn-primary:hover svg {
 .footer-contact a {
     color: var(--strong-black);
     text-decoration: none;
-    font-size: 18px;
+    font-size: 14px;
 }
 
 .footer-contact a:hover {
@@ -503,7 +511,15 @@ button.btn-primary:hover svg {
 
 }
 
+@media (max-width: 768px) {
+    .navbar-brand {
+        width: 15%;
+    }
+}
+
 @media (max-width: 576px) {
+
+
     .snap-section {
         min-height: 100% !important;
     }
@@ -531,20 +547,6 @@ button.btn-primary:hover svg {
 
     .footer-tagline {
         display: none;
-    }
-
-    .footer-links a,
-    .footer-contact a {
-        font-size: 16px;
-    }
-
-    .footer-contact svg {
-        width: 16px;
-        height: 16px;
-    }
-
-    .footer-tagline {
-        font-size: 16px;
     }
 
     /* optional: hide existing footer contact column */

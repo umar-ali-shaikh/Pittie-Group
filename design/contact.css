@@ -1,469 +1,536 @@
-/* =========================
+ .container {
+   width: 100%;
+   max-width: 1140px;
+ }
+
+ /* =========================
    Hero Section
 ========================= */
 
-.community-section .container {
-  max-width: 1300px;
-}
+ .community-section .container {
+   max-width: 1300px;
+   width: 100%;
+ }
 
-.community-wrapper {
-  border-radius: var(--radius24);
-  position: relative;
-}
+ .community-wrapper {
+   border-radius: var(--radius24);
+   position: relative;
+ }
 
-/* Background image */
-.community-bg {
-  border-radius: var(--radius24);
-  object-fit: cover;
-  height: 300px;
-}
+ /* Background image */
+ .community-bg {
+   border-radius: var(--radius24);
+   object-fit: cover;
+   height: 300px;
+ }
 
-/* Gradient Overlay */
-.community-wrapper::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: var(--radius24);
-}
+ /* Gradient Overlay */
+ .community-wrapper::after {
+   content: "";
+   position: absolute;
+   inset: 0;
+   border-radius: var(--radius24);
+ }
 
-/* Ensure content above overlay */
-.community-content {
-  z-index: 2;
-}
+ /* Ensure content above overlay */
+ .community-content {
+   z-index: 2;
+ }
 
-/* Typography */
-.community-title {
-  font-weight: 700;
-  color: var(--bg3-color);
-}
+ /* Typography */
+ .community-title {
+   font-weight: 700;
+   color: var(--bg3-color);
+ }
 
-.community-heading {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--bg3-color);
-  letter-spacing: 1px;
-}
+ .community-heading {
+   font-size: 22px;
+   font-weight: 700;
+   color: var(--bg3-color);
+   letter-spacing: 1px;
+ }
 
-.community-text {
-  color: var(--bg3-color);
-  font-size: 15px;
-  line-height: 1.8;
-  margin-top: 10px;
-  max-width: 420px;
-}
-
-
-
+ .community-text {
+   color: var(--bg3-color);
+   font-size: 15px;
+   line-height: 1.8;
+   margin-top: 10px;
+   max-width: 420px;
+ }
 
 
-/* =========================
+
+
+
+ /* =========================
    CONTACT SECTION
 ========================= */
+ .contact-title {
+   font-size: 36px;
+   font-weight: 600;
+   color: var(--text-primary);
+   letter-spacing: 1px;
+   position: relative;
+ }
 
-/* Title */
-.contact-title {
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--text-primary);
-  letter-spacing: 1px;
-  position: relative;
-}
+ .title-arrow {
+   color: var(--button-color);
+   margin-left: 8px;
+   position: absolute;
+   height: 100%;
+ }
 
-.title-arrow {
-  color: var(--button-color);
-  margin-left: 8px;
-  position: absolute;
-  height: 100%;
-}
+ .title-arrow svg {
+   width: 100%;
+   height: 100%;
+ }
 
-.title-arrow svg {
-  width: 100%;
-  height: 100%;
-}
+ .contact-subtitle {
+   font-size: 14px;
+   color: var(--para-text);
+   margin-top: 6px;
+ }
 
-.contact-subtitle {
-  font-size: 14px;
-  color: var(--para-text);
-  margin-top: 6px;
-}
+ /* Input Styling */
+ .contact-input {
+   border: none;
+   border-bottom: 1px solid #d1d5db;
+   border-radius: 0;
+   padding-left: 0;
+   padding-right: 0;
+   font-size: 14px;
+   background: transparent;
+ }
 
-/* Input Styling */
-.contact-input {
-  border: none;
-  border-bottom: 1px solid #d1d5db;
-  border-radius: 0;
-  padding-left: 0;
-  padding-right: 0;
-  font-size: 14px;
-  background: transparent;
-}
+ .contact-input:focus {
+   box-shadow: none;
+   border-color: var(--bg1-color);
+ }
 
-.contact-input:focus {
-  box-shadow: none;
-  border-color: var(--bg1-color);
-}
+ /* Labels */
+ label {
+   font-size: 13px;
+   color: var(--text-primary);
+   font-weight: 500;
+ }
 
-/* Labels */
-label {
-  font-size: 13px;
-  color: var(--text-primary);
-  font-weight: 500;
-}
+ /* Button */
+ .contact-btn {
+   background: var(--button-color);
+   color: var(--bg3-color);
+   border: none;
+   padding: 10px 24px;
+   border-radius: var(--radius8);
+   font-size: 14px;
+   font-weight: 600;
+   transition: 0.3s ease;
+ }
 
-/* Button */
-.contact-btn {
-  background: var(--button-color);
-  color: var(--bg3-color);
-  border: none;
-  padding: 10px 24px;
-  border-radius: var(--radius8);
-  font-size: 14px;
-  font-weight: 600;
-  transition: 0.3s ease;
-}
+ .contact-btn:hover {
+   background: var(--bg-red-dark);
+ }
 
-.contact-btn:hover {
-  background: var(--bg-red-dark);
-}
+ /* Map Box */
+ .map-box {
+   background: var(--bg-primary);
+   padding: 10px;
+   border-radius: var(--radius16);
+   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+ }
 
-/* Map Box */
-.map-box {
-  background: var(--bg-primary);
-  padding: 10px;
-  border-radius: var(--radius16);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-}
-
-.map-box img {
-  border-radius: var(--radius12);
-}
+ .map-box img {
+   border-radius: var(--radius12);
+ }
 
 
 
-/* =========================
+ /* =========================
    ADDRESS SECTION
 ========================= */
 
-.address-section {
-  padding: 80px 0;
-  position: relative;
-}
+ .address-section {
+   padding: 80px 0;
+   position: relative;
+ }
 
-.address-section .container {
-  position: relative;
-  z-index: 1111;
-}
+ .address-section .container {
+   position: relative;
+   z-index: 1111;
+   width: 100%;
+ }
 
-/* Title */
-.address-title {
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--text-primary);
-  letter-spacing: 1px;
-}
+ /* Title */
+ .address-title {
+   font-size: 28px;
+   font-weight: 700;
+   color: var(--text-primary);
+   letter-spacing: 1px;
+ }
 
-/* Cards */
-.address-card {
-  background: var(--bg-primary);
-  border-radius: var(--radius16);
-  padding: 25px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  transition: 0.3s ease;
-  height: 100%;
-}
+ /* Cards */
+ .address-card {
+   background: var(--bg-primary);
+   border-radius: var(--radius16);
+   padding: 25px;
+   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+   transition: 0.3s ease;
+   height: 100%;
+ }
 
-.address-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
-}
+ .address-card:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+ }
 
-.address-card h5 {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 10px;
-}
+ .address-card h5 {
+   font-size: 20px;
+   font-weight: 700;
+   color: var(--text-primary);
+   margin-bottom: 10px;
+ }
 
-.address-card p {
-  font-size: 13px;
-  color: var(--para-text);
-  line-height: 1.6;
-  margin: 0;
-}
+ .address-card p {
+   font-size: 12px;
+   color: var(--para-text);
+   line-height: 1.6;
+   margin: 0;
+ }
 
-.address-section-icon {
-  position: absolute;
-  height: fit-content;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
+ .address-section-icon {
+   position: absolute;
+   height: fit-content;
+   top: 0;
+   left: 0;
+   width: 100%;
+ }
 
-.address-section-icon-image {
-  width: 20%;
-  height: 100%;
-}
+ .address-section-icon-image {
+   width: 20%;
+   height: 100%;
+ }
 
-.address-section-icon-image2 {
-  transform: rotate(180deg);
-}
+ .address-section-icon-image2 {
+   transform: rotate(180deg);
+ }
 
 
-/* =========================
-   CAREER TESTIMONIAL OVERLAP
+ /* =========================
+   CAREER SECTION
 ========================= */
 
-.career-testimonial-section {
-  padding: 80px 0;
-}
+ .career-testimonial-section {
+   padding: 50px 0;
+ }
 
-.section-title {
-  font-size: 38px;
-  font-weight: 700;
-  color: var(--text-primary);
-}
+ .career-testimonial-section .container .section-label {
+   display: flex;
+   justify-content: center;
+ }
 
-/* Layout Wrapper */
-.career-testimonial-layout {
-  position: relative;
-  display: flex;
-  align-items: center;
-  min-height: 480px;
-}
+ .section-title {
+   font-size: 36px;
+   font-weight: 700;
+   text-align: center;
+   margin-bottom: 40px;
+ }
 
-/* LEFT IMAGE */
-.career-testimonial-image {
-  width: 60%;
-  position: absolute;
-}
+ /* =========================
+   LAYOUT
+========================= */
 
-.career-testimonial-image img {
-  width: 100%;
-  height: 450px;
-  object-fit: cover;
-  border-radius: var(--radius24);
-}
+ .career-testimonial-layout {
+   position: relative;
+   display: flex;
+   align-items: center;
+   min-height: 450px;
+ }
 
-.career-testimonial-row {
-  position: relative;
-}
+ /* LEFT IMAGE */
+ .career-testimonial-image {
+   width: 65%;
+ }
 
-/* RIGHT CARD */
-.career-testimonial-card {
-  position: absolute;
-  right: 0;
-  width: 50%;
-  top: 50%;
-  transform: translateY(-50%);
-  background: var(--bg-primary);
-  padding: 50px;
-  border-radius: var(--radius16);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
-}
+ .career-testimonial-image img {
+   width: 100%;
+   height: 420px;
+   position: relative;
+   object-fit: cover;
+   border-radius: 24px;
+ }
 
-/* Quote */
-.quote-icon {
-  font-size: 60px;
-  color: var(--bg1-color);
-  font-weight: bold;
-  line-height: 1;
-}
+ /* =========================
+   RIGHT CARD (MAIN FIX)
+========================= */
 
-/* Text */
-.career-testimonial-text {
-  font-size: 15px;
-  color: var(--para-text);
-  line-height: 1.8;
-  margin: 20px 0 30px;
-}
+ .career-testimonial-card {
+   position: absolute;
+   right: 0;
+   width: 48%;
+   top: 50%;
+   transform: translateY(-50%);
+   z-index: 5;
+ }
 
-/* Profile */
-.career-testimonial-profile {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
+ /* CARD BOX */
+ .career-card-box {
+   background: #fff;
+   border-radius: 16px;
+   padding: 40px;
+   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+ }
 
-.career-testimonial-profile img {
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  object-fit: cover;
-}
+ /* =========================
+   TITLE + META
+========================= */
 
-.career-testimonial-profile h6 {
-  margin: 0;
-  font-weight: 600;
-  color: var(--text-primary);
-}
+ .career-title {
+   font-size: 22px;
+   font-weight: 600;
+   color: #1a4174;
+   margin-bottom: 12px;
+ }
 
-.career-testimonial-profile span {
-  font-size: 13px;
-  color: var(--sub-text);
-}
+ .career-meta {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 18px;
+   font-size: 13px;
+   color: #6b7280;
+   margin-bottom: 18px;
+ }
 
-/* Footer */
-.career-testimonial-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 30px;
-}
+ /* =========================
+   DESCRIPTION
+========================= */
 
-/* Navigation */
-.swiper-button-prev,
-.swiper-button-next {
-  width: 42px;
-  height: 42px;
-  background: #000;
-  border-radius: 50%;
-  color: #fff;
-}
+ .career-desc {
+   font-size: 14px;
+   line-height: 1.7;
+   color: #555;
+   margin-bottom: 22px;
+ }
 
-.swiper-button-prev::after,
-.swiper-button-next::after {
-  font-size: 16px;
-}
+ /* =========================
+   BUTTON
+========================= */
 
-/* Pagination Wrapper */
-.career-pagination-wrapper {
-  width: 90%;
-  justify-content: end;
-  gap: 50px;
-  position: absolute;
-  top: 74%;
-  z-index: 11;
-}
+ .career-btn {
+   background: #e53935;
+   color: #fff;
+   border: none;
+   padding: 10px 18px;
+   border-radius: 8px;
+   font-size: 14px;
+   cursor: pointer;
+   transition: 0.3s;
+ }
 
-.career-nav-buttons {
-  display: flex;
-  gap: 12px;
-}
+ .career-btn:hover {
+   background: #c62828;
+ }
 
-.career-nav-buttons .swiper-button-icon {
-  position: relative;
-  left: 0;
-  right: 0;
-}
+ /* =========================
+   BOTTOM AREA
+========================= */
 
-/* Pagination */
-.career-pagination-wrapper .career-pagination {
-  gap: 5px;
-  align-items: center;
-}
+ .career-bottom {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-top: 30px;
+ }
 
-.career-pagination-wrapper .career-pagination span {
-  background: black;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  opacity: 1;
-  margin-bottom: 0;
-}
+ /* =========================
+   DOTS (FIXED SIZE)
+========================= */
 
-.career-pagination-wrapper .career-pagination span.active {
-  background: var(--button-color);
-}
+ .career-dots {
+   display: flex;
+   gap: 6px;
+ }
+
+ .career-dots span {
+   width: 6px;
+   height: 6px;
+   background: #d1d5db;
+   border-radius: 50%;
+   transition: 0.3s;
+ }
+
+ .career-dots .active {
+   background: #e53935;
+ }
+
+ /* =========================
+   ARROWS (MATCH FIGMA)
+========================= */
+
+ .career-nav-buttons{
+   display: flex;
+   gap: 10px;
+ }
+
+ .career-prev,
+ .career-next {
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   background: #000;
+   color: #fff;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+   transition: 0.3s;
+ }
+
+ .career-prev:hover,
+ .career-next:hover {
+   background: #e53935;
+ }
+
+ /* =========================
+   OVERLAP FIX (IMPORTANT)
+========================= */
+
+ .career-testimonial-layout {
+   padding-right: 60px;
+ }
+
+ .career-testimonial-image {
+   position: relative;
+   z-index: 1;
+ }
+
+ .career-testimonial-card {
+   z-index: 2;
+ }
+
+ .careerContentSwiper {
+   position: absolute;
+   width: 50%;
+   top: 50%;
+   left: 50%;
+   transform: translateY(-50%);
+
+ }
+
+ .career-testimonial-row {
+   position: relative;
+ }
+
+ /* =========================
+   RESPONSIVE
+========================= */
+
+ @media (max-width: 992px) {
+   .career-testimonial-layout {
+     flex-direction: column;
+   }
+
+   .career-testimonial-image,
+   .career-testimonial-card {
+     width: 100%;
+     position: relative;
+     transform: none;
+   }
+
+   .career-testimonial-card {
+     margin-top: -60px;
+   }
+ }
 
 
 
 
-
-/* =========================
+ /* =========================
    FAQ SECTION
 ========================= */
 
-.faq-section {
-  padding: 80px 0;
-}
+ .faq-section {
+   padding: 50px 0;
+ }
 
-/* Label */
-.faq-label {
-  color: var(--button-color);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 2px;
-}
+ /* Title */
+ .section-title {
+   font-size: 36px;
+   font-weight: 700;
+   color: var(--text-primary);
+ }
 
-/* Title */
-.section-title {
-  font-size: 36px;
-  font-weight: 700;
-  color: var(--text-primary);
-}
+ /* Image */
+ .faq-image img {
+   border-radius: var(--radius16);
+   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+ }
 
-/* Image */
-.faq-image img {
-  border-radius: var(--radius16);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
-}
+ /* Accordion */
+ .faq-accordion .accordion-item {
+   background: transparent;
+   border: none;
+   border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+ }
 
-/* Accordion */
-.faq-accordion .accordion-item {
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.14);
-}
+ .faq-accordion .accordion-button {
+   background: transparent;
+   font-weight: 600;
+   color: var(--bg2-color);
+   padding: 18px 0;
+   box-shadow: none;
+ }
 
-.faq-accordion .accordion-button {
-  background: transparent;
-  font-weight: 600;
-  color: var(--bg2-color);
-  padding: 18px 0;
-  box-shadow: none;
-}
+ .faq-accordion .accordion-button:not(.collapsed) {
+   color: var(--bg2-color);
+   background: transparent;
+ }
 
-.faq-accordion .accordion-button:not(.collapsed) {
-  color: var(--bg2-color);
-  background: transparent;
-}
+ .faq-accordion .accordion-button:focus {
+   box-shadow: none;
+ }
 
-.faq-accordion .accordion-button:focus {
-  box-shadow: none;
-}
+ .faq-accordion .accordion-body {
+   color: var(--para-text);
+   font-size: 14px;
+   padding: 10px 0 20px;
+ }
 
-.faq-accordion .accordion-body {
-  color: var(--para-text);
-  font-size: 14px;
-  padding: 10px 0 20px;
-}
 
-@media (max-width: 768px) {
+ @media (max-width: 768px) {
 
-  .career-testimonial-card {
-    width: 60%;
-    height: 380px;
-  }
+   .career-testimonial-card {
+     width: 60%;
+     height: 380px;
+   }
 
-  .career-pagination-wrapper {
-    top: 78%;
-  }
-}
+   .career-pagination-wrapper {
+     top: 78%;
+   }
+ }
 
-@media (max-width: 576px) {
+ @media (max-width: 576px) {
 
-  .career-testimonial-row {
-    padding: 0 !important;
-    margin-left: 0;
-    text-align: center;
-  }
+   .career-testimonial-row {
+     padding: 0 !important;
+     margin-left: 0;
+     text-align: center;
+   }
 
-  .career-testimonial-card {
-    width: 100%;
-    top: 110%;
-    height: fit-content;
-  }
+   .career-testimonial-card {
+     width: 100%;
+     top: 110%;
+     height: fit-content;
+   }
 
-  .career-testimonial-image {
-    width: 100%;
-  }
+   .career-testimonial-image {
+     width: 100%;
+   }
 
-  .career-testimonial-section {
-    height: 870px;
-  }
+   .career-testimonial-section {
+     height: 870px;
+   }
 
-  .career-pagination-wrapper {
-    top: 132%;
-    right: 6%;
-  }
-}
+   .career-pagination-wrapper {
+     top: 132%;
+     right: 6%;
+   }
+ }

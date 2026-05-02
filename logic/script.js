@@ -1,59 +1,154 @@
-// ================= HERO SLIDER =================
+const TOTAL_SLIDES = 4; // 🔥 real slides count
 
-// function initHeroSlider() {
-//     const heroSwiperEl = document.querySelector(".hero-swiper");
-//     if (!heroSwiperEl) return;
+const hero = new Swiper(".hero-swiper", {
+  loop: true,
+  effect: "fade",
+  speed: 1000,
+  watchOverflow: false,
 
-//     const dots = [...document.querySelectorAll(".hero-wrapper .hero-dots span")];
-//     const bgImages = [...document.querySelectorAll(".overlay-bg .overlay-image")];
+  autoplay: {
+    delay: 4000,
+    disableOnInteraction: false,
+  },
 
-//     const prevBtn = document.querySelector(".hero-arrow.left");
-//     const nextBtn = document.querySelector(".hero-arrow.right");
+  navigation: {
+    nextEl: ".hero-next",
+    prevEl: ".hero-prev",
+  },
 
-//     if (!dots.length) return;
+  on: {
+    afterInit: function () {
+      setupIndicators(this);
+      updateAll(this);
+    },
+    slideChange: function () {
+      updateAll(this);
+    }
+  }
+});
 
-//     const heroSwiper = new Swiper(heroSwiperEl, {
-//         slidesPerView: 1,
-//         loop: true,
-//         speed: 700,
 
-//         preloadImages: false,
-//         lazy: { loadPrevNext: true },
+// =================
+// MAIN UPDATE
+// =================
+function updateAll(swiper) {
+  const index = swiper.realIndex % TOTAL_SLIDES;
 
-//         autoplay: {
-//             delay: 4000,
-//             disableOnInteraction: false,
-//             pauseOnMouseEnter: true,
-//         },
+  updateIndicators(index);
+  updateNumber(index);
+  updateImages(index);
+}
 
-//         observer: true,
-//         observeParents: true,
 
-//         on: {
-//             init: (swiper) => updateHeroUI(swiper.realIndex),
-//             slideChangeTransitionEnd: (swiper) => updateHeroUI(swiper.realIndex),
-//         },
-//     });
+// =================
+// NUMBER
+// =================
+function updateNumber(index) {
+  document.querySelector(".slideNumber").textContent = index + 1;
+}
 
-//     function updateHeroUI(realIndex) {
-//         const index = realIndex % dots.length;
 
-//         dots.forEach((d) => d.classList.remove("active"));
-//         bgImages.forEach((bg) => bg.classList.remove("active"));
+// =================
+// INDICATORS
+// =================
+function setupIndicators(swiper) {
+  const container = document.querySelector(".custom-indicators");
+  container.innerHTML = "";
 
-//         dots[index]?.classList.add("active");
-//         bgImages[index]?.classList.add("active");
-//     }
+  for (let i = 0; i < TOTAL_SLIDES; i++) {
+    const span = document.createElement("span");
+    span.className = "indicator";
 
-//     dots.forEach((dot, i) => {
-//         dot.addEventListener("click", () => heroSwiper.slideToLoop(i));
-//     });
+    span.addEventListener("click", () => {
+      swiper.slideToLoop(i);
+    });
 
-//     prevBtn?.addEventListener("click", () => heroSwiper.slidePrev());
-//     nextBtn?.addEventListener("click", () => heroSwiper.slideNext());
-// }
+    container.appendChild(span);
+  }
 
-// initHeroSlider()
+  document.querySelector(".totalSlide").textContent = TOTAL_SLIDES;
+}
+
+
+// =================
+// UPDATE INDICATORS
+// =================
+function updateIndicators(index) {
+  document.querySelectorAll(".indicator").forEach((el, i) => {
+    el.classList.toggle("active", i === index);
+  });
+}
+
+
+// =================
+// IMAGE SYNC
+// =================
+function updateImages(index) {
+  const images = document.querySelectorAll(".overlay-image");
+
+  images.forEach((img, i) => {
+    const realIndex = i % TOTAL_SLIDES;
+    img.classList.toggle("active", realIndex === index);
+  });
+}
+
+
+// =================
+// PAUSE / PLAY BUTTON
+// =================
+const pauseBtn = document.querySelector(".hero-pause");
+
+if (pauseBtn) {
+  let isPaused = false;
+
+  pauseBtn.addEventListener("click", () => {
+    if (isPaused) {
+      hero.autoplay.start();
+      pauseBtn.innerText = "Pause"; // change text/icon
+    } else {
+      hero.autoplay.stop();
+      pauseBtn.innerText = "Play";
+    }
+
+    isPaused = !isPaused;
+  });
+}
+
+
+// =================
+// HOVER PAUSE (OPTIONAL UX)
+// =================
+const heroEl = document.querySelector(".hero-swiper");
+
+if (heroEl) {
+  heroEl.addEventListener("mouseenter", () => {
+    hero.autoplay.stop();
+  });
+
+  heroEl.addEventListener("mouseleave", () => {
+    hero.autoplay.start();
+  });
+} const toggleBtn = document.getElementById("heroToggle");
+
+if (toggleBtn) {
+  let isPaused = false;
+
+  toggleBtn.addEventListener("click", () => {
+    if (isPaused) {
+      hero.autoplay.start();
+      toggleBtn.querySelector(".icon").textContent = "⏸"; // Pause icon
+    } else {
+      hero.autoplay.stop();
+      toggleBtn.querySelector(".icon").textContent = "▶"; // Play icon
+    }
+
+    isPaused = !isPaused;
+  });
+}
+
+
+
+
 
 
 

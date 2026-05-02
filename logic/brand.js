@@ -1,21 +1,14 @@
 
 const thumbs = new Swiper(".heroThumbs-swipper", {
-  slidesPerView: 6, // default (desktop)
+  slidesPerView: 6,
 
   breakpoints: {
-    0: {
-      slidesPerView: 2, // mobile
-    },
-    576: {
-      slidesPerView: 3, // mobile
-    },
-    768: {
-      slidesPerView: 4, // tablet
-    },
-    992: {
-      slidesPerView: 6, // desktop
-    }
+    0: { slidesPerView: 2 },
+    576: { slidesPerView: 3 },
+    768: { slidesPerView: 4 },
+    992: { slidesPerView: 5 }
   },
+
   spaceBetween: 20,
   watchSlidesProgress: true,
 });
@@ -23,11 +16,24 @@ const thumbs = new Swiper(".heroThumbs-swipper", {
 const main = new Swiper(".heroMain", {
   effect: "fade",
   loop: true,
+
   thumbs: {
     swiper: thumbs,
   },
+
   navigation: {
     nextEl: ".hero-next",
     prevEl: ".hero-prev",
   },
+
+  autoplay: {
+    delay: 3000, // 3 sec
+    disableOnInteraction: false,
+  },
+
+  breakpoints: {
+    768: {
+      autoplay: false, // tablet + desktop pe band
+    }
+  }
 });

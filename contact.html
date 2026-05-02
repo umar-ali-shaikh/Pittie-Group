@@ -38,7 +38,7 @@
     <!-- Skip Navigation Link (REQUIRED) -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <header class="header bg-white sticky-top" role="banner">
+    <header class="header fixed-top" role="banner">
       <nav class="navbar navbar-expand-lg" role="navigation">
         <div class="container">
           <a class="navbar-brand" href="index.html">
@@ -390,7 +390,8 @@
       <!-- Career Testimonial Section -->
       <section class="career-testimonial-section py-5">
         <div class="container">
-          <h2 class="section-title text-center mb-5">
+          <span class="section-label">CAREERS</span>
+          <h2 class="section-title text-center mb-4">
             Experiences Shared By Our Employees
           </h2>
 
@@ -445,64 +446,48 @@
             </div>
 
             <!-- RIGHT CONTENT SWIPER -->
-            <div class="swiper careerContentSwiper career-testimonial-card">
+
+            <div class="swiper careerContentSwiper career-card">
               <div class="swiper-wrapper">
+                <!-- Slide -->
                 <div class="swiper-slide">
-                  <div class="quote-icon">
-                    <!-- SVG remains same -->
-                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                      <path
-                        d="M0 24.0002V44.5716H20.5715V24.0002H6.85719C6.85719 16.4383 13.0096 10.2859 20.5715 10.2859V3.42871C9.22767 3.42871 0 12.6564 0 24.0002Z"
-                        fill="#1A4174"
-                      />
-                      <path
-                        d="M47.9992 10.2859V3.42871C36.6554 3.42871 27.4277 12.6564 27.4277 24.0002V44.5716H47.9992V24.0002H34.2849C34.2849 16.4383 40.4373 10.2859 47.9992 10.2859Z"
-                        fill="#1A4174"
-                      />
-                    </svg>
-                  </div>
+                  <div class="career-card-box">
+                    <h3 class="career-title">Area Sales Manager/Officer</h3>
 
-                  <p class="career-testimonial-text">
-                    Working at Pittie has given me opportunities to grow
-                    professionally while contributing meaningfully to impactful
-                    logistics solutions.
-                  </p>
-
-                  <div class="career-testimonial-profile">
-                    <img src="images/profile1.jpg" alt="Employee Profile" />
-                    <div>
-                      <h6>Artemisia Udinese</h6>
-                      <span>Marketing Specialist</span>
+                    <!-- Meta -->
+                    <div class="career-meta">
+                      <span>📦 General Trade</span>
+                      <span>📍 Chennai & Bangalore</span>
+                      <span>⏱ Posted 3 weeks ago</span>
                     </div>
-                  </div>
-                </div>
 
-                <!-- Duplicate slides as needed -->
-                <div class="swiper-slide">
-                  <div class="quote-icon">
-                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                      <path
-                        d="M0 24.0002V44.5716H20.5715V24.0002H6.85719C6.85719 16.4383 13.0096 10.2859 20.5715 10.2859V3.42871C9.22767 3.42871 0 12.6564 0 24.0002Z"
-                        fill="#1A4174"
-                      />
-                      <path
-                        d="M47.9992 10.2859V3.42871C36.6554 3.42871 27.4277 12.6564 27.4277 24.0002V44.5716H47.9992V24.0002H34.2849C34.2849 16.4383 40.4373 10.2859 47.9992 10.2859Z"
-                        fill="#1A4174"
-                      />
-                    </svg>
-                  </div>
+                    <!-- Description -->
+                    <p class="career-desc">
+                      Lorem ipsum dolor sit amet consectetur. Turpis vitae urna
+                      mattis molestie turpis. Luctus elit ante cursus nisl
+                      felis. Lorem ipsum dolor sit amet consectetur.
+                    </p>
 
-                  <p class="career-testimonial-text">
-                    The collaborative environment and leadership support here
-                    truly empower employees to innovate and excel.
-                  </p>
-
-                  <div class="career-testimonial-profile">
-                    <img src="images/profile1.jpg" alt="Employee Profile" />
-                    <div>
-                      <h6>Artemisia Udinese</h6>
-                      <span>Marketing Specialist</span>
-                    </div>
+                    <!-- Button -->
+                    <button class="btn btn-primary contact-btn mt-4">
+                      <a href="#">
+                        Submit
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M6.92757 16.8242L16.8242 6.92757M16.8242 6.92757H6.92757M16.8242 6.92757V16.8242"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></path>
+                        </svg>
+                      </a>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -518,8 +503,8 @@
               </div>
 
               <div class="career-nav-buttons">
-                <div class="swiper-button-icon swiper-button-prev"></div>
-                <div class="swiper-button-icon swiper-button-next"></div>
+                <div class="swiper-button-icon swiper-button-prev  career-prev"></div>
+                <div class="swiper-button-icon swiper-button-next  career-prev"></div>
               </div>
             </div>
           </div>
@@ -531,7 +516,7 @@
         <div class="container">
           <!-- Heading -->
           <div class="text-center mb-5">
-            <span class="faq-label">FAQ’S</span>
+            <span class="section-label">FAQ’S</span>
             <h2 class="section-title mt-2">Frequently Asked Questions</h2>
           </div>
 
@@ -829,8 +814,8 @@
               <li>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
+                  width="14"
+                  height="14"
                   viewBox="0 0 24 25"
                   fill="none"
                 >
@@ -856,8 +841,8 @@
               <li>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
+                  width="14"
+                  height="14"
                   viewBox="0 0 24 25"
                   fill="none"
                 >

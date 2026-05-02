@@ -28,104 +28,69 @@
     <!-- Skip Navigation Link (REQUIRED) -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <header class="header bg-white sticky-top" role="banner">
-      <nav class="navbar navbar-expand-lg" role="navigation">
-        <div class="container">
-          <a class="navbar-brand" href="index.html">
-            <img src="assets/Pittie-group-Logo.png" alt="Pittie Group Logo" />
-          </a>
+    <header class="header fixed-top " role="banner">
+        <nav class="navbar navbar-expand-lg" role="navigation">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/Pittie-group-Logo.png" alt="Pittie Group Logo" />
+                </a>
 
-          <button
-            class="navbar-toggler border-0 shadow-none"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#mainNavbar"
-            aria-controls="mainNavbar"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-          <div class="collapse navbar-collapse" id="mainNavbar">
-            <ul
-              class="navbar-nav gap-3 ms-auto justify-content-center align-items-lg-center gap-lg-4"
-            >
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="index.html"
-                  >Home</a
-                >
-              </li>
-              <li class="nav-item dropdown">
-                <!-- Main Link -->
-                <div class="d-flex gap-2">
-                  <a class="nav-link active" href="brand.html"> Our Brand </a>
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav gap-3 ms-auto justify-content-center align-items-lg-center gap-lg-4">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <!-- Main Link -->
+                            <div class="d-flex gap-2">
+                                <a class="nav-link active" href="brand.html"> Our Brand </a>
 
-                  <!-- Dropdown Toggle Arrow -->
-                  <a
-                    class="nav-link dropdown-toggle dropdown-toggle-split"
-                    href="#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                  </a>
+                                <!-- Dropdown Toggle Arrow -->
+                                <a class="nav-link dropdown-toggle dropdown-toggle-split" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                </a>
+                            </div>
+
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="https://pittieconsumer.com/" target="_blank">Pittie
+                                        Consumer</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="https://pittielogistics.com/" target="_blank">Pittie
+                                        Logistics</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="http://victoriaenterprises.co.in/"
+                                        target="_blank">Pittie Realty</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="https://www.epiccompany.com/" target="_blank">Pittie
+                                        Media</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-brand-gray" href="community.html">Community</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-brand-gray" href="news.html">News</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-brand-gray" href="contact.html">Contact Us</a>
+                        </li>
+                    </ul>
                 </div>
-
-                <ul class="dropdown-menu">
-                  <li>
-                    <a
-                      class="dropdown-item"
-                      href="https://pittieconsumer.com/"
-                      target="_blank"
-                      >Pittie Consumer</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="dropdown-item"
-                      href="https://pittielogistics.com/"
-                      target="_blank"
-                      >Pittie Logistics</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="dropdown-item"
-                      href="http://victoriaenterprises.co.in/"
-                      target="_blank"
-                      >Pittie Realty</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="dropdown-item"
-                      href="https://www.epiccompany.com/"
-                      target="_blank"
-                      >Pittie Media</a
-                    >
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-brand-gray" href="community.html"
-                  >Community</a
-                >
-              </li>
-              
-              <li class="nav-item">
-                <a class="nav-link text-brand-gray" href="news.html">News</a>
-              </li>
-              
-              <li class="nav-item">
-                <a class="nav-link text-brand-gray" href="contact.html"
-                  >Contact Us</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+            </div>
+        </nav>
     </header>
 
     <!-- MAIN CONTENT LANDMARK -->
@@ -136,21 +101,12 @@
             <!-- Main Slider -->
             <div class="swiper heroMain">
                 <div class="swiper-wrapper">
-                    <!-- <div class="swiper-slide"
-                        style="background-image: url(./assets/ourBrandPage/ourBrand-hero-image2.jpg)">
-                        <div class="container hero-content">
-                            <span class="hero-badge">PITTIE REALTY</span>
-                            <h1>Building Business,<br />Shaping Future</h1>
-                            <p>
-                                Delivering world class spaces for residences and businesses
-                                alike.
-                            </p>
-                            <a href="#" class="btn hero-btn">View Details</a>
-                        </div>
-                    </div> -->
 
-                    <div class="swiper-slide"
-                        style="background-image: url(./assets/ourBrandPage/Pittie\ Nitya_banner_1400\ x\ 700.jpg)">
+                    <div class="swiper-slide">
+                        <img src="./assets/ourBrandPage/Nitya Banner_Web (1).png" class="hero-img hero-img-pc"
+                            alt="Nitya">
+                        <img src="./assets/ourBrandPage/Nitya Banner_Mobile.jpg" class="hero-img hero-img-mobile"
+                            alt="Nitya">
                         <div class="container hero-content">
                             <span class="hero-badge">CONSUMER</span>
                             <h1>Nitya</h1>
@@ -159,8 +115,11 @@
                         </div>
                     </div>
 
-                    <div class="swiper-slide"
-                        style="background-image: url(./assets/ourBrandPage/Pittie\ Tissue_1400\ x\ 700.jpg)">
+                    <div class="swiper-slide">
+                        <img src="./assets/ourBrandPage/Pittie Tissue_1400 x 700.jpg" class="hero-img hero-img-pc"
+                            alt="Chakachak">
+                        <img src="./assets/ourBrandPage/Ck Banner_Mobile.jpg" class="hero-img hero-img-mobile"
+                            alt="Chakachak">
                         <div class="container hero-content">
                             <span class="hero-badge">CONSUMER</span>
                             <h1>Chakachak</h1>
@@ -168,9 +127,10 @@
                             <a href="#" class="btn hero-btn">Learn More</a>
                         </div>
                     </div>
-                    
-                    <div class="swiper-slide"
-                        style="background-image: url(assets/ourBrandPage/Pittie\ Website\ banner_1400\ x\ 700\ 1.jpg)">
+
+                    <div class="swiper-slide">
+                        <img src="assets/ourBrandPage/Pittie Website banner_1400 x 700 1.jpg" class="hero-img"
+                            alt="Nirmal">
                         <div class="container hero-content">
                             <span class="hero-badge">CONSUMER</span>
                             <h1>Nirmal</h1>
@@ -179,18 +139,24 @@
                         </div>
                     </div>
 
-                    <div class="swiper-slide"
-                        style="background-image: url(https://pittielogistics.com/Assests/home/Testimonials-bg1.webp)">
+                    <div class="swiper-slide">
+                        <img src="assets/ourBrandPage/Patanjali.jpg" class="hero-img hero-img-pc"
+                            alt="Logistics">
+                        <img src="assets/ourBrandPage/1-1.jpg" class="hero-img hero-img-mobile"
+                            alt="Logistics">
                         <div class="container hero-content">
                             <span class="hero-badge">LOGISTICS</span>
                             <h1>Strengthening Logistics</h1>
-                            <p>Wherever your business Is, Our Network will Follow.</p>
+                            <p>Wherever your business is, our network will follow.</p>
                             <a href="#" class="btn hero-btn">Learn More</a>
                         </div>
                     </div>
-                    
-                    <div class="swiper-slide"
-                        style="background-image: url(https://pittielogistics.com/Assests/home/Testimonials-bg4.webp)">
+
+                    <div class="swiper-slide">
+                        <img src="assets/ourBrandPage/O'cean.jpg" class="hero-img hero-img-pc"
+                            alt="Retail">
+                        <img src="assets/ourBrandPage/O'cean1.jpg" class="hero-img hero-img-mobile"
+                            alt="Retail">
                         <div class="container hero-content">
                             <span class="hero-badge">RETAIL</span>
                             <h1>Modern<br />Retail Spaces</h1>
@@ -198,6 +164,7 @@
                             <a href="#" class="btn hero-btn">Learn More</a>
                         </div>
                     </div>
+
                 </div>
             </div>
 
@@ -213,26 +180,26 @@
                         </div> -->
 
                         <div class="swiper-slide">
-                            <img src="assets/ourBrandPage/Small Banner_Nitya.jpg" />
+                            <img src="assets/ourBrandPage/Nitya Banner_Web (1).png" />
                             <div class="overlay">
                                 <span>Pittie Realty</span>
                             </div>
                         </div>
 
                         <div class="swiper-slide">
-                            <img src="assets/ourBrandPage/Small Banner_CK.jpg" />
+                            <img src="assets/ourBrandPage/Pittie Tissue_1400 x 700.jpg" />
                             <div class="overlay">
                                 <span>Pittie Realty</span>
                             </div>
                         </div>
 
                         <div class="swiper-slide">
-                            <img src="assets/ourBrandPage/Small Banner_Nirmal.jpg" />
+                            <img src="assets/ourBrandPage/Pittie Website banner_1400 x 700 1.jpg" />
                             <div class="overlay">
                                 <span>Pittie Realty</span>
                             </div>
                         </div>
-                        
+
                         <div class="swiper-slide">
                             <img src="assets/ourBrandPage/Patanjali.jpg" />
                             <div class="overlay">
@@ -450,7 +417,8 @@
 
                             <div class="col-md-3">
                                 <a href="project4.html" target="_blank" class="business-card">
-                                    <img src="assets/ourBrandPage/Mighty-Raju-Movies-YT-Thumbnail-scaled.jpg" alt="Project" />
+                                    <img src="assets/ourBrandPage/Mighty-Raju-Movies-YT-Thumbnail-scaled.jpg"
+                                        alt="Project" />
                                     <div class="card-overlay">
                                         <span>
                                             View Details <i class="bi bi-box-arrow-up-right"></i>
@@ -692,7 +660,8 @@
 
                             <div class="col-md-3">
                                 <a href="ishara.html" target="_blank" class="business-card">
-                                    <img src="assets/ourBrandPage/Mighty-Raju-Movies-YT-Thumbnail-scaled.jpg" alt="ishara" />
+                                    <img src="assets/ourBrandPage/Mighty-Raju-Movies-YT-Thumbnail-scaled.jpg"
+                                        alt="ishara" />
                                     <div class="card-overlay">
                                         <span>
                                             Ishara <i class="bi bi-box-arrow-up-right"></i>
@@ -861,7 +830,7 @@
                         <div class="Services-box-item col-7">
                             <img src="assets/ourBrandPage/Nirmal 4.jpg" alt="Customs Clearance" />
                         </div>
-                        
+
                         <div class="Services-box-item col-5">
                             <img src="assets/ourBrandPage/Freshzap_470 x 300 copy.jpg" alt="Job Opportunities" />
                         </div>
@@ -872,9 +841,9 @@
                         <div class="Services-box-item col-5">
                             <img src="assets/ourBrandPage/Shinezap_470 x 300 copy 1.jpg" alt="Customs Clearance" />
                         </div>
-                        
+
                         <div class="Services-box-item col-7">
-                            <img src="assets/ourBrandPage/Yumkist.jpg "alt="Freight Forwarding" />
+                            <img src="assets/ourBrandPage/Yumkist.jpg " alt="Freight Forwarding" />
                         </div>
                     </div>
                 </div>
@@ -890,7 +859,8 @@
                 <div class="footer-col footer-brand">
                     <img src="assets/Pittie-group-Logo.png" alt="Pittie Group Logo" class="footer-logo" />
                     <p class="footer-tagline">
-                        We aim to enrich lives, transform industries through our diverse verticals : Realty, Logistics, Consumer & Media.
+                        We aim to enrich lives, transform industries through our diverse verticals : Realty, Logistics,
+                        Consumer & Media.
                     </p>
                 </div>
 
@@ -987,7 +957,7 @@
                     <h3 class="footer-title">Contact Us</h3>
                     <ul class="footer-contact">
                         <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 25"
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 25"
                                 fill="none">
                                 <path
                                     d="M4 4.91113H20C21.1 4.91113 22 5.81113 22 6.91113V18.9111C22 20.0111 21.1 20.9111 20 20.9111H4C2.9 20.9111 2 20.0111 2 18.9111V6.91113C2 5.81113 2.9 4.91113 4 4.91113Z"
@@ -999,7 +969,7 @@
                             <a href="mailto:contact@pittiegroup.com">contact@pittiegroup.com</a>
                         </li>
                         <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 25"
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 25"
                                 fill="none">
                                 <path
                                     d="M21.9994 17.8312V20.8312C22.0006 21.1097 21.9435 21.3854 21.832 21.6406C21.7204 21.8958 21.5567 22.1248 21.3515 22.3131C21.1463 22.5014 20.904 22.6447 20.6402 22.7339C20.3764 22.8232 20.0968 22.8563 19.8194 22.8312C16.7423 22.4969 13.7864 21.4454 11.1894 19.7612C8.77327 18.2259 6.72478 16.1774 5.18945 13.7612C3.49942 11.1524 2.44769 8.18222 2.11944 5.09123C2.09446 4.8147 2.12732 4.53599 2.21595 4.27285C2.30457 4.00972 2.44702 3.76792 2.63421 3.56285C2.82141 3.35778 3.04925 3.19394 3.30324 3.08175C3.55722 2.96956 3.83179 2.91149 4.10945 2.91123H7.10945C7.59475 2.90645 8.06524 3.07831 8.43321 3.39476C8.80118 3.71122 9.04152 4.15068 9.10944 4.63123C9.23607 5.5913 9.47089 6.53396 9.80945 7.44123C9.94399 7.79915 9.97311 8.18814 9.89335 8.56211C9.8136 8.93608 9.62831 9.27934 9.35944 9.55123L8.08945 10.8212C9.513 13.3248 11.5859 15.3977 14.0894 16.8212L15.3594 15.5512C15.6313 15.2824 15.9746 15.0971 16.3486 15.0173C16.7225 14.9376 17.1115 14.9667 17.4694 15.1012C18.3767 15.4398 19.3194 15.6746 20.2794 15.8012C20.7652 15.8698 21.2088 16.1144 21.526 16.4887C21.8431 16.863 22.0116 17.3408 21.9994 17.8312Z"
