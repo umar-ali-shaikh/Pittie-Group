@@ -115,7 +115,6 @@
 
 .hero .swiper-slide {
     display: flex;
-    /* ❌ remove none */
     align-items: center;
 }
 
@@ -126,6 +125,7 @@
 .hero-wrapper {
     position: relative;
     z-index: 10;
+    top: 80px;
     height: 100%;
     display: flex;
     align-items: center;
@@ -146,24 +146,26 @@
 }
 
 /* Heading */
+
 .hero-content h1 {
-    font-size: clamp(30px, 5vw, 56px);
-    line-height: clamp(44px, 6vw, 72px);
-    font-weight: 700;
-    margin-bottom: 16px;
+    font-size: clamp(30px, 5vw, 45px);
+    line-height: clamp(44px, 6vw, 50px);
+    font-weight: bold;
+    margin-bottom: 10px;
     color: white;
 }
 
 /* Paragraph */
 .hero-content p {
-    font-size: 14px;
-    max-width: 520px;
+    font-size: 16px;
+    max-width: 520;
     color: white;
+    font-weight: 500;
 }
 
 /* Button */
 .hero-content .btn {
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 /* ==============================
@@ -172,7 +174,7 @@
 
 .Indicators {
     position: absolute;
-    bottom: 40px;
+    bottom: 65px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -194,14 +196,14 @@
 /* Progress bar container */
 .custom-indicators {
     display: flex;
-    gap: 10px;
+    gap: 2px;
     width: 300px;
 }
 
 /* Bars */
 .indicator {
     flex: 1;
-    height: 3px;
+    height: 2px;
     background: rgba(255, 255, 255, 0.3);
     position: relative;
     overflow: hidden;
@@ -413,7 +415,7 @@
 .business-card {
     position: relative;
     display: block;
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius8);
     overflow: hidden;
     margin-bottom: 24px;
     text-decoration: none;
@@ -717,13 +719,14 @@
 }
 
 .trending h2 {
-    ;
     margin: 10px 0 40px;
     color: #1e3a5f;
 }
 
 .trending-container {
     display: flex;
+    width: 90% !important;
+    max-width: 90% !important;
     gap: 30px;
 }
 
@@ -846,11 +849,15 @@
     object-fit: cover;
 }
 
+.text {
+    text-align: left;
+}
+
 .text span {
     border: 1px solid red;
     padding: 3px 10px;
     border-radius: 20px;
-    font-size: 12px;
+    font-size: 10px;
 }
 
 .text h4 {
