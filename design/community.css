@@ -281,6 +281,13 @@
     margin: 0 auto;
 }
 
+
+@media (min-width: 992px) and (max-width: 1400px) {
+    .life-section .masonry-grid {
+        padding: 0 30px;
+    }
+}
+
 .masonry-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -568,11 +575,13 @@
 .testimonial-section {
     padding: 50px 0;
 }
-.testimonial-section .container .section-label{
+
+.testimonial-section .container .section-label {
     margin: auto;
     display: flex;
     width: fit-content;
 }
+
 .section-title {
     font-weight: 700;
     color: var(--text-primary);
