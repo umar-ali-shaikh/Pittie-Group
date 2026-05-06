@@ -65,8 +65,8 @@ body {
 }
 
 .container {
-    width: 80%;
-    max-width: 80%;
+    width: 90%;
+    max-width: 90%;
     margin: auto;
 }
 
@@ -130,9 +130,10 @@ a:hover {
 }
 
 
-button{
+button {
     font-size: 14px;
 }
+
 button:hover {
     background: var(--bg1-color);
 }
@@ -329,15 +330,13 @@ button.btn-primary:hover svg {
    ============================== */
 .header {
     z-index: 1111111;
-    background: rgba(255, 255, 255, .7);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    background: var(--bg-primary);
 }
 
 .navbar-nav .nav-link {
     position: relative;
     padding: 0 !important;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .navbar-brand img {
@@ -518,7 +517,9 @@ button.btn-primary:hover svg {
 }
 
 @media (max-width: 576px) {
-
+    .container {
+        padding: 0;
+    }
 
     .snap-section {
         min-height: 100% !important;

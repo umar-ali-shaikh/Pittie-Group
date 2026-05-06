@@ -67,10 +67,14 @@
     position: absolute;
     z-index: 2;
     color: white;
-    padding: var(--pm64) var(--pm48);
     flex-direction: column;
     justify-content: center;
     display: flex;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-65%);
+    margin: auto;
     align-items: flex-start;
 }
 
@@ -132,8 +136,9 @@
 .heroThumbs-swipper {
     overflow: visible !important;
     clip-path: inset(-100px 0);
-    width: 100%;
-    max-width: 700px;
+    width: 90%;
+    height: 100%;
+    padding: 0 12px;
 }
 
 .heroThumbs {
@@ -145,7 +150,8 @@
     right: 0;
     width: 100%;
     max-width: 100%;
-    height: 120px;
+    padding: 20px 0;
+    height: 140px;
     margin: auto;
     background: linear-gradient(to right,
             rgba(0, 0, 0, 0.75) 30%,
@@ -160,9 +166,10 @@
 
 .heroThumbs .swiper-slide {
     width: calc(100% / 5);
-    height: 80px;
+    height: 100%;
     transition: 0.4s ease;
     cursor: pointer;
+    border-radius: 12px;
     overflow: hidden;
 }
 
@@ -211,7 +218,7 @@
     top: 50%;
     transform: translate(-50%, -50%);
     left: 50%;
-    width: 70%;
+    width: 97%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -298,7 +305,7 @@
 /* Image Zoom Effect */
 .business-card img {
     width: 100%;
-    height: 150px;
+    /* height: 150px; */
     object-fit: cover;
     transition: transform 0.5s ease;
 }
@@ -578,4 +585,3 @@
     .hero-content {
         padding: 20px;
     }
-}

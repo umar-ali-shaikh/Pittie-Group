@@ -3,7 +3,6 @@
 ========================= */
 .community-section {
     height: 300px;
-    margin-top: 80px;
 }
 
 .community-section .container {
@@ -596,6 +595,7 @@
 .testimonial-image img {
     width: 100%;
     height: 450px;
+    object-position: top;
     object-fit: cover;
     border-radius: var(--radius24);
 }

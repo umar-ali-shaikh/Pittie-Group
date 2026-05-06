@@ -52,6 +52,7 @@
     position: relative;
     height: 100vh;
     min-height: 650px;
+    max-height: 700px;
     overflow: hidden;
     color: #fff;
 }
@@ -226,6 +227,7 @@
 .hero-pause span {
     color: white;
     margin: 0;
+    font-size: 18px;
 }
 
 .hero-pause {
@@ -259,6 +261,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 10px;
     cursor: pointer;
     transition: 0.3s;
     font-size: 20px;
@@ -653,6 +656,7 @@
     background: rgb(234, 238, 244, 50%);
     overflow: hidden;
     height: 130vh;
+    max-height: 720px;
     position: relative;
     z-index: 11;
 }
@@ -707,7 +711,7 @@
 
 
 .trending {
-    padding: 60px 5%;
+    padding: 50px 0%;
     text-align: center;
 }
 
@@ -725,8 +729,6 @@
 
 .trending-container {
     display: flex;
-    width: 90% !important;
-    max-width: 90% !important;
     gap: 30px;
 }
 
@@ -873,7 +875,7 @@
     display: none;
     justify-content: center;
     align-items: center;
-    z-index: 999;
+    z-index: 99999999;
 }
 
 .modal-content {
@@ -1038,6 +1040,24 @@
 }
 
 @media (max-width:768px) {
+    #businessTabs .nav-item {
+        width: calc(100% / 2 - 10px);
+    }
+
+    .custom-indicators {
+        width: 250px;
+    }
+
+    .hero-pause {
+        width: 35px;
+        height: 35px;
+    }
+
+    .nav-pills {
+        flex-wrap: wrap !important;
+        gap: 10px;
+    }
+
     .growth-wrapper {
         flex-direction: column;
     }
@@ -1053,8 +1073,10 @@
 }
 
 @media (max-width:576px) {
+
     .hero-wrapper {
-        padding: 20px;
+        padding: 0px;
+        top: 0;
     }
 
     .col-lg-3.left {
@@ -1137,7 +1159,7 @@
 @media (max-width: 768px) {
 
     .trending {
-        padding: 40px 4%;
+        padding: 40px 0%;
     }
 
     .trending h2 {
