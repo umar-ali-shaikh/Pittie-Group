@@ -126,7 +126,6 @@
 .hero-wrapper {
     position: relative;
     z-index: 10;
-    top: 80px;
     height: 100%;
     display: flex;
     align-items: center;
@@ -1254,5 +1253,8 @@
     .hero .swiper-slide {
         align-items: start;
         margin-top: 40px;
+    }
+    .hero-wrapper {
+        top: 80px;
     }
 }
