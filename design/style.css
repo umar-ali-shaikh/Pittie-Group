@@ -48,6 +48,10 @@
    HERO SECTION (FINAL CLEAN)
    ============================== */
 
+   .btn:hover {
+    color: var(--bg3-color) !important;
+   }
+
 .hero {
     position: relative;
     height: 100vh;
@@ -738,6 +742,14 @@
     height: 404px;
     border-radius: 15px;
     overflow: hidden;
+}
+
+/* Video  */
+.big-card video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .big-card img {
