@@ -380,6 +380,19 @@ button.btn-primary:hover svg {
     background: transparent;
 }
 
+.dropdown-menu {
+    border: none;
+    border-radius: 0;
+    padding: 10px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    z-index: 999999;
+}
+
+.dropdown-item {
+    padding: 10px 20px;
+}
+
+
 
 /* ==============================
    Footer
