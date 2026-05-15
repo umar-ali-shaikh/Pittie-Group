@@ -6,8 +6,21 @@
     <title>Pittie Group</title>
 
     <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- 2nd font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
 
@@ -30,7 +43,7 @@
     />
 
     <!-- Main CSS -->
-    <link rel="stylesheet" href="design/universal.css" />
+    <link rel="stylesheet" href="design/universal-new.css" />
     <link rel="stylesheet" href="design/news.css" />
   </head>
 
@@ -38,114 +51,240 @@
     <!-- Skip Navigation Link (REQUIRED) -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <header class="header border-bottom sticky-top " role="header">
-        <nav class="navbar navbar-expand-lg" role="navigation">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <img src="assets/Pittie-group-Logo.png" alt="Pittie Group Logo" />
-                </a>
-
-                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="mainNavbar">
-                    <ul class="navbar-nav ms-auto justify-content-center align-items-lg-center gap-lg-4 gap-3">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
-                        </li>
-
-
-                        <li class="nav-item dropdown d-flex align-items-center">
-
-                            <!-- BRAND PAGE LINK -->
-                            <a class="nav-link" href="brand.html">
-                                Our Brand
-                            </a>
-
-                            <!-- DROPDOWN BUTTON -->
-                            <button class="btn nav-link dropdown-toggle border-0 bg-transparent p-0 ms-1" type="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                            </button>
-
-                            <!-- DROPDOWN MENU -->
-                            <ul class="dropdown-menu">
-
-                                <li>
-                                    <a class="dropdown-item" href="https://pittieconsumer.com/" target="_blank">
-                                        Pittie Consumer
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a class="dropdown-item" href="https://pittielogistics.com/" target="_blank">
-                                        Pittie Logistics
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a class="dropdown-item" href="http://victoriaenterprises.co.in/" target="_blank">
-                                        Pittie Realty
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a class="dropdown-item" href="https://www.epiccompany.com/" target="_blank">
-                                        Pittie Media
-                                    </a>
-                                </li>
-
-                            </ul>
-
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-brand-gray" href="community.html">Community</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-brand-gray  active" href="news.html">News</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-brand-gray" href="contact.html">Contact Us</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+    <header id="masthead" class="site-header">
+      <nav
+        id="site-navigation"
+        class="main-navigation navbar navbar-expand-lg navbar-light"
+      >
+        <div class="container">
+          <a
+            href="https://pittiegroup.com/"
+            class="custom-logo-link"
+            rel="home"
+            aria-current="page"
+            ><img
+              src="assets/cropped-Group-1.png"
+              class="custom-logo"
+              alt=""
+              decoding="async"
+              fetchpriority="high"
+              srcset="
+                assets/cropped-Group-1.png 553w,
+                assets/cropped-Group-1.png 300w
+              "
+              sizes="(max-width: 553px) 100vw, 553px"
+          /></a>
+          <button
+            type="button"
+            class="menu-toggle navbar-toggler"
+            data-toggle="collapse"
+            data-target="#primary-menu"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <div class="menu-main-container">
+            <ul id="primary-menu" class="collapse navbar-collapse nav-menu">
+              <li
+                id="menu-item-125"
+                class="mob-menu-text menu-item menu-item-type-custom menu-item-object-custom menu-item-125"
+              >
+                <a href="#">Menu</a>
+              </li>
+              <li
+                id="menu-item-16"
+                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16"
+              >
+                <a href="index_new.html">Home</a>
+              </li>
+              <li
+                id="menu-item-17"
+                class="arrow-down menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-17"
+              >
+                <a href="brand.html">Our Business</a>
+                <ul class="sub-menu">
+                  <li
+                    id="menu-item-404"
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-404"
+                  >
+                    <a href="realty.html">Pittie Realty</a>
+                  </li>
+                  <li
+                    id="menu-item-407"
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-407"
+                  >
+                    <a href="consumer.html">Pittie Consumer</a>
+                  </li>
+                  <li
+                    id="menu-item-405"
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-405"
+                  >
+                    <a href="https://pittiegroup.com/media/"
+                      >THE EPIC COMPANY</a
+                    >
+                  </li>
+                  <li
+                    id="menu-item-406"
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-406"
+                  >
+                    <a href="logistics.html">Pittie Logistics</a>
+                  </li>
+                </ul>
+              </li>
+              <li
+                id="menu-item-19"
+                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19"
+              >
+                <a href="community.html">Community</a>
+              </li>
+              <li
+                id="menu-item-505"
+                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-505"
+              >
+                <a href="news.html">News</a>
+              </li>
+              <li
+                id="menu-item-20"
+                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20"
+              >
+                <a href="contact.html">Contact US</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- #site-navigation -->
     </header>
 
     <!-- MAIN CONTENT LANDMARK -->
     <main id="main-content" role="main">
       <!-- Hero Section -->
-      <section class="hero-section d-flex align-items-center">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-7">
-              <h1 class="hero-title">
-                Epic On Announces <br />
-                Slate Of Originals
-              </h1>
-              <button class="btn btn-primary">
-                <a href="#">
-                  Read more
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M6.92757 16.8242L16.8242 6.92757M16.8242 6.92757H6.92757M16.8242 6.92757V16.8242"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    ></path>
-                  </svg>
-                </a>
-              </button>
+      <section class="snap-section section hero bg-color-white">
+        <div class="container hero-wrapper">
+          <!-- Hero Swiper -->
+          <div class="swiper hero-swiper">
+            <div class="swiper-wrapper">
+              <!-- Slide 1 -->
+              <div class="swiper-slide">
+                <div class="hero-content col-8">
+                  <h1>Epic On Announces <br />Slate Of Originals</h1>
+
+                  <!-- <p>
+                    At Pittie we strive to create a culture of collaboration
+                    within and between teams to create an environment of
+                    cross-functional learning and growth.
+                  </p> -->
+                  <button class="btn btn-primary">
+                    <a href="#">
+                      View Projects
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6.92757 16.8242L16.8242 6.92757M16.8242 6.92757H6.92757M16.8242 6.92757V16.8242"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </a>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Slide 1 -->
+              <div class="swiper-slide">
+                <div class="hero-content col-8">
+                  <h1>
+                    Epic On Announces <br />
+                    Slate Of Originals
+                  </h1>
+
+                  <button class="btn btn-primary">
+                    <a href="#">
+                      View Projects
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6.92757 16.8242L16.8242 6.92757M16.8242 6.92757H6.92757M16.8242 6.92757V16.8242"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="overlay-bg">
+          <div class="image1 overlay-image active">
+            <img
+              src="assets/newsPage/news-heroSection.png"
+              alt="MobileBanner1"
+              class="overlay-image-pc"
+            />
+            <img
+              src="assets/homePage/mobaile size  01.jpg"
+              alt="MobileBanner1"
+              class="overlay-image-mobile"
+            />
+          </div>
+          <div class="image1 overlay-image">
+            <img
+              src="assets/newsPage/news-heroSection.png"
+              alt="MobileBanner1"
+              class="overlay-image-pc"
+            />
+            <img
+              src="assets/homePage/mobaile size  01.jpg"
+              alt="MobileBanner1"
+              class="overlay-image-mobile"
+            />
+          </div>
+        </div>
+
+        <div class="Indicators container">
+          <!-- Number -->
+          <div class="numPagination">
+            <span class="slideNumber">1</span> /
+            <span class="totalSlide">1</span>
+          </div>
+
+          <!-- Progress Indicators -->
+          <div class="custom-indicators">
+            <span class="indicator active"></span>
+            <span class="indicator"></span>
+            <span class="indicator"></span>
+          </div>
+          <!-- Navigation Arrows -->
+          <div class="hero-nav">
+            <div class="hero-prev">
+              <i class="fa-solid fa-angle-left"></i>
+              <span>prev</span>
+            </div>
+            <div class="hero-pause" id="heroToggle">
+              <span class="icon">⏸</span>
+            </div>
+            <div class="hero-next">
+              <span>next</span>
+              <i class="fa-solid fa-angle-right"></i>
             </div>
           </div>
         </div>
@@ -607,9 +746,9 @@
           </div>
 
           <!-- Load More -->
-          <div class="text-center mt-5">
+          <!-- <div class="text-center mt-5">
             <button class="load-more-btn" id="loadMoreBtn">Load more</button>
-          </div>
+          </div> -->
         </div>
       </section>
     </main>
@@ -621,7 +760,7 @@
           <!-- Company Info -->
           <div class="footer-col footer-brand">
             <img
-              src="assets/Pittie-group-Logo.png"
+              src="assets/cropped-Group-1.png"
               alt="Pittie Group Logo"
               class="footer-logo"
             />
@@ -733,11 +872,10 @@
           <div class="footer-col footer-col-quicks">
             <h3 class="footer-title">Quick Links</h3>
             <ul class="footer-links">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="About-Us.html">About Us</a></li>
-              <li><a href="Capabilities.html">News</a></li>
-              <li><a href="Partners.html">Community</a></li>
-              <li><a href="Contact.html">Contact Us</a></li>
+              <li><a href="index_new.html">Home</a></li>
+              <li><a href="news.html">News</a></li>
+              <li><a href="community.html">Community</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
             </ul>
           </div>
 
@@ -746,16 +884,16 @@
             <h3 class="footer-title">Our Businesses</h3>
             <ul class="footer-links">
               <li>
-                <a href="http://victoriaenterprises.co.in/">Pittie Realty</a>
+                <a href="realty.html">Pittie Realty</a>
               </li>
               <li>
-                <a href="https://pittieconsumer.com/">Pittie Consumer</a>
+                <a href="consumer.html">Pittie Consumer</a>
               </li>
               <li>
-                <a href="https://www.epiccompany.com/">IN10 Media</a>
+                <a href="https://www.epiccompany.com/">THE EPIC COMPANY</a>
               </li>
               <li>
-                <a href="http://pittielogistics.com/">Pittie Logistics</a>
+                <a href="logistics.html">Pittie Logistics</a>
               </li>
             </ul>
           </div>

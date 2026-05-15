@@ -200,3 +200,17 @@ function closeVideo() {
   document.getElementById("videoModal").style.display = "none";
   document.getElementById("videoFrame").src = "";
 }
+
+const cards = document.querySelectorAll(".width190");
+
+cards.forEach((card) => {
+  card.addEventListener("mouseenter", () => {
+    // Sabse pehle sab cards se active hatao
+    cards.forEach((item) => {
+      item.classList.remove("active");
+    });
+
+    // Jispe hover ho usko active karo
+    card.classList.add("active");
+  });
+});

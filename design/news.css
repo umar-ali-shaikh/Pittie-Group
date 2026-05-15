@@ -1,46 +1,211 @@
 /* =========================
    HERO SECTION
 ========================= */
+.btn:hover {
+    color: var(--bg3-color) !important;
+}
 
-.hero-section {
+.hero {
     position: relative;
-    min-height: 600px;
-    background: url("../assets/newsPage/news-heroSection.png") center/cover no-repeat;
-    padding: 100px 0;
+    height: 100vh;
+    min-height: 650px;
+    max-height: 700px;
     overflow: hidden;
+    color: #fff;
 }
 
-/* Keep content above overlay */
-.hero-section .container {
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(to right,
+            rgba(0, 0, 0, 0.6) 0%,
+            rgba(0, 0, 0, 0.3) 30%,
+            rgba(0, 0, 0, 0.1) 55%,
+            rgba(0, 0, 0, 0) 80%);
+}
+
+.hero .overlay-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.overlay-image {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: translateX(120px);
+    transition: all 1s ease;
+}
+
+.overlay-image.active {
+    opacity: 1;
+    transform: translateX(0) !important;
+}
+
+.overlay-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay-image-mobile {
+    display: none;
+}
+
+.hero .swiper,
+.hero .swiper-wrapper {
+    height: 100%;
+}
+
+.hero .swiper-slide {
+    display: flex;
+    align-items: center;
+}
+
+.hero-wrapper {
     position: relative;
-    z-index: 2;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 60px 0;
 }
 
-/* Heading */
-.hero-title {
-       font-size: clamp(30px, 5vw, 56px);
-    line-height: clamp(44px, 6vw, 72px);
+.hero-content {
+    max-width: 600px;
+    opacity: 0;
+    transform: translateY(80px);
+    transition: all 0.8s ease;
+}
+
+.swiper-slide-active .hero-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-content h1 {
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: clamp(30px, 5vw, 45px);
     font-weight: 700;
-    color: var(--bg3-color);
+    line-height: clamp(44px, 6vw, 50px);
 }
 
-/* Button */
-.hero-btn {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 12px 22px;
-    background: var(--button-color);
-    color: var(--bg3-color);
-    border-radius: var(--radius8);
+.hero-content p {
+    max-width: 520px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.hero-content .btn {
+    margin-top: 15px;
+}
+
+.Indicators {
+    position: absolute;
+    bottom: 65px;
+    left: 50%;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    user-select: none;
+    transform: translateX(-50%);
+}
+
+.numPagination {
+    color: #fff;
     font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: 0.3s ease;
 }
 
-.hero-btn:hover {
-    background: var(--bg-red-dark);
-    color: var(--bg3-color);
+.numPagination span {
+    color: #fff;
+}
+
+.custom-indicators {
+    display: flex;
+    gap: 2px;
+    width: 300px;
+}
+
+.indicator {
+    position: relative;
+    flex: 1;
+    height: 2px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.indicator.active {
+    background: #fff;
+}
+
+.hero-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.hero-pause {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.hero-pause span {
+    margin: 0;
+    color: #fff;
+    font-size: 18px;
+}
+
+.hero-pause:hover {
+    border-color: #ff3b3b;
+    background: #ff3b3b;
+    transform: scale(1.1);
+}
+
+.hero-prev,
+.hero-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.hero-prev span,
+.hero-next span {
+    margin: 0;
+    color: #fff;
+    transition: transform 0.3s;
+}
+
+.hero-prev:hover,
+.hero-next:hover {
+    transform: scale(1.1);
+}
+
+.hero-prev:hover span {
+    transform: translateX(-3px);
+}
+
+.hero-next:hover span {
+    transform: translateX(3px);
 }
 
 

@@ -243,11 +243,56 @@
 
 
 /* Both Shape  */
+/* .shape {
+    position: absolute;
+    width: 70px;
+    height: 80px;
+    z-index: 1;
+} */
+
+/* LEFT BOTTOM */
+/* .shape-left {
+    background: #e6e6e6;
+    left: -36px;
+    bottom: -30px;
+}
+
+.shape-left::after {
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background: #0d3b78;
+    right: -40px;
+    bottom: -20px;
+} */
+
+/* RIGHT BOTTOM */
+/* .shape-right {
+    background: #e6e6e6;
+    right: -30px;
+    bottom: 261px;
+}
+
+.shape-right::after {
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background: #0d3b78;
+    left: -40px;
+    top: -20px;
+} */
+
+
+/* New Csss  */
+/* BOTH SHAPES */
 .shape {
     position: absolute;
     width: 70px;
     height: 80px;
     z-index: 1;
+    animation: floatBox 4s ease-in-out infinite;
 }
 
 /* LEFT BOTTOM */
@@ -267,11 +312,14 @@
     bottom: -20px;
 }
 
-/* RIGHT BOTTOM */
+/* RIGHT SIDE */
 .shape-right {
     background: #e6e6e6;
     right: -30px;
     bottom: 261px;
+
+    /* delay for different movement */
+    animation-delay: 1.5s;
 }
 
 .shape-right::after {
@@ -282,6 +330,29 @@
     background: #0d3b78;
     left: -40px;
     top: -20px;
+}
+
+/* FLOAT ANIMATION */
+@keyframes floatBox {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+
+    50% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    75% {
+        transform: translateY(10px) rotate(-2deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
 }
 
 /* LEFT IMAGE */

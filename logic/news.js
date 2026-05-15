@@ -1,19 +1,129 @@
- const loadBtn = document.getElementById("loadMoreBtn");
-  const items = document.querySelectorAll(".news-item");
+const TOTAL_SLIDES = 1; // 🔥 real slides count
 
-  let visible = 6;
+const hero = new Swiper(".hero-swiper", {
+  loop: true,
+  effect: "fade",
+  speed: 1000,
+  watchOverflow: false,
 
-  items.forEach((item, index) => {
-    if (index >= visible) item.style.display = "none";
-  });
+  autoplay: {
+    delay: 4000,
+    disableOnInteraction: false,
+  },
 
-  loadBtn.addEventListener("click", () => {
-    visible += 3;
-    items.forEach((item, index) => {
-      if (index < visible) item.style.display = "block";
+  navigation: {
+    nextEl: ".hero-next",
+    prevEl: ".hero-prev",
+  },
+
+  on: {
+    afterInit: function () {
+      setupIndicators(this);
+      updateAll(this);
+    },
+    slideChange: function () {
+      updateAll(this);
+    },
+  },
+});
+
+// =================
+// MAIN UPDATE
+// =================
+function updateAll(swiper) {
+  const index = swiper.realIndex % TOTAL_SLIDES;
+
+  updateIndicators(index);
+  updateNumber(index);
+  updateImages(index);
+}
+
+// =================
+// NUMBER
+// =================
+function updateNumber(index) {
+  document.querySelector(".slideNumber").textContent = index + 1;
+}
+
+// =================
+// INDICATORS
+// =================
+function setupIndicators(swiper) {
+  const container = document.querySelector(".custom-indicators");
+  container.innerHTML = "";
+
+  for (let i = 0; i < TOTAL_SLIDES; i++) {
+    const span = document.createElement("span");
+    span.className = "indicator";
+
+    span.addEventListener("click", () => {
+      swiper.slideToLoop(i);
     });
 
-    if (visible >= items.length) {
-      loadBtn.style.display = "none";
-    }
+    container.appendChild(span);
+  }
+
+  document.querySelector(".totalSlide").textContent = TOTAL_SLIDES;
+}
+
+// =================
+// UPDATE INDICATORS
+// =================
+function updateIndicators(index) {
+  document.querySelectorAll(".indicator").forEach((el, i) => {
+    el.classList.toggle("active", i === index);
   });
+}
+
+// =================
+// IMAGE SYNC
+// =================
+function updateImages(index) {
+  const images = document.querySelectorAll(".overlay-image");
+
+  images.forEach((img, i) => {
+    const realIndex = i % TOTAL_SLIDES;
+    img.classList.toggle("active", realIndex === index);
+  });
+}
+
+// =================
+// PAUSE / PLAY BUTTON
+// =================
+const pauseBtn = document.querySelector(".hero-pause");
+
+if (pauseBtn) {
+  let isPaused = false;
+
+  pauseBtn.addEventListener("click", () => {
+    if (isPaused) {
+      hero.autoplay.start();
+      pauseBtn.innerText = "Pause"; // change text/icon
+    } else {
+      hero.autoplay.stop();
+      pauseBtn.innerText = "Play";
+    }
+
+    isPaused = !isPaused;
+  });
+}
+
+const loadBtn = document.getElementById("loadMoreBtn");
+const items = document.querySelectorAll(".news-item");
+
+let visible = 6;
+
+items.forEach((item, index) => {
+  if (index >= visible) item.style.display = "none";
+});
+
+loadBtn.addEventListener("click", () => {
+  visible += 3;
+  items.forEach((item, index) => {
+    if (index < visible) item.style.display = "block";
+  });
+
+  if (visible >= items.length) {
+    loadBtn.style.display = "none";
+  }
+});

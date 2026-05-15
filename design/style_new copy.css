@@ -261,7 +261,7 @@
 }
 
 .nav-pills .nav-link span {
-    font-size: 14px;
+    font-size: 25px;
 }
 
 #businessTabs .nav-item {
@@ -275,7 +275,9 @@
     border-bottom-color: var(--button-color);
 }
 
+
 .nav-pills .nav-item.active .nav-link span {
+
     color: var(--bg1-color) !important;
 }
 
@@ -386,13 +388,28 @@
     height: auto;
     margin-bottom: 14px;
     padding: 25px 25px 0 35px;
-    background: #fff;
+    /* background: #fff; */
     text-align: left;
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08),
+        0 4px 12px rgba(0, 0, 0, 0.05);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.numbers-1:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.12),
+        0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
 .numbers-1 .number-image {
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
 }
 
 .numbers-1:last-child {
@@ -419,14 +436,8 @@
     text-transform: uppercase;
 }
 
-
-
-
-
 .number-image figure {
     max-width: 95px;
-
-    margin: 1em 0;
 }
 
 /* ===================== Timeline ===================== */
@@ -514,6 +525,7 @@
 
 .single-card .text {
     text-align: left;
+    margin-top: 10px;
 }
 
 .card {
@@ -553,12 +565,13 @@
 }
 
 .text h4 {
-    margin-top: 15px;
+    margin-top: 20px;
     font-size: 25px;
 }
 
 .featured-video {
     display: flex;
+    margin: auto;
     flex-direction: row;
     gap: 10px;
 }

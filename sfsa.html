@@ -233,3 +233,68 @@ border-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
 
 
 
+Commubity css 
+
+.community-section {
+    height: 300px;
+}
+
+.community-section .container {
+    max-width: 1300px;
+    height: 100%;
+    width: 100%;
+}
+
+.community-wrapper {
+    border-radius: var(--radius50);
+    position: relative;
+    height: 100%;
+}
+
+.community-content .row {
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 50px;
+}
+
+/* Background image */
+.community-bg {
+    border-radius: var(--radius50);
+    object-fit: cover;
+    height: 100%;
+}
+
+/* Gradient Overlay */
+.community-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius50);
+}
+
+/* Ensure content above overlay */
+.community-content {
+    z-index: 2;
+}
+
+/* Typography */
+.community-title {
+    font-weight: 700;
+    color: var(--bg3-color);
+}
+
+.community-heading {
+    font-size: clamp(20px, 2.5vw, 32px);
+    font-weight: 700;
+    color: var(--bg3-color);
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+.community-text {
+    color: var(--bg3-color);
+    font-size: 16px;
+    line-height: 1.4;
+    margin-top: 10px;
+    max-width: 420px;
+}

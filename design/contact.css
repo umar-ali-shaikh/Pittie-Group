@@ -6,56 +6,218 @@
  /* =========================
    Hero Section
 ========================= */
-
- .community-section .container {
-   max-width: 1300px;
-   width: 100%;
+ .btn:hover {
+   color: var(--bg3-color) !important;
  }
 
- .community-wrapper {
-   border-radius: var(--radius24);
+ .hero {
    position: relative;
+   height: 100vh;
+   min-height: 650px;
+   max-height: 700px;
+   overflow: hidden;
+   color: #fff;
  }
 
- /* Background image */
- .community-bg {
-   border-radius: var(--radius24);
-   object-fit: cover;
-   height: 300px;
- }
-
- /* Gradient Overlay */
- .community-wrapper::after {
+ .hero::before {
    content: "";
    position: absolute;
    inset: 0;
-   border-radius: var(--radius24);
+   z-index: 1;
+   pointer-events: none;
+   background: linear-gradient(to right,
+       rgba(0, 0, 0, 0.6) 0%,
+       rgba(0, 0, 0, 0.3) 30%,
+       rgba(0, 0, 0, 0.1) 55%,
+       rgba(0, 0, 0, 0) 80%);
  }
 
- /* Ensure content above overlay */
- .community-content {
-   z-index: 2;
+ .hero .overlay-bg {
+   position: absolute;
+   inset: 0;
+   z-index: 0;
  }
 
- /* Typography */
- .community-title {
+ .overlay-image {
+   position: absolute;
+   inset: 0;
+   opacity: 0;
+   transform: translateX(120px);
+   transition: all 1s ease;
+ }
+
+ .overlay-image.active {
+   opacity: 1;
+   transform: translateX(0) !important;
+ }
+
+ .overlay-image img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+ }
+
+ .overlay-image-mobile {
+   display: none;
+ }
+
+ .hero .swiper,
+ .hero .swiper-wrapper {
+   height: 100%;
+ }
+
+ .hero .swiper-slide {
+   display: flex;
+   align-items: center;
+ }
+
+ .hero-wrapper {
+   position: relative;
+   z-index: 10;
+   display: flex;
+   align-items: center;
+   height: 100%;
+   padding: 60px 0;
+ }
+
+ .hero-content {
+   max-width: 600px;
+   opacity: 0;
+   transform: translateY(80px);
+   transition: all 0.8s ease;
+ }
+
+ .swiper-slide-active .hero-content {
+   opacity: 1;
+   transform: translateY(0);
+ }
+
+ .hero-content h1 {
+   margin-bottom: 10px;
+   color: #fff;
+   font-size: clamp(30px, 5vw, 45px);
    font-weight: 700;
-   color: var(--bg3-color);
+   line-height: clamp(44px, 6vw, 50px);
  }
 
- .community-heading {
-   font-size: 22px;
-   font-weight: 700;
-   color: var(--bg3-color);
-   letter-spacing: 1px;
+ .hero-content p {
+   max-width: 520px;
+   color: #fff;
+   font-size: 16px;
+   font-weight: 500;
  }
 
- .community-text {
-   color: var(--bg3-color);
-   font-size: 15px;
-   line-height: 1.8;
-   margin-top: 10px;
-   max-width: 420px;
+ .hero-content .btn {
+   margin-top: 15px;
+ }
+
+ .Indicators {
+   position: absolute;
+   bottom: 65px;
+   left: 50%;
+   z-index: 20;
+   display: flex;
+   flex-direction: column;
+   gap: 15px;
+   user-select: none;
+   transform: translateX(-50%);
+ }
+
+ .numPagination {
+   color: #fff;
+   font-size: 14px;
+ }
+
+ .numPagination span {
+   color: #fff;
+ }
+
+ .custom-indicators {
+   display: flex;
+   gap: 2px;
+   width: 300px;
+ }
+
+ .indicator {
+   position: relative;
+   flex: 1;
+   height: 2px;
+   overflow: hidden;
+   background: rgba(255, 255, 255, 0.3);
+ }
+
+ .indicator.active {
+   background: #fff;
+ }
+
+ .hero-nav {
+   display: flex;
+   gap: 20px;
+ }
+
+ .hero-pause {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 45px;
+   height: 45px;
+   color: #fff;
+   border: 1px solid rgba(255, 255, 255, 0.4);
+   border-radius: 50%;
+   cursor: pointer;
+   font-size: 18px;
+   transition: 0.3s;
+ }
+
+ .hero-pause span {
+   margin: 0;
+   color: #fff;
+   font-size: 18px;
+ }
+
+ .hero-pause:hover {
+   border-color: #ff3b3b;
+   background: #ff3b3b;
+   transform: scale(1.1);
+ }
+
+ .hero-prev,
+ .hero-next {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+   color: #fff;
+   cursor: pointer;
+   font-size: 20px;
+   transition: 0.3s;
+ }
+
+ .hero-prev span,
+ .hero-next span {
+   margin: 0;
+   color: #fff;
+   transition: transform 0.3s;
+ }
+
+ .hero-prev:hover,
+ .hero-next:hover {
+   transform: scale(1.1);
+ }
+
+ .hero-prev:hover span {
+   transform: translateX(-3px);
+ }
+
+ .hero-next:hover span {
+   transform: translateX(3px);
+ }
+
+
+ .image1 .overlay-image-pc {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
  }
 
 
@@ -365,7 +527,7 @@
    ARROWS (MATCH FIGMA)
 ========================= */
 
- .career-nav-buttons{
+ .career-nav-buttons {
    display: flex;
    gap: 10px;
  }
