@@ -331,7 +331,7 @@
 ========================= */
 
 .business-section {
-    background-color: var(--bg-sections);
+    /* background-color: var(--bg-sections); */
     padding: var(--pm64) 0;
 }
 
@@ -422,6 +422,7 @@
 .business-card {
     position: relative;
     display: block;
+    height: 100%;
     border-radius: var(--radius8);
     overflow: hidden;
     margin-bottom: 24px;
@@ -869,15 +870,27 @@
 
 .text span {
     border: 1px solid red;
-    padding: 3px 10px;
+    padding: 6px 20px;
     border-radius: 20px;
-    font-size: 10px;
+    font-size: 16px;
+}
+
+.text p {
+    font-size: 16px;
+    margin-top: 15px;
 }
 
 .text h4 {
-    margin-top: 10px;
-    font-size: 14px;
+    margin-top: 15px;
+    font-size: 25px;
 }
+
+.featured-video {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
 
 /* MODAL */
 #videoModal {
@@ -1358,8 +1371,11 @@ html {
  */
 body {
     margin: 0;
+    height: 100%;
+    width: 100%;
     font-family: "Barlow Condensed", sans-serif;
 }
+
 
 /**
  * Render the `main` element consistently in IE.
@@ -2341,6 +2357,8 @@ table {
 
 footer {
     padding: 50px 0px 31px 0px;
+    position: relative;
+    z-index: 11;
 }
 
 .contactImg img {
@@ -2604,14 +2622,20 @@ header {
     /* min-height: 628px; */
 }
 
+.numbers-1:last-child {
+    margin-bottom: 0;
+}
+
 .numbers-1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 14px;
     background: #fff;
-    padding: 23px 25px 0px 35px;
-    height: 147px;
+    padding: 5px 25px 0px 35px;
+    text-align: left;
+    /* height: 147px; */
+    height: auto;
     width: 405px;
 }
 
@@ -2643,6 +2667,7 @@ header {
     color: #17242a;
     text-transform: uppercase;
     opacity: 1;
+
     font-size: 16px;
     display: block;
     font-weight: 600;
@@ -4203,7 +4228,6 @@ footer .social_icons ul li {
     bottom: 0;
 }
 
-.ourmissionContent {}
 
 .backBg {
     background-color: #f15d63;
@@ -4806,3 +4830,6 @@ footer .social_icons ul li {
     border-right: 1px solid #fff;
     padding-right: 50px;
 }
+
+
+/* New Csss BY Prathamesh  */

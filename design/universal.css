@@ -112,6 +112,7 @@ h6 {
 /* ===================== Text ===================== */
 p,
 span {
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 14px;
     line-height: 1.8;
     color: var(--sub-text);

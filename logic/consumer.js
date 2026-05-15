@@ -1,13 +1,4 @@
-const panels = document.querySelectorAll(".pittie-panel");
-
-panels.forEach((panel) => {
-  panel.addEventListener("click", () => {
-    panels.forEach((p) => p.classList.remove("active"));
-    panel.classList.add("active");
-  });
-});
-
-const TOTAL_SLIDES = 4; // 🔥 real slides count
+const TOTAL_SLIDES = 2; // 🔥 real slides count
 
 const hero = new Swiper(".hero-swiper", {
   loop: true,
@@ -117,86 +108,43 @@ if (pauseBtn) {
   });
 }
 
-// =================
-// HOVER PAUSE (OPTIONAL UX)
-// =================
-const heroEl = document.querySelector(".hero-swiper");
+// At A glance counting js
+const counters = document.querySelectorAll(".counter");
 
-if (heroEl) {
-  heroEl.addEventListener("mouseenter", () => {
-    hero.autoplay.stop();
-  });
+const startCounter = (counter) => {
+  const target = +counter.getAttribute("data-target");
+  let count = 0;
 
-  heroEl.addEventListener("mouseleave", () => {
-    hero.autoplay.start();
-  });
-}
-const toggleBtn = document.getElementById("heroToggle");
+  const speed = target / 100;
 
-if (toggleBtn) {
-  let isPaused = false;
+  const updateCounter = () => {
+    count += speed;
 
-  toggleBtn.addEventListener("click", () => {
-    if (isPaused) {
-      hero.autoplay.start();
-      toggleBtn.querySelector(".icon").textContent = "⏸"; // Pause icon
+    if (count < target) {
+      counter.innerText = Math.ceil(count) + "+";
+      requestAnimationFrame(updateCounter);
     } else {
-      hero.autoplay.stop();
-      toggleBtn.querySelector(".icon").textContent = "▶"; // Play icon
+      counter.innerText = target + "+";
     }
+  };
 
-    isPaused = !isPaused;
-  });
-}
+  updateCounter();
+};
 
-// leader section
-
-gsap.registerPlugin(ScrollTrigger);
-
-// Select ALL quote paragraphs properly
-document.querySelectorAll(".quote-box p").forEach((p) => {
-  const cleanText = p.textContent.replace(/\s+/g, " ").trim();
-
-  // Convert text into character spans
-  p.innerHTML = [...cleanText]
-    .map((char) => {
-      return char === " "
-        ? `<span class="space">&nbsp;</span>`
-        : `<span class="char">${char}</span>`;
-    })
-    .join("");
-});
-
-/* 🔥 SMOOTH SCROLL ANIMATION */
-gsap.fromTo(
-  ".quote-box .char",
-  {
-    color: "#aaa",
-    willChange: "color",
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        startCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
   },
   {
-    color: "#000",
-    stagger: {
-      each: 0.04,
-      from: "start",
-    },
-    ease: "power2.out",
-    scrollTrigger: {
-      trigger: ".quote-box",
-      start: "top 85%",
-      end: "bottom 45%",
-      scrub: 0.8,
-      anticipatePin: 1,
-    },
+    threshold: 0.5,
   },
 );
 
-function openVideo(url) {
-  document.getElementById("videoModal").style.display = "flex";
-  document.getElementById("videoFrame").src = url;
-}
-
-function closeVideo() {
-  document.getElementById("videoModal").style.display = "none";
-  document.getElementById("videoFrame").src = "";
-}
+counters.forEach((counter) => {
+  observer.observe(counter);
+});

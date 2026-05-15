@@ -325,71 +325,160 @@ button.btn-primary:hover svg {
 
 
 
-/* ==============================
-   Header Styles
-   ============================== */
-.header {
-    z-index: 1111111;
-    background: var(--bg-primary);
-}
 
-.navbar-nav .nav-link {
-    position: relative;
-    padding: 0 !important;
-    font-size: 14px;
-}
-
-.navbar-brand img {
-    max-width: 100%;
-    width: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.navbar-brand {
-    margin-right: 0;
-    width: 7%;
-    padding: 0;
-}
-
-.navbar-toggler-icon {
-    margin-bottom: 0;
-}
-
-.nav-item {
-    margin-bottom: 0;
-}
-
-.navbar-nav .nav-link.active {
-    color: var(--bg-dark);
-    font-weight: 600;
-    border-bottom: 2px solid var(--button-color);
-}
-
-.navbar-nav a {
-    color: var(--para-text);
-    font-weight: 400;
-}
-
-.navbar-nav a:hover {
-    color: var(--bg1-color);
-    transition: 0.5s ease;
-}
-
-.navbar-toggler:hover {
+/* ===================== Header / Navigation ===================== */
+header {
+    position: absolute;
+    inset: 0 0 auto;
+    z-index: 999;
     background: transparent;
 }
 
-.dropdown-menu {
-    border: none;
-    border-radius: 0;
-    padding: 10px 0;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    z-index: 999999;
+.navbar {
+    padding: 25px 40px;
 }
 
-.dropdown-item {
-    padding: 10px 20px;
+.main-navigation {
+    display: block;
+    width: 100%;
+}
+
+.main-navigation ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+.main-navigation li {
+    position: relative;
+}
+
+.main-navigation a {
+    display: block;
+    text-decoration: none;
+}
+
+.main-navigation .custom-logo-link {
+    z-index: 1;
+    padding: 13px 30px;
+}
+
+.main-navigation .custom-logo-link img {
+    width: 85px;
+}
+
+.custom-logo-link {
+    display: inline-block;
+    padding: 0 20px;
+    border-radius: 48px;
+}
+
+.menu-main-container {
+    padding: 5px 20px;
+}
+
+.menu-main-container li {
+    margin-left: 73px;
+    list-style: none;
+    text-transform: uppercase;
+}
+
+.menu-main-container li:first-child {
+    margin-left: 0;
+}
+
+.menu-main-container li a {
+    padding: 0 0 5px;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    letter-spacing: 1.34px;
+}
+
+.mob-menu-text {
+    display: none;
+}
+
+.arrow-down a::after {
+    content: "\203A";
+    display: inline-block;
+    margin-left: 10px;
+    border: none;
+    font-size: 24px;
+    vertical-align: middle;
+    transform: rotate(90deg);
+}
+
+.arrow-down .sub-menu li a::after {
+    display: none;
+}
+
+/* Curve css for menu header  */
+
+.main-navigation .container {
+    background: linear-gradient(135deg,
+            rgba(0, 0, 0, 0.88) 0%,
+            rgba(26, 65, 116, 0.65) 40%,
+            rgba(117, 116, 112, 0.25) 100%);
+
+    border-radius: 50px;
+}
+
+.main-navigation ul ul {
+    position: absolute;
+    top: 100%;
+    left: -999em;
+    z-index: 99999;
+    float: left;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.main-navigation ul li:hover>ul,
+.main-navigation ul li.focus>ul {
+    left: auto;
+}
+
+.main-navigation ul ul.sub-menu {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin-top: 0;
+    padding: 6px 6px 10px;
+    background: #fff;
+}
+
+.sub-menu li {
+    margin-left: 0;
+}
+
+.main-navigation ul ul.sub-menu a {
+    width: 100%;
+    margin-bottom: 0;
+    padding: 10px;
+    color: #333;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+
+.main-navigation ul ul.sub-menu a:hover {
+    color: #fff;
+    background: #e9292f;
+}
+
+.sub-menu::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    transform: rotate(45deg);
+}
+
+.menu-toggle {
+    display: none;
 }
 
 

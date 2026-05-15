@@ -1,13 +1,4 @@
-const panels = document.querySelectorAll(".pittie-panel");
-
-panels.forEach((panel) => {
-  panel.addEventListener("click", () => {
-    panels.forEach((p) => p.classList.remove("active"));
-    panel.classList.add("active");
-  });
-});
-
-const TOTAL_SLIDES = 4; // 🔥 real slides count
+const TOTAL_SLIDES = 2; // 🔥 real slides count
 
 const hero = new Swiper(".hero-swiper", {
   loop: true,
@@ -117,86 +108,33 @@ if (pauseBtn) {
   });
 }
 
-// =================
-// HOVER PAUSE (OPTIONAL UX)
-// =================
-const heroEl = document.querySelector(".hero-swiper");
+  // Service we Provide
+document.addEventListener("DOMContentLoaded", () => {
 
-if (heroEl) {
-  heroEl.addEventListener("mouseenter", () => {
-    hero.autoplay.stop();
-  });
+    const cards = document.querySelectorAll(".servicescardWrapper");
 
-  heroEl.addEventListener("mouseleave", () => {
-    hero.autoplay.start();
-  });
-}
-const toggleBtn = document.getElementById("heroToggle");
+    const observer = new IntersectionObserver((entries) => {
 
-if (toggleBtn) {
-  let isPaused = false;
+        entries.forEach((entry, index) => {
 
-  toggleBtn.addEventListener("click", () => {
-    if (isPaused) {
-      hero.autoplay.start();
-      toggleBtn.querySelector(".icon").textContent = "⏸"; // Pause icon
-    } else {
-      hero.autoplay.stop();
-      toggleBtn.querySelector(".icon").textContent = "▶"; // Play icon
-    }
+            if(entry.isIntersecting){
 
-    isPaused = !isPaused;
-  });
-}
+                setTimeout(() => {
 
-// leader section
+                    entry.target.classList.add("show");
 
-gsap.registerPlugin(ScrollTrigger);
+                }, index * 200);
 
-// Select ALL quote paragraphs properly
-document.querySelectorAll(".quote-box p").forEach((p) => {
-  const cleanText = p.textContent.replace(/\s+/g, " ").trim();
+            }
 
-  // Convert text into character spans
-  p.innerHTML = [...cleanText]
-    .map((char) => {
-      return char === " "
-        ? `<span class="space">&nbsp;</span>`
-        : `<span class="char">${char}</span>`;
-    })
-    .join("");
+        });
+
+    }, {
+        threshold:0.25
+    });
+
+    cards.forEach(card => {
+        observer.observe(card);
+    });
+
 });
-
-/* 🔥 SMOOTH SCROLL ANIMATION */
-gsap.fromTo(
-  ".quote-box .char",
-  {
-    color: "#aaa",
-    willChange: "color",
-  },
-  {
-    color: "#000",
-    stagger: {
-      each: 0.04,
-      from: "start",
-    },
-    ease: "power2.out",
-    scrollTrigger: {
-      trigger: ".quote-box",
-      start: "top 85%",
-      end: "bottom 45%",
-      scrub: 0.8,
-      anticipatePin: 1,
-    },
-  },
-);
-
-function openVideo(url) {
-  document.getElementById("videoModal").style.display = "flex";
-  document.getElementById("videoFrame").src = url;
-}
-
-function closeVideo() {
-  document.getElementById("videoModal").style.display = "none";
-  document.getElementById("videoFrame").src = "";
-}

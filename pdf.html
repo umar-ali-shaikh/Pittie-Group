@@ -1,0 +1,2170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>SHUBHASTRO Bracelet Flip Card</title>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/svg+xml" href='./shubhastro-images/shubhastro-favicon.png'>
+
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+
+            font-family: 'Poppins', sans-serif;
+            margin: auto;
+            max-width: 1265px;
+            overflow-x: hidden;
+            background:
+                radial-gradient(circle at top,
+                    #FFF9F1 0%,
+                    #FFF2DD 35%,
+                    #FDE7C3 100%);
+        }
+
+        .body-bg {
+            top: 0;
+            left: 0;
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* STARS */
+
+        body::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+
+            background-image:
+                radial-gradient(rgba(217, 162, 77, .35) 1px, transparent 1px);
+
+            background-size: 70px 70px;
+
+            opacity: .4;
+
+            pointer-events: none;
+        }
+
+
+
+
+        /* HERO */
+
+        .astro-hero {
+
+            position: relative;
+
+            width: 100%;
+
+            overflow: hidden;
+
+            /* background:
+                radial-gradient(circle at top,
+                    #FFFDF8 0%,
+                    #FFF7EC 45%,
+                    #FDF0DB 100%); */
+
+            border-radius: 0 0 28px 28px;
+            margin-bottom: 20px;
+        }
+
+        /* STARS */
+
+        .astro-hero::before {
+
+            content: '';
+
+            position: absolute;
+
+            inset: 0;
+
+            background-image:
+                radial-gradient(rgba(231, 173, 90, .45) 1px, transparent 1px);
+
+            background-size: 55px 55px;
+
+            opacity: .35;
+
+            pointer-events: none;
+        }
+
+        /* LEFT ZODIAC */
+
+        .zodiac-left {
+
+            position: absolute;
+
+            left: 40px;
+            top: 30px;
+
+            width: 320px;
+
+            opacity: .28;
+        }
+
+        /* RIGHT MOON */
+
+        .moon-right {
+
+            position: absolute;
+
+            right: 70px;
+            top: 10px;
+
+            width: 320px;
+
+            opacity: .22;
+        }
+
+        /* CENTER CONTENT */
+
+        .hero-content {
+
+            position: relative;
+
+            z-index: 5;
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding-top: 24px;
+        }
+
+        /* TOP BADGE */
+
+        .top-badge {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 16px;
+
+            padding: 12px 34px;
+
+            border-radius: 60px;
+
+            border:
+                1px solid rgba(227, 159, 64, .55);
+
+            background:
+                rgba(255, 255, 255, .55);
+
+            backdrop-filter: blur(10px);
+
+            box-shadow:
+
+                inset 0 1px 1px rgba(255, 255, 255, .95),
+
+                0 6px 18px rgba(227, 159, 64, .08);
+
+            margin-bottom: 24px;
+        }
+
+        .top-badge span {
+
+            color: #B46A1F;
+
+            font-size: 14px;
+
+            letter-spacing: 5px;
+
+            font-weight: 600;
+        }
+
+        .star {
+
+            color: #E39F40;
+
+            font-size: 16px;
+        }
+
+        /* HEADING */
+
+        .hero-title {
+
+            font-family: 'Cinzel', serif;
+
+            font-size: 74px;
+
+            line-height: 1;
+
+            font-weight: 700;
+
+            color: #2D1404;
+
+            margin-bottom: 18px;
+
+            letter-spacing: -2px;
+        }
+
+        .hero-title .orange {
+
+            background:
+                linear-gradient(180deg,
+                    #FFA53A 0%,
+                    #FF7A00 100%);
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* SUBTITLE */
+
+        .hero-subtitle {
+
+            font-size: 21px;
+
+            color: #78604B;
+
+            font-weight: 400;
+
+            margin-bottom: 30px;
+        }
+
+        /* DIVIDER */
+
+        .divider {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 14px;
+        }
+
+        .line {
+
+            width: 170px;
+            height: 1px;
+
+            background:
+                linear-gradient(90deg,
+                    transparent,
+                    #D39A4D,
+                    transparent);
+        }
+
+        .sun {
+
+            color: #D39A4D;
+
+            font-size: 30px;
+        }
+
+        .small-star {
+
+            color: #D39A4D;
+
+            font-size: 12px;
+        }
+
+        /* FLOAT STARS */
+
+        .floating-star {
+
+            position: absolute;
+
+            color: #E2A354;
+
+            opacity: .5;
+
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .star1 {
+            top: 21%;
+            left: 90%;
+            font-size: 38px;
+        }
+
+        .star2 {
+            top: 150px;
+            right: 420px;
+            font-size: 20px;
+        }
+
+        .star3 {
+            bottom: 30%;
+            left: 10%;
+            font-size: 30px;
+        }
+
+        @keyframes float {
+
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:1200px) {
+
+            .hero-title {
+                font-size: 64px;
+            }
+
+            .zodiac-left,
+            .moon-right {
+                width: 240px;
+            }
+
+        }
+
+        @media(max-width:768px) {
+
+            .astro-hero {
+                min-height: auto;
+                padding: 40px 20px;
+            }
+
+            .hero-title {
+                font-size: 42px;
+                line-height: 1.15;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            .top-badge {
+                padding: 10px 24px;
+            }
+
+            .top-badge span {
+                font-size: 11px;
+                letter-spacing: 3px;
+            }
+
+            .line {
+                width: 70px;
+            }
+
+            .zodiac-left,
+            .moon-right {
+                opacity: .12;
+            }
+
+            .zodiac-left {
+                left: -40px;
+                width: 180px;
+            }
+
+            .moon-right {
+                right: -40px;
+                width: 180px;
+            }
+
+        }
+
+
+        /* WRAPPER */
+
+        .cards-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* FLIP CARD */
+
+        .flip-card {
+            width: 320px;
+            height: 100vh;
+            max-height: 510px;
+
+            perspective: 2000px;
+            position: relative;
+        }
+
+        .flip-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+            transform-style: preserve-3d;
+
+            transition: 1s ease;
+        }
+
+        .flip-card:hover .flip-inner {
+            transform: rotateY(180deg);
+        }
+
+        /* CARD */
+
+        .card-front,
+        .card-back {
+            position: absolute;
+
+            width: 100%;
+            height: 100%;
+
+            border-radius: 28px;
+
+            overflow: hidden;
+
+            backface-visibility: hidden;
+
+            background:
+                rgba(255, 255, 255, 0.45);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            border:
+                1px solid rgba(217, 162, 77, .22);
+
+            /* GLOW */
+
+            box-shadow:
+
+                0 0 15px rgba(255, 210, 122, .25),
+                0 0 40px rgba(217, 162, 77, .18),
+                0 0 90px rgba(255, 210, 122, .12),
+
+                inset 0 0 20px rgba(255, 255, 255, .35),
+                inset 0 0 45px rgba(255, 210, 122, .08);
+
+            animation: cardGlow 4s ease-in-out infinite alternate;
+        }
+
+        /* HOVER */
+
+        .flip-card:hover .card-front,
+        .flip-card:hover .card-back {
+
+            box-shadow:
+
+                0 0 20px rgba(255, 210, 122, .35),
+                0 0 70px rgba(217, 162, 77, .28),
+                0 0 140px rgba(255, 210, 122, .18),
+
+                inset 0 0 25px rgba(255, 255, 255, .45),
+                inset 0 0 60px rgba(255, 210, 122, .12);
+        }
+
+        /* GLOW */
+
+        @keyframes cardGlow {
+
+            0% {
+
+                box-shadow:
+
+                    0 0 15px rgba(255, 210, 122, .18),
+                    0 0 35px rgba(217, 162, 77, .12),
+                    0 0 70px rgba(255, 210, 122, .08),
+
+                    inset 0 0 20px rgba(255, 255, 255, .28);
+            }
+
+            100% {
+
+                box-shadow:
+
+                    0 0 25px rgba(255, 210, 122, .32),
+                    0 0 70px rgba(217, 162, 77, .22),
+                    0 0 140px rgba(255, 210, 122, .14),
+
+                    inset 0 0 25px rgba(255, 255, 255, .4);
+            }
+
+        }
+
+        /* INNER BORDER */
+
+        .card-front::before,
+        .card-back::before {
+
+            content: '';
+
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            inset: 10px;
+
+            border-radius: 22px;
+
+            border:
+                1px solid rgba(217, 162, 77, .35);
+
+            pointer-events: none;
+        }
+
+        /* FRONT */
+
+        .card-front {
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            align-items: center;
+
+            position: relative;
+            background:
+                linear-gradient(180deg,
+                    rgba(255, 255, 255, .95),
+                    rgba(255, 245, 225, .92));
+        }
+
+        /* ZODIAC */
+
+        .zodiac {
+
+            width: 58px;
+            height: 58px;
+
+            border-radius: 50%;
+
+            border:
+                2px solid #D9A24D;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: #D9A24D;
+
+            font-size: 26px;
+
+            box-shadow:
+                0 0 18px rgba(217, 162, 77, .18),
+                0 0 40px rgba(255, 210, 122, .12);
+        }
+
+        /* IMAGE */
+        .bracelet-img {
+            position: relative;
+            scale: 1.2;
+        }
+
+        .product-image {
+            position: absolute;
+            width: 100% !important;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .product-image2 {}
+
+        .product-image,
+        .bracelet-img {
+
+            display: flex;
+
+            width: 165px;
+
+            margin: auto;
+            object-fit: contain;
+
+            /* PREMIUM GOLD GLOW */
+
+            filter:
+
+                drop-shadow(0 0 8px rgba(255, 160, 0, .35)),
+                drop-shadow(0 0 22px rgba(255, 130, 0, .28)), drop-shadow(0 0 45px rgba(255, 110, 0, .20)), drop-shadow(0 0 80px rgba(255, 140, 0, .12));
+
+            animation:
+                imageFloat 4s ease-in-out infinite,
+                imageGlow 3s ease-in-out infinite alternate;
+        }
+
+        /* EXTRA GLOW CIRCLE */
+
+        .product-image::before,
+        .bracelet-img::before {
+            content: '';
+
+            position: absolute;
+
+            inset: -20px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(circle,
+                    rgba(255, 190, 60, .35) 0%,
+                    rgba(255, 140, 0, .18) 35%,
+                    transparent 70%);
+
+            filter: blur(20px);
+
+            z-index: -1;
+
+            animation: pulseGlow 3s ease-in-out infinite;
+        }
+
+        /* FLOAT ANIMATION */
+
+        @keyframes imageFloat {
+
+            0% {
+                transform:
+                    translateY(0px) scale(1);
+            }
+
+            50% {
+                transform:
+                    translateY(-10px) scale(1.03);
+            }
+
+            100% {
+                transform:
+                    translateY(0px) scale(1);
+            }
+
+        }
+
+        /* GLOW ANIMATION */
+
+        @keyframes imageGlow {
+
+            0% {
+
+                filter:
+
+                    drop-shadow(0 0 8px rgba(255, 120, 0, .35)) drop-shadow(0 0 18px rgba(255, 94, 0, .22)) drop-shadow(0 0 35px rgba(255, 120, 0, .16)) drop-shadow(0 0 60px rgba(255, 140, 0, .10));
+            }
+
+            50% {
+
+                filter:
+
+                    drop-shadow(0 0 14px rgba(255, 140, 0, .48)) drop-shadow(0 0 32px rgba(255, 110, 0, .35)) drop-shadow(0 0 65px rgba(255, 90, 0, .25)) drop-shadow(0 0 100px rgba(255, 140, 0, .16));
+            }
+
+            100% {
+
+                filter:
+
+                    drop-shadow(0 0 18px rgba(255, 160, 0, .60)) drop-shadow(0 0 40px rgba(255, 120, 0, .45)) drop-shadow(0 0 80px rgba(255, 94, 0, .32)) drop-shadow(0 0 140px rgba(255, 130, 0, .22));
+            }
+
+        }
+
+        /* PULSE AURA */
+
+        @keyframes pulseGlow {
+
+            0% {
+
+                opacity: .45;
+
+                transform: scale(.9);
+            }
+
+            50% {
+
+                opacity: .75;
+
+                transform: scale(1.08);
+            }
+
+            100% {
+
+                opacity: .45;
+
+                transform: scale(.9);
+            }
+
+        }
+
+        /* TITLE */
+
+        .title {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .title small {
+
+            color: #B88432;
+
+            letter-spacing: 2px;
+
+            font-size: 13px;
+
+            display: block;
+
+            margin-bottom: 6px;
+        }
+
+        .title h2,
+        .back-title h3 {
+
+            color: #6F4A14;
+
+            font-family: 'Cinzel', serif;
+
+            text-shadow:
+
+                0 0 10px rgba(255, 210, 122, .25),
+                0 0 25px rgba(217, 162, 77, .18),
+                0 0 50px rgba(255, 210, 122, .12);
+        }
+
+        .title h2 {
+
+            font-size: 22px;
+
+            line-height: 1;
+
+            font-weight: 600;
+        }
+
+        /* BACK */
+
+        .card-back {
+
+            transform: rotateY(180deg);
+            top: 0;
+            padding: 22px;
+
+            background:
+                linear-gradient(180deg,
+                    rgba(255, 255, 255, .95),
+                    rgba(255, 245, 225, .98));
+        }
+
+        /* CONTENT */
+
+        .back-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* BACK TITLE */
+
+        .back-title {
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .back-title small {
+
+            color: #B88432;
+
+            display: block;
+
+            margin-bottom: 5px;
+
+            letter-spacing: 1px;
+
+            font-size: 12px;
+        }
+
+        .back-title h3 {
+
+            font-size: 20px;
+
+            line-height: 1.1;
+        }
+
+        /* DESCRIPTION */
+
+        .desc {
+
+            text-align: center;
+
+            color:
+                rgba(80, 55, 20, .82);
+
+            font-size: 13px;
+
+            line-height: 1.6;
+
+            margin-top: 12px;
+            margin-bottom: 18px;
+        }
+
+        /* BENEFITS */
+
+        .benefit-title {
+
+            text-align: center;
+
+            color: #B88432;
+
+            margin-bottom: 10px;
+
+            font-size: 13px;
+
+            font-weight: 500;
+        }
+
+        /* BENEFIT BOX EXACT */
+
+        .benefit-box {
+
+            background:
+                linear-gradient(180deg,
+                    rgba(255, 255, 255, .78),
+                    rgba(255, 248, 236, .92));
+
+            border:
+                1px solid rgba(232, 184, 92, .22);
+
+            border-radius: 14px;
+
+            padding: 10px 8px;
+
+            text-align: center;
+
+            color: #9A6B2E;
+
+            font-size: 10px;
+
+            backdrop-filter: blur(12px);
+
+            box-shadow:
+
+                inset 0 1px 1px rgba(255, 255, 255, .9),
+
+                0 2px 10px rgba(232, 184, 92, .08),
+
+                0 0 12px rgba(255, 210, 122, .06);
+
+            transition: .4s;
+        }
+
+        .benefit-box:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow:
+
+                inset 0 1px 1px rgba(255, 255, 255, 1),
+
+                0 4px 15px rgba(232, 184, 92, .12),
+
+                0 0 20px rgba(255, 210, 122, .12);
+        }
+
+        /* MAIN BUTTONS */
+
+        .buttons {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 12px;
+        }
+
+        .buttons a {
+
+            text-decoration: none;
+
+            text-align: center;
+
+            padding: 12px 0;
+
+            border-radius: 50px;
+
+            width: 100%;
+
+            font-weight: 600;
+
+            font-size: 12px;
+
+            transition: .35s;
+        }
+
+        /* VIEW CERTIFICATE */
+        /* WATCH VIDEO */
+
+        .pdf-btn,
+        .video-btn {
+
+            background:
+                linear-gradient(180deg,
+                    #FFFFFF,
+                    #FFF4E3);
+
+            border:
+                2px solid #E8B85C;
+
+            color: #8B5A1F;
+
+            box-shadow:
+
+                inset 0 2px 2px rgba(255, 255, 255, .95),
+
+                0 4px 14px rgba(232, 184, 92, .10),
+
+                0 0 16px rgba(255, 210, 122, .08);
+        }
+
+
+        /* MYNTRA BUTTON EXACT */
+
+        .buy-btn {
+
+            background:
+                linear-gradient(180deg,
+                    #FF9500 0%,
+                    #FF7A00 45%,
+                    #F96B00 100%);
+
+            border:
+                1px solid rgba(255, 255, 255, .35);
+
+            color: #fff;
+
+            font-weight: 700;
+
+            box-shadow:
+
+                inset 0 2px 4px rgba(255, 255, 255, .25),
+
+                0 8px 18px rgba(255, 140, 0, .28),
+
+                0 0 25px rgba(255, 145, 0, .16);
+        }
+
+        .buy-btn:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow:
+
+                inset 0 2px 4px rgba(255, 255, 255, .35),
+
+                0 10px 22px rgba(255, 140, 0, .34),
+
+                0 0 35px rgba(255, 145, 0, .24);
+        }
+
+        /* BUTTON HOVER */
+
+        .pdf-btn:hover,
+        .video-btn:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow:
+
+                inset 0 2px 2px rgba(255, 255, 255, 1),
+
+                0 6px 18px rgba(232, 184, 92, .14),
+
+                0 0 24px rgba(255, 210, 122, .14);
+        }
+
+        .benefits {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr 1fr;
+
+            gap: 8px;
+
+            margin-bottom: 18px;
+        }
+
+        .benefit-box {
+
+            background:
+                rgba(255, 255, 255, .55);
+
+            border:
+                1px solid rgba(217, 162, 77, .15);
+
+            border-radius: 12px;
+
+            padding: 10px 8px;
+
+            text-align: center;
+
+            color: #6F4A14;
+
+            font-size: 10px;
+
+            backdrop-filter: blur(10px);
+
+            transition: .4s;
+
+            box-shadow:
+
+                0 4px 12px rgba(217, 162, 77, .08),
+                0 0 20px rgba(255, 210, 122, .08);
+        }
+
+        .benefit-box:hover {
+
+            transform: translateY(-4px);
+
+            box-shadow:
+
+                0 0 25px rgba(217, 162, 77, .18),
+                0 0 50px rgba(255, 210, 122, .12);
+        }
+
+        /* BUTTONS */
+
+        .buttons {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 10px;
+        }
+
+
+        /* BUY */
+
+        .buy-btn {
+
+            background:
+                linear-gradient(90deg,
+                    #FFB347,
+                    #FF8C00);
+
+            color: #fff;
+
+            font-weight: 700;
+
+            box-shadow:
+
+                0 0 18px rgba(255, 179, 71, .25),
+                0 0 45px rgba(255, 140, 0, .18);
+        }
+
+        .btn-hlp {
+            display: flex;
+            gap: 10px;
+        }
+
+        .buttons a:hover {
+            transform: translateY(-4px);
+        }
+
+        /* MOBILE */
+
+        @media(max-width:768px) {
+
+            .flip-card {
+                width: 100%;
+                max-width: 320px;
+                height: 560px;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <section class="astro-hero">
+
+        <!-- LEFT ZODIAC -->
+
+        <!-- <img class="zodiac-left" src="https://i.ibb.co/5KQ0s0q/zodiac-wheel.png" alt=""> -->
+
+        <!-- RIGHT MOON -->
+
+        <!-- <img class="moon-right" src="https://i.ibb.co/f0R2L5v/moon-astrology.png" alt=""> -->
+
+        <!-- FLOATING STARS -->
+
+        <div class="floating-star star1">✦</div>
+        <div class="floating-star star2">✦</div>
+        <div class="floating-star star3">✦</div>
+
+        <!-- CONTENT -->
+
+        <div class="hero-content">
+
+            <!-- BADGE -->
+
+            <div class="top-badge">
+
+                <div class="star">✦</div>
+
+                <span>SHUBHASTRO BRACELETS</span>
+
+                <div class="star">✦</div>
+
+            </div>
+
+            <!-- TITLE -->
+
+            <h1 class="hero-title">
+
+                Find Your
+                <span class="orange">
+                    Energy Bracelet
+                </span>
+
+            </h1>
+
+            <!-- SUBTITLE -->
+
+            <p class="hero-subtitle">
+
+                Certified natural stone bracelets, charged with cosmic energy and intention.
+
+            </p>
+
+            <!-- DIVIDER -->
+
+            <div class="divider">
+
+                <div class="line"></div>
+
+                <div class="small-star">✦</div>
+
+                <div class="small-star">✦</div>
+
+                <div class="sun">☀</div>
+
+                <div class="small-star">✦</div>
+
+                <div class="small-star">✦</div>
+
+                <div class="line"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <img class="body-bg" src="shubhastro-images/magnific_elegant-mystical-astrolog_2980574730.jpg" alt="">
+
+
+    <div class="cards-wrapper">
+
+        <!-- CARD -->
+        <div class="flip-card">
+
+            <div class="flip-inner">
+
+                <!-- FRONT -->
+
+                <div class="card-front">
+
+                    <img class="product-image" src="shubhastro-images/Website_Tarrot Card copy.jpg" />
+                    <div class="product-image2 product-image"></div>
+
+                    <div class="title">
+
+                        <h2>
+                            Dhan Sampatti <br />
+                            Bracelet
+                        </h2>
+
+                    </div>
+
+
+
+                </div>
+
+                <!-- BACK -->
+
+                <div class="card-back">
+
+                    <div class="back-content">
+
+                        <div class="back-title">
+
+                            <small>SHUBHASTRO</small>
+
+                            <h3>
+                                Dhan Sampatti <br />
+                                Bracelet
+                            </h3>
+
+                        </div>
+
+                        <img class="bracelet-img" src="shubhastro-images/01 Amethyst 1.png" />
+
+                        <div class="desc">
+
+                            Peace, clarity & spiritual protection.
+                            Helps calm the mind and increase intuition.
+
+                        </div>
+
+                        <div class="benefit-title">
+                            Benefits
+                        </div>
+
+                        <div class="benefits">
+
+                            <div class="benefit-box">
+                                Calms Mind
+                            </div>
+
+                            <div class="benefit-box">
+                                Enhances Intuition
+                            </div>
+
+                            <div class="benefit-box">
+                                Emotional Healing
+                            </div>
+
+                        </div>
+
+                        <!-- BIG -->
+
+                        <div class="buttons">
+
+                            <div class="btn-hlp">
+                                <a href="certificate.pdf" target="_blank" class="pdf-btn">
+                                    View Certificate
+                                </a>
+
+                                <a href="#" class="video-btn">
+                                    Watch Video
+                                </a>
+                            </div>
+
+                            <a href="#" class="buy-btn">
+                                CUSTOMIZE
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CARD -->
+        <div class="flip-card">
+
+            <div class="flip-inner">
+
+                <!-- FRONT -->
+
+                <div class="card-front">
+
+
+                    <img class="product-image" src="shubhastro-images/Website_Tarrot Card copy.jpg" />
+                    <div class="product-image2 product-image"></div>
+
+                    <div class="title">
+
+                        <h2>
+                            Evil Eye <br />
+                            Bracelet
+                        </h2>
+
+                    </div>
+
+
+                </div>
+
+                <!-- BACK -->
+
+                <div class="card-back">
+
+                    <div class="back-content">
+
+                        <div class="back-title">
+
+                            <small>SHUBHASTRO</small>
+
+                            <h3>
+                                Evil Eye <br />
+                                Bracelet
+                            </h3>
+
+                        </div>
+
+                        <img class="bracelet-img" src="shubhastro-images/02 Raw Pyrite 1.png" />
+
+                        <div class="desc">
+
+                            Peace, clarity & spiritual protection.
+                            Helps calm the mind and increase intuition.
+
+                        </div>
+
+                        <div class="benefit-title">
+                            Benefits
+                        </div>
+
+                        <div class="benefits">
+
+                            <div class="benefit-box">
+                                Calms Mind
+                            </div>
+
+                            <div class="benefit-box">
+                                Enhances Intuition
+                            </div>
+
+                            <div class="benefit-box">
+                                Emotional Healing
+                            </div>
+
+                        </div>
+
+                        <!-- BIG -->
+
+                        <div class="buttons">
+
+                            <div class="btn-hlp">
+                                <a href="Shubhastro-Report/Evil Eye Bracelet.pdf" target="_blank" class="pdf-btn">
+                                    View Certificate
+                                </a>
+
+                                <a href="#" class="video-btn">
+                                    Watch Video
+                                </a>
+                            </div>
+
+                            <a href="#" class="buy-btn">
+                                CUSTOMIZE
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CARD -->
+        <div class="flip-card">
+
+            <div class="flip-inner">
+
+                <!-- FRONT -->
+
+                <div class="card-front">
+
+                    <img class="product-image" src="shubhastro-images/Website_Tarrot Card copy.jpg" />
+                    <div class="product-image2 product-image"></div>
+
+                    <div class="title">
+
+                        <h2>
+                            Dhan Yog <br />
+                            Bracelet
+                        </h2>
+
+                    </div>
+
+                </div>
+
+                <!-- BACK -->
+
+                <div class="card-back">
+
+                    <div class="back-content">
+
+                        <div class="back-title">
+
+                            <small>SHUBHASTRO</small>
+
+                            <h3>
+                                Dhan Yog <br />
+                                Bracelet
+                            </h3>
+
+                        </div>
+
+                        <img class="bracelet-img" src="shubhastro-images/04 Dhan Yog 1.png" />
+
+                        <div class="desc">
+
+                            Peace, clarity & spiritual protection.
+                            Helps calm the mind and increase intuition.
+
+                        </div>
+
+                        <div class="benefit-title">
+                            Benefits
+                        </div>
+
+                        <div class="benefits">
+
+                            <div class="benefit-box">
+                                Calms Mind
+                            </div>
+
+                            <div class="benefit-box">
+                                Enhances Intuition
+                            </div>
+
+                            <div class="benefit-box">
+                                Emotional Healing
+                            </div>
+
+                        </div>
+
+                        <!-- BIG -->
+
+                        <div class="buttons">
+
+                            <div class="btn-hlp">
+                                <a href="Shubhastro-Report/Dhan Yog Bracelet.pdf" target="_blank" class="pdf-btn">
+                                    View Certificate
+                                </a>
+
+                                <a href="#" class="video-btn">
+                                    Watch Video
+                                </a>
+                            </div>
+
+                            <a href="#" class="buy-btn">
+                                CUSTOMIZE
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CARD -->
+        <div class="flip-card">
+
+            <div class="flip-inner">
+
+                <!-- FRONT -->
+
+                <div class="card-front">
+
+                    <img class="product-image" src="shubhastro-images/Website_Tarrot Card copy.jpg" />
+                    <div class="product-image2 product-image"></div>
+
+                    <div class="title">
+
+                        <h2>
+                            Money Magnet <br />
+                            Bracelet
+                        </h2>
+
+                    </div>
+                </div>
+
+                <!-- BACK -->
+
+                <div class="card-back">
+
+                    <div class="back-content">
+
+                        <div class="back-title">
+
+                            <small>SHUBHASTRO</small>
+
+                            <h3>
+                                Money Magnet <br />
+                                Bracelet
+                            </h3>
+
+                        </div>
+
+                        <img class="bracelet-img" src="shubhastro-images/05 Money Magnet 1.png" />
+
+                        <div class="desc">
+
+                            Peace, clarity & spiritual protection.
+                            Helps calm the mind and increase intuition.
+
+                        </div>
+
+                        <div class="benefit-title">
+                            Benefits
+                        </div>
+
+                        <div class="benefits">
+
+                            <div class="benefit-box">
+                                Calms Mind
+                            </div>
+
+                            <div class="benefit-box">
+                                Enhances Intuition
+                            </div>
+
+                            <div class="benefit-box">
+                                Emotional Healing
+                            </div>
+
+                        </div>
+
+                        <!-- BIG -->
+
+                        <div class="buttons">
+
+                            <div class="btn-hlp">
+                                <a href="certificate.pdf" target="_blank" class="pdf-btn">
+                                    View Certificate
+                                </a>
+
+                                <a href="#" class="video-btn">
+                                    Watch Video
+                                </a>
+                            </div>
+
+                            <a href="#" class="buy-btn">
+                                CUSTOMIZE
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CARD -->
+        <div class="flip-card">
+
+            <div class="flip-inner">
+
+                <!-- FRONT -->
+
+                <div class="card-front">
+
+                    <img class="product-image" src="shubhastro-images/Website_Tarrot Card copy.jpg" />
+                    <div class="product-image2 product-image"></div>
+
+                    <div class="title">
+
+                        <h2>
+                            Silver Hematite <br />
+                            Bracelet
+                        </h2>
+
+                    </div>
+
+
+                </div>
+
+                <!-- BACK -->
+
+                <div class="card-back">
+
+                    <div class="back-content">
+
+                        <div class="back-title">
+
+                            <small>SHUBHASTRO</small>
+
+                            <h3>
+                                Silver Hematite <br />
+                                Bracelet
+                            </h3>
+
+                        </div>
+
+                        <img class="bracelet-img" src="shubhastro-images/06 Dhan Sampatti 1.png" />
+
+                        <div class="desc">
+
+                            Peace, clarity & spiritual protection.
+                            Helps calm the mind and increase intuition.
+
+                        </div>
+
+                        <div class="benefit-title">
+                            Benefits
+                        </div>
+
+                        <div class="benefits">
+
+                            <div class="benefit-box">
+                                Calms Mind
+                            </div>
+
+                            <div class="benefit-box">
+                                Enhances Intuition
+                            </div>
+
+                            <div class="benefit-box">
+                                Emotional Healing
+                            </div>
+
+                        </div>
+
+                        <!-- BIG -->
+
+                        <div class="buttons">
+
+                            <div class="btn-hlp">
+                                <a href="certificate.pdf" target="_blank" class="pdf-btn">
+                                    View Certificate
+                                </a>
+
+                                <a href="#" class="video-btn">
+                                    Watch Video
+                                </a>
+                            </div>
+
+                            <a href="#" class="buy-btn">
+                                CUSTOMIZE
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CARD -->
+        <div class="flip-card">
+
+            <div class="flip-inner">
+
+                <!-- FRONT -->
+
+                <div class="card-front">
+
+                    <img class="product-image" src="shubhastro-images/Website_Tarrot Card copy.jpg" />
+                    <div class="product-image2 product-image"></div>
+
+                    <div class="title">
+
+                        <h2>
+                            Raw Pyrite<br />
+                            Bracelet
+                        </h2>
+
+                    </div>
+
+                </div>
+
+                <!-- BACK -->
+
+                <div class="card-back">
+
+                    <div class="back-content">
+
+                        <div class="back-title">
+
+                            <small>SHUBHASTRO</small>
+
+                            <h3>
+                                Raw Pyrite<br />
+                                Bracelet
+                            </h3>
+
+                        </div>
+
+                        <img class="bracelet-img" src="shubhastro-images/07 Love & Money 1.png" />
+
+                        <div class="desc">
+
+                            Peace, clarity & spiritual protection.
+                            Helps calm the mind and increase intuition.
+
+                        </div>
+
+                        <div class="benefit-title">
+                            Benefits
+                        </div>
+
+                        <div class="benefits">
+
+                            <div class="benefit-box">
+                                Calms Mind
+                            </div>
+
+                            <div class="benefit-box">
+                                Enhances Intuition
+                            </div>
+
+                            <div class="benefit-box">
+                                Emotional Healing
+                            </div>
+
+                        </div>
+
+                        <!-- BIG -->
+
+                        <div class="buttons">
+
+                            <div class="btn-hlp">
+                                <a href="Shubhastro-Report/Raw Pyrite Bracelet.pdf" target="_blank" class="pdf-btn">
+                                    View Certificate
+                                </a>
+
+                                <a href="#" class="video-btn">
+                                    Watch Video
+                                </a>
+                            </div>
+
+                            <a href="#" class="buy-btn">
+                                CUSTOMIZE
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CARD -->
+        <div class="flip-card">
+
+            <div class="flip-inner">
+
+                <!-- FRONT -->
+
+                <div class="card-front">
+                    <img class="product-image" src="shubhastro-images/Website_Tarrot Card copy.jpg" />
+                    <div class="product-image2 product-image"></div>
+
+                    <div class="title">
+
+
+                        <h2>
+                            Amethyst <br />Bracelet
+                        </h2>
+
+                    </div>
+
+
+                </div>
+
+                <!-- BACK -->
+
+                <div class="card-back">
+
+                    <div class="back-content">
+
+                        <div class="back-title">
+
+                            <small>SHUBHASTRO</small>
+
+                            <h3>
+                                Amethyst
+                                Bracelet
+                            </h3>
+
+                        </div>
+
+                        <img class="bracelet-img" src="shubhastro-images/08 Evil Eye 1.png" />
+
+                        <div class="desc">
+
+                            Peace, clarity & spiritual protection.
+                            Helps calm the mind and increase intuition.
+
+                        </div>
+
+                        <div class="benefit-title">
+                            Benefits
+                        </div>
+
+                        <div class="benefits">
+
+                            <div class="benefit-box">
+                                Calms Mind
+                            </div>
+
+                            <div class="benefit-box">
+                                Enhances Intuition
+                            </div>
+
+                            <div class="benefit-box">
+                                Emotional Healing
+                            </div>
+
+                        </div>
+                        <!-- BIG -->
+
+                        <div class="buttons">
+
+                            <div class="btn-hlp">
+                                <a href="Shubhastro-Report/Amethyst Bracelet.pdf" target="_blank" class="pdf-btn">
+                                    View Certificate
+                                </a>
+
+                                <a href="#" class="video-btn">
+                                    Watch Video
+                                </a>
+                            </div>
+
+                            <a href="#" class="buy-btn">
+                                CUSTOMIZE
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CARD -->
+        <div class="flip-card">
+
+            <div class="flip-inner">
+
+                <!-- FRONT -->
+
+                <div class="card-front">
+
+                    <img class="product-image" src="shubhastro-images/Website_Tarrot Card copy.jpg" />
+                    <div class="product-image2 product-image"></div>
+
+                    <div class="title">
+
+                        <h2>
+                            Love & Money <br />Magnet
+                            Bracelet
+                        </h2>
+
+                    </div>
+
+
+                </div>
+
+                <!-- BACK -->
+
+                <div class="card-back">
+
+                    <div class="back-content">
+
+                        <div class="back-title">
+
+                            <small>SHUBHASTRO</small>
+
+                            <h3>
+                                Love & Money <br />Magnet
+                                Bracelet
+                            </h3>
+
+                        </div>
+
+                        <img class="bracelet-img" src="shubhastro-images/09 Silver Hematite 1.png" />
+
+                        <div class="desc">
+
+                            Peace, clarity & spiritual protection.
+                            Helps calm the mind and increase intuition.
+
+                        </div>
+
+                        <div class="benefit-title">
+                            Benefits
+                        </div>
+
+                        <div class="benefits">
+
+                            <div class="benefit-box">
+                                Calms Mind
+                            </div>
+
+                            <div class="benefit-box">
+                                Enhances Intuition
+                            </div>
+
+                            <div class="benefit-box">
+                                Emotional Healing
+                            </div>
+
+                        </div>
+
+                        <!-- BIG -->
+
+                        <div class="buttons">
+
+                            <div class="btn-hlp">
+                                <a href="Shubhastro-Report/Love & Money Bracelet.pdf" target="_blank" class="pdf-btn">
+                                    View Certificate
+                                </a>
+
+                                <a href="#" class="video-btn">
+                                    Watch Video
+                                </a>
+                            </div>
+
+                            <a href="#" class="buy-btn">
+                                CUSTOMIZE
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CARD -->
+        <div class="flip-card">
+
+            <div class="flip-inner">
+
+                <!-- FRONT -->
+
+                <div class="card-front">
+
+                    <img class="product-image" src="shubhastro-images/Website_Tarrot Card copy.jpg" />
+                    <div class="product-image2 product-image"></div>
+
+                    <div class="title">
+
+                        <h2>
+                            Tiger Eye <br />
+                            Bracelet
+                        </h2>
+
+                    </div>
+
+                </div>
+
+                <!-- BACK -->
+
+                <div class="card-back">
+
+                    <div class="back-content">
+
+                        <div class="back-title">
+
+                            <small>SHUBHASTRO</small>
+
+                            <h3>
+                                Tiger Eye <br />
+                                Bracelet
+                            </h3>
+
+                        </div>
+
+                        <img class="bracelet-img" src="shubhastro-images/10 Tiger-Eye 1.png" />
+
+                        <div class="desc">
+
+                            Peace, clarity & spiritual protection.
+                            Helps calm the mind and increase intuition.
+
+                        </div>
+
+                        <div class="benefit-title">
+                            Benefits
+                        </div>
+
+                        <div class="benefits">
+
+                            <div class="benefit-box">
+                                Calms Mind
+                            </div>
+
+                            <div class="benefit-box">
+                                Enhances Intuition
+                            </div>
+
+                            <div class="benefit-box">
+                                Emotional Healing
+                            </div>
+
+                        </div>
+
+                        <!-- BIG -->
+
+                        <div class="buttons">
+
+                            <div class="btn-hlp">
+                                <a href="Shubhastro-Report/Tiger Eye Bracelet.pdf" target="_blank" class="pdf-btn">
+                                    View Certificate
+                                </a>
+
+                                <a href="#" class="video-btn">
+                                    Watch Video
+                                </a>
+                            </div>
+
+                            <a href="#" class="buy-btn">
+                                CUSTOMIZE
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CARD -->
+        <div class="flip-card">
+
+            <div class="flip-inner">
+
+                <!-- FRONT -->
+
+                <div class="card-front">
+
+                    <img class="product-image" src="shubhastro-images/Website_Tarrot Card copy.jpg" />
+                    <div class="product-image2 product-image"></div>
+
+                    <div class="title">
+
+                        <h2>
+                            Triple protection
+                            Bracelet
+                        </h2>
+
+                    </div>
+
+                </div>
+
+                <!-- BACK -->
+
+                <div class="card-back">
+
+                    <div class="back-content">
+
+                        <div class="back-title">
+
+                            <small>SHUBHASTRO</small>
+
+                            <h3>
+                                Triple protection
+                                Bracelet
+                            </h3>
+
+                        </div>
+
+                        <img class="bracelet-img" src="shubhastro-images/Triple Protection.png" />
+
+                        <div class="desc">
+
+                            Peace, clarity & spiritual protection.
+                            Helps calm the mind and increase intuition.
+
+                        </div>
+
+                        <div class="benefit-title">
+                            Benefits
+                        </div>
+
+                        <div class="benefits">
+
+                            <div class="benefit-box">
+                                Calms Mind
+                            </div>
+
+                            <div class="benefit-box">
+                                Enhances Intuition
+                            </div>
+
+                            <div class="benefit-box">
+                                Emotional Healing
+                            </div>
+
+                        </div>
+
+                        <!-- BIG -->
+
+                        <div class="buttons">
+
+                            <div class="btn-hlp">
+                                <a href="Shubhastro-Report/Triple Protection Bracelet.pdf" target="_blank"
+                                    class="pdf-btn">
+                                    View Certificate
+                                </a>
+
+                                <a href="#" class="video-btn">
+                                    Watch Video
+                                </a>
+                            </div>
+
+                            <a href="#" class="buy-btn">
+                                CUSTOMIZE
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
