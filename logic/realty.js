@@ -4,10 +4,11 @@
 
 const paradiseMainSwiper = new Swiper(".paradiseMainSwiper", {
   loop: true,
-  speed: 1200,
-  effect: "fade",
+  speed: 1000,
+  slidesPerView: 1,
+
   autoplay: {
-    delay: 4000,
+    delay: 2500,
     disableOnInteraction: false,
   },
 
@@ -25,6 +26,7 @@ const smallPropertySwiper = new Swiper(".smallPropertySwiper", {
   loop: true,
   speed: 1000,
   slidesPerView: 1,
+
   autoplay: {
     delay: 2500,
     disableOnInteraction: false,
@@ -348,3 +350,46 @@ if (pauseBtn) {
     isPaused = !isPaused;
   });
 }
+
+// Pittie Realty BY numbers counting js
+const counters = document.querySelectorAll(".counter");
+
+const startCounter = (counter) => {
+  const target = +counter.getAttribute("data-target");
+  const symbol = counter.getAttribute("data-symbol") || "+";
+
+  let count = 0;
+
+  const speed = target / 100;
+
+  const updateCounter = () => {
+    count += speed;
+
+    if (count < target) {
+      counter.innerText = Math.ceil(count) + symbol;
+      requestAnimationFrame(updateCounter);
+    } else {
+      counter.innerText = target + symbol;
+    }
+  };
+
+  updateCounter();
+};
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        startCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.5,
+  }
+);
+
+counters.forEach((counter) => {
+  observer.observe(counter);
+});

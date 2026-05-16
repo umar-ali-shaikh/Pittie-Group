@@ -7,7 +7,7 @@ panels.forEach((panel) => {
   });
 });
 
-const TOTAL_SLIDES = 4; // 🔥 real slides count
+const TOTAL_SLIDES = 5; // 🔥 real slides count
 
 const hero = new Swiper(".hero-swiper", {
   loop: true,

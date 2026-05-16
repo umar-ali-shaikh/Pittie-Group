@@ -108,33 +108,200 @@ if (pauseBtn) {
   });
 }
 
-  // Service we Provide
+// Service we Provide
 document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".servicescardWrapper");
 
-    const cards = document.querySelectorAll(".servicescardWrapper");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add("show");
+          }, index * 200);
+        }
+      });
+    },
+    {
+      threshold: 0.25,
+    },
+  );
 
-    const observer = new IntersectionObserver((entries) => {
+  cards.forEach((card) => {
+    observer.observe(card);
+  });
+});
 
-        entries.forEach((entry, index) => {
+// Pittie Logistics By Numbers counting js
+const counters = document.querySelectorAll(".counter");
 
-            if(entry.isIntersecting){
+const startCounter = (counter) => {
+  const target = +counter.getAttribute("data-target");
+  const symbol = counter.getAttribute("data-symbol") || "+";
 
-                setTimeout(() => {
+  let count = 0;
 
-                    entry.target.classList.add("show");
+  const speed = target / 100;
 
-                }, index * 200);
+  const updateCounter = () => {
+    count += speed;
 
-            }
+    if (count < target) {
+      counter.innerText = Math.ceil(count) + symbol;
+      requestAnimationFrame(updateCounter);
+    } else {
+      counter.innerText = target + symbol;
+    }
+  };
 
-        });
+  updateCounter();
+};
 
-    }, {
-        threshold:0.25
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        startCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
     });
+  },
+  {
+    threshold: 0.5,
+  },
+);
 
-    cards.forEach(card => {
-        observer.observe(card);
+counters.forEach((counter) => {
+  observer.observe(counter);
+});
+
+
+
+
+
+
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+const cards = gsap.utils.toArray(".tech-stack .tech-card");
+
+let currentMode = null;
+
+/* =====================================
+   DESKTOP HORIZONTAL SLIDER
+===================================== */
+
+function initDesktopStack() {
+  currentMode = "desktop";
+
+  ScrollTrigger.getAll().forEach((st) => st.kill());
+  gsap.killTweensOf(cards);
+
+  // Initial setup
+  cards.forEach((card, i) => {
+    gsap.set(card, {
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      x: i === 0 ? 0 : window.innerWidth,
+      zIndex: cards.length - i,
     });
+  });
 
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".tech-stack",
+      start: "top-=80px top",
+      end: `+=${cards.length * 120}%`,
+      scrub: 1,
+      pin: true,
+      pinSpacing: true,
+      anticipatePin: 1,
+    },
+  });
+
+  // Sequential horizontal reveal
+  cards.forEach((card, i) => {
+    if (i === 0) return;
+
+    tl.to(card, {
+      x: 0,
+      duration: 1,
+      ease: "power2.inOut",
+    });
+  });
+}
+
+/* =====================================
+   MOBILE HORIZONTAL SLIDER
+===================================== */
+
+function initMobileStack() {
+  currentMode = "mobile";
+
+  ScrollTrigger.getAll().forEach((st) => st.kill());
+  gsap.killTweensOf(cards);
+
+  cards.forEach((card, i) => {
+    gsap.set(card, {
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      x: i === 0 ? 0 : window.innerWidth,
+      zIndex: cards.length - i,
+    });
+  });
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".tech-stack",
+      start: "top top",
+      end: `+=${cards.length * 100}%`,
+      scrub: 1,
+      pin: true,
+      pinSpacing: true,
+      anticipatePin: 1,
+    },
+  });
+
+  cards.forEach((card, i) => {
+    if (i === 0) return;
+
+    tl.to(card, {
+      x: 0,
+      duration: 1,
+      ease: "power2.inOut",
+    });
+  });
+}
+
+/* =====================================
+   RESPONSIVE INIT
+===================================== */
+
+function initTechStackByScreen() {
+  const isMobile = window.innerWidth <= 900;
+
+  if (isMobile && currentMode !== "mobile") {
+    initMobileStack();
+  }
+
+  if (!isMobile && currentMode !== "desktop") {
+    initDesktopStack();
+  }
+}
+
+// Initial load
+initTechStackByScreen();
+
+// Resize
+window.addEventListener("resize", () => {
+  clearTimeout(window.__stackResize);
+
+  window.__stackResize = setTimeout(() => {
+    initTechStackByScreen();
+  }, 300);
 });
