@@ -1,983 +1,1289 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pittie Group - Realty</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pittie Group - Realty</title>
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
 
-  <!-- Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet" />
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
 
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Boostrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-  <!-- Boostrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="design/universal-new.css" />
+    <link rel="stylesheet" href="design/realty.css" />
+  </head>
 
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="design/universal-new.css" />
-  <link rel="stylesheet" href="design/realty.css" />
-</head>
-
-<body>
-  <!-- Skip Navigation Link (REQUIRED) -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-  <header id="masthead" class="site-header">
-    <nav id="site-navigation" class="main-navigation navbar navbar-expand-lg navbar-light">
-      <div class="container">
-        <a href="https://pittiegroup.com/" class="custom-logo-link" rel="home" aria-current="page"><img
-            src="assets/cropped-Group-1.png" class="custom-logo" alt="" decoding="async" fetchpriority="high" srcset="
+  <body>
+    <!-- Skip Navigation Link (REQUIRED) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header id="masthead" class="site-header">
+      <nav
+        id="site-navigation"
+        class="main-navigation navbar navbar-expand-lg navbar-light"
+      >
+        <div class="container">
+          <a
+            href="https://pittiegroup.com/"
+            class="custom-logo-link"
+            rel="home"
+            aria-current="page"
+            ><img
+              src="assets/cropped-Group-1.png"
+              class="custom-logo"
+              alt=""
+              decoding="async"
+              fetchpriority="high"
+              srcset="
                 assets/cropped-Group-1.png 553w,
                 assets/cropped-Group-1.png 300w
-              " sizes="(max-width: 553px) 100vw, 553px" /></a>
-        <button type="button" class="menu-toggle navbar-toggler" data-toggle="collapse" data-target="#primary-menu"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
-        <!-- Middle Menu content -->
-        <div class="menu-main-container">
-          <ul id="primary-menu" class="collapse navbar-collapse nav-menu">
-            <li id="menu-item-16" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16">
-              <a href="index_new.html">Home</a>
-            </li>
-            <li id="menu-item-17"
-              class="arrow-down menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-17 active">
-              <a href="brand.html">Our Business</a>
-              <ul class="sub-menu">
-                <li id="menu-item-404" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-404">
-                  <a href="realty.html">Pittie Realty</a>
-                </li>
-                <li id="menu-item-407" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-407">
-                  <a href="consumer.html">Pittie Consumer</a>
-                </li>
-                <li id="menu-item-405" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-405">
-                  <a href="media.html">THE EPIC COMPANY</a>
-                </li>
-                <li id="menu-item-406" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-406">
-                  <a href="logistics.html">Pittie Logistics</a>
-                </li>
-              </ul>
-            </li>
-            <li id="menu-item-19" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19">
-              <a href="community.html">Community</a>
-            </li>
-            <li id="menu-item-505" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-505">
-              <a href="news.html">News</a>
-            </li>
-            <li id="menu-item-20" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20">
-              <a href="contact.html">Contact US</a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Right Ask AI -->
-        <div class="search-icon-wrap">
-          <button id="btn-search" type="button" class="search-btn cta-search-glow" aria-label="Ask AI search">
-            <img src="assets/homePage/search-icon-ai.svg" alt="AI Serach icon" class="search-icon"
-              role="presentation" />
-            <span class="text d-none d-md-block">Ask AI</span>
+              "
+              sizes="(max-width: 553px) 100vw, 553px"
+          /></a>
+          <button
+            type="button"
+            class="menu-toggle navbar-toggler"
+            data-toggle="collapse"
+            data-target="#primary-menu"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
           </button>
+
+          <!-- Middle Menu content -->
+          <div class="menu-main-container">
+            <ul id="primary-menu" class="collapse navbar-collapse nav-menu">
+              <li
+                id="menu-item-16"
+                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16"
+              >
+                <a href="index_new.html">Home</a>
+              </li>
+              <li
+                id="menu-item-17"
+                class="arrow-down menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-17 active"
+              >
+                <a href="brand.html">Our Business</a>
+                <ul class="sub-menu">
+                  <li
+                    id="menu-item-404"
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-404"
+                  >
+                    <a href="realty.html">Pittie Realty</a>
+                  </li>
+                  <li
+                    id="menu-item-407"
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-407"
+                  >
+                    <a href="consumer.html">Pittie Consumer</a>
+                  </li>
+                  <li
+                    id="menu-item-405"
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-405"
+                  >
+                    <a href="media.html">THE EPIC COMPANY</a>
+                  </li>
+                  <li
+                    id="menu-item-406"
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-406"
+                  >
+                    <a href="logistics.html">Pittie Logistics</a>
+                  </li>
+                </ul>
+              </li>
+              <li
+                id="menu-item-19"
+                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19"
+              >
+                <a href="community.html">Community</a>
+              </li>
+              <li
+                id="menu-item-505"
+                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-505"
+              >
+                <a href="news.html">News</a>
+              </li>
+              <li
+                id="menu-item-20"
+                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20"
+              >
+                <a href="contact.html">Contact US</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Right Ask AI -->
+          <div class="search-icon-wrap">
+            <button
+              id="btn-search"
+              type="button"
+              class="search-btn cta-search-glow"
+              aria-label="Ask AI search"
+            >
+              <img
+                src="assets/homePage/search-icon-ai.svg"
+                alt="AI Serach icon"
+                class="search-icon"
+                role="presentation"
+              />
+              <span class="text d-none d-md-block">Ask AI</span>
+            </button>
+          </div>
         </div>
-      </div>
-    </nav>
-    <!-- #site-navigation -->
-  </header>
+      </nav>
+      <!-- #site-navigation -->
+    </header>
 
-  <!-- MAIN CONTENT LANDMARK -->
-  <main id="main-content" role="main">
-    <!-- Hero Section -->
-    <section class="snap-section section hero bg-color-white">
-      <div class="container hero-wrapper">
-        <!-- Hero Swiper -->
-        <div class="swiper hero-swiper">
-          <div class="swiper-wrapper">
-            <!-- Slide 1 -->
-            <div class="swiper-slide">
-              <div class="hero-content col-8">
-                <h1>A Sanctuary of Bliss, Where Dreams Find a Home</h1>
+    <!-- MAIN CONTENT LANDMARK -->
+    <main id="main-content" role="main">
+      <!-- Hero Section -->
+      <section class="snap-section section hero bg-color-white">
+        <div class="container hero-wrapper">
+          <!-- Hero Swiper -->
+          <div class="swiper hero-swiper">
+            <div class="swiper-wrapper">
+              <!-- Slide 1 -->
+              <div class="swiper-slide">
+                <div class="hero-content col-8">
+                  <h1>A Sanctuary of Bliss, Where Dreams Find a Home</h1>
 
-                <p>
-                  Embark on a transformative journey of fulfillment and
-                  serenity with Pittie Realty, where aspirations find
-                  nurturing grounds, and dreams flourish in a blissful haven
-                  of possibilities.
-                </p>
-                <button class="btn btn-primary">
-                  <a href="#">
-                    View Projects
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M6.92757 16.8242L16.8242 6.92757M16.8242 6.92757H6.92757M16.8242 6.92757V16.8242"
-                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg>
-                  </a>
-                </button>
+                  <p>
+                    Embark on a transformative journey of fulfillment and
+                    serenity with Pittie Realty, where aspirations find
+                    nurturing grounds, and dreams flourish in a blissful haven
+                    of possibilities.
+                  </p>
+                  <button class="btn btn-primary">
+                    <a href="#">
+                      View Projects
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6.92757 16.8242L16.8242 6.92757M16.8242 6.92757H6.92757M16.8242 6.92757V16.8242"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </a>
+                  </button>
+                </div>
               </div>
-            </div>
 
-            <!-- Slide 2 -->
-            <div class="swiper-slide">
-              <div class="hero-content col-8">
-                <h1>Empowering Excellence, Redefining Business Landscapes</h1>
+              <!-- Slide 2 -->
+              <div class="swiper-slide">
+                <div class="hero-content col-8">
+                  <h1>Empowering Excellence, Redefining Business Landscapes</h1>
 
-                <p>
-                  Unlocking new possibilities for businesses with unparalleled
-                  excellence, revolutionizing industries, and shaping the
-                  future of business landscapes
-                </p>
-                <button class="btn btn-primary">
-                  <a href="#">
-                    View Projects
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M6.92757 16.8242L16.8242 6.92757M16.8242 6.92757H6.92757M16.8242 6.92757V16.8242"
-                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg>
-                  </a>
-                </button>
+                  <p>
+                    Unlocking new possibilities for businesses with unparalleled
+                    excellence, revolutionizing industries, and shaping the
+                    future of business landscapes
+                  </p>
+                  <button class="btn btn-primary">
+                    <a href="#">
+                      View Projects
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6.92757 16.8242L16.8242 6.92757M16.8242 6.92757H6.92757M16.8242 6.92757V16.8242"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </a>
+                  </button>
+                </div>
               </div>
-            </div>
 
-            <!-- Slide 1 -->
-            <div class="swiper-slide">
-              <div class="hero-content col-8">
-                <h1>A Sanctuary of Bliss, Where Dreams Find a Home</h1>
+              <!-- Slide 1 -->
+              <div class="swiper-slide">
+                <div class="hero-content col-8">
+                  <h1>A Sanctuary of Bliss, Where Dreams Find a Home</h1>
 
-                <p>
-                  Embark on a transformative journey of fulfillment and
-                  serenity with Pittie Realty, where aspirations find
-                  nurturing grounds, and dreams flourish in a blissful haven
-                  of possibilities.
-                </p>
-                <button class="btn btn-primary">
-                  <a href="#">
-                    View Projects
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M6.92757 16.8242L16.8242 6.92757M16.8242 6.92757H6.92757M16.8242 6.92757V16.8242"
-                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg>
-                  </a>
-                </button>
+                  <p>
+                    Embark on a transformative journey of fulfillment and
+                    serenity with Pittie Realty, where aspirations find
+                    nurturing grounds, and dreams flourish in a blissful haven
+                    of possibilities.
+                  </p>
+                  <button class="btn btn-primary">
+                    <a href="#">
+                      View Projects
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6.92757 16.8242L16.8242 6.92757M16.8242 6.92757H6.92757M16.8242 6.92757V16.8242"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </a>
+                  </button>
+                </div>
               </div>
-            </div>
 
-            <!-- Slide 2 -->
-            <div class="swiper-slide">
-              <div class="hero-content col-8">
-                <h1>Empowering Excellence, Redefining Business Landscapes</h1>
+              <!-- Slide 2 -->
+              <div class="swiper-slide">
+                <div class="hero-content col-8">
+                  <h1>Empowering Excellence, Redefining Business Landscapes</h1>
 
-                <p>
-                  Unlocking new possibilities for businesses with unparalleled
-                  excellence, revolutionizing industries, and shaping the
-                  future of business landscapes
-                </p>
-                <button class="btn btn-primary">
-                  <a href="#">
-                    View Projects
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M6.92757 16.8242L16.8242 6.92757M16.8242 6.92757H6.92757M16.8242 6.92757V16.8242"
-                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg>
-                  </a>
-                </button>
+                  <p>
+                    Unlocking new possibilities for businesses with unparalleled
+                    excellence, revolutionizing industries, and shaping the
+                    future of business landscapes
+                  </p>
+                  <button class="btn btn-primary">
+                    <a href="#">
+                      View Projects
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6.92757 16.8242L16.8242 6.92757M16.8242 6.92757H6.92757M16.8242 6.92757V16.8242"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </a>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="overlay-bg">
-        <div class="image1 overlay-image active">
-          <img src="assets/realityPage/banner-reality.jpg" alt="MobileBanner1" class="overlay-image-pc" />
-          <img src="assets/homePage/mobaile size  01.jpg" alt="MobileBanner1" class="overlay-image-mobile" />
-        </div>
-        <div class="image2 overlay-image">
-          <img src="assets/realityPage/realty-banner-2.jpg" alt="MobileBanner2" class="overlay-image-pc" />
-          <img src="assets/homePage/mobaile size  02.jpg" alt="MobileBanner2" class="overlay-image-mobile" />
-        </div>
-
-        <div class="image1 overlay-image">
-          <img src="assets/realityPage/banner-reality.jpg" alt="MobileBanner1" class="overlay-image-pc" />
-          <img src="assets/homePage/mobaile size  01.jpg" alt="MobileBanner1" class="overlay-image-mobile" />
-        </div>
-        <div class="image2 overlay-image">
-          <img src="assets/realityPage/realty-banner-2.jpg" alt="MobileBanner2" class="overlay-image-pc" />
-          <img src="assets/homePage/mobaile size  02.jpg" alt="MobileBanner2" class="overlay-image-mobile" />
-        </div>
-      </div>
-
-      <div class="Indicators container">
-        <!-- Number -->
-        <div class="numPagination">
-          <span class="slideNumber">1</span> /
-          <span class="totalSlide">2</span>
-        </div>
-
-        <!-- Progress Indicators -->
-        <div class="custom-indicators">
-          <span class="indicator active"></span>
-          <span class="indicator"></span>
-          <span class="indicator"></span>
-        </div>
-        <!-- Navigation Arrows -->
-        <div class="hero-nav">
-          <div class="hero-prev">
-            <i class="fa-solid fa-angle-left"></i>
-            <span>prev</span>
+        <div class="overlay-bg">
+          <div class="image1 overlay-image active">
+            <img
+              src="assets/realityPage/banner-reality.jpg"
+              alt="MobileBanner1"
+              class="overlay-image-pc"
+            />
+            <img
+              src="assets/homePage/mobaile size  01.jpg"
+              alt="MobileBanner1"
+              class="overlay-image-mobile"
+            />
           </div>
-          <div class="hero-pause" id="heroToggle">
-            <span class="icon">⏸</span>
+          <div class="image2 overlay-image">
+            <img
+              src="assets/realityPage/realty-banner-2.jpg"
+              alt="MobileBanner2"
+              class="overlay-image-pc"
+            />
+            <img
+              src="assets/homePage/mobaile size  02.jpg"
+              alt="MobileBanner2"
+              class="overlay-image-mobile"
+            />
           </div>
-          <div class="hero-next">
-            <span>next</span>
-            <i class="fa-solid fa-angle-right"></i>
+
+          <div class="image1 overlay-image">
+            <img
+              src="assets/realityPage/banner-reality.jpg"
+              alt="MobileBanner1"
+              class="overlay-image-pc"
+            />
+            <img
+              src="assets/homePage/mobaile size  01.jpg"
+              alt="MobileBanner1"
+              class="overlay-image-mobile"
+            />
+          </div>
+          <div class="image2 overlay-image">
+            <img
+              src="assets/realityPage/realty-banner-2.jpg"
+              alt="MobileBanner2"
+              class="overlay-image-pc"
+            />
+            <img
+              src="assets/homePage/mobaile size  02.jpg"
+              alt="MobileBanner2"
+              class="overlay-image-mobile"
+            />
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- =========================
+        <div class="Indicators container">
+          <!-- Number -->
+          <div class="numPagination">
+            <span class="slideNumber">1</span> /
+            <span class="totalSlide">2</span>
+          </div>
+
+          <!-- Progress Indicators -->
+          <div class="custom-indicators">
+            <span class="indicator active"></span>
+            <span class="indicator"></span>
+            <span class="indicator"></span>
+          </div>
+          <!-- Navigation Arrows -->
+          <div class="hero-nav">
+            <div class="hero-prev">
+              <i class="fa-solid fa-angle-left"></i>
+              <span>prev</span>
+            </div>
+            <div class="hero-pause" id="heroToggle">
+              <span class="icon">⏸</span>
+            </div>
+            <div class="hero-next">
+              <span>next</span>
+              <i class="fa-solid fa-angle-right"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================
      ABOUT SECTION
 ========================= -->
-    <section class="guide-section">
-      <!-- LEFT -->
-      <div class="guide-image">
-        <!-- <img src="assets/conumersPage/Cleanzap.jpg" alt="Laundry Product" /> -->
-        <video autoplay muted loop playsinline preload="auto">
-          <source src="assets/conumersPage/video1.mp4" type="video/mp4" />
-        </video>
+      <section class="guide-section">
+        <!-- LEFT -->
+        <div class="guide-image">
+          <!-- <img src="assets/conumersPage/Cleanzap.jpg" alt="Laundry Product" /> -->
+          <video autoplay muted loop playsinline preload="auto">
+            <source src="assets/realityPage/video.mp4" type="video/mp4" />
+          </video>
 
-        <!-- <div class="shape shape-left"></div>
+          <!-- <div class="shape shape-left"></div>
         <div class="shape shape-right"></div> -->
-      </div>
-
-      <!-- RIGHT -->
-      <div class="guide-content">
-        <div class="small-title">
-          <span></span>
-          ABOUT PITTIE REALTY
         </div>
 
-        <h2>CREATING WORLD CLASS RESIDENTIAL & CORPORATE SPACES</h2>
+        <!-- RIGHT -->
+        <div class="guide-content">
+          <div class="small-title">
+            <span></span>
+            ABOUT PITTIE REALTY
+          </div>
 
-        <p>
-          Pittie Realty has set a benchmark for itself in realty sector by
-          delivering world class spaces for residences and businesses alike.
-          The commitment, passion and dedication of founder - Mr. Krishna
-          Kumar Pittie towards real estate business metamorphosed from a
-          small-scale business to a world class leader in realty world.
-        </p>
-      </div>
-    </section>
+          <h2>CREATING WORLD CLASS RESIDENTIAL & CORPORATE SPACES</h2>
 
-    <!-- =========================
+          <p>
+            Pittie Realty has set a benchmark for itself in realty sector by
+            delivering world class spaces for residences and businesses alike.
+            The commitment, passion and dedication of founder - Mr. Krishna
+            Kumar Pittie towards real estate business metamorphosed from a
+            small-scale business to a world class leader in realty world.
+          </p>
+        </div>
+      </section>
+
+      <!-- =========================
    Pittie Realty By Numbers
 ========================= -->
-    <section class="glance-section">
-      <div class="container">
-        <h1 class="section-title">Pittie Realty By Numbers</h1>
+      <section class="glance-section">
+        <div class="container">
+          <h1 class="section-title">Pittie Realty By Numbers</h1>
 
-        <div class="dot-overlay"></div>
+          <div class="dot-overlay"></div>
 
-        <div class="stats-wrapper">
-          <div class="stat-box">
-            <h2 class="counter" data-target="2">0+</h2>
-            <div class="line"></div>
-            <p>Cities</p>
-          </div>
+          <div class="stats-wrapper">
+            <div class="stat-box">
+              <h2 class="counter" data-target="2">0+</h2>
+              <div class="line"></div>
+              <p>Cities</p>
+            </div>
 
-          <div class="stat-box">
-            <h2 class="counter" data-target="7">0+</h2>
-            <div class="line"></div>
-            <p>No Of Projects</p>
-          </div>
+            <div class="stat-box">
+              <h2 class="counter" data-target="7">0+</h2>
+              <div class="line"></div>
+              <p>No Of Projects</p>
+            </div>
 
-          <div class="stat-box">
-            <h2 class="counter" data-target="4">0+</h2>
-            <div class="line"></div>
-            <p>Upcoming Projects</p>
-          </div>
+            <div class="stat-box">
+              <h2 class="counter" data-target="4">0+</h2>
+              <div class="line"></div>
+              <p>Upcoming Projects</p>
+            </div>
 
-          <div class="stat-box">
-            <h2 class="counter" data-target="10" data-symbol="K">0k</h2>
-            <div class="line"></div>
-            <p>Units Delivered</p>
+            <div class="stat-box">
+              <h2 class="counter" data-target="10" data-symbol="K">0k</h2>
+              <div class="line"></div>
+              <p>Units Delivered</p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- =========================
+      <!-- =========================
     PROPERTIES
 ========================= -->
-    <section class="pittie-paradise-section">
-      <div class="container-fluid px-0 h-100">
-        <div class="row g-0 align-items-stretch h-100">
-          <!-- LEFT CONTENT -->
-          <div class="col-lg-6 paradise-content-wrapper">
-            <div class="paradise-content">
-              <div class="paradise-content-hlp">
-                <span class="about-tag">Properties Under Pittie</span>
-                <h2>
-                  <span class="blue">VAIBHAV</span>
-                  <span class="red"> CHAMBERS</span>
-                </h2>
+      <section class="pittie-paradise-section">
+        <div class="container-fluid px-0 h-100">
+          <div class="row g-0 align-items-stretch h-100">
+            <!-- LEFT CONTENT -->
+            <div class="col-lg-6 paradise-content-wrapper">
+              <div class="paradise-content">
+                <div class="paradise-content-hlp">
+                  <span class="about-tag">Properties Under Pittie</span>
+                  <h2>
+                    <span class="blue">VAIBHAV</span>
+                    <span class="red"> CHAMBERS</span>
+                  </h2>
 
-                <h4>OFFICES THAT OFFER EXCLUSIVITY</h4>
+                  <h4>OFFICES THAT OFFER EXCLUSIVITY</h4>
 
-                <div class="content-border">
-                  <p>
-                    Vaibhav Chambers is an 11-storey commercial property with
-                    a built-up area of 80,000 sq. feet located in the heart of
-                    the city on the main BKC road with access to the highway
-                    via Kalanagar situated right opposite Income Tax office.
-                    The property is beautifully designed with a glass façade
-                    and is easily accessible to public transport due to it
-                    being situated just 1.5km from Bandra station. With an
-                    office at Vaibhav Chambers, you have access to the most
-                    exclusive and preferred commercial space in Mumbai.
-                  </p>
+                  <div class="content-border">
+                    <p>
+                      Vaibhav Chambers is an 11-storey commercial property with
+                      a built-up area of 80,000 sq. feet located in the heart of
+                      the city on the main BKC road with access to the highway
+                      via Kalanagar situated right opposite Income Tax office.
+                      The property is beautifully designed with a glass façade
+                      and is easily accessible to public transport due to it
+                      being situated just 1.5km from Bandra station. With an
+                      office at Vaibhav Chambers, you have access to the most
+                      exclusive and preferred commercial space in Mumbai.
+                    </p>
+                  </div>
                 </div>
-              </div>
 
-              <!-- Small Image Slider -->
-              <div class="small-property-slider swiper smallPropertySwiper">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <img src="assets/realityPage/Vaibhav-Chambers-2-1-2.jpg" alt="Luxury Balcony" />
-                  </div>
+                <!-- Small Image Slider -->
+                <div class="small-property-slider swiper smallPropertySwiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/realityPage/Vaibhav-Chambers-2-1-2.jpg"
+                        alt="Luxury Balcony"
+                      />
+                    </div>
 
-                  <div class="swiper-slide">
-                    <img src="assets/realityPage/Vaibhav-Chambers-3.png" alt="Modern Living" />
-                  </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/realityPage/Vaibhav-Chambers-3.png"
+                        alt="Modern Living"
+                      />
+                    </div>
 
-                  <div class="swiper-slide">
-                    <img src="assets/realityPage/Vaibhav-Chambers-4-2.jpg" />
+                    <div class="swiper-slide">
+                      <img src="assets/realityPage/Vaibhav-Chambers-4-2.jpg" />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- RIGHT IMAGE SLIDER -->
-          <div class="col-lg-6 paradise-image-wrapper">
-            <div class="swiper paradiseMainSwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="assets/realityPage/Vaibhav-Chambers-4.png" />
+            <!-- RIGHT IMAGE SLIDER -->
+            <div class="col-lg-6 paradise-image-wrapper">
+              <div class="swiper paradiseMainSwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img src="assets/realityPage/Vaibhav-Chambers-4.png" />
+                  </div>
+
+                  <div class="swiper-slide">
+                    <img
+                      src="assets/realityPage/Vaibhav-Chambers-2-1.png"
+                      alt="Luxury Balcony"
+                    />
+                  </div>
+
+                  <div class="swiper-slide">
+                    <img
+                      src="assets/realityPage/Vaibhav-Chambers-3-2.jpg"
+                      alt="Modern Living"
+                    />
+                  </div>
                 </div>
 
-                <div class="swiper-slide">
-                  <img src="assets/realityPage/Vaibhav-Chambers-2-1.png" alt="Luxury Balcony" />
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/realityPage/Vaibhav-Chambers-3-2.jpg" alt="Modern Living" />
-                </div>
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
               </div>
-
-              <!-- Pagination -->
-              <div class="swiper-pagination"></div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="pittie-paradise-section">
-      <div class="container-fluid px-0 h-100">
-        <div class="row g-0 align-items-stretch h-100">
-          <!-- LEFT CONTENT -->
-          <div class="col-lg-6 paradise-content-wrapper">
-            <div class="paradise-content">
-              <div class="paradise-content-hlp">
-                <!-- <span class="about-tag">Properties Under Pittie</span> -->
-                <h2>
-                  <span class="blue">PITTIE</span>
-                  <span class="red"> CHAMBERS</span>
-                </h2>
+      </section>
+      <section class="pittie-paradise-section">
+        <div class="container-fluid px-0 h-100">
+          <div class="row g-0 align-items-stretch h-100">
+            <!-- LEFT CONTENT -->
+            <div class="col-lg-6 paradise-content-wrapper">
+              <div class="paradise-content">
+                <div class="paradise-content-hlp">
+                  <!-- <span class="about-tag">Properties Under Pittie</span> -->
+                  <h2>
+                    <span class="blue">PITTIE</span>
+                    <span class="red"> CHAMBERS</span>
+                  </h2>
 
-                <h4>A STELLAR EXPERIENCE IN THE HEART OF MUMBAI</h4>
+                  <h4>A STELLAR EXPERIENCE IN THE HEART OF MUMBAI</h4>
 
-                <div class="content-border">
-                  <p>
-                    Pittie Chambers is a commercial property located on the
-                    BKC-CST link road with a built-up area of 15,000 sq. feet.
-                    It is located near the MTNL building and has easy access
-                    to mass transit systems. At Pittie Chambers, let your
-                    imagination take flight, we only rent you spaces, and let
-                    your imagination carve out your office look-and-feel,
-                    which will take you places. We want you to arrive at an
-                    experience, which will enthral you.
-                  </p>
+                  <div class="content-border">
+                    <p>
+                      Pittie Chambers is a commercial property located on the
+                      BKC-CST link road with a built-up area of 15,000 sq. feet.
+                      It is located near the MTNL building and has easy access
+                      to mass transit systems. At Pittie Chambers, let your
+                      imagination take flight, we only rent you spaces, and let
+                      your imagination carve out your office look-and-feel,
+                      which will take you places. We want you to arrive at an
+                      experience, which will enthral you.
+                    </p>
+                  </div>
                 </div>
-              </div>
 
-              <!-- Small Image Slider -->
-              <div class="small-property-slider swiper smallPropertySwiper">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <img src="assets/realityPage/Pittie-Chambers-4.png" alt="Luxury Balcony" />
-                  </div>
+                <!-- Small Image Slider -->
+                <div class="small-property-slider swiper smallPropertySwiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/realityPage/Pittie-Chambers-4.png"
+                        alt="Luxury Balcony"
+                      />
+                    </div>
 
-                  <div class="swiper-slide">
-                    <img src="assets/realityPage/Pittie-Chambers-2.png" alt="Modern Living" />
-                  </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/realityPage/Pittie-Chambers-2.png"
+                        alt="Modern Living"
+                      />
+                    </div>
 
-                  <div class="swiper-slide">
-                    <img src="assets/realityPage/Pittie-Chambers-3.png" alt="Luxury Interior" />
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/realityPage/Pittie-Chambers-3.png"
+                        alt="Luxury Interior"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- RIGHT IMAGE SLIDER -->
-          <div class="col-lg-6 paradise-image-wrapper">
-            <div class="swiper paradiseMainSwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="assets/realityPage/Pittie-Chambers-3-2.jpg" alt="Luxury Interior" />
+            <!-- RIGHT IMAGE SLIDER -->
+            <div class="col-lg-6 paradise-image-wrapper">
+              <div class="swiper paradiseMainSwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img
+                      src="assets/realityPage/Pittie-Chambers-3-2.jpg"
+                      alt="Luxury Interior"
+                    />
+                  </div>
+
+                  <div class="swiper-slide">
+                    <img
+                      src="assets/realityPage/Pittie-Chambers-4-2.jpg"
+                      alt="Luxury Balcony"
+                    />
+                  </div>
+
+                  <div class="swiper-slide">
+                    <img
+                      src="assets/realityPage/Pittie-Chambers-2-2.jpg"
+                      alt="Modern Living"
+                    />
+                  </div>
                 </div>
 
-                <div class="swiper-slide">
-                  <img src="assets/realityPage/Pittie-Chambers-4-2.jpg" alt="Luxury Balcony" />
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/realityPage/Pittie-Chambers-2-2.jpg" alt="Modern Living" />
-                </div>
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
               </div>
-
-              <!-- Pagination -->
-              <div class="swiper-pagination"></div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="pittie-paradise-section">
-      <div class="container-fluid px-0 h-100">
-        <div class="row g-0 align-items-stretch h-100">
-          <!-- LEFT CONTENT -->
-          <div class="col-lg-6 paradise-content-wrapper">
-            <div class="paradise-content">
-              <div class="paradise-content-hlp">
-                <!-- <span class="about-tag">Properties Under Pittie</span> -->
-                <h2>
-                  <span class="blue">PITTIE </span>
-                  <span class="red">PARADISE</span>
-                </h2>
+      </section>
+      <section class="pittie-paradise-section">
+        <div class="container-fluid px-0 h-100">
+          <div class="row g-0 align-items-stretch h-100">
+            <!-- LEFT CONTENT -->
+            <div class="col-lg-6 paradise-content-wrapper">
+              <div class="paradise-content">
+                <div class="paradise-content-hlp">
+                  <!-- <span class="about-tag">Properties Under Pittie</span> -->
+                  <h2>
+                    <span class="blue">PITTIE </span>
+                    <span class="red">PARADISE</span>
+                  </h2>
 
-                <h4>A PARADISE FOR ARISTOCRATS</h4>
+                  <h4>A PARADISE FOR ARISTOCRATS</h4>
 
-                <div class="content-border">
-                  <p>
-                    Pittie Paradise is a 21 plus floors residential property
-                    located at Dadar near Shivaji Park and Shiv Sena Bhavan.
-                    At such an elevation, life would feel like a walk in the
-                    clouds, and the penthouses offer a majestic view which
-                    will be nothing short of a thrill. Located in central hub
-                    of the city it has access to amenities, recreation and
-                    hospitality. At Pittie Paradise you can understand the
-                    true meaning of aristocratic living by embracing a home
-                    you have always dreamt of.
-                  </p>
+                  <div class="content-border">
+                    <p>
+                      Pittie Paradise is a 21 plus floors residential property
+                      located at Dadar near Shivaji Park and Shiv Sena Bhavan.
+                      At such an elevation, life would feel like a walk in the
+                      clouds, and the penthouses offer a majestic view which
+                      will be nothing short of a thrill. Located in central hub
+                      of the city it has access to amenities, recreation and
+                      hospitality. At Pittie Paradise you can understand the
+                      true meaning of aristocratic living by embracing a home
+                      you have always dreamt of.
+                    </p>
+                  </div>
                 </div>
-              </div>
 
-              <!-- Small Image Slider -->
-              <div class="small-property-slider swiper smallPropertySwiper">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <img src="assets/realityPage/Pittie-Paradise-2-1.png" alt="Luxury Balcony" />
-                  </div>
+                <!-- Small Image Slider -->
+                <div class="small-property-slider swiper smallPropertySwiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/realityPage/Pittie-Paradise-2-1.png"
+                        alt="Luxury Balcony"
+                      />
+                    </div>
 
-                  <div class="swiper-slide">
-                    <img src="assets/realityPage/Pittie-Paradise-2-300x262.png" alt="Modern Living" />
-                  </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/realityPage/Pittie-Paradise-2-300x262.png"
+                        alt="Modern Living"
+                      />
+                    </div>
 
-                  <div class="swiper-slide">
-                    <img src="assets/realityPage/Pittie-Paradise-1.png" alt="Luxury Interior" />
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/realityPage/Pittie-Paradise-1.png"
+                        alt="Luxury Interior"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- RIGHT IMAGE SLIDER -->
-          <div class="col-lg-6 paradise-image-wrapper">
-            <div class="swiper paradiseMainSwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="assets/realityPage/Pittie-Paradise-1-2.jpg" alt="Luxury Interior" />
+            <!-- RIGHT IMAGE SLIDER -->
+            <div class="col-lg-6 paradise-image-wrapper">
+              <div class="swiper paradiseMainSwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img
+                      src="assets/realityPage/Pittie-Paradise-1-2.jpg"
+                      alt="Luxury Interior"
+                    />
+                  </div>
+
+                  <div class="swiper-slide">
+                    <img
+                      src="assets/realityPage/Pittie-Paradise-4-2-2.jpg"
+                      alt="Luxury Balcony"
+                    />
+                  </div>
+
+                  <div class="swiper-slide">
+                    <img
+                      src="assets/realityPage/Pittie-Paradise-2-300x262-2.jpg"
+                      alt="Modern Living"
+                    />
+                  </div>
                 </div>
 
-                <div class="swiper-slide">
-                  <img src="assets/realityPage/Pittie-Paradise-4-2-2.jpg" alt="Luxury Balcony" />
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/realityPage/Pittie-Paradise-2-300x262-2.jpg" alt="Modern Living" />
-                </div>
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
               </div>
-
-              <!-- Pagination -->
-              <div class="swiper-pagination"></div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="pittie-paradise-section">
-      <div class="container-fluid px-0 h-100">
-        <div class="row g-0 align-items-stretch h-100">
-          <!-- LEFT CONTENT -->
-          <div class="col-lg-6 paradise-content-wrapper">
-            <div class="paradise-content">
-              <div class="paradise-content-hlp">
-                <!-- <span class="about-tag">Properties Under Pittie</span> -->
-                <h2>
-                  <span class="blue">ANTARIKSH</span>
-                  <!-- <span class="red"> CHAMBERS</span> -->
-                </h2>
+      </section>
+      <section class="pittie-paradise-section">
+        <div class="container-fluid px-0 h-100">
+          <div class="row g-0 align-items-stretch h-100">
+            <!-- LEFT CONTENT -->
+            <div class="col-lg-6 paradise-content-wrapper">
+              <div class="paradise-content">
+                <div class="paradise-content-hlp">
+                  <!-- <span class="about-tag">Properties Under Pittie</span> -->
+                  <h2>
+                    <span class="blue">ANTARIKSH</span>
+                    <!-- <span class="red"> CHAMBERS</span> -->
+                  </h2>
 
-                <h4>A PARADISE FOR ARISTOCRATS</h4>
+                  <h4>A PARADISE FOR ARISTOCRATS</h4>
 
-                <div class="content-border">
-                  <p>
-                    Quality and versatility have always been the hallmarks of
-                    the Pittie Group. The Group's presence in real estate
-                    spans premium residential and commercial developments
-                    sprawling industrial parks and high-end hospitality. A
-                    firmly customer-centric approach, true transparency and
-                    integrity infuse every icon developed by Antariksh.
-                    Through strict quality checks and high construction
-                    standards, we ensure that our customers own timeless
-                    residences. While we also meet their needs for a
-                    contemporary lifestyle. We are proud that every Antariksh
-                    project is a testament to our lifelong relationship with
-                    our customers and to our honest endeavor to add value to
-                    their lives.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Small Image Slider -->
-              <div class="small-property-slider swiper smallPropertySwiper">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <img src="assets/realityPage/Antariksh-2.png" alt="Luxury Balcony" />
+                  <div class="content-border">
+                    <p>
+                      Quality and versatility have always been the hallmarks of
+                      the Pittie Group. The Group's presence in real estate
+                      spans premium residential and commercial developments
+                      sprawling industrial parks and high-end hospitality. A
+                      firmly customer-centric approach, true transparency and
+                      integrity infuse every icon developed by Antariksh.
+                      Through strict quality checks and high construction
+                      standards, we ensure that our customers own timeless
+                      residences. While we also meet their needs for a
+                      contemporary lifestyle. We are proud that every Antariksh
+                      project is a testament to our lifelong relationship with
+                      our customers and to our honest endeavor to add value to
+                      their lives.
+                    </p>
                   </div>
+                </div>
 
-                  <div class="swiper-slide">
-                    <img src="assets/realityPage/Antariksh-2-1.png" alt="Luxury Interior" />
+                <!-- Small Image Slider -->
+                <div class="small-property-slider swiper smallPropertySwiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/realityPage/Antariksh-2.png"
+                        alt="Luxury Balcony"
+                      />
+                    </div>
+
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/realityPage/Antariksh-2-1.png"
+                        alt="Luxury Interior"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- RIGHT IMAGE SLIDER -->
-          <div class="col-lg-6 paradise-image-wrapper">
-            <div class="swiper paradiseMainSwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="assets/realityPage/Antariksh-2-1-2.jpg" alt="Luxury Interior" />
+            <!-- RIGHT IMAGE SLIDER -->
+            <div class="col-lg-6 paradise-image-wrapper">
+              <div class="swiper paradiseMainSwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img
+                      src="assets/realityPage/Antariksh-2-1-2.jpg"
+                      alt="Luxury Interior"
+                    />
+                  </div>
+
+                  <div class="swiper-slide">
+                    <img
+                      src="assets/realityPage/Antariksh-2-2.jpg"
+                      alt="Luxury Balcony"
+                    />
+                  </div>
                 </div>
 
-                <div class="swiper-slide">
-                  <img src="assets/realityPage/Antariksh-2-2.jpg" alt="Luxury Balcony" />
-                </div>
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
               </div>
-
-              <!-- Pagination -->
-              <div class="swiper-pagination"></div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="pittie-paradise-section">
-      <div class="container-fluid px-0 h-100">
-        <div class="row g-0 align-items-stretch h-100">
-          <!-- LEFT CONTENT -->
-          <div class="col-lg-6 paradise-content-wrapper">
-            <div class="paradise-content">
-              <div class="paradise-content-hlp">
-                <!-- <span class="about-tag">Properties Under Pittie</span> -->
-                <h2>
-                  <span class="blue">VEERPRATAP </span>
-                  <span class="red"> INDUSTRIAL PARK</span>
-                </h2>
+      </section>
+      <section class="pittie-paradise-section">
+        <div class="container-fluid px-0 h-100">
+          <div class="row g-0 align-items-stretch h-100">
+            <!-- LEFT CONTENT -->
+            <div class="col-lg-6 paradise-content-wrapper">
+              <div class="paradise-content">
+                <div class="paradise-content-hlp">
+                  <!-- <span class="about-tag">Properties Under Pittie</span> -->
+                  <h2>
+                    <span class="blue">VEERPRATAP </span>
+                    <span class="red"> INDUSTRIAL PARK</span>
+                  </h2>
 
-                <h4>MAKING YOUR DREAMS POSSIBLE</h4>
+                  <h4>MAKING YOUR DREAMS POSSIBLE</h4>
 
-                <div class="content-border">
-                  <p>
-                    Veerpratap Industrial Park is an industrial township on
-                    Salawas Road in Jodhpur. The project is ideal for those
-                    who dream to establish their own small or medium scale
-                    factories and commercial shops. What’s more, we are the
-                    only real estate company who have an approval from the
-                    Jodhpur Development Authority to develop an industrial
-                    area. We are also the 1st industrial park to be approved
-                    under Rajasthan Investment Promotion Scheme 2019. At
-                    Veerpratap Industrial Park, we provide you a foundation to
-                    nurture your dreams.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Small Image Slider -->
-              <div class="small-property-slider swiper smallPropertySwiper">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <img src="assets/realityPage/Veerpratap-Industrial-Park-2.png" alt="Luxury Balcony" />
+                  <div class="content-border">
+                    <p>
+                      Veerpratap Industrial Park is an industrial township on
+                      Salawas Road in Jodhpur. The project is ideal for those
+                      who dream to establish their own small or medium scale
+                      factories and commercial shops. What’s more, we are the
+                      only real estate company who have an approval from the
+                      Jodhpur Development Authority to develop an industrial
+                      area. We are also the 1st industrial park to be approved
+                      under Rajasthan Investment Promotion Scheme 2019. At
+                      Veerpratap Industrial Park, we provide you a foundation to
+                      nurture your dreams.
+                    </p>
                   </div>
+                </div>
 
-                  <div class="swiper-slide">
-                    <img src="assets/realityPage/Veerpratap-Industrial-Park-3.png" alt="Luxury Interior" />
+                <!-- Small Image Slider -->
+                <div class="small-property-slider swiper smallPropertySwiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/realityPage/Veerpratap-Industrial-Park-2.png"
+                        alt="Luxury Balcony"
+                      />
+                    </div>
+
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/realityPage/Veerpratap-Industrial-Park-3.png"
+                        alt="Luxury Interior"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- RIGHT IMAGE SLIDER -->
-          <div class="col-lg-6 paradise-image-wrapper">
-            <div class="swiper paradiseMainSwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="assets/realityPage/Veerpratap-Industrial-Park-3-2.jpg" alt="Luxury Interior" />
+            <!-- RIGHT IMAGE SLIDER -->
+            <div class="col-lg-6 paradise-image-wrapper">
+              <div class="swiper paradiseMainSwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img
+                      src="assets/realityPage/Veerpratap-Industrial-Park-3-2.jpg"
+                      alt="Luxury Interior"
+                    />
+                  </div>
+
+                  <div class="swiper-slide">
+                    <img
+                      src="assets/realityPage/Veerpratap-Industrial-Park-2-2.jpg"
+                      alt="Luxury Balcony"
+                    />
+                  </div>
                 </div>
 
-                <div class="swiper-slide">
-                  <img src="assets/realityPage/Veerpratap-Industrial-Park-2-2.jpg" alt="Luxury Balcony" />
-                </div>
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
               </div>
-
-              <!-- Pagination -->
-              <div class="swiper-pagination"></div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="pittie-paradise-section">
-      <div class="container-fluid px-0 h-100">
-        <div class="row g-0 align-items-stretch h-100">
-          <!-- LEFT CONTENT -->
-          <div class="col-lg-6 paradise-content-wrapper">
-            <div class="paradise-content">
-              <div class="paradise-content-hlp">
-                <!-- <span class="about-tag">Properties Under Pittie</span> -->
-                <h2>
-                  <span class="blue">VEERPRATAP </span>
-                  <span class="red"> ENCLAVE</span>
-                </h2>
+      </section>
+      <section class="pittie-paradise-section">
+        <div class="container-fluid px-0 h-100">
+          <div class="row g-0 align-items-stretch h-100">
+            <!-- LEFT CONTENT -->
+            <div class="col-lg-6 paradise-content-wrapper">
+              <div class="paradise-content">
+                <div class="paradise-content-hlp">
+                  <!-- <span class="about-tag">Properties Under Pittie</span> -->
+                  <h2>
+                    <span class="blue">VEERPRATAP </span>
+                    <span class="red"> ENCLAVE</span>
+                  </h2>
 
-                <!-- <h4>A PARADISE FOR ARISTOCRATS</h4> -->
+                  <!-- <h4>A PARADISE FOR ARISTOCRATS</h4> -->
 
-                <div class="content-border">
-                  <p>
-                    Introducing Veerpratap Enclave, a prestigious plot project
-                    nestled in the heart of Jodhpur. With 86 meticulously
-                    designed plots, this exclusive development offers a
-                    seamless blend of luxury and functionality. Unveiling
-                    Jodhpur's Finest Plot Project with Internal Development
-                    and Modern Infrastructure
-                  </p>
+                  <div class="content-border">
+                    <p>
+                      Introducing Veerpratap Enclave, a prestigious plot project
+                      nestled in the heart of Jodhpur. With 86 meticulously
+                      designed plots, this exclusive development offers a
+                      seamless blend of luxury and functionality. Unveiling
+                      Jodhpur's Finest Plot Project with Internal Development
+                      and Modern Infrastructure
+                    </p>
+                  </div>
                 </div>
-              </div>
 
-              <!-- Small Image Slider -->
-              <div class="small-property-slider swiper smallPropertySwiper">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <img src="assets/realityPage/Main-Gate-300-x-262-px.jpg" alt="Luxury Balcony" />
-                  </div>
+                <!-- Small Image Slider -->
+                <div class="small-property-slider swiper smallPropertySwiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/realityPage/Main-Gate-300-x-262-px.jpg"
+                        alt="Luxury Balcony"
+                      />
+                    </div>
 
-                  <div class="swiper-slide">
-                    <img src="assets/realityPage/Main-Gate-300-x-262-px-1.jpg" alt="Modern Living" />
-                  </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/realityPage/Main-Gate-300-x-262-px-1.jpg"
+                        alt="Modern Living"
+                      />
+                    </div>
 
-                  <div class="swiper-slide">
-                    <img src="assets/realityPage/Garden-300-x-262-px.jpg" alt="Luxury Interior" />
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/realityPage/Garden-300-x-262-px.jpg"
+                        alt="Luxury Interior"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- RIGHT IMAGE SLIDER -->
-          <div class="col-lg-6 paradise-image-wrapper">
-            <div class="swiper paradiseMainSwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="assets/realityPage/Garden-632-x-600-px.jpg" alt="Luxury Interior" />
+            <!-- RIGHT IMAGE SLIDER -->
+            <div class="col-lg-6 paradise-image-wrapper">
+              <div class="swiper paradiseMainSwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img
+                      src="assets/realityPage/Garden-632-x-600-px.jpg"
+                      alt="Luxury Interior"
+                    />
+                  </div>
+
+                  <div class="swiper-slide">
+                    <img
+                      src="assets/realityPage/Main-Gate-300-x-262-2-px.jpg"
+                      alt="Luxury Balcony"
+                    />
+                  </div>
+
+                  <div class="swiper-slide">
+                    <img
+                      src="assets/realityPage/Main-Gate-300-x-262-px-1-2.jpg"
+                      alt="Modern Living"
+                    />
+                  </div>
                 </div>
 
-                <div class="swiper-slide">
-                  <img src="assets/realityPage/Main-Gate-300-x-262-2-px.jpg" alt="Luxury Balcony" />
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/realityPage/Main-Gate-300-x-262-px-1-2.jpg" alt="Modern Living" />
-                </div>
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
               </div>
-
-              <!-- Pagination -->
-              <div class="swiper-pagination"></div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ========================================= -->
-    <!-- SOHO HOUSE SECTION -->
-    <!-- ========================================= -->
+      <!-- ========================================= -->
+      <!-- SOHO HOUSE SECTION -->
+      <!-- ========================================= -->
 
-    <section class="soho-house-section">
-      <div class="container-fluid px-0">
-        <div class="container">
-          <!-- ========================================= -->
-          <!-- HEADING -->
-          <!-- ========================================= -->
+      <section class="soho-house-section">
+        <div class="container-fluid px-0">
+          <div class="container">
+            <!-- ========================================= -->
+            <!-- HEADING -->
+            <!-- ========================================= -->
 
-          <div class="row justify-content-center">
-            <div class="soho-heading">
-              <h2>
-                <span class="brand-blue">SOHO</span>
-                HOUSE & CO
-              </h2>
+            <div class="row justify-content-center">
+              <div class="soho-heading">
+                <h2>
+                  <span class="brand-blue">SOHO</span>
+                  HOUSE & CO
+                </h2>
 
-              <h4>IN THE REALM OF LEISURE & HOSPITALITY</h4>
+                <h4>IN THE REALM OF LEISURE & HOSPITALITY</h4>
 
-              <p>
-                Pittie Realty's investment in Soho House marked the Group's
-                foray into the hospitality business. Soho House with a
-                presence worldwide, presents an opportunity for its members
-                and their guests to forge social connections with people
-                across diverse interests such as media, arts, fashion etc. who
-                can express themselves with camaraderie.
-              </p>
+                <p>
+                  Pittie Realty's investment in Soho House marked the Group's
+                  foray into the hospitality business. Soho House with a
+                  presence worldwide, presents an opportunity for its members
+                  and their guests to forge social connections with people
+                  across diverse interests such as media, arts, fashion etc. who
+                  can express themselves with camaraderie.
+                </p>
 
-              <div class="soho-btn-wrap">
-                <a href="https://www.sohohouse.com/en-us/" target="_blank">
-                  Explore
-                </a>
+                <div class="soho-btn-wrap">
+                  <a href="https://www.sohohouse.com/en-us/" target="_blank">
+                    Explore
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- ========================================= -->
-          <!-- IMAGE GRID -->
-          <!-- ========================================= -->
+            <!-- ========================================= -->
+            <!-- IMAGE GRID -->
+            <!-- ========================================= -->
 
-          <div class="row gx-4 gy-4 align-items-center soho-gallery-row">
-            <!-- LEFT -->
-            <div class="col-lg-3">
-              <div class="left-gallery">
-                <div class="gallery-card large-card">
+            <div class="row gx-4 gy-4 align-items-center soho-gallery-row">
+              <!-- LEFT -->
+              <div class="col-lg-3">
+                <div class="left-gallery">
+                  <div class="gallery-card large-card">
+                    <img
+                      src="https://pittiegroup.com/wp-content/uploads/2023/04/MicrosoftTeams-image-2022-12-10T151640.519-e1685119289712.jpg"
+                      alt=""
+                    />
+                  </div>
+
+                  <div class="gallery-card small-card mt-4">
+                    <img
+                      src="https://pittiegroup.com/wp-content/uploads/2023/04/MicrosoftTeams-image-2022-12-10T151645.991.jpg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- CENTER -->
+              <div class="col-lg-6">
+                <div class="gallery-card center-card">
                   <img
-                    src="https://pittiegroup.com/wp-content/uploads/2023/04/MicrosoftTeams-image-2022-12-10T151640.519-e1685119289712.jpg"
-                    alt="" />
-                </div>
-
-                <div class="gallery-card small-card mt-4">
-                  <img
-                    src="https://pittiegroup.com/wp-content/uploads/2023/04/MicrosoftTeams-image-2022-12-10T151645.991.jpg"
-                    alt="" />
+                    src="https://pittiegroup.com/wp-content/uploads/2023/04/center-img.jpg"
+                    alt=""
+                  />
                 </div>
               </div>
-            </div>
 
-            <!-- CENTER -->
-            <div class="col-lg-6">
-              <div class="gallery-card center-card">
-                <img src="https://pittiegroup.com/wp-content/uploads/2023/04/center-img.jpg" alt="" />
-              </div>
-            </div>
+              <!-- RIGHT -->
+              <div class="col-lg-3">
+                <div class="right-gallery">
+                  <div class="gallery-card medium-card">
+                    <img
+                      src="https://pittiegroup.com/wp-content/uploads/2023/04/MicrosoftTeams-image-2022-12-10T151654.493-e1685119703844.jpg"
+                      alt=""
+                    />
+                  </div>
 
-            <!-- RIGHT -->
-            <div class="col-lg-3">
-              <div class="right-gallery">
-                <div class="gallery-card medium-card">
-                  <img
-                    src="https://pittiegroup.com/wp-content/uploads/2023/04/MicrosoftTeams-image-2022-12-10T151654.493-e1685119703844.jpg"
-                    alt="" />
-                </div>
-
-                <div class="gallery-card small-card mt-4">
-                  <img
-                    src="https://pittiegroup.com/wp-content/uploads/2023/04/MicrosoftTeams-image-2022-12-10T151701.361.jpg"
-                    alt="" />
+                  <div class="gallery-card small-card mt-4">
+                    <img
+                      src="https://pittiegroup.com/wp-content/uploads/2023/04/MicrosoftTeams-image-2022-12-10T151701.361.jpg"
+                      alt=""
+                    />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
 
-  <!-- Footer -->
-  <footer class="footer-section" role="contentinfo">
-    <div class="container">
-      <div class="footer-grid">
-        <!-- Company Info -->
-        <div class="footer-col footer-brand">
-          <img src="assets/cropped-Group-1.png" alt="Pittie Group Logo" class="footer-logo" />
-          <p class="footer-tagline">
-            We aim to enrich lives, transform industries through our diverse
-            verticals : Realty, Logistics, Consumer & Media.
-          </p>
-        </div>
-
-        <!-- Mobile Get In Touch (ONLY for mobile) -->
-        <div class="mobile-get-in-touch">
-          <h3>Get in touch</h3>
-
-          <div class="icon-circle">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" viewBox="0 0 24 25" fill="none">
-              <path
-                d="M21 10.9112C21 17.9112 12 22.9112 12 22.9112C12 22.9112 3 17.9112 3 10.9112C3 6.4939 6.58172 2.91113 12 2.91113C17.4183 2.91113 21 6.4939 21 10.9112Z"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              <path
-                d="M12 13.9111C13.6569 13.9111 15 12.568 15 10.9111C15 9.25427 13.6569 7.91113 12 7.91113C10.3431 7.91113 9 9.25427 9 10.9111C9 12.568 10.3431 13.9111 12 13.9111Z"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
+    <!-- Footer -->
+    <footer class="footer-section" role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Company Info -->
+          <div class="footer-col footer-brand">
+            <img
+              src="assets/cropped-Group-1.png"
+              alt="Pittie Group Logo"
+              class="footer-logo"
+            />
+            <p class="footer-tagline">
+              We aim to enrich lives, transform industries through our diverse
+              verticals : Realty, Logistics, Consumer & Media.
+            </p>
           </div>
 
-          <p class="address First">
-            Vaibhav Chambers, Bandra Kurla Complex, Bandra - East, Mumbai -
-            400051.
-          </p>
+          <!-- Mobile Get In Touch (ONLY for mobile) -->
+          <div class="mobile-get-in-touch">
+            <h3>Get in touch</h3>
 
-          <span class="divider"></span>
+            <div class="icon-circle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="30"
+                viewBox="0 0 24 25"
+                fill="none"
+              >
+                <path
+                  d="M21 10.9112C21 17.9112 12 22.9112 12 22.9112C12 22.9112 3 17.9112 3 10.9112C3 6.4939 6.58172 2.91113 12 2.91113C17.4183 2.91113 21 6.4939 21 10.9112Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M12 13.9111C13.6569 13.9111 15 12.568 15 10.9111C15 9.25427 13.6569 7.91113 12 7.91113C10.3431 7.91113 9 9.25427 9 10.9111C9 12.568 10.3431 13.9111 12 13.9111Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
 
-          <p class="address">
-            Raheja District I, B3 & B4, RICC, Plot Gen-2/1/B, D Block, T.T.C.
-            Industrial Area, Juinagar, Navi Mumbai - 400705.
-          </p>
+            <p class="address First">
+              Vaibhav Chambers, Bandra Kurla Complex, Bandra - East, Mumbai -
+              400051.
+            </p>
 
-          <div class="contact-row">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 25" fill="none">
-              <path
-                d="M4 4.91113H20C21.1 4.91113 22 5.81113 22 6.91113V18.9111C22 20.0111 21.1 20.9111 20 20.9111H4C2.9 20.9111 2 20.0111 2 18.9111V6.91113C2 5.81113 2.9 4.91113 4 4.91113Z"
-                stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-              <path d="M22 6.91113L12 13.9111L2 6.91113" stroke="black" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round"></path>
-            </svg>
-            <!-- <a href="mailto:contact@pittiegroup.com"
-                >contact@pittiegroup.com</a
-              > -->
-            <a href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;to=contact@pittiegroup.com">contact@pittiegroup.com
-            </a>
-          </div>
+            <span class="divider"></span>
 
-          <div class="contact-row">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 25" fill="none">
-              <path
-                d="M21.9994 17.8312V20.8312C22.0006 21.1097 21.9435 21.3854 21.832 21.6406C21.7204 21.8958 21.5567 22.1248 21.3515 22.3131C21.1463 22.5014 20.904 22.6447 20.6402 22.7339C20.3764 22.8232 20.0968 22.8563 19.8194 22.8312C16.7423 22.4969 13.7864 21.4454 11.1894 19.7612C8.77327 18.2259 6.72478 16.1774 5.18945 13.7612C3.49942 11.1524 2.44769 8.18222 2.11944 5.09123C2.09446 4.8147 2.12732 4.53599 2.21595 4.27285C2.30457 4.00972 2.44702 3.76792 2.63421 3.56285C2.82141 3.35778 3.04925 3.19394 3.30324 3.08175C3.55722 2.96956 3.83179 2.91149 4.10945 2.91123H7.10945C7.59475 2.90645 8.06524 3.07831 8.43321 3.39476C8.80118 3.71122 9.04152 4.15068 9.10944 4.63123C9.23607 5.5913 9.47089 6.53396 9.80945 7.44123C9.94399 7.79915 9.97311 8.18814 9.89335 8.56211C9.8136 8.93608 9.62831 9.27934 9.35944 9.55123L8.08945 10.8212C9.513 13.3248 11.5859 15.3977 14.0894 16.8212L15.3594 15.5512C15.6313 15.2824 15.9746 15.0971 16.3486 15.0173C16.7225 14.9376 17.1115 14.9667 17.4694 15.1012C18.3767 15.4398 19.3194 15.6746 20.2794 15.8012C20.7652 15.8698 21.2088 16.1144 21.526 16.4887C21.8431 16.863 22.0116 17.3408 21.9994 17.8312Z"
-                stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-            <a href="tel:+912242604260">+91 22 4260 4260</a>
-          </div>
-        </div>
-        <div class="consumer-rights">
-          <p class="logistics-policy">
-            © 2025 Pittie Logistics. All Rights Reserved.
-          </p>
-        </div>
+            <p class="address">
+              Raheja District I, B3 & B4, RICC, Plot Gen-2/1/B, D Block, T.T.C.
+              Industrial Area, Juinagar, Navi Mumbai - 400705.
+            </p>
 
-        <!-- Quick Links -->
-        <div class="footer-col footer-col-quicks">
-          <h3 class="footer-title">Quick Links</h3>
-          <ul class="footer-links">
-            <li><a href="index_new.html">Home</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="community.html">Community</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-          </ul>
-        </div>
-
-        <!-- Services -->
-        <div class="footer-col footer-col-services">
-          <h3 class="footer-title">Our Businesses</h3>
-          <ul class="footer-links">
-            <li>
-              <a href="realty.html">Pittie Realty</a>
-            </li>
-            <li>
-              <a href="consumer.html">Pittie Consumer</a>
-            </li>
-            <li>
-              <a href="https://www.epiccompany.com/">THE EPIC COMPANY</a>
-            </li>
-            <li>
-              <a href="logistics.html">Pittie Logistics</a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Contact -->
-        <div class="footer-col">
-          <h3 class="footer-title">Contact Us</h3>
-          <ul class="footer-contact">
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 25" fill="none">
+            <div class="contact-row">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 25"
+                fill="none"
+              >
                 <path
                   d="M4 4.91113H20C21.1 4.91113 22 5.81113 22 6.91113V18.9111C22 20.0111 21.1 20.9111 20 20.9111H4C2.9 20.9111 2 20.0111 2 18.9111V6.91113C2 5.81113 2.9 4.91113 4 4.91113Z"
-                  stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                <path d="M22 6.91113L12 13.9111L2 6.91113" stroke="black" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round"></path>
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M22 6.91113L12 13.9111L2 6.91113"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
               </svg>
-              <a href="mailto:contact@pittiegroup.com">contact@pittiegroup.com</a>
-            </li>
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 25" fill="none">
+              <!-- <a href="mailto:contact@pittiegroup.com"
+                >contact@pittiegroup.com</a
+              > -->
+              <a
+                href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;to=contact@pittiegroup.com"
+                >contact@pittiegroup.com
+              </a>
+            </div>
+
+            <div class="contact-row">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 25"
+                fill="none"
+              >
                 <path
                   d="M21.9994 17.8312V20.8312C22.0006 21.1097 21.9435 21.3854 21.832 21.6406C21.7204 21.8958 21.5567 22.1248 21.3515 22.3131C21.1463 22.5014 20.904 22.6447 20.6402 22.7339C20.3764 22.8232 20.0968 22.8563 19.8194 22.8312C16.7423 22.4969 13.7864 21.4454 11.1894 19.7612C8.77327 18.2259 6.72478 16.1774 5.18945 13.7612C3.49942 11.1524 2.44769 8.18222 2.11944 5.09123C2.09446 4.8147 2.12732 4.53599 2.21595 4.27285C2.30457 4.00972 2.44702 3.76792 2.63421 3.56285C2.82141 3.35778 3.04925 3.19394 3.30324 3.08175C3.55722 2.96956 3.83179 2.91149 4.10945 2.91123H7.10945C7.59475 2.90645 8.06524 3.07831 8.43321 3.39476C8.80118 3.71122 9.04152 4.15068 9.10944 4.63123C9.23607 5.5913 9.47089 6.53396 9.80945 7.44123C9.94399 7.79915 9.97311 8.18814 9.89335 8.56211C9.8136 8.93608 9.62831 9.27934 9.35944 9.55123L8.08945 10.8212C9.513 13.3248 11.5859 15.3977 14.0894 16.8212L15.3594 15.5512C15.6313 15.2824 15.9746 15.0971 16.3486 15.0173C16.7225 14.9376 17.1115 14.9667 17.4694 15.1012C18.3767 15.4398 19.3194 15.6746 20.2794 15.8012C20.7652 15.8698 21.2088 16.1144 21.526 16.4887C21.8431 16.863 22.0116 17.3408 21.9994 17.8312Z"
-                  stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
               </svg>
               <a href="tel:+912242604260">+91 22 4260 4260</a>
-            </li>
-          </ul>
+            </div>
+          </div>
+          <div class="consumer-rights">
+            <p class="logistics-policy">
+              © 2025 Pittie Logistics. All Rights Reserved.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-col footer-col-quicks">
+            <h3 class="footer-title">Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="index_new.html">Home</a></li>
+              <li><a href="news.html">News</a></li>
+              <li><a href="community.html">Community</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Services -->
+          <div class="footer-col footer-col-services">
+            <h3 class="footer-title">Our Businesses</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="realty.html">Pittie Realty</a>
+              </li>
+              <li>
+                <a href="consumer.html">Pittie Consumer</a>
+              </li>
+              <li>
+                <a href="https://www.epiccompany.com/">THE EPIC COMPANY</a>
+              </li>
+              <li>
+                <a href="logistics.html">Pittie Logistics</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="footer-col">
+            <h3 class="footer-title">Contact Us</h3>
+            <ul class="footer-contact">
+              <li>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 25"
+                  fill="none"
+                >
+                  <path
+                    d="M4 4.91113H20C21.1 4.91113 22 5.81113 22 6.91113V18.9111C22 20.0111 21.1 20.9111 20 20.9111H4C2.9 20.9111 2 20.0111 2 18.9111V6.91113C2 5.81113 2.9 4.91113 4 4.91113Z"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M22 6.91113L12 13.9111L2 6.91113"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+                <a href="mailto:contact@pittiegroup.com"
+                  >contact@pittiegroup.com</a
+                >
+              </li>
+              <li>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 25"
+                  fill="none"
+                >
+                  <path
+                    d="M21.9994 17.8312V20.8312C22.0006 21.1097 21.9435 21.3854 21.832 21.6406C21.7204 21.8958 21.5567 22.1248 21.3515 22.3131C21.1463 22.5014 20.904 22.6447 20.6402 22.7339C20.3764 22.8232 20.0968 22.8563 19.8194 22.8312C16.7423 22.4969 13.7864 21.4454 11.1894 19.7612C8.77327 18.2259 6.72478 16.1774 5.18945 13.7612C3.49942 11.1524 2.44769 8.18222 2.11944 5.09123C2.09446 4.8147 2.12732 4.53599 2.21595 4.27285C2.30457 4.00972 2.44702 3.76792 2.63421 3.56285C2.82141 3.35778 3.04925 3.19394 3.30324 3.08175C3.55722 2.96956 3.83179 2.91149 4.10945 2.91123H7.10945C7.59475 2.90645 8.06524 3.07831 8.43321 3.39476C8.80118 3.71122 9.04152 4.15068 9.10944 4.63123C9.23607 5.5913 9.47089 6.53396 9.80945 7.44123C9.94399 7.79915 9.97311 8.18814 9.89335 8.56211C9.8136 8.93608 9.62831 9.27934 9.35944 9.55123L8.08945 10.8212C9.513 13.3248 11.5859 15.3977 14.0894 16.8212L15.3594 15.5512C15.6313 15.2824 15.9746 15.0971 16.3486 15.0173C16.7225 14.9376 17.1115 14.9667 17.4694 15.1012C18.3767 15.4398 19.3194 15.6746 20.2794 15.8012C20.7652 15.8698 21.2088 16.1144 21.526 16.4887C21.8431 16.863 22.0116 17.3408 21.9994 17.8312Z"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+                <a href="tel:+912242604260">+91 22 4260 4260</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-  <!-- ================= Scripts ================= -->
+    <!-- ================= Scripts ================= -->
 
-  <!-- GSAP -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-  <!-- Boostrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Boostrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script> -->
 
-  <!-- Main JS -->
-  <script src="logic/universal.js"></script>
-  <script src="logic/realty.js"></script>
-</body>
-
+    <!-- Main JS -->
+    <script src="logic/universal.js"></script>
+    <script src="logic/realty.js"></script>
+  </body>
 </html>
