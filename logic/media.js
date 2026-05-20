@@ -1,4 +1,4 @@
-const TOTAL_SLIDES = 3; // 🔥 real slides count
+const TOTAL_SLIDES = 1; // 🔥 real slides count
 
 const hero = new Swiper(".hero-swiper", {
   loop: true,
