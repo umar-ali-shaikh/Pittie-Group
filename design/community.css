@@ -423,6 +423,9 @@
     margin: 0 auto;
 }
 
+.masonry-grid .edit{
+    object-position: center;
+}
 
 @media (min-width: 992px) and (max-width: 1400px) {
     .life-section .masonry-grid {
