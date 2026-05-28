@@ -469,11 +469,16 @@
  }
 
  .jobs-slider {
-   display: flex;
+   display: none;
    gap: 14px;
    overflow-x: auto;
    scroll-behavior: smooth;
    padding-bottom: 8px;
+ }
+
+
+ .jobs-slider.active {
+   display: flex;
  }
 
  .jobs-slider::-webkit-scrollbar {
@@ -613,11 +618,11 @@
    cursor: pointer;
  }
 
- .arrow{
+ .arrow {
    font-size: 28px;
    font-weight: 300;
    line-height: 1;
-}
+ }
 
  @media (max-width: 768px) {
    .jobs-tabs {
