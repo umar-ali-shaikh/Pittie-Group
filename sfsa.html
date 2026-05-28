@@ -228,73 +228,176 @@ border-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
   </div>
 </section>
 
+Commubity css .community-section { height: 300px; } .community-section
+.container { max-width: 1300px; height: 100%; width: 100%; } .community-wrapper
+{ border-radius: var(--radius50); position: relative; height: 100%; }
+.community-content .row { align-items: center; justify-content: space-between;
+margin-left: 50px; } /* Background image */ .community-bg { border-radius:
+var(--radius50); object-fit: cover; height: 100%; } /* Gradient Overlay */
+.community-wrapper::after { content: ""; position: absolute; inset: 0;
+border-radius: var(--radius50); } /* Ensure content above overlay */
+.community-content { z-index: 2; } /* Typography */ .community-title {
+font-weight: 700; color: var(--bg3-color); } .community-heading { font-size:
+clamp(20px, 2.5vw, 32px); font-weight: 700; color: var(--bg3-color);
+letter-spacing: 1px; line-height: 1.2; } .community-text { color:
+var(--bg3-color); font-size: 16px; line-height: 1.4; margin-top: 10px;
+max-width: 420px; }
 
+<!-- Contact uS page Career section  -->
 
+<div class="career-testimonial-row">
+  <!-- LEFT IMAGE SWIPER -->
+  <div class="swiper careerImageSwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="career-testimonial-layout">
+          <div class="career-testimonial-image">
+            <img src="assets/contactPage/contact.JPG" alt="Employee" />
+          </div>
+        </div>
+      </div>
 
+      <!-- <div class="swiper-slide">
+                  <div class="career-testimonial-layout">
+                    <div class="career-testimonial-image">
+                      <img
+                        src="assets/commitmentPage/community-testimonials1.png"
+                        alt="Employee"
+                      />
+                    </div>
+                  </div>
+                </div>
 
+                <div class="swiper-slide">
+                  <div class="career-testimonial-layout">
+                    <div class="career-testimonial-image">
+                      <img
+                        src="assets/commitmentPage/community-testimonials1.png"
+                        alt="Employee"
+                      />
+                    </div>
+                  </div>
+                </div>
 
-Commubity css 
+                <div class="swiper-slide">
+                  <div class="career-testimonial-layout">
+                    <div class="career-testimonial-image">
+                      <img
+                        src="assets/commitmentPage/community-testimonials1.png"
+                        alt="Employee"
+                      />
+                    </div>
+                  </div>
+                </div> -->
+    </div>
+  </div>
 
-.community-section {
-    height: 300px;
-}
+  <!-- RIGHT CONTENT SWIPER -->
 
-.community-section .container {
-    max-width: 1300px;
-    height: 100%;
-    width: 100%;
-}
+  <div class="swiper careerContentSwiper career-card">
+    <div class="swiper-wrapper">
+      <!-- Slide -->
+      <div class="swiper-slide">
+        <div class="career-card-box">
+          <h3 class="career-title">Area Sales Manager/Officer</h3>
 
-.community-wrapper {
-    border-radius: var(--radius50);
-    position: relative;
-    height: 100%;
-}
+          <!-- Meta -->
+          <div class="career-meta">
+            <span>📦 General Trade</span>
+            <span>📍 Chennai & Bangalore</span>
+            <span>⏱ Posted 3 weeks ago</span>
+          </div>
 
-.community-content .row {
-    align-items: center;
-    justify-content: space-between;
-    margin-left: 50px;
-}
+          <!-- Description -->
+          <p class="career-desc">
+            Lorem ipsum dolor sit amet consectetur. Turpis vitae urna mattis
+            molestie turpis. Luctus elit ante cursus nisl felis. Lorem ipsum
+            dolor sit amet consectetur.
+          </p>
 
-/* Background image */
-.community-bg {
-    border-radius: var(--radius50);
-    object-fit: cover;
-    height: 100%;
-}
+          <!-- Button -->
+          <button class="btn btn-primary contact-btn mt-4">
+            <a href="#">
+              Submit
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.92757 16.8242L16.8242 6.92757M16.8242 6.92757H6.92757M16.8242 6.92757V16.8242"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-/* Gradient Overlay */
-.community-wrapper::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: var(--radius50);
-}
+  <!-- Pagination + Navigation -->
+  <div class="career-pagination-wrapper d-flex">
+    <div class="career-pagination">
+      <span class="active"></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
-/* Ensure content above overlay */
-.community-content {
-    z-index: 2;
-}
+    <div class="career-nav-buttons">
+      <div class="swiper-button-icon swiper-button-prev career-prev"></div>
+      <div class="swiper-button-icon swiper-button-next career-prev"></div>
+    </div>
+  </div>
+</div>
 
-/* Typography */
-.community-title {
-    font-weight: 700;
-    color: var(--bg3-color);
-}
+<!-- Contact us page career ka css  -->
 
-.community-heading {
-    font-size: clamp(20px, 2.5vw, 32px);
-    font-weight: 700;
-    color: var(--bg3-color);
-    letter-spacing: 1px;
-    line-height: 1.2;
-}
-
-.community-text {
-    color: var(--bg3-color);
-    font-size: 16px;
-    line-height: 1.4;
-    margin-top: 10px;
-    max-width: 420px;
-}
+/* ========================= CAREER SECTION ========================= */
+.career-testimonial-section { padding: 50px 0; } .career-testimonial-section
+.container .section-label { display: flex; justify-content: center; }
+.section-title { font-size: 36px; font-weight: 700; text-align: center;
+margin-bottom: 40px; } /* ========================= LAYOUT
+========================= */ .career-testimonial-layout { position: relative;
+display: flex; align-items: center; min-height: 450px; } /* LEFT IMAGE */
+.career-testimonial-image { width: 65%; } .career-testimonial-image img { width:
+100%; height: 420px; position: relative; object-fit: cover; border-radius: 24px;
+} /* ========================= RIGHT CARD (MAIN FIX) =========================
+*/ .career-testimonial-card { position: absolute; right: 0; width: 48%; top:
+50%; transform: translateY(-50%); z-index: 5; } /* CARD BOX */ .career-card-box
+{ background: #fff; border-radius: 16px; padding: 40px; box-shadow: 0 20px 60px
+rgba(0, 0, 0, 0.12); } /* ========================= TITLE + META
+========================= */ .career-title { font-size: 22px; font-weight: 600;
+color: #1a4174; margin-bottom: 12px; } .career-meta { display: flex; flex-wrap:
+wrap; gap: 18px; font-size: 13px; color: #6b7280; margin-bottom: 18px; } /*
+========================= DESCRIPTION ========================= */ .career-desc
+{ font-size: 14px; line-height: 1.7; color: #555; margin-bottom: 22px; } /*
+========================= BUTTON ========================= */ .career-btn {
+background: #e53935; color: #fff; border: none; padding: 10px 18px;
+border-radius: 8px; font-size: 14px; cursor: pointer; transition: 0.3s; }
+.career-btn:hover { background: #c62828; } /* ========================= BOTTOM
+AREA ========================= */ .career-bottom { display: flex;
+justify-content: space-between; align-items: center; margin-top: 30px; } /*
+========================= DOTS (FIXED SIZE) ========================= */
+.career-dots { display: flex; gap: 6px; } .career-dots span { width: 6px;
+height: 6px; background: #d1d5db; border-radius: 50%; transition: 0.3s; }
+.career-dots .active { background: #e53935; } /* =========================
+ARROWS (MATCH FIGMA) ========================= */ .career-nav-buttons { display:
+flex; gap: 10px; } .career-prev, .career-next { width: 40px; height: 40px;
+border-radius: 50%; background: #000; color: #fff; display: flex; align-items:
+center; justify-content: center; cursor: pointer; transition: 0.3s; }
+.career-prev:hover, .career-next:hover { background: #e53935; } /*
+========================= OVERLAP FIX (IMPORTANT) ========================= */
+.career-testimonial-layout { padding-right: 60px; } .career-testimonial-image {
+position: relative; z-index: 1; } .career-testimonial-card { z-index: 2; }
+.careerContentSwiper { position: absolute; width: 50%; top: 50%; left: 50%;
+transform: translateY(-50%); } .career-testimonial-row { position: relative; }
+/* ========================= RESPONSIVE ========================= */ @media
+(max-width: 992px) { .career-testimonial-layout { flex-direction: column; }
+.career-testimonial-image, .career-testimonial-card { width: 100%; position:
+relative; transform: none; } .career-testimonial-card { margin-top: -60px; } }

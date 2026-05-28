@@ -229,7 +229,7 @@
 }
 
 /* ===================== Business Section ===================== */
-.business-section {
+/* .business-section {
     padding: var(--pm64) 0;
 }
 
@@ -388,7 +388,7 @@
     height: auto;
     margin-bottom: 14px;
     padding: 25px 25px 0 35px;
-    /* background: #fff; */
+   
     text-align: left;
     box-shadow:
         0 10px 30px rgba(0, 0, 0, 0.08),
@@ -399,7 +399,7 @@
     transition: all 0.3s ease;
 }
 
-/* Hover effect */
+ Hover effect 
 .numbers-1:hover {
     transform: translateY(-4px);
     box-shadow:
@@ -438,7 +438,162 @@
 
 .number-image figure {
     max-width: 95px;
+} */
+
+
+
+/* =========================
+   Business Section
+========================= */
+
+.business-section {
+    background-color: var(--bg-sections);
+    padding: var(--pm64) 0;
 }
+
+.section-title {
+    color: var(--bg1-color);
+    font-weight: 700;
+    margin-bottom: 3rem;
+}
+
+/* Tab Styling */
+.nav-pills .nav-link {
+    color: var(--sub-text);
+    font-weight: 600;
+    border-radius: 0;
+    background: none !important;
+}
+
+.nav-pills .nav-item.active .nav-link span {
+    color: var(--bg1-color) !important;
+}
+
+.nav-pills .nav-link span {
+    font-size: 14px;
+}
+
+
+#businessTabs .nav-item.active {
+    color: var(--bg1-color) !important;
+    border-bottom-color: var(--button-color);
+}
+
+.nav-pills img {
+    display: block;
+    margin: 0 auto 10px;
+    width: 62px;
+    height: 62px;
+    transition: 0.3s ease;
+}
+
+.icon-box {
+    position: relative;
+    width: 62px;
+    height: 62px;
+    margin: 0 auto 10px;
+}
+
+.icon-box .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s ease;
+}
+
+/* Default icon visible */
+.default-icon {
+    opacity: 1;
+}
+
+#businessTabs .nav-item {
+    border-bottom: 3px solid transparent;
+    padding-bottom: 10px;
+}
+
+/* Active icon hidden by default */
+.active-icon {
+    opacity: 0;
+}
+
+/* Jab active ho tab switch */
+.nav-item.active .default-icon {
+    opacity: 0;
+}
+
+.nav-item.active .active-icon {
+    opacity: 1;
+}
+
+.nav-pills .nav-item.active img {
+    filter: none;
+    opacity: 1;
+}
+
+/* Image Card Styling */
+
+.business-card {
+    position: relative;
+    display: block;
+    border-radius: var(--radius8);
+    overflow: hidden;
+    margin-bottom: 24px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.business-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Image Zoom Effect */
+.business-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.business-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Overlay */
+.card-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 20px;
+    color: white;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.4s ease;
+}
+
+/* Slide Up + Fade In */
+/* .business-card:hover .card-overlay {
+    opacity: 1;
+    transform: translateY(0);
+    background: rgba(26, 65, 116, 0.7);
+} */
+
+/* Overlay Text */
+.card-overlay span {
+    font-weight: 600;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+.card-overlay span i {
+    margin-left: 6px;
+}
+
 
 /* ===================== Timeline ===================== */
 .timeline-section {
