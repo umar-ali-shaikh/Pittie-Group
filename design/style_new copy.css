@@ -576,12 +576,22 @@
     transition: all 0.4s ease;
 }
 
-/* Slide Up + Fade In */
-/* .business-card:hover .card-overlay {
-    opacity: 1;
-    transform: translateY(0);
-    background: rgba(26, 65, 116, 0.7);
-} */
+/* =================== button ====================== */
+.btn-view-all {
+    background-color: var(--button-color);
+    color: var(--bg3-color);
+    padding: 10px 30px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-view-all:hover {
+    background-color: var(--button-color);
+    color: var(--bg3-color);
+}
 
 /* Overlay Text */
 .card-overlay span {
