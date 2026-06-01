@@ -361,9 +361,18 @@
 }
 
 .btn-view-all:hover {
-    opacity: 0.9;
+    background-color: var(--button-color);
+    color: white;
 }
 
+
+.hidden-card {
+    display: none;
+}
+
+.view-more-wrapper {
+    display: none;
+}
 
 
 
