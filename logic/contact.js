@@ -186,3 +186,34 @@ document.getElementById("nextJob").addEventListener("click", () => {
 document.getElementById("prevJob").addEventListener("click", () => {
   document.querySelector(".jobs-slider.active").scrollLeft -= 580;
 });
+
+// Adress Tabs Css
+
+const addressTabs = document.querySelectorAll(".address-tab-btn");
+const addressItems = document.querySelectorAll(".address-item");
+
+function filterAddress(category) {
+  addressItems.forEach((item) => {
+    const itemCategory = item.getAttribute("data-category");
+
+    if (itemCategory === category) {
+      item.classList.remove("hide");
+    } else {
+      item.classList.add("hide");
+    }
+  });
+}
+
+addressTabs.forEach((tab) => {
+  tab.addEventListener("click", function () {
+    const selectedCategory = this.getAttribute("data-filter");
+
+    addressTabs.forEach((btn) => btn.classList.remove("active"));
+    this.classList.add("active");
+
+    filterAddress(selectedCategory);
+  });
+});
+
+// Page load par sirf corporate offices show honge
+filterAddress("corporate");

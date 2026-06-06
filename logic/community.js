@@ -139,44 +139,90 @@ if (toggleBtn) {
     isPaused = !isPaused;
   });
 }
+// // Testimonaial EMPLOYEE FEEDBACK Slider
+// // IMAGE SWIPER
+// var imageSwiper = new Swiper(".testimonialImageSwiper", {
+//   slidesPerView: 1,
+//   loop: true,
+//   effect: "fade",
+//   allowTouchMove: false,
+// });
 
-// IMAGE SWIPER
+// // CONTENT SWIPER
+// var contentSwiper = new Swiper(".testimonialContentSwiper", {
+//   slidesPerView: 1,
+//   loop: true,
+//   effect: "fade",
+
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev",
+//   },
+
+//   on: {
+//     slideChange: function () {
+//       // Sync image slider
+//       imageSwiper.slideToLoop(this.realIndex);
+
+//       // Custom Pagination Active Change
+//       document.querySelectorAll(".pagination span").forEach((dot, index) => {
+//         dot.classList.remove("active");
+//         if (index === this.realIndex) {
+//           dot.classList.add("active");
+//         }
+//       });
+//     },
+//   },
+// });
+
+// document.querySelectorAll(".pagination span").forEach((dot, index) => {
+//   dot.addEventListener("click", function () {
+//     contentSwiper.slideToLoop(index);
+//   });
+// });
+
 var imageSwiper = new Swiper(".testimonialImageSwiper", {
   slidesPerView: 1,
   loop: true,
   effect: "fade",
+  speed: 700,
   allowTouchMove: false,
+  fadeEffect: {
+    crossFade: true,
+  },
 });
 
-// CONTENT SWIPER
 var contentSwiper = new Swiper(".testimonialContentSwiper", {
   slidesPerView: 1,
   loop: true,
   effect: "fade",
+  speed: 700,
+  fadeEffect: {
+    crossFade: true,
+  },
+
+  // autoplay: {
+  //   delay: 5000,
+  //   disableOnInteraction: false,
+  // },
 
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: ".testimonial-next",
+    prevEl: ".testimonial-prev",
+  },
+
+  pagination: {
+    el: ".testimonial-pagination",
+    clickable: true,
   },
 
   on: {
     slideChange: function () {
-      // Sync image slider
       imageSwiper.slideToLoop(this.realIndex);
-
-      // Custom Pagination Active Change
-      document.querySelectorAll(".pagination span").forEach((dot, index) => {
-        dot.classList.remove("active");
-        if (index === this.realIndex) {
-          dot.classList.add("active");
-        }
-      });
     },
   },
 });
 
-document.querySelectorAll(".pagination span").forEach((dot, index) => {
-  dot.addEventListener("click", function () {
-    contentSwiper.slideToLoop(index);
-  });
+contentSwiper.on("slideChange", function () {
+  imageSwiper.slideToLoop(contentSwiper.realIndex);
 });

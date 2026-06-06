@@ -214,3 +214,121 @@ cards.forEach((card) => {
     card.classList.add("active");
   });
 });
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const tabPanes = document.querySelectorAll(".tab-pane");
+
+  tabPanes.forEach((pane, index) => {
+    const mainRow = pane.querySelector(":scope > .row");
+    if (!mainRow) return;
+
+    const cards = Array.from(mainRow.querySelectorAll(":scope > .col-md-4"));
+    const viewAllBtn = mainRow.querySelector(".mt-4.text-center");
+
+    if (cards.length <= 6) return;
+
+    const carouselId = `businessCarousel${index}`;
+
+    const carousel = document.createElement("div");
+    carousel.id = carouselId;
+    carousel.className = "carousel slide business-slider";
+    carousel.setAttribute("data-bs-ride", "false");
+
+    const carouselInner = document.createElement("div");
+    carouselInner.className = "carousel-inner";
+
+    for (let i = 0; i < cards.length; i += 6) {
+      const slide = document.createElement("div");
+      slide.className = `carousel-item ${i === 0 ? "active" : ""}`;
+
+      const slideRow = document.createElement("div");
+      slideRow.className = "row";
+
+      cards.slice(i, i + 6).forEach((card) => {
+        slideRow.appendChild(card);
+      });
+
+      slide.appendChild(slideRow);
+      carouselInner.appendChild(slide);
+    }
+
+    carousel.appendChild(carouselInner);
+
+    carousel.insertAdjacentHTML(
+      "beforeend",
+      `
+      <button class="carousel-control-prev" type="button" data-bs-target="#${carouselId}" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#${carouselId}" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+      `,
+    );
+
+    mainRow.innerHTML = "";
+    mainRow.appendChild(carousel);
+
+    if (viewAllBtn) {
+      mainRow.appendChild(viewAllBtn);
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  function createSlider(pane) {
+
+    const wrapper = pane.querySelector(".business-slider-wrapper");
+
+    if (!wrapper) return;
+
+    if (!wrapper.dataset.cloned) {
+      wrapper.innerHTML += wrapper.innerHTML;
+      wrapper.dataset.cloned = "true";
+    }
+
+    gsap.killTweensOf(wrapper);
+
+    const moveWidth = wrapper.scrollWidth / 2;
+
+    gsap.to(wrapper, {
+      x: -moveWidth,
+      duration: 20,
+      ease: "none",
+      repeat: -1
+    });
+  }
+
+  // First active tab
+  const activePane = document.querySelector(".tab-pane.active.show");
+
+  if (activePane) {
+    createSlider(activePane);
+  }
+
+  // Every tab click
+  document
+    .querySelectorAll('[data-bs-toggle="pill"], [data-bs-toggle="tab"]')
+    .forEach(tab => {
+
+      tab.addEventListener("shown.bs.tab", e => {
+
+        const pane = document.querySelector(
+          e.target.getAttribute("data-bs-target")
+        );
+
+        if (pane) {
+          createSlider(pane);
+        }
+
+      });
+
+    });
+
+});

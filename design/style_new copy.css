@@ -128,7 +128,7 @@
 
 .Indicators {
     position: absolute;
-    bottom: 40px;
+    bottom: 90px;
     left: 50%;
     z-index: 20;
     display: flex;
@@ -457,7 +457,65 @@
     margin-bottom: 3rem;
 }
 
+.business-slider .carousel-item {
+    padding: 5px;
+}
+
+.business-slider .row {
+    margin-bottom: 0;
+}
+
+.business-slider .carousel-control-prev,
+.business-slider .carousel-control-next {
+    width: 45px;
+    height: 45px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--button-color);
+    border-radius: 50%;
+    opacity: 1;
+}
+
+.business-slider-wrapper {
+    gap: 24px;
+}
+
+.tab-pane {
+    clip-path: inset(-100px 0 -100px 0);
+}
+
+.business-slider-wrapper .business-slider-track {
+    display: flex;
+    flex: 0 0 100%;
+}
+
+/* 
+.business-slider .carousel-control-prev,
+.business-slider .carousel-control-next {
+  display: none;
+} */
+
+.business-card {
+    height: 220px;
+}
+
+@media (max-width: 768px) {
+    .business-card {
+        height: 180px;
+    }
+
+    .business-slider .carousel-control-prev {
+        left: 5px;
+    }
+
+    .business-slider .carousel-control-next {
+        right: 5px;
+    }
+}
+
 /* Tab Styling */
+
+
 .nav-pills .nav-link {
     color: var(--sub-text);
     font-weight: 600;
@@ -609,10 +667,10 @@
 .timeline-section {
     position: relative;
     z-index: 11;
-    height: 130vh;
-    max-height: 720px;
+    height: 100vh;
+    max-height: 650px;
     overflow: hidden;
-    background: rgb(234, 238, 244, 50%);
+    /* background: rgb(234, 238, 244, 50%); */
 }
 
 .timeline-section .container {
@@ -620,12 +678,23 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+}
+
+.timeline-heading {
+    display: flex;
+    justify-content: center;
 }
 
 .timeline-title {
     color: var(--text-primary);
-    font-size: 36px;
     font-weight: 700;
+}
+
+.timeline-banner img {
+    object-position: 0 -40px;
 }
 
 .timeline-banner {
@@ -636,11 +705,93 @@
     height: 100%;
 }
 
+
+/* .timeline-section .content {
+    position: absolute;
+    top: 75%;
+    left: 15%;
+} */
+
 .timeline-text {
     color: var(--para-text);
     font-size: 14px;
     line-height: 1.8;
 }
+
+
+
+/* Big Screens */
+@media (min-width: 1400px) and (max-width: 1550px) {
+    .timeline-section {
+        min-height: 720px;
+        height: 100vh;
+    }
+}
+
+@media (min-width: 1550px) and (max-width: 2000px) {
+    .timeline-section {
+        min-height: 800px;
+        height: 100vh;
+    }
+
+}
+
+@media (max-width: 1080px) {
+    .timeline-banner img {
+        object-position: 0 0px;
+    }
+
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+    .timeline-section {
+        min-height: 550px;
+        height: auto;
+    }
+
+    .timeline-banner img {
+        object-position: center;
+    }
+
+
+    .timeline-text {
+        max-width: 90%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .timeline-section {
+        min-height: 420px;
+        height: auto;
+    }
+
+    .timeline-section .container {
+        justify-content: space-between;
+    }
+
+    .timeline-title {
+        font-size: 28px;
+    }
+
+    .timeline-banner img {
+        object-position: 0 25px;
+    }
+}
+
+.timeline-text {
+    font-size: 13px;
+    line-height: 1.7;
+    max-width: 95%;
+}
+
+.timeline-section .btn {
+    font-size: 14px;
+    padding: 10px 18px;
+}
+
+
 
 /* ===================== Trending / Video Modal ===================== */
 .trending {
@@ -985,6 +1136,10 @@
         width: 100px;
         height: 100px;
     }
+
+    .featured-video {
+        margin: 0 !important;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1166,7 +1321,7 @@
     }
 
     .timeline-banner img {
-        object-position: 0 80px;
+        object-position: 0 40px;
     }
 
     .trending {
@@ -1193,7 +1348,8 @@
     }
 
     .card {
-        width: 100%;
+        width: fit-content;
+        border: 0;
     }
 
     .img-box img {
@@ -1243,6 +1399,7 @@
     .width190 .textPart h2 {
         font-size: 24px;
     }
+
 }
 
 @media (max-width: 576px) {
@@ -1257,6 +1414,7 @@
 
     .hero .swiper-slide {
         padding: 0;
+        align-items: center;
     }
 }
 
@@ -1293,8 +1451,14 @@
     }
 
     .img-box img {
-        width: 75px;
-        height: 75px;
+        width: 90px;
+        height: 90px;
+    }
+
+    .play-btn.small {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
     }
 
     .text span {
