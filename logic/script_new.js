@@ -215,75 +215,10 @@ cards.forEach((card) => {
   });
 });
 
-
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
-  const tabPanes = document.querySelectorAll(".tab-pane");
-
-  tabPanes.forEach((pane, index) => {
-    const mainRow = pane.querySelector(":scope > .row");
-    if (!mainRow) return;
-
-    const cards = Array.from(mainRow.querySelectorAll(":scope > .col-md-4"));
-    const viewAllBtn = mainRow.querySelector(".mt-4.text-center");
-
-    if (cards.length <= 6) return;
-
-    const carouselId = `businessCarousel${index}`;
-
-    const carousel = document.createElement("div");
-    carousel.id = carouselId;
-    carousel.className = "carousel slide business-slider";
-    carousel.setAttribute("data-bs-ride", "false");
-
-    const carouselInner = document.createElement("div");
-    carouselInner.className = "carousel-inner";
-
-    for (let i = 0; i < cards.length; i += 6) {
-      const slide = document.createElement("div");
-      slide.className = `carousel-item ${i === 0 ? "active" : ""}`;
-
-      const slideRow = document.createElement("div");
-      slideRow.className = "row";
-
-      cards.slice(i, i + 6).forEach((card) => {
-        slideRow.appendChild(card);
-      });
-
-      slide.appendChild(slideRow);
-      carouselInner.appendChild(slide);
-    }
-
-    carousel.appendChild(carouselInner);
-
-    carousel.insertAdjacentHTML(
-      "beforeend",
-      `
-      <button class="carousel-control-prev" type="button" data-bs-target="#${carouselId}" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </button>
-
-      <button class="carousel-control-next" type="button" data-bs-target="#${carouselId}" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </button>
-      `,
-    );
-
-    mainRow.innerHTML = "";
-    mainRow.appendChild(carousel);
-
-    if (viewAllBtn) {
-      mainRow.appendChild(viewAllBtn);
-    }
-  });
-});
+// Business verticals section
 
 document.addEventListener("DOMContentLoaded", () => {
-
   function createSlider(pane) {
-
     const wrapper = pane.querySelector(".business-slider-wrapper");
 
     if (!wrapper) return;
@@ -301,7 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
       x: -moveWidth,
       duration: 20,
       ease: "none",
-      repeat: -1
+      repeat: -1,
     });
   }
 
@@ -315,20 +250,30 @@ document.addEventListener("DOMContentLoaded", () => {
   // Every tab click
   document
     .querySelectorAll('[data-bs-toggle="pill"], [data-bs-toggle="tab"]')
-    .forEach(tab => {
-
-      tab.addEventListener("shown.bs.tab", e => {
-
+    .forEach((tab) => {
+      tab.addEventListener("shown.bs.tab", (e) => {
         const pane = document.querySelector(
-          e.target.getAttribute("data-bs-target")
+          e.target.getAttribute("data-bs-target"),
         );
 
         if (pane) {
           createSlider(pane);
         }
-
       });
-
     });
-
 });
+
+// Journey section
+
+document
+  .getElementById("viewTimelineBtn")
+  .addEventListener("click", function () {
+    const journeySection = document.getElementById("our-journey");
+
+    journeySection.classList.add("active");
+
+    journeySection.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  });

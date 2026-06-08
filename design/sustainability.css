@@ -102,7 +102,7 @@
     transition: all 0.8s ease;
 }
 
-.swiper-slide-active .hero-content {
+.swiper-slide.active .hero-content {
     opacity: 1;
     transform: translateY(0);
 }

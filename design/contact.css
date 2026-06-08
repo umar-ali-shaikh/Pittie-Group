@@ -133,7 +133,7 @@
    transition: all 0.8s ease;
  }
 
- .swiper-slide-active .hero-content {
+ .swiper-slide.active .hero-content {
    opacity: 1;
    transform: translateY(0);
  }
@@ -450,8 +450,9 @@
  }
 
  .address-item.hide {
-   display: none;
+   display: none !important;
  }
+
 
  .address-tab-btn {
    border: 1px solid var(--text-primary);
