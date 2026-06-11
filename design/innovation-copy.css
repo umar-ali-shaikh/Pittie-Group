@@ -1,0 +1,592 @@
+/* ===================== Page Variables ===================== */
+:root {
+    --bg1-color: #1A4174;
+    --bg2-color: #000000;
+    --bg3-color: #ffffff;
+    --button-color: #e9292f;
+    --text-color: #111928;
+    --sub-text: #4b5563;
+    --text-primary: #1A4174;
+    --bg-primary: #ffffff;
+    --bg-sections: #EAEEF4;
+    --para-text: #4B5563;
+    --bg-danger: #C81E1E;
+    --bg-red-dark: #E9292F;
+    --radius8: 8px;
+    --radius12: 12px;
+    --radius999: 999px;
+    --pm16: 16px;
+    --pm64: 64px;
+}
+
+
+/* ===================== Hero ===================== */
+.btn:hover {
+    color: var(--bg3-color) !important;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    /* min-height: 650px; */
+    /* max-height: 700px; */
+    overflow: hidden;
+    color: #fff;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(to right,
+            rgba(0, 0, 0, 0.6) 0%,
+            rgba(0, 0, 0, 0.3) 30%,
+            rgba(0, 0, 0, 0.1) 55%,
+            rgba(0, 0, 0, 0) 80%);
+}
+
+.hero .overlay-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.overlay-image {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: translateX(120px);
+    transition: all 1s ease;
+}
+
+.overlay-image.active {
+    opacity: 1;
+    transform: translateX(0) !important;
+}
+
+.overlay-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay-image-mobile {
+    display: flex;
+}
+
+.hero .swiper,
+.hero .swiper-wrapper {
+    height: 100%;
+}
+
+.hero .swiper-slide {
+    display: flex;
+    align-items: center;
+}
+
+.hero-wrapper {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 60px 0;
+}
+
+.hero-content {
+    max-width: 600px;
+    opacity: 0;
+    transform: translateY(80px);
+    transition: all 0.8s ease;
+}
+
+.swiper-slide.active .hero-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-content h1 {
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: clamp(30px, 5vw, 45px);
+    font-weight: 700;
+    line-height: clamp(44px, 6vw, 50px);
+}
+
+.hero-content p {
+    max-width: 520px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.hero-content .btn {
+    margin-top: 15px;
+}
+
+.Indicators {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    user-select: none;
+    transform: translateX(-50%);
+}
+
+.numPagination {
+    color: #fff;
+    font-size: 14px;
+}
+
+.numPagination span {
+    color: #fff;
+}
+
+.custom-indicators {
+    display: flex;
+    gap: 2px;
+    width: 300px;
+}
+
+.indicator {
+    position: relative;
+    flex: 1;
+    height: 2px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.indicator.active {
+    background: #fff;
+}
+
+.hero-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.hero-pause {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.hero-pause span {
+    margin: 0;
+    color: #fff;
+    font-size: 18px;
+}
+
+.hero-pause:hover {
+    border-color: #ff3b3b;
+    background: #ff3b3b;
+    transform: scale(1.1);
+}
+
+.hero-prev,
+.hero-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.hero-prev span,
+.hero-next span {
+    margin: 0;
+    color: #fff;
+    transition: transform 0.3s;
+}
+
+.hero-prev:hover,
+.hero-next:hover {
+    transform: scale(1.1);
+}
+
+.hero-prev:hover span {
+    transform: translateX(-3px);
+}
+
+.hero-next:hover span {
+    transform: translateX(3px);
+}
+
+@media (max-width:576px) {
+    /* Banner css */
+
+    .hero {
+        height: 100vh;
+    }
+
+    .hero .overlay-bg {
+        position: relative;
+        height: 100%;
+    }
+
+    .hero-wrapper {
+        left: 50%;
+        top: -5%;
+        transform: translate(-50%, 10%);
+    }
+
+    .hero-wrapper {
+        position: absolute;
+    }
+
+    .overlay-image {
+        position: relative;
+        height: 100%;
+    }
+
+}
+
+
+/* ================== Video Section ================== */
+
+.job-opening {
+    width: 100%;
+    height: 100%;
+    padding: 50px 0 100px;
+    background: var(--bg-blue, #f4f7fd);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Header */
+.job-opening .section-header {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.job-opening .section-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    color: var(--secondary-red, #e9292f);
+}
+
+.job-opening .section-decoration {
+    width: 31px;
+    height: auto;
+}
+
+.job-opening .title-text {
+    color: var(--secondary-red, #e9292f);
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 600;
+}
+
+.job-opening .subtitle-text {
+    color: var(--primary-blue, #1a4174);
+    font-size: clamp(28px, 4vw, 48px);
+    line-height: 1.15;
+    font-weight: 700;
+    margin-top: 16px;
+}
+
+/* Main Wrapper */
+.frame-1272638318 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Common Video Block */
+.frame-1272638326,
+.frame-1272638325,
+.frame-1272638324,
+.frame-1272638319,
+.frame-1272638323 {
+    width: 100%;
+    height: 100vh;
+    min-height: 650px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+/* Background Colors */
+.frame-1272638326 {
+    background: #101010;
+}
+
+.frame-1272638325,
+.frame-1272638323 {
+    background: #cdcaca;
+}
+
+.frame-1272638324 {
+    background: #01bcb3;
+}
+
+.frame-1272638319 {
+    background: #62a0c7;
+}
+
+/* Text */
+.the-art-of-dual-aroma-two-fragrances-in-one-stick,
+._100-pure-resin-loban-dhoop-candy,
+.odour-neutralising-techonology,
+.handmade-soaps-with-essential-oils,
+.dual-enzyme-formula {
+    width: 75%;
+    margin-left: auto;
+    padding: 30px 40px;
+    text-align: center;
+    font-size: clamp(26px, 3vw, 38px);
+    line-height: 1.25;
+    font-weight: 700;
+    z-index: 5;
+    position: relative;
+}
+
+.the-art-of-dual-aroma-two-fragrances-in-one-stick,
+.odour-neutralising-techonology,
+.handmade-soaps-with-essential-oils {
+    color: #ffffff;
+}
+
+._100-pure-resin-loban-dhoop-candy,
+.dual-enzyme-formula {
+    color: #000000;
+}
+
+/* Left Product / Platform Image */
+.kesar-chandan,
+.kapoor-dhoop-candy,
+.vertical-shinezap-355-x-765-px-1,
+.freshzap,
+.soap {
+    width: 25%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+}
+
+/* Document Name */
+.doc-name {
+    position: absolute;
+    left: 70px;
+    z-index: 4;
+    font-size: clamp(24px, 3vw, 38px);
+    font-weight: 700;
+    color: var(--bg-primary, #ffffff);
+}
+
+/* Video Area */
+.image-hlp {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.image3 {
+    width: 75%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.image3 .video-product-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120% !important;
+    height: 120% !important;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    border: 0;
+}
+
+/* ================== Responsive ================== */
+
+/* Laptop / Small Desktop */
+@media (max-width: 1200px) {
+    .job-opening .section-header {
+        width: 90%;
+    }
+
+    .frame-1272638326,
+    .frame-1272638325,
+    .frame-1272638324,
+    .frame-1272638319,
+    .frame-1272638323 {
+        min-height: 600px;
+    }
+
+    .the-art-of-dual-aroma-two-fragrances-in-one-stick,
+    ._100-pure-resin-loban-dhoop-candy,
+    .odour-neutralising-techonology,
+    .handmade-soaps-with-essential-oils,
+    .dual-enzyme-formula {
+        padding: 25px 30px;
+    }
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+
+    .frame-1272638326,
+    .frame-1272638325,
+    .frame-1272638324,
+    .frame-1272638319,
+    .frame-1272638323 {
+        height: auto;
+        min-height: auto;
+        padding-bottom: 40px;
+    }
+
+    .image-hlp {
+        height: 480px;
+    }
+
+    .image3 {
+        width: 100%;
+    }
+
+    .kesar-chandan,
+    .kapoor-dhoop-candy,
+    .vertical-shinezap-355-x-765-px-1,
+    .freshzap,
+    .soap {
+        width: 180px;
+        height: auto;
+        max-height: 90px;
+        top: 44px;
+        left: 750px;
+    }
+
+    .the-art-of-dual-aroma-two-fragrances-in-one-stick,
+    ._100-pure-resin-loban-dhoop-candy,
+    .odour-neutralising-techonology,
+    .handmade-soaps-with-essential-oils,
+    .dual-enzyme-formula {
+        width: 100%;
+        margin-left: 0;
+        padding: 30px 24px 0;
+    }
+
+    .doc-name {
+        left: 30px;
+        bottom: 35px;
+        display: none;
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .job-opening {
+        padding: 40px 0 60px;
+        gap: 30px;
+    }
+
+    .job-opening .section-header {
+        width: 92%;
+    }
+
+    .job-opening .title-text {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .job-opening .subtitle-text {
+        font-size: 28px;
+        line-height: 34px;
+    }
+
+    .frame-1272638326,
+    .frame-1272638325,
+    .frame-1272638324,
+    .frame-1272638319,
+    .frame-1272638323 {
+        padding-bottom: 30px;
+    }
+
+    .image-hlp {
+        height: 320px;
+    }
+
+    .image3 .video-product-image {
+        width: 140% !important;
+        height: 140% !important;
+    }
+
+    .kesar-chandan,
+    .kapoor-dhoop-candy,
+    .vertical-shinezap-355-x-765-px-1,
+    .freshzap,
+    .soap {
+        width: 110px;
+        max-height: 220px;
+        left: 15px;
+        bottom: 25px;
+    }
+
+    .doc-name {
+        left: 15px;
+        bottom: 25px;
+        font-size: 22px;
+        margin-left: 0;
+        display: none;
+    }
+
+    .the-art-of-dual-aroma-two-fragrances-in-one-stick,
+    ._100-pure-resin-loban-dhoop-candy,
+    .odour-neutralising-techonology,
+    .handmade-soaps-with-essential-oils,
+    .dual-enzyme-formula {
+        font-size: 22px;
+        line-height: 1.35;
+        padding: 24px 18px 0;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 380px) {
+    .image-hlp {
+        height: 280px;
+    }
+
+    .kesar-chandan,
+    .kapoor-dhoop-candy,
+    .vertical-shinezap-355-x-765-px-1,
+    .freshzap,
+    .soap {
+        width: 95px;
+    }
+
+    .doc-name {
+        font-size: 20px;
+    }
+}

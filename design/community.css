@@ -53,7 +53,7 @@
 }
 
 .overlay-image-mobile {
-    display: none;
+    display: flex;
 }
 
 .hero .swiper,
@@ -404,7 +404,6 @@
 ========================= */
 
 .life-section {
-    /* background: var(--bg-sections); */
     padding: 80px 0;
 }
 
@@ -528,11 +527,8 @@
    Growth Section
 ========================= */
 
-
-
 .growth-section {
     width: 100%;
-
     min-height: 100vh;
     background: #fff;
     display: flex;
@@ -665,7 +661,162 @@
 
 
 
+/* =========================
+   Tablet
+========================= */
+@media (max-width: 991px) {
 
+    .growth-wrapper,
+    .growth-wrapper-new {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .growth-left,
+    .growth-right,
+    .growth-right-new {
+        width: 100%;
+    }
+
+    .growth-left {
+        height: 800px;
+    }
+
+    .growth-left img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .growth-right,
+    .growth-right-new {
+        padding: 60px 40px;
+    }
+
+    .quote-box {
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .quote-box p {
+        font-size: 17px;
+        line-height: 1.7;
+    }
+
+    .profile-info,
+    .profile-info-new {
+        place-self: flex-start;
+    }
+
+
+
+}
+
+
+/* =========================
+   Mobile
+========================= */
+@media (max-width: 767px) {
+
+    .growth-section,
+    .growth-section-new,
+    .growth-wrapper,
+    .growth-wrapper-new {
+        min-height: auto;
+    }
+
+    .growth-wrapper,
+    .growth-wrapper-new {
+        flex-direction: column;
+    }
+
+    .growth-left {
+        width: 100%;
+        height: 420px;
+    }
+
+    .growth-left img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+    }
+
+    .growth-right,
+    .growth-right-new {
+        width: 100%;
+        padding: 40px 24px;
+    }
+
+    .quote-box {
+        margin-bottom: 30px;
+    }
+
+    .quote-box p {
+        font-size: 15px;
+        line-height: 1.8;
+        padding: 0 10px;
+    }
+
+    .quote-box p::before {
+        left: -2px;
+        top: -5px;
+        font-size: 28px;
+    }
+
+    .quote-box p::after {
+        font-size: 28px;
+        bottom: -10px;
+    }
+
+    .profile-info h4,
+    .profile-info-new h4 {
+        font-size: 18px;
+        line-height: 1.4;
+    }
+
+    .profile-info span,
+    .profile-info-new span {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .btn-outline {
+        margin-top: 20px;
+        padding: 10px 22px;
+        font-size: 13px;
+    }
+}
+
+
+/* =========================
+   Small Mobile
+========================= */
+@media (max-width: 480px) {
+
+    .growth-left {
+        height: 330px;
+    }
+
+    .growth-right,
+    .growth-right-new {
+        padding: 32px 20px;
+    }
+
+    .quote-box p {
+        font-size: 14px;
+    }
+
+    .profile-info h4,
+    .profile-info-new h4 {
+        font-size: 16px;
+    }
+
+    .profile-info span,
+    .profile-info-new span {
+        font-size: 12px;
+    }
+}
 
 
 /* RESPONSIVE BREAKPOINTS */
@@ -711,6 +862,33 @@
     .grid-item.small {
         grid-row: span 1;
         grid-column: span 1;
+    }
+
+
+    /* Banner css */
+
+    .hero {
+        height: 100vh;
+    }
+
+    .hero .overlay-bg {
+        position: relative;
+        height: 100%;
+    }
+
+    .hero-wrapper {
+        left: 50%;
+        top: -5%;
+        transform: translate(-50%, 10%);
+    }
+
+    .hero-wrapper {
+        position: absolute;
+    }
+
+    .overlay-image {
+        position: relative;
+        height: 100%;
     }
 }
 
@@ -882,67 +1060,6 @@
 }
 
 
-@media (max-width: 768px) {
-
-    .testimonial-card {
-        width: 60%;
-        height: 380px;
-    }
-
-    .pagination-icon {
-        top: 78%;
-    }
-}
-
-@media (max-width: 576px) {
-    .community-content .row {
-        padding: 0 !important;
-        margin-left: 0;
-        text-align: center;
-    }
-
-    .community-text {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .row.g-4.justify-content-center {
-        gap: 30px;
-    }
-
-    .testimonial-card {
-        width: 100%;
-        top: 110%;
-        height: fit-content;
-    }
-
-    .testimonial-image {
-        width: 100%;
-    }
-
-    .testimonial-section {
-        height: 870px;
-    }
-
-    .pagination-icon {
-        top: 132%;
-        right: 6%
-    }
-
-    .work-wrapper {
-        padding: 20px !important;
-    }
-
-    .member-badge {
-        display: none;
-    }
-
-    .col-lg-6.position-relative.text-end {
-        margin-top: 20px;
-    }
-}
-
-
 .testimonial-card {
     position: absolute;
     right: 0;
@@ -1044,6 +1161,19 @@
     padding-bottom: 8px;
 }
 
+@media (min-width: 600px) and (max-width: 991px) {
+
+    .testimonial-card {
+        right: -19px !important;
+        padding: 15px !important;
+    }
+
+    .testimonial-controls {
+        top: -73% !important;
+        right: -44px !important;
+    }
+}
+
 @media (max-width: 768px) {
     .testimonial-card {
         width: 60%;
@@ -1071,155 +1201,15 @@
 
     .testimonial-card {
         width: 100%;
-        top: 520px;
+        /* top: 520px; */
+        top: 471px;
         transform: none;
         padding: 28px;
     }
 
     .testimonial-controls {
         width: 100%;
-        bottom: 20px;
+        bottom: -120px;
         padding: 0 20px;
-    }
-}
-
-
-/* Neww section  */
-.leader-section {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-
-    background: url('../assets/homePage/kk_pittie.jpg') center center/cover no-repeat;
-
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-
-    overflow: hidden;
-}
-
-/* Dark overlay */
-.leader-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.15);
-}
-
-/* Content wrapper */
-.leader-content {
-    position: relative;
-    z-index: 2;
-
-    width: 50%;
-    padding-right: 100px;
-}
-
-/* Glass card */
-.leader-card {
-    background: rgba(0, 0, 0, 0.55);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    padding: 40px 50px;
-    width: 100%;
-    max-width: 580px;
-    color: #fff;
-}
-
-/* Heading */
-.leader-card h2 {
-    font-weight: 700;
-    margin-bottom: 40px;
-}
-
-/* Line + text layout */
-.leader-line-content {
-    display: flex;
-    gap: 20px;
-}
-
-/* Vertical line */
-.line {
-    width: 2px;
-    min-height: 120px;
-    background: #d6a33b;
-}
-
-/* Paragraph */
-.text-content p {
-    font-size: 16px;
-    line-height: 1.8;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 30px;
-    max-width: 420px;
-}
-
-/* Button */
-.profile-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background: #d6a33b;
-    color: #fff;
-    text-decoration: none;
-    padding: 0px 24px;
-    /* font-size: 16px; */
-    font-weight: 500;
-
-    transition: 0.3s ease;
-}
-
-.profile-btn:hover {
-    background: #bf8e2e;
-    color: #fff;
-}
-
-.profile-btn span {
-    font-size: 22px;
-}
-
-/* Responsive */
-@media(max-width: 992px) {
-
-    .leader-section {
-        justify-content: center;
-        padding: 40px;
-    }
-
-    .leader-content {
-        width: 100%;
-        padding-right: 0;
-    }
-
-    .leader-card {
-        max-width: 100%;
-    }
-
-    .leader-card h2 {
-        font-size: 38px;
-    }
-
-    .text-content p {
-        font-size: 16px;
-    }
-}
-
-@media(max-width: 576px) {
-
-    .leader-card {
-        padding: 35px 25px;
-    }
-
-    .leader-line-content {
-        gap: 15px;
-    }
-
-    .leader-card h2 {
-        font-size: 30px;
-    }
-
-    .profile-btn {
-        padding: 12px 18px;
-        font-size: 14px;
     }
 }

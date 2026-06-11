@@ -67,3 +67,16 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const primaryMenu = document.querySelector("#primary-menu");
+
+  menuToggle.addEventListener("click", () => {
+    primaryMenu.classList.toggle("show");
+
+    const expanded =
+      menuToggle.getAttribute("aria-expanded") === "true";
+
+    menuToggle.setAttribute("aria-expanded", !expanded);
+  });
+});

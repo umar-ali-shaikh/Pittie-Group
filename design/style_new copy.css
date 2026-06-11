@@ -1819,6 +1819,8 @@
 }
 
 @media (max-width: 992px) {
+
+
     .trending h2 {
         font-size: 32px;
     }
@@ -1846,6 +1848,7 @@
     }
 
     .featured-video {
+        justify-content: space-evenly;
         margin: 0 !important;
     }
 }
@@ -1918,7 +1921,33 @@
     }
 
     .main-navigation ul {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .menu-main-container {
+        width: 100%;
+        flex: 100%;
+        margin-top: 20px;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .search-icon-wrap-pc {
         display: none;
+    }
+
+    .search-icon-wrap-mb {
+        display: flex;
+    }
+
+    .menu-main-container li a {
+        text-align: center;
+    }
+
+    .main-navigation .container {
+        flex-wrap: wrap;
     }
 
     .main-navigation.toggled ul,
@@ -1946,8 +1975,12 @@
     .main-navigation .menu-main-container li {
         position: relative;
         margin: 0;
-        padding: 24px 0 24px 25px !important;
+        margin-bottom: 20px;
         border-bottom: none;
+    }
+
+    .main-navigation .menu-main-container li:last-child {
+        margin-bottom: 0;
     }
 
     .mob-menu-text,
@@ -1960,10 +1993,6 @@
         border-bottom: 1px solid #fff6;
     }
 
-    .main-navigation ul ul {
-        position: relative;
-        box-shadow: none;
-    }
 
     .main-navigation ul ul.sub-menu {
         display: flex;
@@ -2000,6 +2029,8 @@
         transition: height 0.4s linear;
         transition-delay: 0.4s;
     }
+
+
 
     #businessTabs .nav-item {
         width: calc(50% - 10px);
@@ -2093,7 +2124,7 @@
     .width190 .textPart p.bigP {
         color: #fff;
         font-family: "Barlow Condensed", sans-serif;
-        font-size: 15px;
+        /* font-size: 15px; */
         font-weight: 400;
         text-transform: capitalize;
         opacity: 1;
@@ -2101,7 +2132,8 @@
 
     .width190 .textPart p {
         font-size: 14px;
-        white-space: break-spaces;
+        /* white-space: break-spaces; */
+        text-wrap: wrap;
     }
 
     .width190 .textPart h2 {

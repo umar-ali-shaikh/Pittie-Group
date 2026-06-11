@@ -104,7 +104,7 @@
  }
 
  .overlay-image-mobile {
-   display: none;
+   display: flex;
  }
 
  .hero .swiper,
@@ -868,5 +868,31 @@
    .career-pagination-wrapper {
      top: 132%;
      right: 6%;
+   }
+
+   /* Banner css */
+
+   .hero {
+     height: 100vh;
+   }
+
+   .hero .overlay-bg {
+     position: relative;
+     height: 100%;
+   }
+
+   .hero-wrapper {
+     left: 50%;
+     top: -5%;
+     transform: translate(-50%, 10%);
+   }
+
+   .hero-wrapper {
+     position: absolute;
+   }
+
+   .overlay-image {
+     position: relative;
+     height: 100%;
    }
  }

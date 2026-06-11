@@ -73,7 +73,7 @@
 }
 
 .overlay-image-mobile {
-    display: none;
+    display: flex;
 }
 
 .hero .swiper,
@@ -551,4 +551,29 @@
 
 .frame-1272638320 {
     overflow: hidden;
+}
+
+@media (max-width: 576px) {
+
+    .hero {
+        height: 100% !important;
+    }
+
+    .hero .overlay-bg {
+        position: relative;
+    }
+
+    .hero-wrapper {
+        left: 50%;
+        top: -5%;
+        transform: translate(-50%, 10%);
+    }
+
+    .hero-wrapper {
+        position: absolute;
+    }
+
+    .overlay-image {
+        position: relative;
+    }
 }
