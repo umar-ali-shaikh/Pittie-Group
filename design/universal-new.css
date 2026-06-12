@@ -55,6 +55,7 @@
 
 /* ===================== Base ===================== */
 body {
+    width: 100%;
     font-family: "Barlow Condensed", sans-serif;
     line-height: 1.7;
     color: var(--text-color);
@@ -1208,9 +1209,9 @@ header #btn-search:focus,
         padding: 0;
     }
 
-    .snap-section {
+    /* .snap-section {
         min-height: 100% !important;
-    }
+    } */
 
     .footer-logo {
         max-width: 120px;

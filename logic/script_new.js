@@ -265,15 +265,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Journey section
 
-document
-  .getElementById("viewTimelineBtn")
-  .addEventListener("click", function () {
-    const journeySection = document.getElementById("our-journey");
+const viewTimelineBtn = document.getElementById("viewTimelineBtn");
+const journeySection = document.getElementById("our-journey");
 
+viewTimelineBtn.addEventListener("click", function () {
+  const isActive = journeySection.classList.contains("active");
+
+  if (isActive) {
+    // Close section
+    journeySection.classList.remove("active");
+  } else {
+    // Open section
     journeySection.classList.add("active");
 
     journeySection.scrollIntoView({
       behavior: "smooth",
       block: "start",
     });
-  });
+  }
+});

@@ -28,7 +28,7 @@
 .hero {
     position: relative;
     height: 100vh;
-    /* min-height: 650px; */
+    min-height: 650px;
     /* max-height: 700px; */
     overflow: hidden;
     color: #fff;
@@ -236,6 +236,7 @@
 .business-section {
     background-color: var(--bg-sections);
     padding: var(--pm64) 0;
+    overflow-x: hidden;
 }
 
 .section-title {
@@ -269,6 +270,7 @@
 
 .tab-pane {
     clip-path: inset(-100px 0 -100px 0);
+    
 }
 
 .business-slider-wrapper {
