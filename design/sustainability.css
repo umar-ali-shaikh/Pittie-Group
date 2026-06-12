@@ -1026,4 +1026,42 @@
     .container11 .container10-img {
         height: 230px;
     }
+
+    .hero-wrapper {
+        top: 0;
+        padding: 0;
+        display: none;
+    }
+
+    .hero-content {
+        width: 100% !important;
+    }
+
+    .hero .swiper-slide {
+        padding: 0;
+        align-items: center;
+    }
+
+    .Indicators {
+        display: none;
+    }
+
+    .hero {
+        height: 100%;
+        min-height: 100%;
+    }
+
+    .hero .overlay-bg {
+        position: relative;
+        display: flex;
+    }
+
+    .overlay-image {
+        flex: 0 0 100%;
+    }
+
+    .overlay-image.active {
+        position: relative;
+        z-index: 111;
+    }
 }

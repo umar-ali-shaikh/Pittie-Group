@@ -571,6 +571,44 @@
         line-height: 1.35;
         padding: 24px 18px 0;
     }
+
+    .hero-wrapper {
+        top: 0;
+        padding: 0;
+        display: none;
+    }
+
+    .hero-content {
+        width: 100% !important;
+    }
+
+    .hero .swiper-slide {
+        padding: 0;
+        align-items: center;
+    }
+
+    .Indicators {
+        display: none;
+    }
+
+    .hero {
+        height: 100%;
+        min-height: 100%;
+    }
+
+    .hero .overlay-bg {
+        position: relative;
+        display: flex;
+    }
+
+    .overlay-image {
+        flex: 0 0 100%;
+    }
+
+    .overlay-image.active {
+        position: relative;
+        z-index: 111;
+    }
 }
 
 /* Small Mobile */

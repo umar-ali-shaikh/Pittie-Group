@@ -149,6 +149,61 @@ if (toggleBtn) {
   });
 }
 
+
+let mobileIndex = 0;
+let mobileInterval;
+
+function updateMobileImages(index) {
+  const images = document.querySelectorAll(".overlay-image");
+
+  images.forEach((img, i) => {
+    img.classList.toggle("active", i === index);
+  });
+}
+
+function startMobileSlider() {
+  if (window.innerWidth > 576) return;
+
+  clearInterval(mobileInterval);
+
+  updateMobileImages(mobileIndex);
+
+  mobileInterval = setInterval(() => {
+    mobileIndex = (mobileIndex + 1) % TOTAL_SLIDES;
+    updateMobileImages(mobileIndex);
+  }, 4000);
+
+  let startX = 0;
+
+  document.querySelector(".overlay-images-wrapper")
+    ?.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].clientX;
+    });
+
+  document.querySelector(".overlay-images-wrapper")
+    ?.addEventListener("touchend", (e) => {
+      const endX = e.changedTouches[0].clientX;
+
+      if (startX - endX > 50) {
+        mobileIndex = (mobileIndex + 1) % TOTAL_SLIDES;
+      } else if (endX - startX > 50) {
+        mobileIndex =
+          (mobileIndex - 1 + TOTAL_SLIDES) % TOTAL_SLIDES;
+      }
+
+      updateMobileImages(mobileIndex);
+    });
+}
+
+startMobileSlider();
+
+window.addEventListener("resize", startMobileSlider);
+
+
+
+
+
+
 // leader section
 
 gsap.registerPlugin(ScrollTrigger);

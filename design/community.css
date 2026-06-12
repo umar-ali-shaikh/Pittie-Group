@@ -865,30 +865,45 @@
     }
 
 
-    /* Banner css */
+    /*================ Header Banner css 
+    =================================*/
+
+    .hero-wrapper {
+        top: 0;
+        padding: 0;
+        display: none;
+    }
+
+    .hero-content {
+        width: 100% !important;
+    }
+
+    .hero .swiper-slide {
+        padding: 0;
+        align-items: center;
+    }
+
+    .Indicators {
+        display: none;
+    }
 
     .hero {
-        height: 100vh;
+        height: 100%;
+        min-height: 100%;
     }
 
     .hero .overlay-bg {
         position: relative;
-        height: 100%;
-    }
-
-    .hero-wrapper {
-        left: 50%;
-        top: -5%;
-        transform: translate(-50%, 10%);
-    }
-
-    .hero-wrapper {
-        position: absolute;
+        display: flex;
     }
 
     .overlay-image {
+        flex: 0 0 100%;
+    }
+
+    .overlay-image.active {
         position: relative;
-        height: 100%;
+        z-index: 111;
     }
 }
 
