@@ -330,15 +330,27 @@
     display: flex;
     flex-direction: column-reverse;
 }
+.doc-name {
+    color: black;
+    padding-bottom: 20px;
+    margin: 0;
+}
+
+.frame-12726383238 {
+    background: #b991ee !important;
+}
 
 /* Background Colors */
 .frame-1272638326 {
     background: #101010;
 }
 
-.frame-1272638325,
-.frame-1272638323 {
+.frame-1272638325 {
     background: #cdcaca;
+}
+
+.frame-1272638323 {
+    background: #c0a26e;
 }
 
 .frame-1272638324 {
@@ -374,7 +386,7 @@
 
 ._100-pure-resin-loban-dhoop-candy,
 .dual-enzyme-formula {
-    color: #000000;
+    color: #fff;
 }
 
 /* Left Product / Platform Image */

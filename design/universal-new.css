@@ -401,7 +401,7 @@ header {
 }
 
 .menu-main-container li a {
-    padding: 0 0 5px;
+    padding: 0;
     color: var(--bg1-color);
     border: none;
     font-weight: 500;

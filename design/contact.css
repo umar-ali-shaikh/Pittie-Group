@@ -645,7 +645,7 @@
    width: 100%;
    height: 100%;
    object-fit: cover;
-   opacity: 0;
+   /* opacity: 0; */
    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
  }
 
@@ -662,15 +662,11 @@
    content: "";
    position: absolute;
    inset: 0;
-   background: rgba(6, 16, 28, 0);
+   background: rgba(6, 16, 28, 0.62);
    transition: 0.5s ease-in-out;
    z-index: 1;
  }
 
- .job-card.image-card::after,
- .job-card:not(.image-card):hover::after {
-   background: rgba(6, 16, 28, 0.62);
- }
 
  .job-content {
    position: absolute;
@@ -711,7 +707,7 @@
  .job-card:not(.image-card) .job-content h3,
  .job-card:not(.image-card) .job-content p,
  .job-card:not(.image-card) .job-content a {
-   color: #111;
+   color: #fff;
  }
 
  /* HOVER PAR WHITE */
