@@ -293,8 +293,16 @@
     height: 220px;
 }
 
+#technology .business-card {
+    height: 100%;
+}
+
 @media (max-width: 768px) {
     .business-card {
+        height: 180px;
+    }
+
+    #technology .business-card {
         height: 180px;
     }
 
