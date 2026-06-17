@@ -270,28 +270,36 @@ cards.forEach((card) => {
   });
 });
 
-// Business verticals section
 
+
+
+// Business verticals section
 document.addEventListener("DOMContentLoaded", () => {
   function createSlider(pane) {
-    const wrapper = pane.querySelector(".business-slider-wrapper");
+    const track = pane.querySelector(".business-slider-track");
 
-    if (!wrapper) return;
+    if (!track) return;
 
-    if (!wrapper.dataset.cloned) {
-      wrapper.innerHTML += wrapper.innerHTML;
-      wrapper.dataset.cloned = "true";
+    gsap.killTweensOf(track);
+
+    // Clone only once
+    if (!track.dataset.cloned) {
+      track.innerHTML += track.innerHTML;
+      track.dataset.cloned = "true";
     }
 
-    gsap.killTweensOf(wrapper);
+    const moveWidth = track.scrollWidth / 2;
 
-    const moveWidth = wrapper.scrollWidth / 2;
+    gsap.set(track, { x: 0 });
 
-    gsap.to(wrapper, {
+    gsap.to(track, {
       x: -moveWidth,
-      duration: 20,
+      duration: 25,
       ease: "none",
       repeat: -1,
+      modifiers: {
+        x: (x) => `${parseFloat(x) % moveWidth}px`,
+      },
     });
   }
 
@@ -302,13 +310,13 @@ document.addEventListener("DOMContentLoaded", () => {
     createSlider(activePane);
   }
 
-  // Every tab click
+  // Tab change
   document
     .querySelectorAll('[data-bs-toggle="pill"], [data-bs-toggle="tab"]')
     .forEach((tab) => {
       tab.addEventListener("shown.bs.tab", (e) => {
         const pane = document.querySelector(
-          e.target.getAttribute("data-bs-target"),
+          e.target.getAttribute("data-bs-target")
         );
 
         if (pane) {
@@ -317,6 +325,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 });
+
 
 // Journey section
 
