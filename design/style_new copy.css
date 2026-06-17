@@ -591,6 +591,11 @@
     margin-top: 50px;
 }
 
+.timeline-left,
+.timeline-right {
+    width: 50%;
+}
+
 .timeline-box-leftnone,
 .timeline-box-rightnone {
     opacity: 0 !important;
@@ -668,8 +673,8 @@
 .timeline-markers {
     height: 100%;
     position: absolute;
-    left: calc(100% - 49%);
-    top: 2.8%;
+    left: calc(100% - 50.5%);
+    top: 2%;
 }
 
 .ellipse-line-laptop-hlp {
@@ -813,7 +818,7 @@
     color: #1a4174;
     text-align: center;
     font-size: 30px;
-    line-height: 52px;
+    line-height: 32px;
     font-weight: 600;
     position: relative;
     display: flex;
@@ -1064,6 +1069,7 @@
     justify-content: flex-start;
     width: 100%;
     height: 100%;
+    padding-right: 10px;
 }
 
 .box10 {
