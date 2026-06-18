@@ -3,293 +3,401 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Consumer Brands Carousel</title>
-
-    <!-- GOOGLE FONT -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
+    <title>Document</title>
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+      header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+        background: transparent;
       }
 
-      body {
-        font-family: "Poppins", sans-serif;
-        background: #f5f5f5;
+      .navbar {
+        padding: 22px 24px;
+      }
+
+      .main-navigation .container {
+        max-width: 100%;
+        width: calc(100% - 32px);
+        min-height: 72px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 0 42px 0 38px;
+
+        border-radius: 16px;
+
+        background: rgba(255, 255, 255, 0.72);
+        backdrop-filter: blur(35px);
+        -webkit-backdrop-filter: blur(35px);
+
+        box-shadow:
+          0 12px 30px rgba(0, 0, 0, 0.12),
+          inset 0 1px 0 rgba(255, 255, 255, 0.75);
+
+        border: 1px solid rgba(255, 255, 255, 0.45);
+      }
+
+      /* Logo */
+      .custom-logo-link {
+        display: flex;
+        align-items: center;
+        padding: 0;
+        background: transparent !important;
+      }
+
+      .main-navigation .custom-logo-link img {
+        width: 92px;
+        height: auto;
+        display: block;
+      }
+
+      /* Menu */
+      .menu-main-container {
+        background: transparent;
+        box-shadow: none;
+        backdrop-filter: none;
+        padding: 0;
+      }
+
+      .main-navigation ul {
+        display: flex;
+        align-items: center;
+        gap: 36px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .menu-main-container li {
+        margin: 0;
+        list-style: none;
+        text-transform: none;
+      }
+
+      .menu-main-container li a {
+        position: relative;
+        color: #0b376d;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0;
+        text-decoration: none;
+        padding: 26px 0;
+        line-height: 1;
+      }
+
+      .menu-main-container li a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 19px;
+        width: 0;
+        height: 2px;
+        background: #0059cf;
+        border-radius: 20px;
+        transition: 0.3s ease;
+      }
+
+      .menu-main-container li.active > a::after,
+      .menu-main-container li:hover > a::after {
+        width: 100%;
+      }
+
+      .menu-main-container li.active > a,
+      .menu-main-container li:hover > a {
+        color: #0059cf;
+      }
+
+      /* Dropdown arrow */
+      .arrow-down > a::after {
+        content: "⌄";
+        position: static;
+        width: auto;
+        height: auto;
+        margin-left: 6px;
+        background: none;
+        font-size: 12px;
+        vertical-align: middle;
+      }
+
+      /* Dropdown */
+      .main-navigation ul ul.sub-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 210px;
+        padding: 10px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .main-navigation ul li:hover > ul.sub-menu {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .sub-menu li a {
+        padding: 10px 12px;
+        font-size: 13px;
+        color: #0b376d;
+      }
+
+      .sub-menu li a:hover {
+        background: #0059cf;
+        color: #fff;
+        border-radius: 8px;
+      }
+
+      /* Ask AI */
+      .search-icon-wrap {
+        padding: 0;
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+      }
+
+      header #btn-search {
+        width: 118px;
+        height: 48px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+
+        border: 1px solid rgba(140, 148, 171, 0.25);
+        border-radius: 12px;
+
+        background:
+          linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.4),
+            rgba(255, 255, 255, 0.4)
+          ),
+          linear-gradient(
+            25.61deg,
+            rgba(0, 89, 207, 0) 29.07%,
+            rgba(0, 89, 207, 0.1) 94.36%
+          ),
+          linear-gradient(
+            59.96deg,
+            rgba(0, 89, 207, 0.2) 10.06%,
+            rgba(0, 89, 207, 0) 50.1%
+          );
+
+        box-shadow:
+          0 8px 20px rgba(0, 89, 207, 0.12),
+          inset 0 1px 2px rgba(255, 255, 255, 0.65);
+
+        cursor: pointer;
+      }
+
+      .search-btn .search-icon {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+      }
+
+      .search-btn .text {
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0 !important;
+
+        background: linear-gradient(135deg, #0059cf 0%, #111928 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* Hide mobile Ask AI inside menu on desktop */
+      .search-icon-wrap-mb {
+        display: none;
+      }
+
+      /* Mobile */
+      @media (max-width: 991px) {
+        .menu-toggle {
+          display: block;
+        }
+
+        .menu-main-container {
+          position: absolute;
+          top: 90px;
+          left: 24px;
+          right: 24px;
+          background: rgba(255, 255, 255, 0.95);
+          border-radius: 18px;
+          padding: 20px;
+        }
+
+        .main-navigation ul {
+          flex-direction: column;
+          gap: 18px;
+          align-items: flex-start;
+        }
+
+        .search-icon-wrap-pc {
+          display: none;
+        }
+
+        .search-icon-wrap-mb {
+          display: block;
+        }
       }
     </style>
   </head>
-  <body></body>
-</html>
-
-<!-- Actual Header  -->
-
-<header id="masthead" class="site-header">
-  <nav
-    id="site-navigation"
-    class="main-navigation navbar navbar-expand-lg navbar-light"
-  >
-    <div class="container">
-      <a
-        href="https://pittiegroup.com/"
-        class="custom-logo-link"
-        rel="home"
-        aria-current="page"
-        ><img
-          src="assets/cropped-Group-1.png"
-          class="custom-logo"
-          alt=""
-          decoding="async"
-          fetchpriority="high"
-          srcset="
-            assets/cropped-Group-1.png 553w,
-            assets/cropped-Group-1.png 300w
-          "
-          sizes="(max-width: 553px) 100vw, 553px"
-      /></a>
-      <button
-        type="button"
-        class="menu-toggle navbar-toggler"
-        data-toggle="collapse"
-        data-target="#primary-menu"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
+  <body>
+    <header id="masthead" class="site-header">
+      <nav
+        id="site-navigation"
+        class="main-navigation navbar navbar-expand-lg navbar-light"
       >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <div class="menu-main-container">
-        <ul id="primary-menu" class="collapse navbar-collapse nav-menu">
-          <li
-            id="menu-item-125"
-            class="mob-menu-text menu-item menu-item-type-custom menu-item-object-custom menu-item-125"
+        <div class="container">
+          <a
+            href="https://pittiegroup.com/"
+            class="custom-logo-link"
+            rel="home"
+            aria-current="page"
+            ><img
+              src="assets/cropped-Group-1.png"
+              class="custom-logo"
+              alt=""
+              decoding="async"
+              fetchpriority="high"
+              srcset="
+                assets/cropped-Group-1.png 553w,
+                assets/cropped-Group-1.png 300w
+              "
+              sizes="(max-width: 553px) 100vw, 553px"
+          /></a>
+          <button
+            type="button"
+            class="menu-toggle navbar-toggler"
+            data-toggle="collapse"
+            data-target="#primary-menu"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
-            <a href="#">Menu</a>
-          </li>
-          <li
-            id="menu-item-16"
-            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16"
-          >
-            <a href="index_new.html">Home</a>
-          </li>
-          <li
-            id="menu-item-17"
-            class="arrow-down menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-17"
-          >
-            <a href="brand.html">Our Business</a>
-            <ul class="sub-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <!-- Middle Menu content -->
+          <div class="menu-main-container">
+            <ul id="primary-menu" class="collapse navbar-collapse nav-menu">
               <li
-                id="menu-item-404"
-                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-404"
+                id="menu-item-16"
+                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16 active"
               >
-                <a href="realty.html">Pittie Realty</a>
+                <a href="index_new.html">Home</a>
               </li>
               <li
-                id="menu-item-407"
-                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-407"
+                id="menu-item-17"
+                class="arrow-down menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-17"
               >
-                <a href="consumer.html">Pittie Consumer</a>
+                <a href="#our-business">Our Business</a>
+                <ul class="sub-menu">
+                  <li
+                    id="menu-item-404"
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-404"
+                  >
+                    <a href="https://www.victoriaenterprises.co.in/"
+                      >Pittie Realty</a
+                    >
+                  </li>
+                  <li
+                    id="menu-item-407"
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-407"
+                  >
+                    <a href="https://pittieconsumer.com/">Pittie Consumer</a>
+                  </li>
+                  <li
+                    id="menu-item-405"
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-405"
+                  >
+                    <a href="https://www.epiccompany.com/">The EPIC Company</a>
+                  </li>
+                  <li
+                    id="menu-item-406"
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-406"
+                  >
+                    <a href="https://www.pittielogistics.com/"
+                      >Pittie Logistics</a
+                    >
+                  </li>
+                </ul>
               </li>
               <li
-                id="menu-item-405"
-                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-405"
+                id="menu-item-19"
+                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19"
               >
-                <a href="https://pittiegroup.com/media/">THE EPIC COMPANY</a>
+                <a href="community.html">Community</a>
               </li>
               <li
-                id="menu-item-406"
-                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-406"
+                id="menu-item-19"
+                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19"
               >
-                <a href="logistics.html">Pittie Logistics</a>
+                <a href="innovation.html">Innovation</a>
               </li>
+              <li
+                id="menu-item-19"
+                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19"
+              >
+                <a href="sustainability.html">Sustainability</a>
+              </li>
+              <li
+                id="menu-item-20"
+                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20"
+              >
+                <a href="contact.html">Contact US</a>
+              </li>
+              <div class="search-icon-wrap search-icon-wrap-mb">
+                <button
+                  id="btn-search"
+                  type="button"
+                  class="search-btn cta-search-glow"
+                  aria-label="Ask AI search"
+                >
+                  <img
+                    src="assets/homePage/search-icon-ai-new.svg"
+                    alt="AI Serach icon"
+                    class="search-icon"
+                    role="presentation"
+                  />
+                  <span class="text d-none d-md-block">Ask AI</span>
+                </button>
+              </div>
             </ul>
-          </li>
-          <li
-            id="menu-item-19"
-            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19"
-          >
-            <a href="community.html">Community</a>
-          </li>
-          <li
-            id="menu-item-505"
-            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-505"
-          >
-            <a href="news.html">News</a>
-          </li>
-          <li
-            id="menu-item-20"
-            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20"
-          >
-            <a href="contact.html">Contact US</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <!-- #site-navigation -->
-</header>
+          </div>
 
-<style>
-  /* ===================== Header / Navigation ===================== */
-  header {
-    position: absolute;
-    inset: 0 0 auto;
-    z-index: 999;
-    background: transparent;
-  }
-
-  .navbar {
-    padding: 25px 40px;
-  }
-
-  .main-navigation {
-    display: block;
-    width: 100%;
-  }
-
-  .main-navigation ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding-left: 0;
-  }
-
-  .main-navigation li {
-    position: relative;
-  }
-
-  .main-navigation a {
-    display: block;
-    text-decoration: none;
-  }
-
-  .main-navigation .custom-logo-link {
-    z-index: 1;
-    padding: 13px 30px;
-  }
-
-  .main-navigation .custom-logo-link img {
-    width: 85px;
-  }
-
-  .custom-logo-link {
-    display: inline-block;
-    padding: 0 20px;
-    border-radius: 48px;
-  }
-
-  .menu-main-container {
-    padding: 5px 20px;
-  }
-
-  .menu-main-container li {
-    margin-left: 73px;
-    list-style: none;
-    text-transform: uppercase;
-  }
-
-  .menu-main-container li:first-child {
-    margin-left: 0;
-  }
-
-  .menu-main-container li a {
-    padding: 0 0 5px;
-    color: #fff;
-    border: none;
-    font-size: 16px;
-    letter-spacing: 1.34px;
-  }
-
-  .mob-menu-text {
-    display: none;
-  }
-
-  .arrow-down a::after {
-    content: "\203A";
-    display: inline-block;
-    margin-left: 10px;
-    border: none;
-    font-size: 24px;
-    vertical-align: middle;
-    transform: rotate(90deg);
-  }
-
-  .arrow-down .sub-menu li a::after {
-    display: none;
-  }
-
-  /* Curve css for menu header  */
-
-  .main-navigation .container {
-    box-shadow: 0px 4px 20px 0px #00000026;
-    backdrop-filter: blur(50px);
-    border-radius: 50px;
-    background-color: rgba(255, 255, 255, 0.6);
-  }
-
-  .main-navigation ul ul {
-    position: absolute;
-    top: 100%;
-    left: -999em;
-    z-index: 99999;
-    float: left;
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  }
-
-  .main-navigation ul li:hover > ul,
-  .main-navigation ul li.focus > ul {
-    left: auto;
-  }
-
-  .main-navigation ul ul.sub-menu {
-    display: flex;
-    flex-direction: column;
-    width: 200px;
-    margin-top: 0;
-    padding: 6px 6px 10px;
-    background: #fff;
-  }
-
-  .sub-menu li {
-    margin-left: 0;
-  }
-
-  .main-navigation ul ul.sub-menu a {
-    width: 100%;
-    margin-bottom: 0;
-    padding: 10px;
-    color: #333;
-    font-family: "Nunito Sans", sans-serif;
-    font-size: 14px;
-    text-transform: capitalize;
-  }
-
-  .main-navigation ul ul.sub-menu a:hover {
-    color: #fff;
-    background: #e9292f;
-  }
-
-  .sub-menu::before {
-    content: "";
-    position: absolute;
-    top: -3px;
-    width: 15px;
-    height: 15px;
-    background-color: #fff;
-    transform: rotate(45deg);
-  }
-
-  .menu-toggle {
-    display: none;
-  }
-</style>
+          <!-- Right Ask AI -->
+          <div class="search-icon-wrap search-icon-wrap-pc">
+            <button
+              id="btn-search"
+              type="button"
+              class="search-btn cta-search-glow"
+              aria-label="Ask AI search"
+            >
+              <img
+                src="assets/homePage/search-icon-ai-new.svg"
+                alt="AI Serach icon"
+                class="search-icon"
+                role="presentation"
+              />
+              <span class="text d-none d-md-block">Ask AI</span>
+            </button>
+          </div>
+        </div>
+      </nav>
+      <!-- #site-navigation -->
+    </header>
+  </body>
+</html>

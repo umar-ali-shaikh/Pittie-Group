@@ -376,9 +376,9 @@
     display: flex;
     gap: 10px;
     align-items: center;
-    bottom: -20px;
-    right: 30px;
-    background: var(--button-color);
+    bottom: -25px;
+    right: -10px;
+    background: #C11425CC;
     color: var(--bg3-color);
     padding: 18px 28px;
     border-radius: var(--radius16);

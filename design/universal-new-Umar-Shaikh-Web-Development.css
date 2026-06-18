@@ -6,7 +6,7 @@
     --bg3-color: #ffffff;
     --button-color: #e9292f;
     --text-color: #111928;
-    --sub-text: #5C5C5C;
+    --sub-text: #4b5563;
     --gold-color: #dda83d;
     --text-primary: #1A4174;
 
@@ -330,6 +330,21 @@ header {
     background: transparent;
 }
 
+.navigation-container {
+    background: rgba(255, 255, 255, 0.7);
+    /* #FFFFFFB2 */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border: 1px solid rgba(17, 25, 40, 0.1);
+    /* #1119281A */
+
+    box-shadow:
+        0px 2px 4px rgba(17, 25, 40, 0.1),
+        0px 4px 12px rgba(92, 92, 92, 0.12);
+
+    border-radius: 18px;
+}
 
 .navbar {
     padding: 22px 24px;
@@ -347,6 +362,11 @@ header {
     padding-left: 0;
 }
 
+.custom-logo-link {
+    /* background-color: #fff; */
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 48px;
+}
 
 .main-navigation li {
     position: relative;
@@ -361,19 +381,39 @@ header {
     text-decoration: none;
 }
 
+.main-navigation .custom-logo-link {
+    z-index: 1;
+    padding: 10px 25px;
+}
+
 .main-navigation .custom-logo-link img {
     width: 85px;
 }
 
+.custom-logo-link {
+    display: inline-block;
+    padding: 0 20px;
+    border-radius: 48px;
+}
 
-.menu-main-container ul {
-    display: flex;
-    gap: 30px;
+.menu-main-container {
+    box-shadow: 0px 4px 20px 0px #00000026;
+    backdrop-filter: blur(50px);
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding-inline: 20px;
+    padding-bottom: 5px;
+    padding-top: 5px;
 }
 
 .menu-main-container li {
+    margin-left: 73px;
     list-style: none;
     text-transform: uppercase;
+}
+
+.menu-main-container li:first-child {
+    margin-left: 0;
 }
 
 .menu-main-container li a {
@@ -408,20 +448,6 @@ header {
 .main-navigation .container {
     max-width: 1400px;
     width: 100%;
-    padding: 10px 20px;
-    background: rgba(255, 255, 255, 0.7);
-    /* #FFFFFFB2 */
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-
-    border: 1px solid rgba(17, 25, 40, 0.1);
-    /* #1119281A */
-
-    box-shadow:
-        0px 2px 4px rgba(17, 25, 40, 0.1),
-        0px 4px 12px rgba(92, 92, 92, 0.12);
-
-    border-radius: 18px;
 }
 
 .main-navigation ul ul {
@@ -493,7 +519,7 @@ header {
     bottom: 0;
     width: 0%;
     height: 2px;
-    background: var(--bg-danger);
+    background: var(--bg1-color);
     border-radius: 50px;
     transition: width 0.35s ease;
 }
