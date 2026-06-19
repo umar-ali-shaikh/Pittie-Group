@@ -281,6 +281,19 @@
    position: relative;
  }
 
+ .contact-box {
+   background: linear-gradient(90deg,
+       rgba(238, 243, 253, 0.3) 0%,
+       rgba(252, 253, 253, 0.3) 100%);
+
+   border: 1px solid #D8E4FF;
+
+   backdrop-filter: blur(12px);
+   -webkit-backdrop-filter: blur(12px);
+   padding: 20px;
+   border-radius: var(--radius16);
+ }
+
  .title-arrow {
    color: var(--button-color);
    margin-left: 8px;

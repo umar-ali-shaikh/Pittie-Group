@@ -367,7 +367,6 @@ header {
 .main-navigation li {
     position: relative;
 }
-
 .main-navigation>li:hover {
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(16px);
@@ -395,6 +394,20 @@ header {
     text-transform: uppercase;
 }
 
+#primary-menu>li::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    position: absolute;
+    background-color: var(--bg-danger);
+    transition: width 0.3s ease;
+}
+
+#primary-menu>li:hover::after,
+#primary-menu>li.active::after {
+    width: 100%;
+}
+
 .menu-main-container li a {
     padding: 0;
     color: var(--bg1-color);
@@ -420,6 +433,19 @@ header {
 
 .arrow-down .sub-menu li a::after {
     display: none;
+}
+
+.arrow-down>a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.arrow-down>a img {
+    width: 10px;
+    height: 10px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
 }
 
 /* Curve css for menu header  */
@@ -1140,9 +1166,10 @@ header #btn-search:focus,
     }
 
     .main-navigation .menu-toggle {
-        position: absolute;
-        top: 32px !important;
-        right: 18px;
+        position: relative;
+        top: 0% !important;
+        /* transform: translateY(-50%); */
+        right: 0px;
         z-index: 99;
         padding: 5px;
         background: #ffffff40;
@@ -1163,7 +1190,7 @@ header #btn-search:focus,
     .menu-main-container {
         width: 100%;
         flex: 100%;
-        margin-top: 20px;
+        margin-top: 0px;
         padding: 0;
         overflow: hidden;
     }

@@ -340,7 +340,14 @@
 
 /* Background Colors */
 .frame-1272638326 {
-    background: #101010;
+    background: #0c0a03f2;
+
+    /* background: linear-gradient(
+    135deg,
+    rgba(16, 16, 16, 0.95) 0%,
+    rgba(30, 30, 30, 0.85) 50%,
+    rgba(16, 16, 16, 0.95) 100%
+); */
 }
 
 .frame-1272638325 {

@@ -241,11 +241,11 @@
 ========================= */
 
 .business-section {
-    /* background-color: var(--bg-sections); */
     padding: var(--pm64) 0;
     position: relative;
     overflow: hidden;
     background: #fff;
+    height: 100%;
 }
 
 .business-section::before {
@@ -285,6 +285,12 @@
 .business-section .container {
     position: relative;
     z-index: 11;
+}
+
+.business-section .bg-icon {
+    position: absolute;
+    top: 80%;
+    left: -6%;
 }
 
 .section-title {
@@ -1628,6 +1634,16 @@
 .trending {
     padding: 50px 0;
     text-align: center;
+}
+
+.trending .container {
+    position: relative;
+}
+
+.trending .bg-icon {
+    position: absolute;
+    top: 80%;
+    right: -6%;
 }
 
 .tag {
