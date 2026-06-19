@@ -367,6 +367,7 @@ header {
 .main-navigation li {
     position: relative;
 }
+
 .main-navigation>li:hover {
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(16px);
@@ -821,13 +822,24 @@ header #btn-search:focus,
    ============================== */
 
 .footer-section {
-    background: var(--bg-primary);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), linear-gradient(25.61deg, rgba(0, 89, 207, 0) 29.07%, rgba(0, 89, 207, 0.1) 94.36%), linear-gradient(59.96deg, rgba(0, 89, 207, 0.2) 10.06%, rgba(0, 89, 207, 0) 50.1%);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(17, 25, 40, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 89, 207, 0.12), inset 0 1px 2px rgba(255, 255, 255, 0.65);
+
+    /* background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(17, 25, 40, 0.1);
+    box-shadow: 0px 2px 4px rgba(17, 25, 40, 0.1), 0px 4px 12px rgba(92, 92, 92, 0.12); */
+
     padding: 50px 0;
     border-top: 1px solid #e5e7eb;
     /* font-family: "Barlow Condensed", sans-serif; */
     font-family: "Poppins", sans-serif;
     border-radius: 50px 50px 0 0;
-    box-shadow: 0px 0px 40px -15px rgba(0, 76, 176, 0.5);
+    /* box-shadow: 0px 0px 40px -15px rgba(0, 76, 176, 0.5); */
 }
 
 /* Grid */
