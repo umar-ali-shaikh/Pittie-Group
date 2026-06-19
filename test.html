@@ -1,403 +1,95 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      header {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 999;
-        background: transparent;
-      }
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glassmorphism Mouse Follow Shine</title>
 
-      .navbar {
-        padding: 22px 24px;
-      }
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-      .main-navigation .container {
-        max-width: 100%;
-        width: calc(100% - 32px);
-        min-height: 72px;
+  body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    font-family: Arial, sans-serif;
+  }
 
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+  .glass-btn {
+    position: relative;
+    overflow: hidden;
 
-        padding: 0 42px 0 38px;
+    padding: 18px 42px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 18px;
 
-        border-radius: 16px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
 
-        background: rgba(255, 255, 255, 0.72);
-        backdrop-filter: blur(35px);
-        -webkit-backdrop-filter: blur(35px);
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.2),
+      inset 0 1px 1px rgba(255, 255, 255, 0.15);
 
-        box-shadow:
-          0 12px 30px rgba(0, 0, 0, 0.12),
-          inset 0 1px 0 rgba(255, 255, 255, 0.75);
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
 
-        border: 1px solid rgba(255, 255, 255, 0.45);
-      }
+    transition: all 0.3s ease;
+  }
 
-      /* Logo */
-      .custom-logo-link {
-        display: flex;
-        align-items: center;
-        padding: 0;
-        background: transparent !important;
-      }
+  .glass-btn:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.12);
+  }
 
-      .main-navigation .custom-logo-link img {
-        width: 92px;
-        height: auto;
-        display: block;
-      }
+  /* Mouse Follow Shine */
+  .glass-btn::before {
+    content: "";
+    position: absolute;
 
-      /* Menu */
-      .menu-main-container {
-        background: transparent;
-        box-shadow: none;
-        backdrop-filter: none;
-        padding: 0;
-      }
+    left: var(--x, 50%);
+    top: var(--y, 50%);
 
-      .main-navigation ul {
-        display: flex;
-        align-items: center;
-        gap: 36px;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
+    width: 180px;
+    height: 180px;
 
-      .menu-main-container li {
-        margin: 0;
-        list-style: none;
-        text-transform: none;
-      }
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.45) 0%,
+      rgba(255, 255, 255, 0.18) 35%,
+      transparent 75%
+    );
 
-      .menu-main-container li a {
-        position: relative;
-        color: #0b376d;
-        font-size: 13px;
-        font-weight: 500;
-        letter-spacing: 0;
-        text-decoration: none;
-        padding: 26px 0;
-        line-height: 1;
-      }
+    transform: translate(-50%, -50%);
+    pointer-events: none;
 
-      .menu-main-container li a::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 19px;
-        width: 0;
-        height: 2px;
-        background: #0059cf;
-        border-radius: 20px;
-        transition: 0.3s ease;
-      }
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
 
-      .menu-main-container li.active > a::after,
-      .menu-main-container li:hover > a::after {
-        width: 100%;
-      }
+  .glass-btn:hover::before {
+    opacity: 1;
+  }
+</style>
+</head>
 
-      .menu-main-container li.active > a,
-      .menu-main-container li:hover > a {
-        color: #0059cf;
-      }
+<body>
 
-      /* Dropdown arrow */
-      .arrow-down > a::after {
-        content: "⌄";
-        position: static;
-        width: auto;
-        height: auto;
-        margin-left: 6px;
-        background: none;
-        font-size: 12px;
-        vertical-align: middle;
-      }
+<button class="glass-btn">
+  Hover Me
+</button>
 
-      /* Dropdown */
-      .main-navigation ul ul.sub-menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 210px;
-        padding: 10px;
-        border-radius: 14px;
-        background: rgba(255, 255, 255, 0.95);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-      }
+<script>
 
-      .main-navigation ul li:hover > ul.sub-menu {
-        display: flex;
-        flex-direction: column;
-      }
+</script>
 
-      .sub-menu li a {
-        padding: 10px 12px;
-        font-size: 13px;
-        color: #0b376d;
-      }
-
-      .sub-menu li a:hover {
-        background: #0059cf;
-        color: #fff;
-        border-radius: 8px;
-      }
-
-      /* Ask AI */
-      .search-icon-wrap {
-        padding: 0;
-        background: transparent;
-        border: 0;
-        box-shadow: none;
-      }
-
-      header #btn-search {
-        width: 118px;
-        height: 48px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-
-        border: 1px solid rgba(140, 148, 171, 0.25);
-        border-radius: 12px;
-
-        background:
-          linear-gradient(
-            0deg,
-            rgba(255, 255, 255, 0.4),
-            rgba(255, 255, 255, 0.4)
-          ),
-          linear-gradient(
-            25.61deg,
-            rgba(0, 89, 207, 0) 29.07%,
-            rgba(0, 89, 207, 0.1) 94.36%
-          ),
-          linear-gradient(
-            59.96deg,
-            rgba(0, 89, 207, 0.2) 10.06%,
-            rgba(0, 89, 207, 0) 50.1%
-          );
-
-        box-shadow:
-          0 8px 20px rgba(0, 89, 207, 0.12),
-          inset 0 1px 2px rgba(255, 255, 255, 0.65);
-
-        cursor: pointer;
-      }
-
-      .search-btn .search-icon {
-        width: 20px;
-        height: 20px;
-        display: flex;
-        align-items: center;
-      }
-
-      .search-btn .text {
-        font-size: 16px;
-        font-weight: 500;
-        margin: 0 !important;
-
-        background: linear-gradient(135deg, #0059cf 0%, #111928 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-
-      /* Hide mobile Ask AI inside menu on desktop */
-      .search-icon-wrap-mb {
-        display: none;
-      }
-
-      /* Mobile */
-      @media (max-width: 991px) {
-        .menu-toggle {
-          display: block;
-        }
-
-        .menu-main-container {
-          position: absolute;
-          top: 90px;
-          left: 24px;
-          right: 24px;
-          background: rgba(255, 255, 255, 0.95);
-          border-radius: 18px;
-          padding: 20px;
-        }
-
-        .main-navigation ul {
-          flex-direction: column;
-          gap: 18px;
-          align-items: flex-start;
-        }
-
-        .search-icon-wrap-pc {
-          display: none;
-        }
-
-        .search-icon-wrap-mb {
-          display: block;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <header id="masthead" class="site-header">
-      <nav
-        id="site-navigation"
-        class="main-navigation navbar navbar-expand-lg navbar-light"
-      >
-        <div class="container">
-          <a
-            href="https://pittiegroup.com/"
-            class="custom-logo-link"
-            rel="home"
-            aria-current="page"
-            ><img
-              src="assets/cropped-Group-1.png"
-              class="custom-logo"
-              alt=""
-              decoding="async"
-              fetchpriority="high"
-              srcset="
-                assets/cropped-Group-1.png 553w,
-                assets/cropped-Group-1.png 300w
-              "
-              sizes="(max-width: 553px) 100vw, 553px"
-          /></a>
-          <button
-            type="button"
-            class="menu-toggle navbar-toggler"
-            data-toggle="collapse"
-            data-target="#primary-menu"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-
-          <!-- Middle Menu content -->
-          <div class="menu-main-container">
-            <ul id="primary-menu" class="collapse navbar-collapse nav-menu">
-              <li
-                id="menu-item-16"
-                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16 active"
-              >
-                <a href="index_new.html">Home</a>
-              </li>
-              <li
-                id="menu-item-17"
-                class="arrow-down menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-17"
-              >
-                <a href="#our-business">Our Business</a>
-                <ul class="sub-menu">
-                  <li
-                    id="menu-item-404"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-404"
-                  >
-                    <a href="https://www.victoriaenterprises.co.in/"
-                      >Pittie Realty</a
-                    >
-                  </li>
-                  <li
-                    id="menu-item-407"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-407"
-                  >
-                    <a href="https://pittieconsumer.com/">Pittie Consumer</a>
-                  </li>
-                  <li
-                    id="menu-item-405"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-405"
-                  >
-                    <a href="https://www.epiccompany.com/">The EPIC Company</a>
-                  </li>
-                  <li
-                    id="menu-item-406"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-406"
-                  >
-                    <a href="https://www.pittielogistics.com/"
-                      >Pittie Logistics</a
-                    >
-                  </li>
-                </ul>
-              </li>
-              <li
-                id="menu-item-19"
-                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19"
-              >
-                <a href="community.html">Community</a>
-              </li>
-              <li
-                id="menu-item-19"
-                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19"
-              >
-                <a href="innovation.html">Innovation</a>
-              </li>
-              <li
-                id="menu-item-19"
-                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19"
-              >
-                <a href="sustainability.html">Sustainability</a>
-              </li>
-              <li
-                id="menu-item-20"
-                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20"
-              >
-                <a href="contact.html">Contact US</a>
-              </li>
-              <div class="search-icon-wrap search-icon-wrap-mb">
-                <button
-                  id="btn-search"
-                  type="button"
-                  class="search-btn cta-search-glow"
-                  aria-label="Ask AI search"
-                >
-                  <img
-                    src="assets/homePage/search-icon-ai-new.svg"
-                    alt="AI Serach icon"
-                    class="search-icon"
-                    role="presentation"
-                  />
-                  <span class="text d-none d-md-block">Ask AI</span>
-                </button>
-              </div>
-            </ul>
-          </div>
-
-          <!-- Right Ask AI -->
-          <div class="search-icon-wrap search-icon-wrap-pc">
-            <button
-              id="btn-search"
-              type="button"
-              class="search-btn cta-search-glow"
-              aria-label="Ask AI search"
-            >
-              <img
-                src="assets/homePage/search-icon-ai-new.svg"
-                alt="AI Serach icon"
-                class="search-icon"
-                role="presentation"
-              />
-              <span class="text d-none d-md-block">Ask AI</span>
-            </button>
-          </div>
-        </div>
-      </nav>
-      <!-- #site-navigation -->
-    </header>
-  </body>
+</body>
 </html>

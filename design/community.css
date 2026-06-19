@@ -215,7 +215,6 @@
 .section-title {
     font-size: clamp(24px, 3.5vw, 36px);
     font-weight: 600;
-    color: var(--text-primary);
 }
 
 .core-text {
@@ -267,7 +266,19 @@
 .core-values-section .icon-circle {
     width: 70px;
     height: 70px;
-    background: var(--bg-sections);
+
+    background: linear-gradient(90deg,
+            rgba(177, 202, 235, 0.5) 0%,
+            rgba(252, 253, 253, 0.5) 100%);
+
+    border: 1px solid #D8E4FF;
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    box-shadow:
+        inset 0 0 4px rgba(0, 0, 0, 0.16);
+
     border-radius: var(--radius999);
     display: flex;
     align-items: center;
@@ -410,7 +421,6 @@
 
 .section-title {
     font-weight: 600;
-    color: var(--text-primary);
     margin-top: 10px;
 }
 
@@ -1166,7 +1176,7 @@
 .testimonial-next {
     width: 42px;
     height: 42px;
-    background: #000;
+    background: radial-gradient(71.7% 135.42% at 49.77% 79.17%, #0059CF 0%, #111928 100%);
     color: #fff;
     border-radius: 50%;
     display: flex;
@@ -1175,7 +1185,7 @@
     font-size: 40px;
     cursor: pointer;
     line-height: 1;
-    padding-bottom: 8px;
+    padding-bottom: 5px;
 }
 
 @media (min-width: 600px) and (max-width: 991px) {

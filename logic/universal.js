@@ -1,3 +1,19 @@
+// manu shine
+const buttons = document.querySelectorAll(".menu-main-container li");
+
+buttons.forEach((button) => {
+  button.addEventListener("mousemove", (e) => {
+    const rect = button.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    button.style.setProperty("--x", `${x}px`);
+    button.style.setProperty("--y", `${y}px`);
+  });
+});
+
+
 // Counter Js universal 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -9,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     entries.forEach(entry => {
 
-      if(entry.isIntersecting){
+      if (entry.isIntersecting) {
 
         const counter = entry.target;
 
@@ -31,18 +47,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
           current += increment;
 
-          if(current < targetNumber){
+          if (current < targetNumber) {
 
             // HANDLE DECIMAL VALUES
-            if(originalText.includes(".")){
+            if (originalText.includes(".")) {
               counter.innerText = current.toFixed(1) + suffix;
-            }else{
+            } else {
               counter.innerText = Math.floor(current) + suffix;
             }
 
             requestAnimationFrame(updateCounter);
 
-          }else{
+          } else {
 
             // FINAL VALUE
             counter.innerText = originalText;
@@ -58,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   }, {
-    threshold:0.5
+    threshold: 0.5
   });
 
   // OBSERVE ALL
