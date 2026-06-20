@@ -1884,7 +1884,6 @@
 
 .textPart p.bigP {
     color: #fff;
-    font-family: "Barlow Condensed", sans-serif;
     font-size: 22px;
     font-weight: 400;
     text-transform: capitalize;
@@ -1904,7 +1903,6 @@
 .width190 .textPart p {
     margin-bottom: 0;
     color: #ffffffe0;
-    font-family: "Barlow Condensed", sans-serif;
     font-size: 15px;
     line-height: 20px;
 }
@@ -2258,8 +2256,6 @@
 
     .width190 .textPart p.bigP {
         color: #fff;
-        font-family: "Barlow Condensed", sans-serif;
-        /* font-size: 15px; */
         font-weight: 400;
         text-transform: capitalize;
         opacity: 1;

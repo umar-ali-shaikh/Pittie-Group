@@ -48,6 +48,296 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="design/universal-new.css" />
     <link rel="stylesheet" href="design/contact.css" />
+
+    <!-- Pittie Chat interface -->
+    <style>
+      #pittie-chat-container {
+        position: fixed;
+        bottom: 10px;
+        right: 17px;
+        width: 360px;
+        height: 520px;
+        display: none;
+        flex-direction: column;
+        border-radius: 20px;
+        overflow: hidden;
+        z-index: 99999;
+        /* Glassmorphism */
+        background: rgba(10, 15, 35, 0.82);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.13);
+        box-shadow:
+          0 24px 60px rgba(0, 0, 0, 0.55),
+          0 0 0 1px rgba(201, 168, 76, 0.18);
+      }
+
+      #pittie-chat-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 16px;
+        background-color: rgba(255, 255, 255, 0.6);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      #pittie-chat-header .hdr-left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      #pittie-chat-header .hdr-avatar {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #c9a84c, #3b7dff);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+      }
+
+      .hdr-avatar img {
+        width: 75%;
+      }
+
+      #pittie-chat-header .hdr-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #003160;
+        line-height: 1.2;
+        letter-spacing: 1px;
+      }
+
+      /* #pittie-chat-header .hdr-subtitle {
+    font-size: 11px;
+    color: rgba(255,255,255,0.55);
+  } */
+      #pittie-chat-header .hdr-close {
+        background: rgba(255, 255, 255, 0.08);
+        border: none;
+        color: rgba(255, 255, 255, 0.7);
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s;
+      }
+
+      #pittie-chat-header .hdr-close:hover {
+        background: rgba(255, 255, 255, 0.18);
+        color: #fff;
+      }
+
+      /* ── Messages area ─ */
+      #pittie-chat-messages {
+        flex: 1;
+        padding: 14px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+      }
+
+      #pittie-chat-messages::-webkit-scrollbar {
+        width: 4px;
+      }
+
+      #pittie-chat-messages::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 4px;
+      }
+
+      .pittie-msg {
+        max-width: 82%;
+        padding: 10px 13px;
+        border-radius: 14px;
+        font-size: 13px;
+        line-height: 1.5;
+        word-break: break-word;
+        animation: msgIn 0.2s ease;
+      }
+
+      @keyframes msgIn {
+        from {
+          opacity: 0;
+          transform: translateY(6px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .pittie-msg.bot {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.9);
+        align-self: flex-start;
+        border-bottom-left-radius: 4px;
+      }
+
+      .pittie-msg.user {
+        background: linear-gradient(135deg, #c9a84c, #b8922e);
+        color: #fff;
+        align-self: flex-end;
+        border-bottom-right-radius: 4px;
+      }
+
+      /* ── Quick-action buttons ───── */
+      .pittie-btn-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        align-self: flex-start;
+        width: 100%;
+        max-width: 82%;
+      }
+
+      .pittie-quick-btn {
+        padding: 8px 12px;
+        border-radius: 10px;
+        border: 1px solid rgba(201, 168, 76, 0.4);
+        background: rgba(201, 168, 76, 0.08);
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 12.5px;
+        cursor: pointer;
+        text-align: left;
+        transition:
+          background 0.2s,
+          border-color 0.2s;
+      }
+
+      .pittie-quick-btn:hover {
+        background: rgba(201, 168, 76, 0.2);
+        border-color: rgba(201, 168, 76, 0.7);
+      }
+
+      /* ── Typing indicator ────────────────────────────────────────── */
+      .pittie-typing {
+        display: flex;
+        gap: 4px;
+        padding: 10px 13px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 14px;
+        border-bottom-left-radius: 4px;
+        align-self: flex-start;
+        width: fit-content;
+      }
+
+      .pittie-typing span {
+        width: 7px;
+        height: 7px;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+        animation: bounce 1.2s infinite;
+      }
+
+      .pittie-typing span:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+
+      .pittie-typing span:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+
+      @keyframes bounce {
+        0%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+
+        40% {
+          transform: translateY(-6px);
+        }
+      }
+
+      /* ── Session badge──────── */
+      #pittie-session-badge {
+        padding: 4px 14px;
+        font-size: 10px;
+        color: rgba(255, 255, 255, 0.3);
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        letter-spacing: 0.04em;
+      }
+
+      /* ── Input bar ──────── */
+      #pittie-chat-input {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 12px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(0, 0, 0, 0.25);
+      }
+
+      #pittie-chat-input input {
+        flex: 1;
+        padding: 9px 13px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.06);
+        color: #fff;
+        font-size: 13px;
+        outline: none;
+        transition: border-color 0.2s;
+      }
+
+      #pittie-chat-input input::placeholder {
+        color: rgba(255, 255, 255, 0.35);
+      }
+
+      #pittie-chat-input input:focus {
+        border-color: rgba(201, 168, 76, 0.6);
+        background: rgba(255, 255, 255, 0.09);
+      }
+
+      #pittie-send-btn {
+        width: 36px;
+        height: 36px;
+        border: none;
+        border-radius: 10px;
+        background: linear-gradient(135deg, #c9a84c, #3b7dff);
+        color: #fff;
+        font-size: 15px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition:
+          opacity 0.2s,
+          transform 0.15s;
+      }
+
+      #pittie-send-btn:hover {
+        opacity: 0.85;
+        transform: scale(1.05);
+      }
+
+      /* ── Mobile responsiveness───── */
+      @media (max-width: 480px) {
+        #pittie-chat-container {
+          right: 0;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 70vh;
+          border-radius: 20px 20px 0 0;
+        }
+      }
+    </style>
   </head>
 
   <body>
@@ -103,7 +393,10 @@
                 id="menu-item-17"
                 class="arrow-down menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-17"
               >
-                <a href="#our-business">Our Business <img src="assets/homePage/dropdown.svg" alt="arrow-svg"></a>
+                <a href="#our-business"
+                  >Our Business
+                  <img src="assets/homePage/dropdown.svg" alt="arrow-svg"
+                /></a>
                 <ul class="sub-menu">
                   <li
                     id="menu-item-404"
@@ -394,7 +687,7 @@
 
           <!-- ADDRESS TABS -->
           <div class="address-tabs">
-            <button class="address-tab-btn  active" data-filter="corporate">
+            <button class="address-tab-btn active" data-filter="corporate">
               Corporate Office Locations
             </button>
 
@@ -616,8 +909,6 @@
             </div>
           </div>
         </div>
-
-      
       </section>
 
       <!-- Career Testimonial Section -->
@@ -732,8 +1023,7 @@
           </div>
         </div>
       </section>
-
-   </main>
+    </main>
 
     <!-- Footer -->
     <footer class="footer-section" role="contentinfo">
@@ -939,6 +1229,204 @@
     </footer>
 
     <!-- ================= Scripts ================= -->
+
+    <div
+      id="pittie-chat-container"
+      role="dialog"
+      aria-label="Pittie AI Chatbot"
+    >
+      <div id="pittie-chat-header">
+        <div class="hdr-left">
+          <div class="hdr-avatar">
+            <img src="assets/favicon.png" alt="Bot Logo" />
+          </div>
+          <div>
+            <div class="hdr-title">Pittie Raahi</div>
+            <!-- <div class="hdr-subtitle">Your logistics companion</div> -->
+          </div>
+        </div>
+        <button class="hdr-close" id="pittie-close-btn" aria-label="Close chat">
+          ✕
+        </button>
+      </div>
+      <div id="pittie-session-badge"></div>
+      <div id="pittie-chat-messages"></div>
+      <div id="pittie-chat-input">
+        <input
+          type="text"
+          id="pittie-msg-input"
+          placeholder="Ask something…"
+          autocomplete="off"
+        />
+        <button id="pittie-send-btn" aria-label="Send message">➤</button>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        "use strict";
+
+        /* ── 1. SESSION ID — localStorage + cookie ────── */
+        function getCookie(name) {
+          const match = document.cookie.match(
+            new RegExp("(^| )" + name + "=([^;]+)"),
+          );
+          return match ? decodeURIComponent(match[2]) : null;
+        }
+        function setCookie(name, value, days) {
+          const expires = new Date(Date.now() + days * 864e5).toUTCString();
+          document.cookie =
+            name +
+            "=" +
+            encodeURIComponent(value) +
+            "; expires=" +
+            expires +
+            "; path=/; SameSite=Lax";
+        }
+
+        let sessionId =
+          localStorage.getItem("chatSessionId") || getCookie("chatSessionId");
+        if (!sessionId) {
+          sessionId =
+            typeof crypto !== "undefined" && crypto.randomUUID
+              ? crypto.randomUUID()
+              : "xxxx-xxxx-xxxx".replace(/x/g, () =>
+                  ((Math.random() * 16) | 0).toString(16),
+                );
+          localStorage.setItem("chatSessionId", sessionId);
+          setCookie("chatSessionId", sessionId, 365);
+        }
+
+        /* ── 2. WEBHOOK URL — replace this string ─────── */
+        const WEBHOOK_URL =
+          "https://n8n.srv1670075.hstgr.cloud/webhook/4091fa09-fb9a-4039-9411-7104d213f601/chat";
+
+        /* ── 3. DOM refs ──────────────────────────────── */
+        const chatBox = document.getElementById("pittie-chat-container");
+        const msgArea = document.getElementById("pittie-chat-messages");
+        const input = document.getElementById("pittie-msg-input");
+        const sendBtn = document.getElementById("pittie-send-btn");
+        const closeBtn = document.getElementById("pittie-close-btn");
+        const sessionBadge = document.getElementById("pittie-session-badge");
+
+        sessionBadge.textContent = "Session: " + sessionId.slice(0, 8) + "…";
+
+        /* ── 4. OPEN / CLOSE ──────────────────────────── */
+        function openChat() {
+          chatBox.style.display = "flex";
+          if (msgArea.childElementCount === 0) showWelcome();
+          setTimeout(() => input.focus(), 100);
+        }
+        function closeChat() {
+          chatBox.style.display = "none";
+        }
+
+        document.querySelectorAll("#btn-search").forEach((btn) => {
+          btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            chatBox.style.display === "flex" ? closeChat() : openChat();
+          });
+        });
+
+        closeBtn.addEventListener("click", closeChat);
+
+        /* ── 5. MESSAGES ──────────────────────────────── */
+        function addMessage(text, type) {
+          const el = document.createElement("div");
+          el.classList.add("pittie-msg", type);
+          el.textContent = text;
+          msgArea.appendChild(el);
+          msgArea.scrollTop = msgArea.scrollHeight;
+          return el;
+        }
+
+        function addTyping() {
+          const el = document.createElement("div");
+          el.className = "pittie-typing";
+          el.id = "pittie-typing-indicator";
+          el.innerHTML = "<span></span><span></span><span></span>";
+          msgArea.appendChild(el);
+          msgArea.scrollTop = msgArea.scrollHeight;
+          return el;
+        }
+
+        /* ── 6. WELCOME — sirf yahi message dikhega ───── */
+        function showWelcome() {
+          addMessage(
+            "Hi 👋 I'm Pittie Raahi, your Pittie Group companion.\n\nHow can I help you today?",
+            "bot",
+          );
+        }
+
+        /* ── 7. FREE-TEXT SEND + WEBHOOK ──────────────── */
+        function sendMessage() {
+          const text = input.value.trim();
+          if (!text) return;
+          input.value = "";
+
+          addMessage(text, "user");
+          const typing = addTyping();
+
+          // Send to webhook and wait for reply
+          sendToWebhook(text, typing);
+        }
+
+        sendBtn.addEventListener("click", sendMessage);
+        input.addEventListener("keypress", (e) => {
+          if (e.key === "Enter") {
+            e.preventDefault();
+            sendMessage();
+          }
+        });
+
+        /* ── 8. WEBHOOK — sessionId sent with every call  */
+        function sendToWebhook(userMessage, typingEl) {
+          const payload = {
+            sessionId: sessionId,
+            chatInput: userMessage,
+            timestamp: new Date().toISOString(),
+            page: window.location.href,
+          };
+
+          if (!WEBHOOK_URL || WEBHOOK_URL === "YOUR_WEBHOOK_URL") {
+            // Webhook not configured yet — show placeholder reply
+            setTimeout(() => {
+              typingEl.remove();
+              addMessage(
+                "Webhook URL not set yet. Please configure YOUR_WEBHOOK_URL in the script.",
+                "bot",
+              );
+            }, 700);
+            return;
+          }
+
+          fetch(WEBHOOK_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              typingEl.remove();
+              // Adjust this key based on what your webhook returns
+              const reply =
+                data.output ||
+                data.reply ||
+                data.message ||
+                data.text ||
+                "Got it! Our team will get back to you shortly.";
+              addMessage(reply, "bot");
+            })
+            .catch(() => {
+              typingEl.remove();
+              addMessage(
+                "Something went wrong. Please try again or call us at +91 22 4260 4260.",
+                "bot",
+              );
+            });
+        }
+      })();
+    </script>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
