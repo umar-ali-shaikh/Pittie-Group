@@ -172,7 +172,6 @@ img {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    /* font-family: "Barlow Condensed", sans-serif; */
     font-family: "Poppins", sans-serif;
     font-size: 16px;
     font-weight: 600;
@@ -562,29 +561,6 @@ header {
 }
 
 
-/* New updated hover css  */
-
-/* UNDERLINE */
-/* .menu-main-container li a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0%;
-    height: 2px;
-    background: var(--bg-danger);
-    border-radius: 50px;
-    transition: width 0.35s ease;
-} */
-/* 
-HOVER EFFECT
-.menu-main-container li:hover>a {
-    color: var(--bg1-color);
-}
-
-.menu-main-container li:hover>a::after {
-    width: 100%;
-}
 
 /* ACTIVE MENU */
 .menu-main-container li.current-menu-item>a,
@@ -692,16 +668,6 @@ header #btn-search {
 .cta-btn.cta-search-glow {
     gap: 7px;
 }
-
-/* .search-icon-wrap {
-    padding: 3px;
-    border-radius: 50px;
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(1.5px);
-    -webkit-backdrop-filter: blur(1.5px);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-} */
 
 .cta-search-glow {
     position: relative;
@@ -828,18 +794,10 @@ header #btn-search:focus,
     border: 1px solid rgba(17, 25, 40, 0.1);
     box-shadow: 0 8px 20px rgba(0, 89, 207, 0.12), inset 0 1px 2px rgba(255, 255, 255, 0.65);
 
-    /* background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(17, 25, 40, 0.1);
-    box-shadow: 0px 2px 4px rgba(17, 25, 40, 0.1), 0px 4px 12px rgba(92, 92, 92, 0.12); */
-
     padding: 50px 0;
     border-top: 1px solid #e5e7eb;
-    /* font-family: "Barlow Condensed", sans-serif; */
     font-family: "Poppins", sans-serif;
     border-radius: 50px 50px 0 0;
-    /* box-shadow: 0px 0px 40px -15px rgba(0, 76, 176, 0.5); */
 }
 
 /* Grid */
