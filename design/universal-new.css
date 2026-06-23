@@ -866,11 +866,9 @@ header #btn-search:focus,
 
 /* Brand */
 .footer-logo {
-    /* max-width: 160px; */
-    max-width: 200px;
-    /* margin: auto; */
-    margin-bottom: 12px;
-    margin-top: 20px;
+    max-width: 170px;
+    /* width: 45%; */
+    margin: 20px 0px 12px 50px;
 }
 
 .footer-tagline {
@@ -1038,6 +1036,11 @@ header #btn-search:focus,
         margin-top: 20px;
         padding: 0;
         overflow: hidden;
+    }
+
+    /* Footer Css  */
+    .footer-logo {
+        margin: 0px;
     }
 
     .search-icon-wrap-pc {
@@ -1485,6 +1488,7 @@ header #btn-search:focus,
     }
 
 
+
     .navbar-brand {
         width: 15%;
     }
@@ -1505,6 +1509,9 @@ header #btn-search:focus,
     .footer-logo {
         max-width: 120px;
         margin-top: 50px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
     }
 
     .footer-grid {
