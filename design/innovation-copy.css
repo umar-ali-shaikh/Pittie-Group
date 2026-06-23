@@ -371,11 +371,11 @@
     border-radius: 50%;
     pointer-events: none;
     background: radial-gradient(circle,
-            rgba(255, 255, 255, 0.45) 0%,
-            rgba(255, 215, 0, 0.25) 35%,
-            rgba(255, 215, 0, 0.12) 60%,
-            transparent 100%);
-    filter: blur(24px);
+            rgba(255, 255, 255, 0.8) 0%,
+            rgba(255, 180, 240, 0.6) 20%,
+            rgba(255, 120, 220, 0.4) 45%,
+            rgba(220, 80, 255, 0.25) 70%);
+    filter: blur(40px);
     transform: translate(-50%, -50%);
 }
 
@@ -387,31 +387,80 @@
     pointer-events: none;
 
     background: radial-gradient(circle,
-            rgba(255, 255, 255, 0.95) 0%,
-            rgba(180, 220, 255, 0.7) 20%,
-            rgba(110, 140, 192, 0.45) 50%,
-            rgba(110, 140, 192, 0.15) 75%,
-            transparent 100%);
+            rgba(255, 255, 255, 1) 0%,
+            rgba(180, 220, 255, 0.95) 20%,
+            rgba(110, 140, 192, 0.8) 45%,
+            rgba(110, 140, 192, 0.5) 70%);
 
-    filter: blur(35px);
+    filter: blur(40px);
     transform: translate(-50%, -50%);
 }
 
 .frame-1272638325 .shine-dot {
     position: absolute;
-    width: 180px;
-    height: 180px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     pointer-events: none;
 
     background: radial-gradient(circle,
             rgba(255, 255, 255, 1) 0%,
-            rgba(220, 240, 255, 0.9) 25%,
-            rgba(120, 170, 255, 0.6) 50%,
-            rgba(90, 120, 255, 0.3) 70%,
-            transparent 100%);
+            rgba(180, 255, 255, 0.95) 20%,
+            rgba(0, 255, 255, 0.8) 45%,
+            rgba(0, 180, 255, 0.5) 70%);
 
-    filter: blur(50px);
+    filter: blur(40px);
+    transform: translate(-50%, -50%);
+}
+
+.frame-1272638319 .shine-dot {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    pointer-events: none;
+
+    background: radial-gradient(circle,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 235, 200, 0.95) 20%,
+            rgba(255, 179, 102, 0.8) 45%,
+            rgba(199, 137, 98, 0.70) 70%);
+
+    filter: blur(40px);
+    transform: translate(-50%, -50%);
+}
+
+.frame-12726383238 .shine-dot {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    pointer-events: none;
+
+    background: radial-gradient(circle,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(220, 255, 220, 0.95) 20%,
+            rgba(120, 255, 120, 0.8) 45%,
+            rgba(0, 255, 100, 0.7) 70%);
+
+    filter: blur(40px);
+    transform: translate(-50%, -50%);
+}
+
+.frame-1272638324 .shine-dot {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    pointer-events: none;
+
+    background: radial-gradient(circle,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 220, 245, 0.95) 20%,
+            rgba(255, 120, 220, 0.75) 45%,
+            rgba(220, 80, 255, 0.45) 70%);
+    z-index: 111;
+    filter: blur(40px);
     transform: translate(-50%, -50%);
 }
 
