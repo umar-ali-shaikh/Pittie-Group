@@ -1,419 +1,502 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pittie Group - Innovation</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pittie Group - Innovation</title>
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
 
-  <!-- favicon -->
-  <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
 
-  <!-- Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet" />
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
 
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Boostrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-  <!-- Boostrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="design/universal-new.css" />
+    <link rel="stylesheet" href="design/innovation-copy.css" />
 
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="design/universal-new.css" />
-  <link rel="stylesheet" href="design/innovation-copy.css" />
+    <!-- Pittie Chat interface -->
+    <style>
+      #pittie-chat-container {
+        position: fixed;
+        bottom: 10px;
+        right: 17px;
+        width: 360px;
+        height: 520px;
+        display: none;
+        flex-direction: column;
+        border-radius: 20px;
+        overflow: hidden;
+        z-index: 99999;
+        /* Glassmorphism */
+        background: rgba(10, 15, 35, 0.82);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.13);
+        box-shadow:
+          0 24px 60px rgba(0, 0, 0, 0.55),
+          0 0 0 1px rgba(201, 168, 76, 0.18);
+      }
 
-  <!-- Pittie Chat interface -->
-  <style>
-    #pittie-chat-container {
-      position: fixed;
-      bottom: 10px;
-      right: 17px;
-      width: 360px;
-      height: 520px;
-      display: none;
-      flex-direction: column;
-      border-radius: 20px;
-      overflow: hidden;
-      z-index: 99999;
-      /* Glassmorphism */
-      background: rgba(10, 15, 35, 0.82);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.13);
-      box-shadow:
-        0 24px 60px rgba(0, 0, 0, 0.55),
-        0 0 0 1px rgba(201, 168, 76, 0.18);
-    }
+      #pittie-chat-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 16px;
+        background-color: rgba(255, 255, 255, 0.6);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
 
-    #pittie-chat-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 16px;
-      background-color: rgba(255, 255, 255, 0.6);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
+      #pittie-chat-header .hdr-left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
 
-    #pittie-chat-header .hdr-left {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+      #pittie-chat-header .hdr-avatar {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #c9a84c, #3b7dff);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+      }
 
-    #pittie-chat-header .hdr-avatar {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #c9a84c, #3b7dff);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-    }
+      .hdr-avatar img {
+        width: 75%;
+      }
 
-    .hdr-avatar img {
-      width: 75%;
-    }
+      #pittie-chat-header .hdr-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #003160;
+        line-height: 1.2;
+        letter-spacing: 1px;
+      }
 
-    #pittie-chat-header .hdr-title {
-      font-size: 18px;
-      font-weight: 700;
-      color: #003160;
-      line-height: 1.2;
-      letter-spacing: 1px;
-    }
-
-    /* #pittie-chat-header .hdr-subtitle {
+      /* #pittie-chat-header .hdr-subtitle {
     font-size: 11px;
     color: rgba(255,255,255,0.55);
   } */
-    #pittie-chat-header .hdr-close {
-      background: rgba(255, 255, 255, 0.08);
-      border: none;
-      color: rgba(255, 255, 255, 0.7);
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s;
-    }
-
-    #pittie-chat-header .hdr-close:hover {
-      background: rgba(255, 255, 255, 0.18);
-      color: #fff;
-    }
-
-    /* ── Messages area ─ */
-    #pittie-chat-messages {
-      flex: 1;
-      padding: 14px;
-      overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      scrollbar-width: thin;
-      scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
-    }
-
-    #pittie-chat-messages::-webkit-scrollbar {
-      width: 4px;
-    }
-
-    #pittie-chat-messages::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 4px;
-    }
-
-    .pittie-msg {
-      max-width: 82%;
-      padding: 10px 13px;
-      border-radius: 14px;
-      font-size: 13px;
-      line-height: 1.5;
-      word-break: break-word;
-      animation: msgIn 0.2s ease;
-    }
-
-    @keyframes msgIn {
-      from {
-        opacity: 0;
-        transform: translateY(6px);
+      #pittie-chat-header .hdr-close {
+        background: rgba(255, 255, 255, 0.08);
+        border: none;
+        color: rgba(255, 255, 255, 0.7);
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s;
       }
 
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .pittie-msg.bot {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: rgba(255, 255, 255, 0.9);
-      align-self: flex-start;
-      border-bottom-left-radius: 4px;
-    }
-
-    .pittie-msg.user {
-      background: linear-gradient(135deg, #c9a84c, #b8922e);
-      color: #fff;
-      align-self: flex-end;
-      border-bottom-right-radius: 4px;
-    }
-
-    /* ── Quick-action buttons ───── */
-    .pittie-btn-group {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      align-self: flex-start;
-      width: 100%;
-      max-width: 82%;
-    }
-
-    .pittie-quick-btn {
-      padding: 8px 12px;
-      border-radius: 10px;
-      border: 1px solid rgba(201, 168, 76, 0.4);
-      background: rgba(201, 168, 76, 0.08);
-      color: rgba(255, 255, 255, 0.85);
-      font-size: 12.5px;
-      cursor: pointer;
-      text-align: left;
-      transition:
-        background 0.2s,
-        border-color 0.2s;
-    }
-
-    .pittie-quick-btn:hover {
-      background: rgba(201, 168, 76, 0.2);
-      border-color: rgba(201, 168, 76, 0.7);
-    }
-
-    /* ── Typing indicator ────────────────────────────────────────── */
-    .pittie-typing {
-      display: flex;
-      gap: 4px;
-      padding: 10px 13px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 14px;
-      border-bottom-left-radius: 4px;
-      align-self: flex-start;
-      width: fit-content;
-    }
-
-    .pittie-typing span {
-      width: 7px;
-      height: 7px;
-      background: rgba(255, 255, 255, 0.5);
-      border-radius: 50%;
-      animation: bounce 1.2s infinite;
-    }
-
-    .pittie-typing span:nth-child(2) {
-      animation-delay: 0.2s;
-    }
-
-    .pittie-typing span:nth-child(3) {
-      animation-delay: 0.4s;
-    }
-
-    @keyframes bounce {
-
-      0%,
-      80%,
-      100% {
-        transform: translateY(0);
+      #pittie-chat-header .hdr-close:hover {
+        background: rgba(255, 255, 255, 0.18);
+        color: #fff;
       }
 
-      40% {
-        transform: translateY(-6px);
+      /* ── Messages area ─ */
+      #pittie-chat-messages {
+        flex: 1;
+        padding: 14px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
       }
-    }
 
-    /* ── Session badge──────── */
-    #pittie-session-badge {
-      padding: 4px 14px;
-      font-size: 10px;
-      color: rgba(255, 255, 255, 0.3);
-      text-align: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      letter-spacing: 0.04em;
-    }
+      #pittie-chat-messages::-webkit-scrollbar {
+        width: 4px;
+      }
 
-    /* ── Input bar ──────── */
-    #pittie-chat-input {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 12px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      background: rgba(0, 0, 0, 0.25);
-    }
+      #pittie-chat-messages::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 4px;
+      }
 
-    #pittie-chat-input input {
-      flex: 1;
-      padding: 9px 13px;
-      border-radius: 10px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      background: rgba(255, 255, 255, 0.06);
-      color: #fff;
-      font-size: 13px;
-      outline: none;
-      transition: border-color 0.2s;
-    }
+      .pittie-msg {
+        max-width: 82%;
+        padding: 10px 13px;
+        border-radius: 14px;
+        font-size: 13px;
+        line-height: 1.5;
+        word-break: break-word;
+        animation: msgIn 0.2s ease;
+      }
 
-    #pittie-chat-input input::placeholder {
-      color: rgba(255, 255, 255, 0.35);
-    }
+      @keyframes msgIn {
+        from {
+          opacity: 0;
+          transform: translateY(6px);
+        }
 
-    #pittie-chat-input input:focus {
-      border-color: rgba(201, 168, 76, 0.6);
-      background: rgba(255, 255, 255, 0.09);
-    }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-    #pittie-send-btn {
-      width: 36px;
-      height: 36px;
-      border: none;
-      border-radius: 10px;
-      background: linear-gradient(135deg, #c9a84c, #3b7dff);
-      color: #fff;
-      font-size: 15px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      transition:
-        opacity 0.2s,
-        transform 0.15s;
-    }
+      .pittie-msg.bot {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.9);
+        align-self: flex-start;
+        border-bottom-left-radius: 4px;
+      }
 
-    #pittie-send-btn:hover {
-      opacity: 0.85;
-      transform: scale(1.05);
-    }
+      .pittie-msg.user {
+        background: linear-gradient(135deg, #c9a84c, #b8922e);
+        color: #fff;
+        align-self: flex-end;
+        border-bottom-right-radius: 4px;
+      }
 
-    /* ── Mobile responsiveness───── */
-    @media (max-width: 480px) {
-      #pittie-chat-container {
-        right: 0;
-        left: 0;
-        bottom: 0;
+      /* ── Quick-action buttons ───── */
+      .pittie-btn-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        align-self: flex-start;
         width: 100%;
-        height: 70vh;
-        border-radius: 20px 20px 0 0;
+        max-width: 82%;
       }
-    }
-  </style>
-</head>
 
-<body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-  <header id="masthead" class="site-header">
-    <nav id="site-navigation" class="main-navigation navbar navbar-expand-lg navbar-light">
-      <div class="container">
-        <a href="https://pittiegroup.com/" class="custom-logo-link" rel="home" aria-current="page"><img
-            src="assets/cropped-Group-1.png" class="custom-logo" alt="" decoding="async" fetchpriority="high" srcset="
+      .pittie-quick-btn {
+        padding: 8px 12px;
+        border-radius: 10px;
+        border: 1px solid rgba(201, 168, 76, 0.4);
+        background: rgba(201, 168, 76, 0.08);
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 12.5px;
+        cursor: pointer;
+        text-align: left;
+        transition:
+          background 0.2s,
+          border-color 0.2s;
+      }
+
+      .pittie-quick-btn:hover {
+        background: rgba(201, 168, 76, 0.2);
+        border-color: rgba(201, 168, 76, 0.7);
+      }
+
+      /* ── Typing indicator ────────────────────────────────────────── */
+      .pittie-typing {
+        display: flex;
+        gap: 4px;
+        padding: 10px 13px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 14px;
+        border-bottom-left-radius: 4px;
+        align-self: flex-start;
+        width: fit-content;
+      }
+
+      .pittie-typing span {
+        width: 7px;
+        height: 7px;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+        animation: bounce 1.2s infinite;
+      }
+
+      .pittie-typing span:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+
+      .pittie-typing span:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+
+      @keyframes bounce {
+        0%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+
+        40% {
+          transform: translateY(-6px);
+        }
+      }
+
+      /* ── Session badge──────── */
+      #pittie-session-badge {
+        padding: 4px 14px;
+        font-size: 10px;
+        color: rgba(255, 255, 255, 0.3);
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        letter-spacing: 0.04em;
+      }
+
+      /* ── Input bar ──────── */
+      #pittie-chat-input {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 12px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(0, 0, 0, 0.25);
+      }
+
+      #pittie-chat-input input {
+        flex: 1;
+        padding: 9px 13px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.06);
+        color: #fff;
+        font-size: 13px;
+        outline: none;
+        transition: border-color 0.2s;
+      }
+
+      #pittie-chat-input input::placeholder {
+        color: rgba(255, 255, 255, 0.35);
+      }
+
+      #pittie-chat-input input:focus {
+        border-color: rgba(201, 168, 76, 0.6);
+        background: rgba(255, 255, 255, 0.09);
+      }
+
+      #pittie-send-btn {
+        width: 36px;
+        height: 36px;
+        border: none;
+        border-radius: 10px;
+        background: linear-gradient(135deg, #c9a84c, #3b7dff);
+        color: #fff;
+        font-size: 15px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition:
+          opacity 0.2s,
+          transform 0.15s;
+      }
+
+      #pittie-send-btn:hover {
+        opacity: 0.85;
+        transform: scale(1.05);
+      }
+
+      /* ── Mobile responsiveness───── */
+      @media (max-width: 480px) {
+        #pittie-chat-container {
+          right: 0;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 70vh;
+          border-radius: 20px 20px 0 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header id="masthead" class="site-header">
+      <nav
+        id="site-navigation"
+        class="main-navigation navbar navbar-expand-lg navbar-light"
+      >
+        <div class="container">
+          <a
+            href="https://pittiegroup.com/"
+            class="custom-logo-link"
+            rel="home"
+            aria-current="page"
+            ><img
+              src="assets/cropped-Group-1.png"
+              class="custom-logo"
+              alt=""
+              decoding="async"
+              fetchpriority="high"
+              srcset="
                 assets/cropped-Group-1.png 553w,
                 assets/cropped-Group-1.png 300w
-              " sizes="(max-width: 553px) 100vw, 553px" /></a>
-        <button type="button" class="menu-toggle navbar-toggler" data-toggle="collapse" data-target="#primary-menu"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
-        <!-- Middle Menu content -->
-        <div class="menu-main-container">
-          <ul id="primary-menu" class="collapse navbar-collapse nav-menu">
-            <li id="menu-item-16" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16">
-              <a href="index_new.html">Home</a>
-            </li>
-            <li id="menu-item-17"
-              class="arrow-down menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-17">
-              <a href="index_new.html#our-business">Our Business
-                <img src="assets/homePage/dropdown.svg" alt="arrow-svg" /></a>
-              <ul class="sub-menu">
-                <li id="menu-item-404" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-404">
-                  <a href="https://www.victoriaenterprises.co.in/">Pittie Realty</a>
-                </li>
-                <li id="menu-item-407" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-407">
-                  <a href="https://pittieconsumer.com/">Pittie Consumer</a>
-                </li>
-                <li id="menu-item-405" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-405">
-                  <a href="https://www.epiccompany.com/">The EPIC Company</a>
-                </li>
-                <li id="menu-item-406" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-406">
-                  <a href="https://www.pittielogistics.com/">Pittie Logistics</a>
-                </li>
-              </ul>
-            </li>
-            <li id="menu-item-19" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19">
-              <a href="community.html">Community</a>
-            </li>
-            <li id="menu-item-19" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19 active">
-              <a href="innovation.html">Innovation</a>
-            </li>
-            <li id="menu-item-19" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19">
-              <a href="sustainability.html">Sustainability</a>
-            </li>
-            <li id="menu-item-20" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20">
-              <a href="contact.html">Contact US</a>
-            </li>
-            <div class="search-icon-wrap search-icon-wrap-mb">
-              <button id="btn-search" type="button" class="search-btn cta-search-glow" aria-label="Ask AI search">
-                <img src="assets/homePage/search-icon-ai-new.svg" alt="AI Serach icon" class="search-icon"
-                  role="presentation" />
-                <span class="text d-none d-md-block">Ask AI</span>
-              </button>
-            </div>
-          </ul>
-        </div>
-
-        <!-- Right Ask AI -->
-        <div class="search-icon-wrap search-icon-wrap-pc">
-          <button id="btn-search" type="button" class="search-btn cta-search-glow" aria-label="Ask AI search">
-            <img src="assets/homePage/search-icon-ai-new.svg" alt="AI Serach icon" class="search-icon"
-              role="presentation" />
-            <span class="text d-none d-md-block">Ask AI</span>
+              "
+              sizes="(max-width: 553px) 100vw, 553px"
+          /></a>
+          <button
+            type="button"
+            class="menu-toggle navbar-toggler"
+            data-toggle="collapse"
+            data-target="#primary-menu"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
           </button>
+
+          <!-- Middle Menu content -->
+          <div class="menu-main-container">
+            <ul id="primary-menu" class="collapse navbar-collapse nav-menu">
+              <li
+                id="menu-item-16"
+                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16"
+              >
+                <a href="index_new.html">Home</a>
+              </li>
+              <li
+                id="menu-item-17"
+                class="arrow-down menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-17"
+              >
+                <a href="index_new.html#our-business"
+                  >Our Business
+                  <img src="assets/homePage/dropdown.svg" alt="arrow-svg"
+                /></a>
+                <ul class="sub-menu">
+                  <li
+                    id="menu-item-404"
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-404"
+                  >
+                    <a href="https://www.victoriaenterprises.co.in/"
+                      >Pittie Realty</a
+                    >
+                  </li>
+                  <li
+                    id="menu-item-407"
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-407"
+                  >
+                    <a href="https://pittieconsumer.com/">Pittie Consumer</a>
+                  </li>
+                  <li
+                    id="menu-item-405"
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-405"
+                  >
+                    <a href="https://www.epiccompany.com/">The EPIC Company</a>
+                  </li>
+                  <li
+                    id="menu-item-406"
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-406"
+                  >
+                    <a href="https://www.pittielogistics.com/"
+                      >Pittie Logistics</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li
+                id="menu-item-19"
+                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19"
+              >
+                <a href="community.html">Community</a>
+              </li>
+              <li
+                id="menu-item-19"
+                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19 active"
+              >
+                <a href="innovation.html">Innovation</a>
+              </li>
+              <li
+                id="menu-item-19"
+                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19"
+              >
+                <a href="sustainability.html">Sustainability</a>
+              </li>
+              <li
+                id="menu-item-20"
+                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20"
+              >
+                <a href="contact.html">Contact US</a>
+              </li>
+              <div class="search-icon-wrap search-icon-wrap-mb">
+                <button
+                  id="btn-search"
+                  type="button"
+                  class="search-btn cta-search-glow"
+                  aria-label="Ask AI search"
+                >
+                  <img
+                    src="assets/homePage/search-icon-ai-new.svg"
+                    alt="AI Serach icon"
+                    class="search-icon"
+                    role="presentation"
+                  />
+                  <span class="text d-none d-md-block">Ask AI</span>
+                </button>
+              </div>
+            </ul>
+          </div>
+
+          <!-- Right Ask AI -->
+          <div class="search-icon-wrap search-icon-wrap-pc">
+            <button
+              id="btn-search"
+              type="button"
+              class="search-btn cta-search-glow"
+              aria-label="Ask AI search"
+            >
+              <img
+                src="assets/homePage/search-icon-ai-new.svg"
+                alt="AI Serach icon"
+                class="search-icon"
+                role="presentation"
+              />
+              <span class="text d-none d-md-block">Ask AI</span>
+            </button>
+          </div>
         </div>
-      </div>
-    </nav>
-    <!-- #site-navigation -->
-  </header>
+      </nav>
+      <!-- #site-navigation -->
+    </header>
 
-  <main id="maincontent" role="main">
-    <!-- Hero Section -->
-    <section class="snap-section section hero bg-color-white">
-      <div class="container hero-wrapper">
-        <!-- Slide 1 -->
-        <div class="swiper-slide">
-          <div class="hero-content col-8">
-            <h1>Not Just Brands, But Beliefs</h1>
+    <main id="maincontent" role="main">
+      <!-- Hero Section -->
+      <section class="snap-section section hero bg-color-white">
+        <div class="container hero-wrapper">
+          <!-- Slide 1 -->
+          <div class="swiper-slide">
+            <div class="hero-content col-8">
+              <h1>Not Just Brands, But Beliefs</h1>
 
-            <p>
-              We believe in solving real problems with science, design, and
-              intent.
-            </p>
-            <!-- <button class="btn btn-primary">
+              <p>
+                We believe in solving real problems with science, design, and
+                intent.
+              </p>
+              <!-- <button class="btn btn-primary">
                     <a href="#">
                       View Projects
                       <svg
@@ -432,467 +515,598 @@
                       </svg>
                     </a>
                   </button> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="overlay-bg">
+          <div class="image1 overlay-image active">
+            <img
+              src="assets/inovationPage/epic-banner.jpg"
+              alt="Innovation-Banner1"
+              class="overlay-image-pc"
+            />
+            <img
+              src="assets/inovationPage/Epic-mobile-banner.jpg"
+              alt="MobileBanner1"
+              class="overlay-image-mobile"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Video Section  -->
+      <div class="job-opening">
+        <div class="section-header">
+          <div class="section-title">
+            <img
+              class="section-decoration"
+              src="assets/inovationPage/section-decoration0.svg"
+            />
+            <div class="title-text">Our Brand Portfolio</div>
+          </div>
+          <div class="subtitle-text titte-colour">
+            At Pittie Group, innovation is a mindset that shapes the way we
+            think, build, improve, and create value across everyday life.
+          </div>
+        </div>
+        <div class="frame-1272638318">
+          <!-- nitflix -->
+          <div class="frame-1272638326">
+            <div class="the-art-of-dual-aroma-two-fragrances-in-one-stick">
+              A father’s love has no backup plan | Watch on Netflix
+            </div>
+            <img
+              class="kesar-chandan"
+              src="assets/inovationPage/Netflix.png"
+            /><span class="doc-name">Single Papa</span>
+            <div class="image-hlp">
+              <div class="image3">
+                <iframe
+                  class="video-product-image"
+                  src="https://www.youtube.com/embed/WYhyxUbOLK8?autoplay=1&mute=1&controls=0&playsinline=1&loop=1&playlist=WYhyxUbOLK8&modestbranding=1&rel=0"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="autoplay; encrypted-media"
+                  allowfullscreen
+                  style="width: 100%; height: 100%"
+                >
+                </iframe>
+              </div>
+            </div>
+          </div>
+          <!-- shubhkart -->
+          <div class="frame-1272638323">
+            <div class="dual-enzyme-formula">ART OF DUAL AROMAS</div>
+            <img
+              class="vertical-shinezap-355-x-765-px-1"
+              src="assets/inovationPage/kesar-chandan0.png"
+            />
+            <!-- <span class="doc-name">Kargil 1999</> -->
+            <div class="image-hlp">
+              <div class="image3">
+                <iframe
+                  class="video-product-image"
+                  src="https://www.youtube.com/embed/BIH53laYVHA?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&loop=1&playlist=BIH53laYVHA&cc_load_policy=0"
+                  frameborder="0"
+                  allow="autoplay; fullscreen; encrypted-media"
+                  allowfullscreen
+                  style="width: 100%; height: 100%"
+                >
+                </iframe>
+              </div>
+            </div>
+          </div>
+          <!-- docubay -->
+          <div class="frame-1272638325">
+            <div class="_100-pure-resin-loban-dhoop-candy">
+              Where silence became the loudest scream | Watch on Hindi ZEE5
+            </div>
+            <img
+              class="kapoor-dhoop-candy"
+              src="assets/inovationPage/Docubay.png"
+            /><span class="doc-name">Hathras</span>
+            <div class="image-hlp">
+              <div class="image3">
+                <iframe
+                  class="video-product-image"
+                  src="https://www.youtube.com/embed/QQQ1mLi6M3M?autoplay=1&mute=1&controls=0&playsinline=1&loop=1&playlist=QQQ1mLi6M3M&modestbranding=1&rel=0"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="autoplay; encrypted-media"
+                  allowfullscreen
+                  style="width: 100%; height: 100%"
+                >
+                </iframe>
+              </div>
+            </div>
+          </div>
+          <!-- Chaakachak -->
+          <div class="frame-1272638319">
+            <div class="handmade-soaps-with-essential-oils">
+              ULTRA SPIN BUCKET MOP
+            </div>
+            <img class="soap" src="assets/inovationPage/MOP (1).png" />
+            <div class="image-hlp">
+              <div class="image3">
+                <iframe
+                  class="video-product-image"
+                  src="https://www.youtube.com/embed/1UJ1LqkuCKI?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&loop=1&playlist=1UJ1LqkuCKI&cc_load_policy=0"
+                  frameborder="0"
+                  allow="autoplay; fullscreen; encrypted-media"
+                  allowfullscreen
+                  style="width: 100%; height: 100%"
+                >
+                </iframe>
+              </div>
+            </div>
+          </div>
+          <!-- Epic on -->
+          <div class="frame-12726383238 frame-1272638323">
+            <div class="dual-enzyme-formula">
+              Love, deceit, and murder in the lanes of Benaras
+            </div>
+            <img
+              class="vertical-shinezap-355-x-765-px-1"
+              src="assets/inovationPage/EPIC ON LOGO.png"
+            />
+            <span class="doc-name">Tatlubaaz</span>
+            <div class="image-hlp">
+              <div class="image3">
+                <iframe
+                  class="video-product-image"
+                  src="https://www.youtube.com/embed/3Mq0yPo23TE?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&loop=1&playlist=3Mq0yPo23TE&cc_load_policy=0"
+                  frameborder="0"
+                  allow="autoplay; fullscreen; encrypted-media"
+                  allowfullscreen
+                  style="width: 100%; height: 100%"
+                >
+                </iframe>
+              </div>
+            </div>
+          </div>
+          <!-- freshzap -->
+          <div class="frame-1272638324">
+            <div class="odour-neutralising-techonology">
+              Odour Neutralising Technology
+            </div>
+            <img class="freshzap" src="assets/inovationPage/freshzap0.png" />
+            <div class="image-hlp">
+              <div class="image3">
+                <iframe
+                  class="video-product-image"
+                  src="https://www.youtube.com/embed/9o1VO3DLauo?autoplay=1&mute=1&controls=0&showinfo=0&modestbranding=1&rel=0&loop=1&playlist=9o1VO3DLauo&playsinline=1"
+                  frameborder="0"
+                  allow="autoplay; encrypted-media"
+                  allowfullscreen
+                  style="width: 100%; height: 100%; border: 0"
+                >
+                </iframe>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+    </main>
 
-      <div class="overlay-bg">
-        <div class="image1 overlay-image active">
-          <img src="assets/inovationPage/epic-banner.jpg" alt="Innovation-Banner1" class="overlay-image-pc" />
-          <img src="assets/inovationPage/Epic-mobile-banner.jpg" alt="MobileBanner1" class="overlay-image-mobile" />
-        </div>
-      </div>
-    </section>
-
-    <!-- Video Section  -->
-    <div class="job-opening">
-      <div class="section-header">
-        <div class="section-title">
-          <img class="section-decoration" src="assets/inovationPage/section-decoration0.svg" />
-          <div class="title-text">Our Brand Portfolio</div>
-        </div>
-        <div class="subtitle-text titte-colour">
-          At Pittie Group, innovation is a mindset that shapes the way we
-          think, build, improve, and create value across everyday life.
-        </div>
-      </div>
-      <div class="frame-1272638318">
-        <!-- nitflix -->
-        <div class="frame-1272638326">
-          <div class="the-art-of-dual-aroma-two-fragrances-in-one-stick">
-            A father’s love has no backup plan | Watch on Netflix
+    <!-- Footer -->
+    <footer class="footer-section mouse-shine" role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Company Info -->
+          <div class="footer-col footer-brand">
+            <img
+              src="assets/cropped-Group-1.png"
+              alt="Pittie Group Logo"
+              class="footer-logo"
+            />
+            <p class="footer-tagline">
+              We aim to enrich lives, transform industries through our diverse
+              verticals : Realty, Logistics, Consumer & Media.
+            </p>
           </div>
-          <img class="kesar-chandan" src="assets/inovationPage/Netflix.png" /><span class="doc-name">Single Papa</span>
-          <div class="image-hlp">
-            <div class="image3">
-              <iframe class="video-product-image"
-                src="https://www.youtube.com/embed/WYhyxUbOLK8?autoplay=1&mute=1&controls=0&playsinline=1&loop=1&playlist=WYhyxUbOLK8&modestbranding=1&rel=0"
-                title="YouTube video player" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
-                style="width: 100%; height: 100%">
-              </iframe>
+
+          <!-- Mobile Get In Touch (ONLY for mobile) -->
+          <div class="mobile-get-in-touch">
+            <h3>Get in touch</h3>
+
+            <div class="icon-circle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="30"
+                viewBox="0 0 24 25"
+                fill="none"
+              >
+                <path
+                  d="M21 10.9112C21 17.9112 12 22.9112 12 22.9112C12 22.9112 3 17.9112 3 10.9112C3 6.4939 6.58172 2.91113 12 2.91113C17.4183 2.91113 21 6.4939 21 10.9112Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M12 13.9111C13.6569 13.9111 15 12.568 15 10.9111C15 9.25427 13.6569 7.91113 12 7.91113C10.3431 7.91113 9 9.25427 9 10.9111C9 12.568 10.3431 13.9111 12 13.9111Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
             </div>
-          </div>
-        </div>
-        <!-- shubhkart -->
-        <div class="frame-1272638323">
-          <div class="dual-enzyme-formula">ART OF DUAL AROMAS</div>
-          <img class="vertical-shinezap-355-x-765-px-1" src="assets/inovationPage/kesar-chandan0.png" />
-          <!-- <span class="doc-name">Kargil 1999</> -->
-          <div class="image-hlp">
-            <div class="image3">
-              <iframe class="video-product-image"
-                src="https://www.youtube.com/embed/BIH53laYVHA?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&loop=1&playlist=BIH53laYVHA&cc_load_policy=1"
-                frameborder="0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen
-                style="width: 100%; height: 100%">
-              </iframe>
-            </div>
-          </div>
-        </div>
-        <!-- docubay -->
-        <div class="frame-1272638325">
-          <div class="_100-pure-resin-loban-dhoop-candy">
-            Where silence became the loudest scream | Watch on Hindi ZEE5
-          </div>
-          <img class="kapoor-dhoop-candy" src="assets/inovationPage/Docubay.jpg" /><span class="doc-name">Hathras</span>
-          <div class="image-hlp">
-            <div class="image3">
-              <iframe class="video-product-image"
-                src="https://www.youtube.com/embed/QQQ1mLi6M3M?autoplay=1&mute=1&controls=0&playsinline=1&loop=1&playlist=QQQ1mLi6M3M&modestbranding=1&rel=0"
-                title="YouTube video player" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
-                style="width: 100%; height: 100%">
-              </iframe>
-            </div>
-          </div>
-        </div>
-        <!-- Chaakachak -->
-        <div class="frame-1272638319">
-          <div class="handmade-soaps-with-essential-oils">
-            ULTRA SPIN BUCKET MOP
-          </div>
-          <img class="soap" src="assets/inovationPage/MOP (1).png" />
-          <div class="image-hlp">
-            <div class="image3">
-              <iframe class="video-product-image"
-                src="https://www.youtube.com/embed/1UJ1LqkuCKI?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&loop=1&playlist=1UJ1LqkuCKI&cc_load_policy=1"
-                frameborder="0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen
-                style="width: 100%; height: 100%">
-              </iframe>
-            </div>
-          </div>
-        </div>
-        <!-- Epic on -->
-        <div class="frame-12726383238 frame-1272638323">
-          <div class="dual-enzyme-formula">
-            Love, deceit, and murder in the lanes of Benaras
-          </div>
-          <img class="vertical-shinezap-355-x-765-px-1" src="assets/inovationPage/EPIC ON LOGO.png" />
-          <span class="doc-name">Tatlubaaz</span>
-          <div class="image-hlp">
-            <div class="image3">
-              <iframe class="video-product-image"
-                src="https://www.youtube.com/embed/3Mq0yPo23TE?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&loop=1&playlist=3Mq0yPo23TE&cc_load_policy=1"
-                frameborder="0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen
-                style="width: 100%; height: 100%">
-              </iframe>
-            </div>
-          </div>
-        </div>
-        <!-- freshzap -->
-        <div class="frame-1272638324">
-          <div class="odour-neutralising-techonology">
-            Odour Neutralising Technology
-          </div>
-          <img class="freshzap" src="assets/inovationPage/freshzap0.png" />
-          <div class="image-hlp">
-            <div class="image3">
-              <iframe class="video-product-image"
-                src="https://www.youtube.com/embed/DCl5hier0po?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&loop=1&playlist=DCl5hier0po&cc_load_policy=1"
-                frameborder="0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen
-                style="width: 100%; height: 100%">
-              </iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
 
-  <!-- Footer -->
-  <footer class="footer-section" role="contentinfo">
-    <div class="container">
-      <div class="footer-grid">
-        <!-- Company Info -->
-        <div class="footer-col footer-brand">
-          <img src="assets/cropped-Group-1.png" alt="Pittie Group Logo" class="footer-logo" />
-          <p class="footer-tagline">
-            We aim to enrich lives, transform industries through our diverse
-            verticals : Realty, Logistics, Consumer & Media.
-          </p>
-        </div>
+            <p class="address First">
+              Vaibhav Chambers, Bandra Kurla Complex, Bandra - East, Mumbai -
+              400051.
+            </p>
 
-        <!-- Mobile Get In Touch (ONLY for mobile) -->
-        <div class="mobile-get-in-touch">
-          <h3>Get in touch</h3>
+            <span class="divider"></span>
 
-          <div class="icon-circle">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" viewBox="0 0 24 25" fill="none">
-              <path
-                d="M21 10.9112C21 17.9112 12 22.9112 12 22.9112C12 22.9112 3 17.9112 3 10.9112C3 6.4939 6.58172 2.91113 12 2.91113C17.4183 2.91113 21 6.4939 21 10.9112Z"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              <path
-                d="M12 13.9111C13.6569 13.9111 15 12.568 15 10.9111C15 9.25427 13.6569 7.91113 12 7.91113C10.3431 7.91113 9 9.25427 9 10.9111C9 12.568 10.3431 13.9111 12 13.9111Z"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </div>
+            <p class="address">
+              Raheja District I, B3 & B4, RICC, Plot Gen-2/1/B, D Block, T.T.C.
+              Industrial Area, Juinagar, Navi Mumbai - 400705.
+            </p>
 
-          <p class="address First">
-            Vaibhav Chambers, Bandra Kurla Complex, Bandra - East, Mumbai -
-            400051.
-          </p>
-
-          <span class="divider"></span>
-
-          <p class="address">
-            Raheja District I, B3 & B4, RICC, Plot Gen-2/1/B, D Block, T.T.C.
-            Industrial Area, Juinagar, Navi Mumbai - 400705.
-          </p>
-
-          <div class="contact-row">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 25" fill="none">
-              <path
-                d="M4 4.91113H20C21.1 4.91113 22 5.81113 22 6.91113V18.9111C22 20.0111 21.1 20.9111 20 20.9111H4C2.9 20.9111 2 20.0111 2 18.9111V6.91113C2 5.81113 2.9 4.91113 4 4.91113Z"
-                stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-              <path d="M22 6.91113L12 13.9111L2 6.91113" stroke="black" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round"></path>
-            </svg>
-            <!-- <a href="mailto:contact@pittiegroup.com"
-                >contact@pittiegroup.com</a
-              > -->
-            <a href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;to=contact@pittiegroup.com">contact@pittiegroup.com
-            </a>
-          </div>
-
-          <div class="contact-row">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 25" fill="none">
-              <path
-                d="M21.9994 17.8312V20.8312C22.0006 21.1097 21.9435 21.3854 21.832 21.6406C21.7204 21.8958 21.5567 22.1248 21.3515 22.3131C21.1463 22.5014 20.904 22.6447 20.6402 22.7339C20.3764 22.8232 20.0968 22.8563 19.8194 22.8312C16.7423 22.4969 13.7864 21.4454 11.1894 19.7612C8.77327 18.2259 6.72478 16.1774 5.18945 13.7612C3.49942 11.1524 2.44769 8.18222 2.11944 5.09123C2.09446 4.8147 2.12732 4.53599 2.21595 4.27285C2.30457 4.00972 2.44702 3.76792 2.63421 3.56285C2.82141 3.35778 3.04925 3.19394 3.30324 3.08175C3.55722 2.96956 3.83179 2.91149 4.10945 2.91123H7.10945C7.59475 2.90645 8.06524 3.07831 8.43321 3.39476C8.80118 3.71122 9.04152 4.15068 9.10944 4.63123C9.23607 5.5913 9.47089 6.53396 9.80945 7.44123C9.94399 7.79915 9.97311 8.18814 9.89335 8.56211C9.8136 8.93608 9.62831 9.27934 9.35944 9.55123L8.08945 10.8212C9.513 13.3248 11.5859 15.3977 14.0894 16.8212L15.3594 15.5512C15.6313 15.2824 15.9746 15.0971 16.3486 15.0173C16.7225 14.9376 17.1115 14.9667 17.4694 15.1012C18.3767 15.4398 19.3194 15.6746 20.2794 15.8012C20.7652 15.8698 21.2088 16.1144 21.526 16.4887C21.8431 16.863 22.0116 17.3408 21.9994 17.8312Z"
-                stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-            <a href="tel:+912242604260">+91 22 4260 4260</a>
-          </div>
-        </div>
-        <div class="consumer-rights">
-          <p class="logistics-policy">
-            © 2025 Pittie Logistics. All Rights Reserved.
-          </p>
-        </div>
-
-        <!-- Quick Links -->
-        <div class="footer-col footer-col-quicks">
-          <h3 class="footer-title">Quick Links</h3>
-          <ul class="footer-links">
-            <li><a href="index_new.html">Home</a></li>
-            <li><a href="community.html">Community</a></li>
-            <li><a href="innovation.html">Innovation</a></li>
-            <li><a href="sustainability.html">Sustainability</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-          </ul>
-        </div>
-
-        <!-- Services -->
-        <div class="footer-col footer-col-services">
-          <h3 class="footer-title">Our Businesses</h3>
-          <ul class="footer-links">
-            <li>
-              <a href="https://www.victoriaenterprises.co.in/">Pittie Realty</a>
-            </li>
-            <li>
-              <a href="https://pittieconsumer.com/">Pittie Consumer</a>
-            </li>
-            <li>
-              <a href="https://www.epiccompany.com/">The EPIC Company</a>
-            </li>
-            <li>
-              <a href="https://www.pittielogistics.com/">Pittie Logistics</a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Contact -->
-        <div class="footer-col">
-          <h3 class="footer-title">Contact Us</h3>
-          <ul class="footer-contact">
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 25" fill="none">
+            <div class="contact-row">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 25"
+                fill="none"
+              >
                 <path
                   d="M4 4.91113H20C21.1 4.91113 22 5.81113 22 6.91113V18.9111C22 20.0111 21.1 20.9111 20 20.9111H4C2.9 20.9111 2 20.0111 2 18.9111V6.91113C2 5.81113 2.9 4.91113 4 4.91113Z"
-                  stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                <path d="M22 6.91113L12 13.9111L2 6.91113" stroke="black" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round"></path>
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M22 6.91113L12 13.9111L2 6.91113"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
               </svg>
-              <a href="mailto:contact@pittiegroup.com">contact@pittiegroup.com</a>
-            </li>
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 25" fill="none">
+              <!-- <a href="mailto:contact@pittiegroup.com"
+                >contact@pittiegroup.com</a
+              > -->
+              <a
+                href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;to=contact@pittiegroup.com"
+                >contact@pittiegroup.com
+              </a>
+            </div>
+
+            <div class="contact-row">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 25"
+                fill="none"
+              >
                 <path
                   d="M21.9994 17.8312V20.8312C22.0006 21.1097 21.9435 21.3854 21.832 21.6406C21.7204 21.8958 21.5567 22.1248 21.3515 22.3131C21.1463 22.5014 20.904 22.6447 20.6402 22.7339C20.3764 22.8232 20.0968 22.8563 19.8194 22.8312C16.7423 22.4969 13.7864 21.4454 11.1894 19.7612C8.77327 18.2259 6.72478 16.1774 5.18945 13.7612C3.49942 11.1524 2.44769 8.18222 2.11944 5.09123C2.09446 4.8147 2.12732 4.53599 2.21595 4.27285C2.30457 4.00972 2.44702 3.76792 2.63421 3.56285C2.82141 3.35778 3.04925 3.19394 3.30324 3.08175C3.55722 2.96956 3.83179 2.91149 4.10945 2.91123H7.10945C7.59475 2.90645 8.06524 3.07831 8.43321 3.39476C8.80118 3.71122 9.04152 4.15068 9.10944 4.63123C9.23607 5.5913 9.47089 6.53396 9.80945 7.44123C9.94399 7.79915 9.97311 8.18814 9.89335 8.56211C9.8136 8.93608 9.62831 9.27934 9.35944 9.55123L8.08945 10.8212C9.513 13.3248 11.5859 15.3977 14.0894 16.8212L15.3594 15.5512C15.6313 15.2824 15.9746 15.0971 16.3486 15.0173C16.7225 14.9376 17.1115 14.9667 17.4694 15.1012C18.3767 15.4398 19.3194 15.6746 20.2794 15.8012C20.7652 15.8698 21.2088 16.1144 21.526 16.4887C21.8431 16.863 22.0116 17.3408 21.9994 17.8312Z"
-                  stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
               </svg>
               <a href="tel:+912242604260">+91 22 4260 4260</a>
-            </li>
-          </ul>
+            </div>
+          </div>
+          <div class="consumer-rights">
+            <p class="logistics-policy">
+              © 2025 Pittie Logistics. All Rights Reserved.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-col footer-col-quicks">
+            <h3 class="footer-title">Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="index_new.html">Home</a></li>
+              <li><a href="community.html">Community</a></li>
+              <li><a href="innovation.html">Innovation</a></li>
+              <li><a href="sustainability.html">Sustainability</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Services -->
+          <div class="footer-col footer-col-services">
+            <h3 class="footer-title">Our Businesses</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="https://www.victoriaenterprises.co.in/"
+                  >Pittie Realty</a
+                >
+              </li>
+              <li>
+                <a href="https://pittieconsumer.com/">Pittie Consumer</a>
+              </li>
+              <li>
+                <a href="https://www.epiccompany.com/">The EPIC Company</a>
+              </li>
+              <li>
+                <a href="https://www.pittielogistics.com/">Pittie Logistics</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="footer-col">
+            <h3 class="footer-title">Contact Us</h3>
+            <ul class="footer-contact">
+              <li>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 25"
+                  fill="none"
+                >
+                  <path
+                    d="M4 4.91113H20C21.1 4.91113 22 5.81113 22 6.91113V18.9111C22 20.0111 21.1 20.9111 20 20.9111H4C2.9 20.9111 2 20.0111 2 18.9111V6.91113C2 5.81113 2.9 4.91113 4 4.91113Z"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M22 6.91113L12 13.9111L2 6.91113"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+                <a href="mailto:contact@pittiegroup.com"
+                  >contact@pittiegroup.com</a
+                >
+              </li>
+              <li>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 25"
+                  fill="none"
+                >
+                  <path
+                    d="M21.9994 17.8312V20.8312C22.0006 21.1097 21.9435 21.3854 21.832 21.6406C21.7204 21.8958 21.5567 22.1248 21.3515 22.3131C21.1463 22.5014 20.904 22.6447 20.6402 22.7339C20.3764 22.8232 20.0968 22.8563 19.8194 22.8312C16.7423 22.4969 13.7864 21.4454 11.1894 19.7612C8.77327 18.2259 6.72478 16.1774 5.18945 13.7612C3.49942 11.1524 2.44769 8.18222 2.11944 5.09123C2.09446 4.8147 2.12732 4.53599 2.21595 4.27285C2.30457 4.00972 2.44702 3.76792 2.63421 3.56285C2.82141 3.35778 3.04925 3.19394 3.30324 3.08175C3.55722 2.96956 3.83179 2.91149 4.10945 2.91123H7.10945C7.59475 2.90645 8.06524 3.07831 8.43321 3.39476C8.80118 3.71122 9.04152 4.15068 9.10944 4.63123C9.23607 5.5913 9.47089 6.53396 9.80945 7.44123C9.94399 7.79915 9.97311 8.18814 9.89335 8.56211C9.8136 8.93608 9.62831 9.27934 9.35944 9.55123L8.08945 10.8212C9.513 13.3248 11.5859 15.3977 14.0894 16.8212L15.3594 15.5512C15.6313 15.2824 15.9746 15.0971 16.3486 15.0173C16.7225 14.9376 17.1115 14.9667 17.4694 15.1012C18.3767 15.4398 19.3194 15.6746 20.2794 15.8012C20.7652 15.8698 21.2088 16.1144 21.526 16.4887C21.8431 16.863 22.0116 17.3408 21.9994 17.8312Z"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+                <a href="tel:+912242604260">+91 22 4260 4260</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-  <!-- ================= Scripts ================= -->
+    <!-- ================= Scripts ================= -->
 
-  <div id="pittie-chat-container" role="dialog" aria-label="Pittie AI Chatbot">
-    <div id="pittie-chat-header">
-      <div class="hdr-left">
-        <div class="hdr-avatar">
-          <img src="assets/favicon.png" alt="Bot Logo" />
+    <div
+      id="pittie-chat-container"
+      role="dialog"
+      aria-label="Pittie AI Chatbot"
+    >
+      <div id="pittie-chat-header">
+        <div class="hdr-left">
+          <div class="hdr-avatar">
+            <img src="assets/favicon.png" alt="Bot Logo" />
+          </div>
+          <div>
+            <div class="hdr-title">Pittie Raahi</div>
+            <!-- <div class="hdr-subtitle">Your logistics companion</div> -->
+          </div>
         </div>
-        <div>
-          <div class="hdr-title">Pittie Raahi</div>
-          <!-- <div class="hdr-subtitle">Your logistics companion</div> -->
-        </div>
+        <button class="hdr-close" id="pittie-close-btn" aria-label="Close chat">
+          ✕
+        </button>
       </div>
-      <button class="hdr-close" id="pittie-close-btn" aria-label="Close chat">
-        ✕
-      </button>
+      <div id="pittie-session-badge"></div>
+      <div id="pittie-chat-messages"></div>
+      <div id="pittie-chat-input">
+        <input
+          type="text"
+          id="pittie-msg-input"
+          placeholder="Ask something…"
+          autocomplete="off"
+        />
+        <button id="pittie-send-btn" aria-label="Send message">➤</button>
+      </div>
     </div>
-    <div id="pittie-session-badge"></div>
-    <div id="pittie-chat-messages"></div>
-    <div id="pittie-chat-input">
-      <input type="text" id="pittie-msg-input" placeholder="Ask something…" autocomplete="off" />
-      <button id="pittie-send-btn" aria-label="Send message">➤</button>
-    </div>
-  </div>
 
-  <script>
-    (function () {
-      "use strict";
+    <script>
+      (function () {
+        "use strict";
 
-      /* ── 1. SESSION ID — localStorage + cookie ────── */
-      function getCookie(name) {
-        const match = document.cookie.match(
-          new RegExp("(^| )" + name + "=([^;]+)"),
-        );
-        return match ? decodeURIComponent(match[2]) : null;
-      }
-      function setCookie(name, value, days) {
-        const expires = new Date(Date.now() + days * 864e5).toUTCString();
-        document.cookie =
-          name +
-          "=" +
-          encodeURIComponent(value) +
-          "; expires=" +
-          expires +
-          "; path=/; SameSite=Lax";
-      }
-
-      let sessionId =
-        localStorage.getItem("chatSessionId") || getCookie("chatSessionId");
-      if (!sessionId) {
-        sessionId =
-          typeof crypto !== "undefined" && crypto.randomUUID
-            ? crypto.randomUUID()
-            : "xxxx-xxxx-xxxx".replace(/x/g, () =>
-              ((Math.random() * 16) | 0).toString(16),
-            );
-        localStorage.setItem("chatSessionId", sessionId);
-        setCookie("chatSessionId", sessionId, 365);
-      }
-
-      /* ── 2. WEBHOOK URL — replace this string ─────── */
-      const WEBHOOK_URL =
-        "https://n8n.srv1670075.hstgr.cloud/webhook/4091fa09-fb9a-4039-9411-7104d213f601/chat";
-
-      /* ── 3. DOM refs ──────────────────────────────── */
-      const chatBox = document.getElementById("pittie-chat-container");
-      const msgArea = document.getElementById("pittie-chat-messages");
-      const input = document.getElementById("pittie-msg-input");
-      const sendBtn = document.getElementById("pittie-send-btn");
-      const closeBtn = document.getElementById("pittie-close-btn");
-      const sessionBadge = document.getElementById("pittie-session-badge");
-
-      sessionBadge.textContent = "Session: " + sessionId.slice(0, 8) + "…";
-
-      /* ── 4. OPEN / CLOSE ──────────────────────────── */
-      function openChat() {
-        chatBox.style.display = "flex";
-        if (msgArea.childElementCount === 0) showWelcome();
-        setTimeout(() => input.focus(), 100);
-      }
-      function closeChat() {
-        chatBox.style.display = "none";
-      }
-
-      document.querySelectorAll("#btn-search").forEach((btn) => {
-        btn.addEventListener("click", function (e) {
-          e.preventDefault();
-          chatBox.style.display === "flex" ? closeChat() : openChat();
-        });
-      });
-
-      closeBtn.addEventListener("click", closeChat);
-
-      /* ── 5. MESSAGES ──────────────────────────────── */
-      function addMessage(text, type) {
-        const el = document.createElement("div");
-        el.classList.add("pittie-msg", type);
-        el.textContent = text;
-        msgArea.appendChild(el);
-        msgArea.scrollTop = msgArea.scrollHeight;
-        return el;
-      }
-
-      function addTyping() {
-        const el = document.createElement("div");
-        el.className = "pittie-typing";
-        el.id = "pittie-typing-indicator";
-        el.innerHTML = "<span></span><span></span><span></span>";
-        msgArea.appendChild(el);
-        msgArea.scrollTop = msgArea.scrollHeight;
-        return el;
-      }
-
-      /* ── 6. WELCOME — sirf yahi message dikhega ───── */
-      function showWelcome() {
-        addMessage(
-          "Hi 👋 I'm Pittie Raahi, your Pittie Group companion.\n\nHow can I help you today?",
-          "bot",
-        );
-      }
-
-      /* ── 7. FREE-TEXT SEND + WEBHOOK ──────────────── */
-      function sendMessage() {
-        const text = input.value.trim();
-        if (!text) return;
-        input.value = "";
-
-        addMessage(text, "user");
-        const typing = addTyping();
-
-        // Send to webhook and wait for reply
-        sendToWebhook(text, typing);
-      }
-
-      sendBtn.addEventListener("click", sendMessage);
-      input.addEventListener("keypress", (e) => {
-        if (e.key === "Enter") {
-          e.preventDefault();
-          sendMessage();
+        /* ── 1. SESSION ID — localStorage + cookie ────── */
+        function getCookie(name) {
+          const match = document.cookie.match(
+            new RegExp("(^| )" + name + "=([^;]+)"),
+          );
+          return match ? decodeURIComponent(match[2]) : null;
         }
-      });
-
-      /* ── 8. WEBHOOK — sessionId sent with every call  */
-      function sendToWebhook(userMessage, typingEl) {
-        const payload = {
-          sessionId: sessionId,
-          chatInput: userMessage,
-          timestamp: new Date().toISOString(),
-          page: window.location.href,
-        };
-
-        if (!WEBHOOK_URL || WEBHOOK_URL === "YOUR_WEBHOOK_URL") {
-          // Webhook not configured yet — show placeholder reply
-          setTimeout(() => {
-            typingEl.remove();
-            addMessage(
-              "Webhook URL not set yet. Please configure YOUR_WEBHOOK_URL in the script.",
-              "bot",
-            );
-          }, 700);
-          return;
+        function setCookie(name, value, days) {
+          const expires = new Date(Date.now() + days * 864e5).toUTCString();
+          document.cookie =
+            name +
+            "=" +
+            encodeURIComponent(value) +
+            "; expires=" +
+            expires +
+            "; path=/; SameSite=Lax";
         }
 
-        fetch(WEBHOOK_URL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            typingEl.remove();
-            // Adjust this key based on what your webhook returns
-            const reply =
-              data.output ||
-              data.reply ||
-              data.message ||
-              data.text ||
-              "Got it! Our team will get back to you shortly.";
-            addMessage(reply, "bot");
-          })
-          .catch(() => {
-            typingEl.remove();
-            addMessage(
-              "Something went wrong. Please try again or call us at +91 22 4260 4260.",
-              "bot",
-            );
+        let sessionId =
+          localStorage.getItem("chatSessionId") || getCookie("chatSessionId");
+        if (!sessionId) {
+          sessionId =
+            typeof crypto !== "undefined" && crypto.randomUUID
+              ? crypto.randomUUID()
+              : "xxxx-xxxx-xxxx".replace(/x/g, () =>
+                  ((Math.random() * 16) | 0).toString(16),
+                );
+          localStorage.setItem("chatSessionId", sessionId);
+          setCookie("chatSessionId", sessionId, 365);
+        }
+
+        /* ── 2. WEBHOOK URL — replace this string ─────── */
+        const WEBHOOK_URL =
+          "https://n8n.srv1670075.hstgr.cloud/webhook/4091fa09-fb9a-4039-9411-7104d213f601/chat";
+
+        /* ── 3. DOM refs ──────────────────────────────── */
+        const chatBox = document.getElementById("pittie-chat-container");
+        const msgArea = document.getElementById("pittie-chat-messages");
+        const input = document.getElementById("pittie-msg-input");
+        const sendBtn = document.getElementById("pittie-send-btn");
+        const closeBtn = document.getElementById("pittie-close-btn");
+        const sessionBadge = document.getElementById("pittie-session-badge");
+
+        sessionBadge.textContent = "Session: " + sessionId.slice(0, 8) + "…";
+
+        /* ── 4. OPEN / CLOSE ──────────────────────────── */
+        function openChat() {
+          chatBox.style.display = "flex";
+          if (msgArea.childElementCount === 0) showWelcome();
+          setTimeout(() => input.focus(), 100);
+        }
+        function closeChat() {
+          chatBox.style.display = "none";
+        }
+
+        document.querySelectorAll("#btn-search").forEach((btn) => {
+          btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            chatBox.style.display === "flex" ? closeChat() : openChat();
           });
-      }
-    })();
-  </script>
+        });
 
-  <!-- GSAP -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+        closeBtn.addEventListener("click", closeChat);
 
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        /* ── 5. MESSAGES ──────────────────────────────── */
+        function addMessage(text, type) {
+          const el = document.createElement("div");
+          el.classList.add("pittie-msg", type);
+          el.textContent = text;
+          msgArea.appendChild(el);
+          msgArea.scrollTop = msgArea.scrollHeight;
+          return el;
+        }
 
-  <!-- Boostrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        function addTyping() {
+          const el = document.createElement("div");
+          el.className = "pittie-typing";
+          el.id = "pittie-typing-indicator";
+          el.innerHTML = "<span></span><span></span><span></span>";
+          msgArea.appendChild(el);
+          msgArea.scrollTop = msgArea.scrollHeight;
+          return el;
+        }
 
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script> -->
+        /* ── 6. WELCOME — sirf yahi message dikhega ───── */
+        function showWelcome() {
+          addMessage(
+            "Hi 👋 I'm Pittie Raahi, your Pittie Group companion.\n\nHow can I help you today?",
+            "bot",
+          );
+        }
 
-  <!-- Main JS -->
-  <script src="logic/universal.js"></script>
-  <!-- <script src="logic/script.js"></script> -->
-  <script src="logic/innovation.js"></script>
-</body>
+        /* ── 7. FREE-TEXT SEND + WEBHOOK ──────────────── */
+        function sendMessage() {
+          const text = input.value.trim();
+          if (!text) return;
+          input.value = "";
 
+          addMessage(text, "user");
+          const typing = addTyping();
+
+          // Send to webhook and wait for reply
+          sendToWebhook(text, typing);
+        }
+
+        sendBtn.addEventListener("click", sendMessage);
+        input.addEventListener("keypress", (e) => {
+          if (e.key === "Enter") {
+            e.preventDefault();
+            sendMessage();
+          }
+        });
+
+        /* ── 8. WEBHOOK — sessionId sent with every call  */
+        function sendToWebhook(userMessage, typingEl) {
+          const payload = {
+            sessionId: sessionId,
+            chatInput: userMessage,
+            timestamp: new Date().toISOString(),
+            page: window.location.href,
+          };
+
+          if (!WEBHOOK_URL || WEBHOOK_URL === "YOUR_WEBHOOK_URL") {
+            // Webhook not configured yet — show placeholder reply
+            setTimeout(() => {
+              typingEl.remove();
+              addMessage(
+                "Webhook URL not set yet. Please configure YOUR_WEBHOOK_URL in the script.",
+                "bot",
+              );
+            }, 700);
+            return;
+          }
+
+          fetch(WEBHOOK_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              typingEl.remove();
+              // Adjust this key based on what your webhook returns
+              const reply =
+                data.output ||
+                data.reply ||
+                data.message ||
+                data.text ||
+                "Got it! Our team will get back to you shortly.";
+              addMessage(reply, "bot");
+            })
+            .catch(() => {
+              typingEl.remove();
+              addMessage(
+                "Something went wrong. Please try again or call us at +91 22 4260 4260.",
+                "bot",
+              );
+            });
+        }
+      })();
+    </script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Boostrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script> -->
+
+    <!-- Main JS -->
+    <script src="logic/universal.js"></script>
+    <!-- <script src="logic/script.js"></script> -->
+    <script src="logic/innovation.js"></script>
+  </body>
 </html>

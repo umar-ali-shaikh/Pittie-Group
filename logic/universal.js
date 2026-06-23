@@ -16,87 +16,79 @@ buttons.forEach((button) => {
 const glowButtons = document.querySelectorAll(".button-colour");
 
 glowButtons.forEach((button) => {
-    button.addEventListener("mousemove", (e) => {
-        const rect = button.getBoundingClientRect();
+  button.addEventListener("mousemove", (e) => {
+    const rect = button.getBoundingClientRect();
 
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
 
-        button.style.setProperty("--x", `${x}px`);
-        button.style.setProperty("--y", `${y}px`);
-    });
+    button.style.setProperty("--x", `${x}px`);
+    button.style.setProperty("--y", `${y}px`);
+  });
 });
 
-
-// Counter Js universal 
+// Counter Js universal
 document.addEventListener("DOMContentLoaded", () => {
-
   // ALL COUNTERS
   const counters = document.querySelectorAll(".count-box h3");
 
   // OBSERVER
-  const observer = new IntersectionObserver((entries, observer) => {
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const counter = entry.target;
 
-    entries.forEach(entry => {
+          // ORIGINAL TEXT
+          const originalText = counter.innerText.trim();
 
-      if (entry.isIntersecting) {
+          // EXTRACT NUMBER
+          const targetNumber = parseFloat(originalText.replace(/[^0-9.]/g, ""));
 
-        const counter = entry.target;
+          // EXTRACT SYMBOLS
+          const suffix = originalText.replace(/[0-9.]/g, "");
 
-        // ORIGINAL TEXT
-        const originalText = counter.innerText.trim();
+          let current = 0;
 
-        // EXTRACT NUMBER
-        const targetNumber = parseFloat(originalText.replace(/[^0-9.]/g, ''));
+          // SPEED
+          const increment = targetNumber / 100;
 
-        // EXTRACT SYMBOLS
-        const suffix = originalText.replace(/[0-9.]/g, '');
+          const updateCounter = () => {
+            current += increment;
 
-        let current = 0;
+            if (current < targetNumber) {
+              // HANDLE DECIMAL VALUES
+              if (originalText.includes(".")) {
+                counter.innerText = current.toFixed(1) + suffix;
+              } else {
+                counter.innerText = Math.floor(current) + suffix;
+              }
 
-        // SPEED
-        const increment = targetNumber / 100;
-
-        const updateCounter = () => {
-
-          current += increment;
-
-          if (current < targetNumber) {
-
-            // HANDLE DECIMAL VALUES
-            if (originalText.includes(".")) {
-              counter.innerText = current.toFixed(1) + suffix;
+              requestAnimationFrame(updateCounter);
             } else {
-              counter.innerText = Math.floor(current) + suffix;
+              // FINAL VALUE
+              counter.innerText = originalText;
             }
+          };
 
-            requestAnimationFrame(updateCounter);
+          updateCounter();
 
-          } else {
-
-            // FINAL VALUE
-            counter.innerText = originalText;
-          }
-        };
-
-        updateCounter();
-
-        // RUN ONLY ONCE
-        observer.unobserve(counter);
-      }
-
-    });
-
-  }, {
-    threshold: 0.5
-  });
+          // RUN ONLY ONCE
+          observer.unobserve(counter);
+        }
+      });
+    },
+    {
+      threshold: 0.5,
+    },
+  );
 
   // OBSERVE ALL
-  counters.forEach(counter => {
+  counters.forEach((counter) => {
     observer.observe(counter);
   });
-
 });
+
 document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.querySelector(".menu-toggle");
   const primaryMenu = document.querySelector("#primary-menu");
@@ -104,9 +96,24 @@ document.addEventListener("DOMContentLoaded", () => {
   menuToggle.addEventListener("click", () => {
     primaryMenu.classList.toggle("show");
 
-    const expanded =
-      menuToggle.getAttribute("aria-expanded") === "true";
+    const expanded = menuToggle.getAttribute("aria-expanded") === "true";
 
     menuToggle.setAttribute("aria-expanded", !expanded);
+  });
+});
+
+/* All section Hover Shine Effect  */
+document.querySelectorAll(".mouse-shine").forEach((element) => {
+  element.addEventListener("mousemove", (e) => {
+    const rect = element.getBoundingClientRect();
+
+    element.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
+
+    element.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
+  });
+
+  element.addEventListener("mouseleave", () => {
+    element.style.setProperty("--mouse-x", "-999px");
+    element.style.setProperty("--mouse-y", "-999px");
   });
 });

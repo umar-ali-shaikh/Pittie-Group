@@ -368,7 +368,6 @@
  /* =========================
    ADDRESS SECTION
 ========================= */
-
  .address-section {
    padding: 80px 0;
    position: relative;
@@ -377,7 +376,7 @@
  .address-section .container {
    position: relative;
    z-index: 11;
-   width: 100%;
+   width: 90%;
  }
 
  .address-title {
@@ -387,7 +386,6 @@
    letter-spacing: 1px;
  }
 
- /* TABS */
  .address-tabs {
    display: flex;
    justify-content: center;
@@ -395,11 +393,6 @@
    gap: 12px;
    margin-bottom: 40px;
  }
-
- .address-item.hide {
-   display: none !important;
- }
-
 
  .address-tab-btn {
    border: 1px solid var(--text-primary);
@@ -415,12 +408,16 @@
 
  .address-tab-btn:hover,
  .address-tab-btn.active {
-   background: radial-gradient(71.7% 135.42% at 49.77% 79.17%, #0059CF 0%, #111928 100%);
- 
+   background: radial-gradient(71.7% 135.42% at 49.77% 79.17%,
+       #0059cf 0%,
+       #111928 100%);
    color: #fff;
  }
 
- /* Cards */
+ .address-slider-wrap {
+   position: relative;
+ }
+
  .address-card {
    background: var(--bg-primary);
    border-radius: var(--radius16);
@@ -432,7 +429,6 @@
 
  .address-card:hover {
    transform: translateY(-5px);
-   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
  }
 
  .address-card h5 {
@@ -449,14 +445,13 @@
    margin: 0;
  }
 
- /* Hide animation */
  .address-item {
    display: block;
    animation: fadeInAddress 0.35s ease;
  }
 
  .address-item.hide {
-   display: none;
+   display: none !important;
  }
 
  @keyframes fadeInAddress {
@@ -471,7 +466,44 @@
    }
  }
 
+ /* Arrows */
+ .address-arrow {
+   width: 44px;
+   height: 44px;
+   border-radius: 50%;
+   border: none;
+   background: radial-gradient(71.7% 135.42% at 49.77% 79.17%,
+       #0059cf 0%,
+       #111928 100%);
+   color: #fff;
+   font-size: 34px;
+   line-height: 1;
+   cursor: pointer;
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   z-index: 20;
+   display: none;
+   align-items: center;
+   justify-content: center;
+ }
 
+ .address-prev {
+   left: -60px;
+ }
+
+ .address-next {
+   right: -60px;
+ }
+
+ .address-arrow.show {
+   display: flex;
+ }
+
+ .address-arrow:disabled {
+   opacity: 0.4;
+   cursor: not-allowed;
+ }
 
  /* Mobile */
  @media (max-width: 576px) {
@@ -489,7 +521,25 @@
      text-align: center;
    }
 
- 
+   .address-arrow {
+     width: 38px;
+     height: 38px;
+     font-size: 28px;
+     top: auto;
+     bottom: -60px;
+   }
+
+   .address-prev {
+     left: 35%;
+   }
+
+   .address-next {
+     right: 35%;
+   }
+
+   .address-slider-wrap {
+     padding-bottom: 70px;
+   }
  }
 
  /* =========================
@@ -796,8 +846,10 @@
 
    .hero-wrapper {
      top: 0;
+     left: 50%;
+     transform: translate(-50%, 10%);
      padding: 0;
-     display: none;
+     position: absolute;
    }
 
    .hero-content {

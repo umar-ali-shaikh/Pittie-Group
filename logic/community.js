@@ -12,15 +12,10 @@ const observer = new IntersectionObserver(
   },
   {
     threshold: 0.3,
-  }
+  },
 );
 
 observer.observe(slide);
-
-
-
-
-
 
 var imageSwiper = new Swiper(".testimonialImageSwiper", {
   slidesPerView: 1,
@@ -67,3 +62,4 @@ var contentSwiper = new Swiper(".testimonialContentSwiper", {
 contentSwiper.on("slideChange", function () {
   imageSwiper.slideToLoop(contentSwiper.realIndex);
 });
+

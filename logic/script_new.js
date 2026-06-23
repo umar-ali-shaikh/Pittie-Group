@@ -149,6 +149,7 @@ if (toggleBtn) {
   });
 }
 
+
 let mobileIndex = 0;
 let mobileInterval;
 
@@ -174,21 +175,20 @@ function startMobileSlider() {
 
   let startX = 0;
 
-  document
-    .querySelector(".overlay-images-wrapper")
+  document.querySelector(".overlay-images-wrapper")
     ?.addEventListener("touchstart", (e) => {
       startX = e.touches[0].clientX;
     });
 
-  document
-    .querySelector(".overlay-images-wrapper")
+  document.querySelector(".overlay-images-wrapper")
     ?.addEventListener("touchend", (e) => {
       const endX = e.changedTouches[0].clientX;
 
       if (startX - endX > 50) {
         mobileIndex = (mobileIndex + 1) % TOTAL_SLIDES;
       } else if (endX - startX > 50) {
-        mobileIndex = (mobileIndex - 1 + TOTAL_SLIDES) % TOTAL_SLIDES;
+        mobileIndex =
+          (mobileIndex - 1 + TOTAL_SLIDES) % TOTAL_SLIDES;
       }
 
       updateMobileImages(mobileIndex);
@@ -198,6 +198,11 @@ function startMobileSlider() {
 startMobileSlider();
 
 window.addEventListener("resize", startMobileSlider);
+
+
+
+
+
 
 // leader section
 
@@ -265,29 +270,31 @@ cards.forEach((card) => {
   });
 });
 
+
+
+
 // Business verticals section
 document.addEventListener("DOMContentLoaded", () => {
-  const SPEED = 70; // px per second, sabhi sliders ki same speed
-
   function createSlider(pane) {
     const track = pane.querySelector(".business-slider-track");
+
     if (!track) return;
 
     gsap.killTweensOf(track);
 
+    // Clone only once
     if (!track.dataset.cloned) {
       track.innerHTML += track.innerHTML;
       track.dataset.cloned = "true";
     }
 
     const moveWidth = track.scrollWidth / 2;
-    const duration = moveWidth / SPEED;
 
     gsap.set(track, { x: 0 });
 
     gsap.to(track, {
       x: -moveWidth,
-      duration: duration,
+      duration: 25,
       ease: "none",
       repeat: -1,
       modifiers: {
@@ -296,20 +303,29 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // First active tab
   const activePane = document.querySelector(".tab-pane.active.show");
-  if (activePane) createSlider(activePane);
 
+  if (activePane) {
+    createSlider(activePane);
+  }
+
+  // Tab change
   document
     .querySelectorAll('[data-bs-toggle="pill"], [data-bs-toggle="tab"]')
     .forEach((tab) => {
       tab.addEventListener("shown.bs.tab", (e) => {
         const pane = document.querySelector(
-          e.target.getAttribute("data-bs-target"),
+          e.target.getAttribute("data-bs-target")
         );
-        if (pane) createSlider(pane);
+
+        if (pane) {
+          createSlider(pane);
+        }
       });
     });
 });
+
 
 // Journey section
 
@@ -332,3 +348,38 @@ viewTimelineBtn.addEventListener("click", function () {
     });
   }
 });
+
+
+// Mobile version time line js 
+// ===============================
+// TIMELINE SLIDERS
+// ===============================
+const timelineContainer = document.querySelector(".timeline-container.timeline-container-mb ");
+const timelinePrev = document.getElementById("timelinePrev");
+const timelineNext = document.getElementById("timelineNext");
+
+if (timelineContainer && timelinePrev && timelineNext) {
+
+  const getScrollAmount = () => {
+    const firstCard = timelineContainer.querySelector(".timeline-box");
+
+    return firstCard
+      ? firstCard.offsetWidth + 24
+      : timelineContainer.clientWidth;
+  };
+
+  timelineNext.addEventListener("click", () => {
+    timelineContainer.scrollBy({
+      left: getScrollAmount(),
+      behavior: "smooth",
+    });
+  });
+
+  timelinePrev.addEventListener("click", () => {
+    timelineContainer.scrollBy({
+      left: -getScrollAmount(),
+      behavior: "smooth",
+    });
+  });
+
+}
