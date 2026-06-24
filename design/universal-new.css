@@ -1140,7 +1140,7 @@ header #btn-search:focus,
 
 @media (max-width: 768px) {
     .hero-wrapper {
-        display: none !important;
+        /* display: none !important; */
     }
 
     .navbar {
@@ -1502,10 +1502,6 @@ header #btn-search:focus,
         padding: 0;
     }
 
-    /* .snap-section {
-        min-height: 100% !important;
-    } */
-
     .footer-logo {
         max-width: 120px;
         margin-top: 50px;
@@ -1513,6 +1509,8 @@ header #btn-search:focus,
         margin-right: 0px;
         margin-bottom: 0px;
     }
+
+  
 
     .footer-grid {
         grid-template-columns: 1fr;

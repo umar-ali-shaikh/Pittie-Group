@@ -267,6 +267,17 @@
  }
 
 
+ @media (max-width:576px){
+
+  .hero-content p{
+    display: none;
+  }
+  .hero-content .mobile{
+    display: flex;
+  }
+ }
+
+
 
 
 

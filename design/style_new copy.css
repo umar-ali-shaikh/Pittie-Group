@@ -2646,7 +2646,7 @@ font-size: 22px;
     .hero-wrapper {
         top: 50%;
         left: 50%;
-        transform: translate(-50%, 10%);
+        transform: translate(-50%, -40%);
         padding: 0;
         position: absolute;
     }
