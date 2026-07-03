@@ -192,41 +192,27 @@ img {
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
 
-    border-color: transparent;
-
+    border: none;
+    border-radius: 8px;
     box-shadow:
         0px 4px 8px rgba(92, 92, 92, 0.15),
         0px 2px 4px rgba(17, 25, 40, 0.10);
+
     padding: 10px 30px;
-    border-radius: 8px;
-    border: none;
     font-weight: 600;
-    transition: 0.3s ease;
-    text-decoration: none;
     color: var(--bg-danger);
-    /* display: flex; */
+    text-decoration: none;
+
     gap: 10px;
     justify-content: center;
-}
 
+    position: relative;
+    overflow: hidden;
+
+    transition: all 0.3s ease;
+}
 
 .button-colour:hover {
-    background:
-        linear-gradient(0deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
-        linear-gradient(25.61deg, rgba(233, 41, 47, 0) 29.07%, rgba(233, 41, 47, 0.1) 94.36%),
-        linear-gradient(59.96deg, rgba(233, 41, 47, 0.2) 10.06%, rgba(233, 41, 47, 0) 50.1%);
-
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-
-    border-color: transparent;
-
-    color: var(--bg-danger);
-
-    transform: translateY(-2px);
-}
-
-.button-colour {
     position: relative;
     overflow: hidden;
 
@@ -248,32 +234,6 @@ img {
     transition: all 0.3s ease;
 }
 
-.button-colour::before {
-    content: "";
-    position: absolute;
-    left: var(--x, 50%);
-    top: var(--y, 50%);
-
-    width: 180px;
-    height: 180px;
-
-    background: radial-gradient(circle,
-            rgba(233, 41, 47, 0.45) 0%,
-            rgba(233, 41, 47, 0.25) 35%,
-            rgba(233, 41, 47, 0.10) 60%,
-            transparent 75%);
-
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-
-    z-index: 0;
-}
-
-.button-colour:hover::before {
-    opacity: 1;
-}
 
 .button-colour>* {
     position: relative;
@@ -564,7 +524,7 @@ header {
     border-radius: 8px;
 }
 
-
+/* 
 .sub-menu li::before {
     content: "";
     position: absolute;
@@ -589,7 +549,7 @@ header {
 
 .sub-menu li:hover::before {
     opacity: 1;
-}
+} */
 
 .main-navigation ul ul.sub-menu a {
     width: 100%;
@@ -1510,7 +1470,7 @@ header #btn-search:focus,
         margin-bottom: 0px;
     }
 
-  
+
 
     .footer-grid {
         grid-template-columns: 1fr;
@@ -1627,7 +1587,7 @@ header #btn-search:focus,
 
 /* All section Hover Shine Effect  */
 
-.mouse-shine {
+/* .mouse-shine {
     position: relative;
     overflow: hidden;
 }
@@ -1664,4 +1624,4 @@ header #btn-search:focus,
 .mouse-shine>* {
     position: relative;
     z-index: 2;
-}
+} */

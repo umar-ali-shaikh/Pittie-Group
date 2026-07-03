@@ -126,12 +126,17 @@
    padding: 60px 0;
  }
 
+ .hero-content .mobile {
+  display: none;
+ }
  .hero-content {
    max-width: 600px;
    opacity: 0;
    transform: translateY(80px);
    transition: all 0.8s ease;
  }
+
+
 
  .swiper-slide.active .hero-content {
    opacity: 1;
@@ -267,14 +272,15 @@
  }
 
 
- @media (max-width:576px){
+ @media (max-width:576px) {
 
-  .hero-content p{
-    display: none;
-  }
-  .hero-content .mobile{
-    display: flex;
-  }
+   .hero-content p {
+     display: none;
+   }
+
+   .hero-content .mobile {
+     display: flex;
+   }
  }
 
 
@@ -514,43 +520,6 @@
  .address-arrow:disabled {
    opacity: 0.4;
    cursor: not-allowed;
- }
-
- /* Mobile */
- @media (max-width: 576px) {
-   .address-tabs {
-     gap: 10px;
-     margin-bottom: 30px;
-   }
-
-   .address-tab-btn {
-     width: 100%;
-     padding: 11px 15px;
-   }
-
-   .address-card {
-     text-align: center;
-   }
-
-   .address-arrow {
-     width: 38px;
-     height: 38px;
-     font-size: 28px;
-     top: auto;
-     bottom: -60px;
-   }
-
-   .address-prev {
-     left: 35%;
-   }
-
-   .address-next {
-     right: 35%;
-   }
-
-   .address-slider-wrap {
-     padding-bottom: 70px;
-   }
  }
 
  /* =========================
@@ -844,10 +813,6 @@
      width: 100%;
    }
 
-   .career-testimonial-section {
-     height: 870px;
-   }
-
    .career-pagination-wrapper {
      top: 132%;
      right: 6%;
@@ -893,5 +858,56 @@
    .overlay-image.active {
      position: relative;
      z-index: 111;
+   }
+ }
+
+
+ /* Mobile */
+ @media (max-width: 576px) {
+   .address-tabs {
+     gap: 10px;
+     margin-bottom: 30px;
+   }
+
+   .address-tab-btn {
+     width: 100%;
+     padding: 11px 15px;
+   }
+
+   .address-card {
+     text-align: center;
+   }
+
+   .address-arrow {
+     width: 38px;
+     height: 38px;
+     font-size: 28px;
+     top: auto;
+     bottom: -60px;
+   }
+
+   .address-prev {
+     left: 35%;
+   }
+
+   .address-next {
+     right: 35%;
+   }
+
+   /* .address-slider-wrap {
+     padding-bottom: 70px;
+   } */
+
+   .contact-title,
+   .section-title {
+     font-size: 24px;
+   }
+
+   .jobs-tabs button {
+     font-size: 18px;
+   }
+
+   .job-content h3 {
+     font-size: 20px;
    }
  }

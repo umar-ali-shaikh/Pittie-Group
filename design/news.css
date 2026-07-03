@@ -43,9 +43,8 @@
     --pm64: 64px;
 }
 
-
 /* =========================
-   HERO SECTION
+   Hero Section
 ========================= */
 .btn:hover {
     color: var(--bg3-color) !important;
@@ -99,7 +98,7 @@
 }
 
 .overlay-image-mobile {
-    display: none;
+    display: flex;
 }
 
 .hero .swiper,
@@ -128,7 +127,7 @@
     transition: all 0.8s ease;
 }
 
-.swiper-slide-active .hero-content {
+.swiper-slide.active .hero-content {
     opacity: 1;
     transform: translateY(0);
 }
@@ -217,8 +216,8 @@
 }
 
 .hero-pause:hover {
-    border-color: var(--bg-red-dark);
-    background: var(--bg-red-dark);
+    border-color: #ff3b3b;
+    background: #ff3b3b;
     transform: scale(1.1);
 }
 
@@ -255,7 +254,50 @@
 }
 
 
+@media (max-width: 576px) {
 
+    .hero-wrapper {
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 10%);
+        padding: 0;
+        position: absolute;
+    }
+
+    .hero-content {
+        width: 100% !important;
+    }
+
+    .hero .swiper-slide {
+        padding: 0;
+        align-items: center;
+    }
+
+    .Indicators {
+        display: none;
+    }
+
+    .hero {
+        height: 100%;
+        min-height: 100%;
+        max-height: 100%;
+    }
+
+    .hero .overlay-bg {
+        position: relative;
+        display: flex;
+    }
+
+    .overlay-image {
+        flex: 0 0 100%;
+    }
+
+    .overlay-image.active {
+        position: relative;
+        z-index: 111;
+    }
+
+}
 
 /* =========================
    MEDIA & NEWS SECTION
@@ -438,7 +480,7 @@
 }
 
 .hot-content h4 {
-    font-size: 22px;
+    /* font-size: 22px; */
     line-height: 1.5;
     height: 100px;
     color: #000;
@@ -493,6 +535,17 @@
     margin-bottom: 30px;
 }
 
+.featured-card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.featured-card-link:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
 .featured-left img {
     width: 100%;
     height: 320px;
@@ -500,16 +553,17 @@
 }
 
 .featured-left h2 {
-    font-size: 30px;
+    font-size: 20px;
     line-height: 1.3;
-    margin: 18px 0 12px;
+    /* margin: 18px 0 12px; */
+    margin-top: 12px;
     color: #111;
 }
 
 .featured-left p {
     color: #4B5563;
     line-height: 1.7;
-    font-size: 15px;
+    font-size: 13px;
 }
 
 .featured-right .side-item {
@@ -640,9 +694,9 @@ p {
 
 @media(max-width:1024px) {
 
-    .news-wrapper {
+    /* .news-wrapper {
         width: 95%;
-    }
+    } */
 
     .hot-grid {
         grid-template-columns: repeat(2, 1fr);

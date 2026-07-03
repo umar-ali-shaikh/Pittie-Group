@@ -37,29 +37,17 @@ var contentSwiper = new Swiper(".testimonialContentSwiper", {
     crossFade: true,
   },
 
-  // autoplay: {
-  //   delay: 5000,
-  //   disableOnInteraction: false,
-  // },
-
-  navigation: {
-    nextEl: ".testimonial-next",
-    prevEl: ".testimonial-prev",
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
   },
 
-  pagination: {
-    el: ".testimonial-pagination",
-    clickable: true,
-  },
+  allowTouchMove: false,
 
   on: {
     slideChange: function () {
       imageSwiper.slideToLoop(this.realIndex);
     },
   },
-});
-
-contentSwiper.on("slideChange", function () {
-  imageSwiper.slideToLoop(contentSwiper.realIndex);
 });
 

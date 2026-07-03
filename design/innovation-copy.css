@@ -364,7 +364,7 @@
     overflow: hidden;
 }
 
-.frame-1272638326 .shine-dot {
+/* .frame-1272638326 .shine-dot {
     position: absolute;
     width: 100px;
     height: 100px;
@@ -462,7 +462,7 @@
     z-index: 111;
     filter: blur(40px);
     transform: translate(-50%, -50%);
-}
+} */
 
 .frame-1272638325 {
     background: #cdcaca;
@@ -663,7 +663,7 @@
     }
 
     .job-opening .subtitle-text {
-        font-size: 28px;
+        font-size: 24px;
         line-height: 34px;
     }
 
@@ -708,7 +708,7 @@
     .odour-neutralising-techonology,
     .handmade-soaps-with-essential-oils,
     .dual-enzyme-formula {
-        font-size: 22px;
+        font-size: 20px;
         line-height: 1.35;
         padding: 24px 18px 0px;
         background: none !important;
