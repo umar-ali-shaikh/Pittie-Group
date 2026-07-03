@@ -2684,14 +2684,19 @@
 
 @media (max-width:991px) {
 
-    .mediahlp {
+    /* .mediahlp {
         flex-direction: column;
+    } */
+    .mediahlp-pc,
+    .mediahlp {
+        gap: 0;
     }
 
     .blog-container,
     .blog-container2,
     .blog-container3 {
         width: 100%;
+        flex: 0 0 100%;
     }
 
     .empowering-stories-real-impact {
@@ -2726,17 +2731,6 @@
 }
 
 /* ===================== Responsive ===================== */
-@media (max-width: 1400px) {
-    /* .hero .swiper-slide {
-        align-items: start;
-        margin-top: 40px;
-    } */
-
-    /* .hero-wrapper {
-        top: 80px;
-    } */
-}
-
 @media (max-width: 992px) {
 
 

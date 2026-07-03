@@ -383,3 +383,40 @@ if (timelineContainer && timelinePrev && timelineNext) {
   });
 
 }
+
+
+
+// news slider  
+
+let mediaSwiper = null;
+
+function initMediaSwiper() {
+  if (window.innerWidth < 576) {
+    if (!mediaSwiper) {
+      mediaSwiper = new Swiper(".mediahlp-pc", {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        loop: true,
+        speed: 600,
+
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    }
+  } else {
+    if (mediaSwiper) {
+      mediaSwiper.destroy(true, true);
+      mediaSwiper = null;
+    }
+  }
+}
+
+window.addEventListener("load", initMediaSwiper);
+window.addEventListener("resize", initMediaSwiper);
