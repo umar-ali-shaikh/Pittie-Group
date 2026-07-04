@@ -149,7 +149,6 @@ if (toggleBtn) {
   });
 }
 
-
 let mobileIndex = 0;
 let mobileInterval;
 
@@ -175,20 +174,21 @@ function startMobileSlider() {
 
   let startX = 0;
 
-  document.querySelector(".overlay-images-wrapper")
+  document
+    .querySelector(".overlay-images-wrapper")
     ?.addEventListener("touchstart", (e) => {
       startX = e.touches[0].clientX;
     });
 
-  document.querySelector(".overlay-images-wrapper")
+  document
+    .querySelector(".overlay-images-wrapper")
     ?.addEventListener("touchend", (e) => {
       const endX = e.changedTouches[0].clientX;
 
       if (startX - endX > 50) {
         mobileIndex = (mobileIndex + 1) % TOTAL_SLIDES;
       } else if (endX - startX > 50) {
-        mobileIndex =
-          (mobileIndex - 1 + TOTAL_SLIDES) % TOTAL_SLIDES;
+        mobileIndex = (mobileIndex - 1 + TOTAL_SLIDES) % TOTAL_SLIDES;
       }
 
       updateMobileImages(mobileIndex);
@@ -198,11 +198,6 @@ function startMobileSlider() {
 startMobileSlider();
 
 window.addEventListener("resize", startMobileSlider);
-
-
-
-
-
 
 // leader section
 
@@ -270,9 +265,6 @@ cards.forEach((card) => {
   });
 });
 
-
-
-
 // Business verticals section
 document.addEventListener("DOMContentLoaded", () => {
   function createSlider(pane) {
@@ -316,7 +308,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .forEach((tab) => {
       tab.addEventListener("shown.bs.tab", (e) => {
         const pane = document.querySelector(
-          e.target.getAttribute("data-bs-target")
+          e.target.getAttribute("data-bs-target"),
         );
 
         if (pane) {
@@ -325,7 +317,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 });
-
 
 // Journey section
 
@@ -349,17 +340,17 @@ viewTimelineBtn.addEventListener("click", function () {
   }
 });
 
-
-// Mobile version time line js 
+// Mobile version time line js
 // ===============================
 // TIMELINE SLIDERS
 // ===============================
-const timelineContainer = document.querySelector(".timeline-container.timeline-container-mb ");
+const timelineContainer = document.querySelector(
+  ".timeline-container.timeline-container-mb ",
+);
 const timelinePrev = document.getElementById("timelinePrev");
 const timelineNext = document.getElementById("timelineNext");
 
 if (timelineContainer && timelinePrev && timelineNext) {
-
   const getScrollAmount = () => {
     const firstCard = timelineContainer.querySelector(".timeline-box");
 
@@ -381,12 +372,9 @@ if (timelineContainer && timelinePrev && timelineNext) {
       behavior: "smooth",
     });
   });
-
 }
 
-
-
-// news slider  
+// news slider
 
 let mediaSwiper = null;
 
@@ -420,3 +408,14 @@ function initMediaSwiper() {
 
 window.addEventListener("load", initMediaSwiper);
 window.addEventListener("resize", initMediaSwiper);
+
+// Life at pittie  mobile Paragraph js
+
+// const lifeCards = document.querySelectorAll(".width190.result_hover.no");
+
+// lifeCards.forEach((card) => {
+//   card.addEventListener("click", () => {
+//     lifeCards.forEach((item) => item.classList.remove("active"));
+//     card.classList.add("active");
+//   });
+// });

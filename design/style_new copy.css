@@ -2473,6 +2473,88 @@
     font-size: 40px;
 }
 
+@media (max-width: 991px) {
+  .busiArticle {
+    padding: 20px 0 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .busiArticle .row {
+    display: block;
+    width: 100%;
+    margin: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
+
+  .width190.result_hover {
+    display: inline-block;
+    vertical-align: top;
+    width: 360px;
+    height: 520px;
+    margin-right: 14px;
+    padding: 0;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .imagesWithContent {
+    width: 100%;
+    height: 520px;
+    background-size: contain !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+  }
+
+  .imagesWithContent .textPart {
+    height: auto;
+    padding: 18px;
+  }
+
+  .width190 .textPart p.bigP {
+    color: #fff;
+    font-weight: 400;
+    text-transform: capitalize;
+    opacity: 1;
+  }
+
+  .width190.result_hover.no .textPart h2 + p {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  .width190.result_hover.no.active .textPart h2 + p {
+    opacity: 1;
+    max-height: 200px;
+  }
+
+  .width190 .textPart p {
+    font-size: 14px;
+    white-space: normal;
+    text-wrap: wrap;
+  }
+
+  .width190 .textPart h2 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  .width190.result_hover {
+    width: 420px;
+    height: 500px;
+  }
+
+  .imagesWithContent {
+    height: 500px;
+    background-size: contain !important;
+    background-position: center top !important;
+  }
+}
 
 /* Media and News  */
 /*=========================
@@ -2848,12 +2930,13 @@
         font-size: 14px;
     }
 
-    .busiArticle {
+    /* Life at Pittie css  */
+
+    /* .busiArticle {
         padding: 20px 0 0;
         overflow-x: scroll;
-    }
-
-    .busiArticle .row {
+    } */
+    /*.busiArticle .row {
         display: inline-block;
         width: 100%;
         margin: 0;
@@ -2879,12 +2962,12 @@
     .width190 .textPart p {
         font-size: 14px;
         /* white-space: break-spaces; */
-        text-wrap: wrap;
+    /* text-wrap: wrap;
     }
 
     .width190 .textPart h2 {
         font-size: 24px;
-    }
+    }  */
 
 }
 
