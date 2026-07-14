@@ -378,6 +378,13 @@ header {
     padding-left: 0;
 }
 
+.swiper-slide .hero-content p {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.swiper-slide .hero-content h1 {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
 
 .main-navigation li {
     position: relative;
@@ -1123,7 +1130,7 @@ header #btn-search:focus,
         margin-right: 0;
     }
 
-   
+
     .navbar-toggler[aria-expanded="true"] span:first-of-type {
         transform: rotate(45deg) translate(6px, 6px);
     }
