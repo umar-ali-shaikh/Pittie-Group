@@ -1,4 +1,4 @@
-// manu shine
+// menu shine
 const buttons = document.querySelectorAll(".menu-main-container li");
 
 buttons.forEach((button) => {
