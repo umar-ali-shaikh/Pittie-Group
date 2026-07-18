@@ -1074,7 +1074,7 @@
     =================================*/
 
     .hero-wrapper {
-        top: 0;
+        top: -50px;
         left: 50%;
         transform: translate(-50%, 10%);
         padding: 0;
@@ -1083,7 +1083,7 @@
 
 
     .swiper-slide .hero-content p {
-        /* display: none; */
+        display: none;
         text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
     }
 

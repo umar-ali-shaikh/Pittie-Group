@@ -238,11 +238,7 @@
         height: 100%;
     }
 
-    .hero-wrapper {
-        left: 50%;
-        top: -5%;
-        transform: translate(-50%, 10%);
-    }
+  
 
     .hero-wrapper {
         position: absolute;
@@ -720,7 +716,7 @@
     }
 
     .hero-wrapper {
-        top: 0;
+        top: -50px;
         left: 50%;
         transform: translate(-50%, 10%);
         padding: 0;
