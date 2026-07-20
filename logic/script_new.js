@@ -55,10 +55,11 @@ function updateSlider(swiper) {
     indicator.classList.toggle("active", i === index);
   });
 
-  // Background Images
-  document.querySelectorAll(".overlay-image").forEach((img, i) => {
-    img.classList.toggle("active", i === index);
-  });
+  // Move Overlay Wrapper
+  const wrapper = document.querySelector(".overlay-bg-wrapper");
+  if (wrapper) {
+    wrapper.style.transform = `translateX(-${index * 100}%)`;
+  }
 }
 
 function setupIndicators(totalSlides) {

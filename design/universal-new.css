@@ -977,8 +977,6 @@ header #btn-search:focus,
     }
 
     .main-navigation .menu-toggle {
-        position: absolute;
-        top: 32px !important;
         right: 18px;
         z-index: 99;
         padding: 5px;
@@ -1000,9 +998,12 @@ header #btn-search:focus,
     .menu-main-container {
         width: 100%;
         flex: 100%;
-        margin-top: 20px;
         padding: 0;
         overflow: hidden;
+    }
+
+    .navbar-collapse.show {
+        margin-top: 20px;
     }
 
     /* Footer Css  */

@@ -27,9 +27,7 @@
 
 .hero {
     position: relative;
-    height: 100vh;
-    min-height: 650px;
-    max-height: 700px;
+    height: 100%;
     overflow: hidden;
     color: #fff;
 }
@@ -48,13 +46,11 @@
 }
 
 .hero .overlay-bg {
-    position: absolute;
     inset: 0;
     z-index: 0;
 }
 
 .overlay-image {
-    position: absolute;
     inset: 0;
     opacity: 0;
     transform: translateX(120px);
@@ -73,7 +69,7 @@
 }
 
 .overlay-image-mobile {
-    display: flex;
+    display: none;
 }
 
 .hero .swiper,
@@ -87,12 +83,14 @@
 }
 
 .hero-wrapper {
-    position: relative;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     z-index: 10;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    height: 100%;
-    padding: 60px 0;
 }
 
 .hero-content {
@@ -1002,6 +1000,9 @@
 }
 
 @media (max-width: 575px) {
+    .overlay-image-mobile {
+        display: flex;
+    }
 
     .frame-1272638182-container2,
     .awardscontainer2,
@@ -1057,9 +1058,9 @@
     }
 
     .hero-wrapper {
-        top: -50px;
+        top: 50%;
         left: 50%;
-        transform: translate(-50%, 10%);
+        transform: translate(-50%, -50%);
         padding: 0;
         position: absolute;
     }
@@ -1079,7 +1080,6 @@
 
     .hero {
         height: 100%;
-        min-height: 100%;
     }
 
     .hero .overlay-bg {

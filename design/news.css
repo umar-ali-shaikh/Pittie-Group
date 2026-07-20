@@ -52,9 +52,9 @@
 
 .hero {
     position: relative;
-    height: 100vh;
-    min-height: 650px;
-    max-height: 700px;
+    height: 100%;
+    /* min-height: 650px;
+    max-height: 700px; */
     overflow: hidden;
     color: #fff;
 }
@@ -73,13 +73,11 @@
 }
 
 .hero .overlay-bg {
-    position: absolute;
     inset: 0;
     z-index: 0;
 }
 
 .overlay-image {
-    position: absolute;
     inset: 0;
     opacity: 0;
     transform: translateX(120px);
@@ -98,7 +96,7 @@
 }
 
 .overlay-image-mobile {
-    display: flex;
+    display: none;
 }
 
 .hero .swiper,
@@ -112,7 +110,10 @@
 }
 
 .hero-wrapper {
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 10;
     display: flex;
     align-items: center;
@@ -264,6 +265,10 @@
         position: absolute;
     }
 
+    .overlay-image-mobile {
+        display: flex;
+    }
+
     .hero-content {
         width: 100% !important;
     }
@@ -279,8 +284,7 @@
 
     .hero {
         height: 100%;
-        min-height: 100%;
-        max-height: 100%;
+        max-height: 700px;
     }
 
     .hero .overlay-bg {
