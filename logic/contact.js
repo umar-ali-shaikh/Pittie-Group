@@ -161,3 +161,60 @@ prevBtn.addEventListener("click", () => {
 });
 
 updateAddressList();
+
+// Contact form submission
+const contactForm = document.getElementById("contactForm");
+
+if (contactForm) {
+  const submitBtn = document.getElementById("contactSubmitBtn");
+  const statusEl = document.getElementById("contactFormStatus");
+
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(contactForm);
+    const payload = Object.fromEntries(formData.entries());
+
+    statusEl.textContent = "";
+    statusEl.className = "mt-3";
+
+    if (!payload.firstName || !payload.email || !payload.message) {
+      statusEl.textContent = "Please fill in your name, email, and message.";
+      statusEl.classList.add("text-danger");
+      return;
+    }
+
+    const originalBtnText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.ok) {
+        statusEl.textContent = "Thanks! Your message has been sent — we'll get back to you soon.";
+        statusEl.classList.add("text-success");
+        contactForm.reset();
+      } else if (data.errors) {
+        const firstError = Object.values(data.errors)[0];
+        statusEl.textContent = firstError || "Please check the form and try again.";
+        statusEl.classList.add("text-danger");
+      } else {
+        statusEl.textContent = data.error || "Something went wrong. Please try again later.";
+        statusEl.classList.add("text-danger");
+      }
+    } catch (err) {
+      statusEl.textContent = "Could not reach the server. Please check your connection and try again.";
+      statusEl.classList.add("text-danger");
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalBtnText;
+    }
+  });
+}
