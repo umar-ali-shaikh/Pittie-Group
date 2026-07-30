@@ -552,7 +552,7 @@
     height: 100vh;
     max-height: 650px;
     overflow: hidden;
-    /* padding-bottom: 10px; */
+    padding-bottom: 10px;
 }
 
 .timeline-section .container {
@@ -2562,11 +2562,12 @@
 @media (max-width: 576px) {
     .width190.result_hover {
         width: 90%;
-        height: 500px;
+        height: 300px;
+        background-position: 0% !important; 
     }
 
     .imagesWithContent {
-        height: 500px;
+        height: 300px;
         background-size: contain !important;
         background-position: center top !important;
     }
@@ -2945,45 +2946,6 @@
     .text h4 {
         font-size: 14px;
     }
-
-    /* Life at Pittie css  */
-
-    /* .busiArticle {
-        padding: 20px 0 0;
-        overflow-x: scroll;
-    } */
-    /*.busiArticle .row {
-        display: inline-block;
-        width: 100%;
-        margin: 0;
-        overflow-x: auto;
-        overflow-y: hidden;
-        white-space: nowrap;
-    }
-
-    .width190.result_hover {
-        display: inline-block;
-        width: 295px;
-        margin-right: 14px;
-        padding: 0;
-    }
-
-    .width190 .textPart p.bigP {
-        color: #fff;
-        font-weight: 400;
-        text-transform: capitalize;
-        opacity: 1;
-    }
-
-    .width190 .textPart p {
-        font-size: 14px;
-        /* white-space: break-spaces; */
-    /* text-wrap: wrap;
-    }
-
-    .width190 .textPart h2 {
-        font-size: 24px;
-    }  */
 
 }
 

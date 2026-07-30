@@ -89,39 +89,6 @@ tabs.forEach((tab) => {
   });
 });
 
-// Adress Tabs Css
-// document.addEventListener("DOMContentLoaded", () => {
-//   const tabs = document.querySelectorAll(".address-tab-btn");
-//   const items = document.querySelectorAll(".address-item");
-
-//   function filterCategory(category) {
-//     items.forEach((item) => {
-//       if (item.dataset.category === category) {
-//         item.style.display = "block";
-//       } else {
-//         item.style.display = "none";
-//       }
-//     });
-//   }
-
-//   // Default category
-//   filterCategory("corporate");
-
-//   tabs.forEach((tab) => {
-//     tab.addEventListener("click", () => {
-//       const category = tab.dataset.filter;
-
-//       tabs.forEach((btn) =>
-//         btn.classList.remove("active")
-//       );
-
-//       tab.classList.add("active");
-
-//       filterCategory(category);
-//     });
-//   });
-// });
-
 const tabButtons = document.querySelectorAll(".address-tab-btn");
 const addressItems = document.querySelectorAll(".address-item");
 const prevBtn = document.querySelector(".address-prev");

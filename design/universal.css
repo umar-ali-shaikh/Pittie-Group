@@ -531,33 +531,6 @@ header {
     border-radius: 8px;
 }
 
-/* 
-.sub-menu li::before {
-    content: "";
-    position: absolute;
-
-    left: var(--x, 50%);
-    top: var(--y, 50%);
-
-    width: 120px;
-    height: 120px;
-    background: radial-gradient(circle,
-            rgba(255, 255, 255, 0.44) 20%,
-            rgba(0, 90, 180, 0.6) 50%,
-            rgba(0, 49, 96, 0.4) 70%,
-            transparent 50%);
-
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: -1;
-}
-
-.sub-menu li:hover::before {
-    opacity: 1;
-} */
-
 .main-navigation ul ul.sub-menu a {
     width: 100%;
     margin-bottom: 0;
@@ -984,11 +957,6 @@ header #btn-search:focus,
         border-radius: 0 !important;
     }
 
-    /* .main-navigation ul {
-        display: none;
-    }
-    .main-navigation ul { */
-
     .main-navigation ul {
         display: flex;
         flex-direction: column;
@@ -1342,11 +1310,6 @@ header #btn-search:focus,
         border-radius: 0 !important;
     }
 
-    /* .main-navigation ul {
-        display: none;
-    }
-    .main-navigation ul { */
-
     .main-navigation ul {
         display: flex;
         flex-direction: column;
@@ -1595,45 +1558,3 @@ header #btn-search:focus,
 
 }
 
-
-
-/* All section Hover Shine Effect  */
-
-/* .mouse-shine {
-    position: relative;
-    overflow: hidden;
-}
-
-.mouse-shine::before {
-    content: "";
-    position: absolute;
-
-    width: 280px;
-    height: 280px;
-
-    left: var(--mouse-x, -999px);
-    top: var(--mouse-y, -999px);
-
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-
-    background: radial-gradient(circle,
-            rgba(0, 89, 207, 0.18) 0%,
-            rgba(177, 202, 235, 0.12) 35%,
-            rgba(177, 202, 235, 0.05) 50%,
-            transparent 75%);
-
-    opacity: 0;
-    transition: opacity 0.25s ease;
-
-    z-index: 1;
-}
-
-.mouse-shine:hover::before {
-    opacity: 1;
-}
-
-.mouse-shine>* {
-    position: relative;
-    z-index: 2;
-} */

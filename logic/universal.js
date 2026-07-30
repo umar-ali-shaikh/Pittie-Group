@@ -13,20 +13,6 @@ buttons.forEach((button) => {
   });
 });
 
-// const glowButtons = document.querySelectorAll(".button-colour");
-
-// glowButtons.forEach((button) => {
-//   button.addEventListener("mousemove", (e) => {
-//     const rect = button.getBoundingClientRect();
-
-//     const x = e.clientX - rect.left;
-//     const y = e.clientY - rect.top;
-
-//     button.style.setProperty("--x", `${x}px`);
-//     button.style.setProperty("--y", `${y}px`);
-//   });
-// });
-
 // Counter Js universal
 document.addEventListener("DOMContentLoaded", () => {
   // ALL COUNTERS
@@ -93,8 +79,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.querySelector(".menu-toggle");
   const primaryMenu = document.querySelector("#primary-menu");
 
+  // Bootstrap's Collapse plugin animates the show/hide (height + fade)
+  // via its own "collapsing" class; toggling "show" by hand skips that
+  // and just snaps open/closed.
+  const menuCollapse = bootstrap.Collapse.getOrCreateInstance(primaryMenu, {
+    toggle: false,
+  });
+
   menuToggle.addEventListener("click", () => {
-    primaryMenu.classList.toggle("show");
+    menuCollapse.toggle();
 
     const expanded = menuToggle.getAttribute("aria-expanded") === "true";
 
@@ -117,3 +110,26 @@ document.querySelectorAll(".mouse-shine").forEach((element) => {
     element.style.setProperty("--mouse-y", "-999px");
   });
 });
+
+// Activates the first .swiper-slide's "active" class while it's in view.
+// Called explicitly per-page (not run here) so pages without this markup are unaffected.
+function initSwiperSlideObserver() {
+  const slide = document.querySelector(".swiper-slide");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          slide.classList.add("active");
+        } else {
+          slide.classList.remove("active"); // optional
+        }
+      });
+    },
+    {
+      threshold: 0.3,
+    },
+  );
+
+  observer.observe(slide);
+}
