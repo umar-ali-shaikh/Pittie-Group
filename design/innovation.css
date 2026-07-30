@@ -27,9 +27,7 @@
 
 .hero {
     position: relative;
-    height: 100vh;
-    /* min-height: 650px; */
-    /* max-height: 700px; */
+    height: 100%;
     overflow: hidden;
     color: #fff;
 }
@@ -48,13 +46,11 @@
 }
 
 .hero .overlay-bg {
-    position: absolute;
     inset: 0;
     z-index: 0;
 }
 
 .overlay-image {
-    position: absolute;
     inset: 0;
     opacity: 0;
     transform: translateX(120px);
@@ -73,7 +69,7 @@
 }
 
 .overlay-image-mobile {
-    display: flex;
+    display: none;
 }
 
 .hero .swiper,
@@ -87,13 +83,24 @@
 }
 
 .hero-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* .hero-wrapper {
     position: relative;
     z-index: 10;
     display: flex;
     align-items: center;
     height: 100%;
     padding: 60px 0;
-}
+} */
 
 .hero-content {
     max-width: 600px;
@@ -228,183 +235,337 @@
     transform: translateX(3px);
 }
 
-/* ================== Video Section Css 
-=============================== */
+@media (max-width:576px) {
+    /* Banner css */
 
+    .hero {
+        height: 100vh;
+    }
+
+    .overlay-image-mobile {
+        display: flex;
+    }
+
+    .hero .overlay-bg {
+        position: relative;
+        height: 100%;
+    }
+
+
+
+    .hero-wrapper {
+        position: absolute;
+    }
+
+    .overlay-image {
+        position: relative;
+        height: 100%;
+    }
+
+}
+
+
+/* ================== Video Section ================== */
 
 .job-opening {
+    width: 100%;
+    height: 100%;
+    padding: 50px 0 100px;
     background: var(--bg-blue, #f4f7fd);
     display: flex;
     flex-direction: column;
     gap: 40px;
-    padding-top: 50px;
     align-items: center;
-    justify-content: flex-start;
-    position: relative;
     overflow: hidden;
-    width: 100%;
-    padding-bottom: 100px;
-    height: 100%;
+    position: relative;
 }
 
-.section-title {
-    color: var(--secondary-red, #e9292f);
+/* Header */
+.job-opening .section-header {
+    /* width: 80%; */
+    margin: 0 auto;
     text-align: center;
-    font-size: var(--poppins-h6-bold-font-size, 24px);
-    line-height: var(--poppins-h6-bold-line-height, 30px);
-    font-weight: var(--poppins-h6-bold-font-weight, 600);
-    position: relative;
 }
 
-.section-decoration {
+.job-opening .section-title {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-shrink: 0;
-    width: 31px;
-    height: auto;
-    position: relative;
-    overflow: visible;
-}
-
-.section-title {
-    display: flex;
-    flex-direction: row;
-    gap: 16px;
     align-items: center;
     justify-content: center;
-    position: relative;
+    gap: 16px;
+    color: var(--secondary-red, #e9292f);
 }
 
-
-.title-text {
-    color: #e9292f;
-    text-align: center;
-    font-size: var(--poppins-h6-bold-font-size, 24px);
-    line-height: var(--poppins-h6-bold-line-height, 30px);
-    font-weight: var(--poppins-h6-bold-font-weight, 600);
-    position: relative;
+.job-opening .section-decoration {
+    width: 31px;
+    height: auto;
 }
 
-.subtitle-text {
-    color: var(--primary-blue, #1a4174);
-    text-align: center;
-    font-size: 48px;
-    line-height: 52px;
+.job-opening .title-text {
+    color: var(--secondary-red, #e9292f);
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 600;
+}
+
+.job-opening .subtitle-text {
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.15;
     font-weight: 700;
-    position: relative;
-    align-self: stretch;
+    margin-top: 16px;
 }
 
+/* Main Wrapper */
 .frame-1272638318 {
-    display: flex;
-    flex-direction: column;
-    gap: 0px;
-    align-items: flex-start;
-    justify-content: flex-start;
     width: 100%;
     height: 100%;
-    position: relative;
+    display: flex;
+    flex-direction: column;
 }
+
+/* Common Video Block */
+.frame-1272638326,
+.frame-1272638325,
+.frame-1272638324,
+.frame-1272638319,
+.frame-1272638323 {
+    width: 100%;
+    height: 100vh;
+    min-height: 650px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.doc-name {
+    color: black;
+    padding-bottom: 20px;
+    margin: 0;
+}
+
+.frame-12726383238 {
+    background: #b991ee !important;
+}
+
+/* Background Colors */
+.frame-1272638325::before,
+.frame-1272638323::before,
+.frame-1272638324::before,
+.frame-1272638319::before,
+.frame-1272638326::before {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    z-index: 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.32), transparent 22%), linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+    box-shadow: inset 16px 16px 42px rgba(255, 255, 255, 0.08), inset -20px -20px 50px rgba(0, 0, 0, 0.16);
+    pointer-events: none;
+}
+
+.frame-1272638326 {
+    background: #0c0a03f2;
+}
+
+.frame-1272638326 {
+    position: relative;
+    overflow: hidden;
+}
+
+/* .frame-1272638326 .shine-dot {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    pointer-events: none;
+    background: radial-gradient(circle,
+            rgba(255, 255, 255, 0.8) 0%,
+            rgba(255, 180, 240, 0.6) 20%,
+            rgba(255, 120, 220, 0.4) 45%,
+            rgba(220, 80, 255, 0.25) 70%);
+    filter: blur(40px);
+    transform: translate(-50%, -50%);
+}
+
+.frame-1272638323 .shine-dot {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    pointer-events: none;
+
+    background: radial-gradient(circle,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(180, 220, 255, 0.95) 20%,
+            rgba(110, 140, 192, 0.8) 45%,
+            rgba(110, 140, 192, 0.5) 70%);
+
+    filter: blur(40px);
+    transform: translate(-50%, -50%);
+}
+
+.frame-1272638325 .shine-dot {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    pointer-events: none;
+
+    background: radial-gradient(circle,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(180, 255, 255, 0.95) 20%,
+            rgba(0, 255, 255, 0.8) 45%,
+            rgba(0, 180, 255, 0.5) 70%);
+
+    filter: blur(40px);
+    transform: translate(-50%, -50%);
+}
+
+.frame-1272638319 .shine-dot {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    pointer-events: none;
+
+    background: radial-gradient(circle,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 235, 200, 0.95) 20%,
+            rgba(255, 179, 102, 0.8) 45%,
+            rgba(199, 137, 98, 0.70) 70%);
+
+    filter: blur(40px);
+    transform: translate(-50%, -50%);
+}
+
+.frame-12726383238 .shine-dot {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    pointer-events: none;
+
+    background: radial-gradient(circle,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(220, 255, 220, 0.95) 20%,
+            rgba(120, 255, 120, 0.8) 45%,
+            rgba(0, 255, 100, 0.7) 70%);
+
+    filter: blur(40px);
+    transform: translate(-50%, -50%);
+}
+
+.frame-1272638324 .shine-dot {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    pointer-events: none;
+
+    background: radial-gradient(circle,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 220, 245, 0.95) 20%,
+            rgba(255, 120, 220, 0.75) 45%,
+            rgba(220, 80, 255, 0.45) 70%);
+    z-index: 111;
+    filter: blur(40px);
+    transform: translate(-50%, -50%);
+} */
 
 .frame-1272638325 {
     background: #cdcaca;
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 100vh;
 }
 
-._100-pure-resin-loban-dhoop-candy {
-    color: #000000;
-    text-align: center;
-    font-size: 38px;
-    font-weight: 700;
-    text-align: center;
+.frame-1272638323 {
+    background: #c0a26e;
+}
+
+.frame-1272638324 {
+    background: #01bcb3;
+}
+
+.frame-1272638319 {
+    background: #62a0c7;
+}
+
+/* Text */
+.the-art-of-dual-aroma-two-fragrances-in-one-stick,
+._100-pure-resin-loban-dhoop-candy,
+.odour-neutralising-techonology,
+.handmade-soaps-with-essential-oils,
+.dual-enzyme-formula {
     width: 75%;
     margin-left: auto;
-
+    padding: 30px 40px;
+    text-align: center;
+    font-size: clamp(26px, 3vw, 38px);
+    line-height: 1.25;
+    font-weight: 700;
+    z-index: 5;
+    position: relative;
+    margin-top: 5px;
+    margin-right: 4px;
+    margin-bottom: 10px;
+    background: rgba(10, 18, 28, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 8px;
+    box-shadow: 10px 10px 28px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.26);
 }
 
-.kapoor-dhoop-candy {
-    object-fit: cover;
-    aspect-ratio: 355/765;
+.the-art-of-dual-aroma-two-fragrances-in-one-stick,
+.odour-neutralising-techonology,
+.handmade-soaps-with-essential-oils {
+    color: #ffffff;
+}
+
+._100-pure-resin-loban-dhoop-candy,
+.dual-enzyme-formula {
+    color: #fff;
+}
+
+/* Left Product / Platform Image */
+.kesar-chandan,
+.kapoor-dhoop-candy,
+.vertical-shinezap-355-x-765-px-1,
+.freshzap,
+.soap {
+    width: 25%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+}
+
+/* Document Name */
+.doc-name {
+    position: absolute;
+    left: 70px;
+    z-index: 4;
+    font-size: clamp(24px, 3vw, 38px);
+    font-weight: 700;
+    color: var(--bg-primary, #ffffff);
+}
+
+/* Video Area */
+.image-hlp {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
 }
 
 .image3 {
     width: 75%;
     height: 100%;
     position: relative;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 0;
     overflow: hidden;
-}
-
-.frame-1272638326,
-.frame-1272638327,
-.frame-1272638323,
-.frame-1272638324,
-.frame-1272638319,
-.frame-1272638325 {
-    display: flex;
-    flex-direction: column-reverse;
-}
-
-.frame-1272638326 {
-    background: #101010;
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 100vh;
-}
-
-.the-art-of-dual-aroma-two-fragrances-in-one-stick,
-.frame-1272638328,
-.dual-enzyme-formula,
-.odour-neutralising-techonology,
-.handmade-soaps-with-essential-oils {
-    color: #ffffff;
-    text-align: center;
-    width: 75%;
-    margin-left: auto;
-    font-size: 38px;
-
-    font-weight: 700;
-}
-
-.doc-name {
-    font-size: 38px;
-    color: var(--bg-primary);
-    z-index: 3;
-    position: absolute;
-    top: 85%;
-    left: 20px;
-    font-weight: 700;
-    margin-left: 70px;
-}
-
-.kesar-chandan,
-.kapoor-zipeer,
-.vertical-shinezap-355-x-765-px-1,
-.freshzap,
-.soap,
-.kapoor-dhoop-candy {
-    object-fit: contain;
-    position: absolute;
-    width: 25%;
-    height: 100%;
-}
-
-.image-hlp {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: end;
-    position: relative;
 }
 
 .image3 .video-product-image {
@@ -415,165 +576,213 @@
     height: 120% !important;
     transform: translate(-50%, -50%);
     object-fit: cover;
+    border: 0;
 }
 
-.the-art-of-dual-aroma-two-fragrances-in-one-stick {
-    font-size: 38px;
+/* ================== Responsive ================== */
+
+/* Laptop / Small Desktop */
+@media (max-width: 1200px) {
+    .job-opening .section-header {
+        width: 90%;
+    }
+
+    .frame-1272638326,
+    .frame-1272638325,
+    .frame-1272638324,
+    .frame-1272638319,
+    .frame-1272638323 {
+        min-height: 600px;
+    }
+
+    .the-art-of-dual-aroma-two-fragrances-in-one-stick,
+    ._100-pure-resin-loban-dhoop-candy,
+    .odour-neutralising-techonology,
+    .handmade-soaps-with-essential-oils,
+    .dual-enzyme-formula {
+        padding: 25px 30px;
+    }
 }
 
-.image3 .product-image {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    scale: 1 !important;
-    object-fit: cover;
+/* Tablet */
+@media (max-width: 991px) {
+
+    .frame-1272638326,
+    .frame-1272638325,
+    .frame-1272638324,
+    .frame-1272638319,
+    .frame-1272638323 {
+        height: auto;
+        min-height: auto;
+        padding-bottom: 40px;
+    }
+
+    .image-hlp {
+        height: 480px;
+    }
+
+    .image3 {
+        width: 100%;
+    }
+
+    .kesar-chandan,
+    .kapoor-dhoop-candy,
+    .vertical-shinezap-355-x-765-px-1,
+    .freshzap,
+    .soap {
+        width: 180px;
+        height: auto;
+        max-height: 90px;
+        top: 44px;
+        left: 750px;
+        display: none;
+    }
+
+    .the-art-of-dual-aroma-two-fragrances-in-one-stick,
+    ._100-pure-resin-loban-dhoop-candy,
+    .odour-neutralising-techonology,
+    .handmade-soaps-with-essential-oils,
+    .dual-enzyme-formula {
+        width: 100%;
+        margin-left: 0;
+        padding: 30px 24px 0;
+    }
+
+    .doc-name {
+        left: 30px;
+        bottom: 35px;
+        display: none;
+    }
 }
 
-.frame-1272638327 {
-    width: 100%;
-    height: 100vh;
-    background: #399a64;
-    position: relative;
-    overflow: hidden;
-}
-
-.frame-1272638328 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-}
-
-._5-mm-thick {
-    color: #ffffff;
-    text-align: center;
-    font-size: 48px;
-    font-weight: 700;
-    position: relative;
-}
-
-.ellipse-804 {
-    background: #ffffff;
-    border-radius: 50%;
-    flex-shrink: 0;
-    width: 16px;
-    height: 16px;
-    position: relative;
-    aspect-ratio: 1;
-}
-
-._2-x-fragrance {
-    color: #ffffff;
-    text-align: center;
-    font-size: 48px;
-    font-weight: 700;
-    position: relative;
-}
-
-.ellipse-805 {
-    background: #ffffff;
-    border-radius: 50%;
-    flex-shrink: 0;
-    width: 16px;
-    height: 16px;
-    position: relative;
-    aspect-ratio: 1;
-}
-
-.pure-loban {
-    color: #ffffff;
-    text-align: center;
-    font-size: 48px;
-    font-weight: 700;
-    position: relative;
-}
-
-.kapoor-zipeer,
-.vertical-shinezap-355-x-765-px-1,
-.freshzap,
-.soap {
-    object-fit: contain;
-}
-
-.frame-1272638323 {
-    background: #cdcaca;
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 100vh;
-}
-
-.dual-enzyme-formula {
-    color: #000000;
-    text-align: center;
-    font-size: 38px;
-    font-weight: 700;
-}
-
-.product-image {
-    overflow: hidden;
-    object-fit: cover;
-}
-
-.frame-1272638324 {
-    background: #01bcb3;
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 100vh;
-}
-
-.placeholder-container {
-    overflow: hidden;
-}
-
-.odour-neutralising-techonology {
-    color: #ffffff;
-    text-align: center;
-    font-size: 38px;
-    font-weight: 700;
-}
-
-.frame-1272638319 {
-    background: #62a0c7;
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 100vh;
-}
-
-.handmade-soaps-with-essential-oils {
-    color: #ffffff;
-    text-align: center;
-    font-size: 38px;
-    font-weight: 700;
-}
-
-.frame-1272638320 {
-    overflow: hidden;
-}
-
+/* Mobile */
 @media (max-width: 576px) {
+    .job-opening {
+        padding: 40px 0 60px;
+        gap: 30px;
+    }
+
+    .job-opening .section-header {
+        width: 92%;
+    }
+
+    .job-opening .title-text {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .job-opening .subtitle-text {
+        font-size: 24px;
+        line-height: 34px;
+    }
+
+    .frame-1272638326,
+    .frame-1272638325,
+    .frame-1272638324,
+    .frame-1272638319,
+    .frame-1272638323 {
+        padding-bottom: 30px;
+    }
+
+    .image-hlp {
+        height: 320px;
+    }
+
+    .image3 .video-product-image {
+        width: 140% !important;
+        height: 140% !important;
+    }
+
+    .kesar-chandan,
+    .kapoor-dhoop-candy,
+    .vertical-shinezap-355-x-765-px-1,
+    .freshzap,
+    .soap {
+        width: 110px;
+        max-height: 220px;
+        left: 15px;
+        bottom: 25px;
+    }
+
+    .doc-name {
+        left: 15px;
+        bottom: 25px;
+        font-size: 22px;
+        margin-left: 0;
+        display: none;
+    }
+
+    .the-art-of-dual-aroma-two-fragrances-in-one-stick,
+    ._100-pure-resin-loban-dhoop-candy,
+    .odour-neutralising-techonology,
+    .handmade-soaps-with-essential-oils,
+    .dual-enzyme-formula {
+        font-size: 20px;
+        line-height: 1.35;
+        padding: 24px 18px 0px;
+        background: none !important;
+        border: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        box-shadow: none !important;
+
+    }
+
+    .hero-wrapper {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 0;
+        position: absolute;
+    }
+
+    .hero-content {
+        width: 100% !important;
+    }
+
+    .hero .swiper-slide {
+        padding: 0;
+        align-items: center;
+    }
+
+    .Indicators {
+        display: none;
+    }
 
     .hero {
-        height: 100% !important;
+        height: 100%;
     }
 
     .hero .overlay-bg {
         position: relative;
-    }
-
-    .hero-wrapper {
-        left: 50%;
-        top: -5%;
-        transform: translate(-50%, 10%);
-    }
-
-    .hero-wrapper {
-        position: absolute;
+        display: flex;
     }
 
     .overlay-image {
+        flex: 0 0 100%;
+    }
+
+    .overlay-image.active {
         position: relative;
+        z-index: 111;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 380px) {
+    .image-hlp {
+        height: 280px;
+    }
+
+    .kesar-chandan,
+    .kapoor-dhoop-candy,
+    .vertical-shinezap-355-x-765-px-1,
+    .freshzap,
+    .soap {
+        width: 95px;
+    }
+
+    .doc-name {
+        font-size: 20px;
     }
 }
